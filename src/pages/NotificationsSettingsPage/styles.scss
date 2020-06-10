@@ -1,0 +1,21 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.section {
+  @include make-spacer(py, 3);
+  @include make-spacer(py, 6, sm);
+
+  &:first-child {
+    @include make-spacer(pt, 0);
+  }
+
+  &:last-child {
+    @include make-spacer(pb, 3);
+
+    border-bottom: 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    border-bottom: 1px solid var(--grey-200);
+  }
+}

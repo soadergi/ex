@@ -1,0 +1,36 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(center, center);
+  @include make-spacer(mb, 2);
+}
+
+.text {
+  @include make-spacer(ml, 2);
+  @include make-spacer(mr, 2);
+
+  text-transform: capitalize;
+  color: var(--blue);
+}
+
+.button {
+  @include reset-button;
+
+  &[disabled] {
+
+    .icon {
+      color: var(--grey-400);
+    }
+  }
+
+}
+
+.icon {
+  transform: rotate(-90deg);
+  color: var(--blue);
+
+  &.left {
+    transform: rotate(90deg);
+  }
+}
+

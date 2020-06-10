@@ -1,0 +1,160 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(flex-start, stretch, column);
+  @include make-spacer(pb, 7);
+  @include make-spacer(pt, 7);
+
+  position: relative;
+  border-bottom: 30px solid var(--black);
+  background-attachment: scroll;
+  background-color: var(--white);
+  background-position: left 9%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: calc(100vh / 3);
+  overflow: hidden;
+  text-align: center;
+
+
+  &::before {
+    top: rem(-80px);
+    left: rem(-55px);
+    background-position: left top;
+    height: rem(280px);
+
+    @include media-breakpoint-up(sm) {
+      top: rem(-48px);
+      left: rem(-90px);
+      height: rem(350px);
+    }
+
+    @include media-breakpoint-up(md) {
+      left: rem(-122px);
+      height: rem(100%);
+    }
+
+    @include media-breakpoint-up(lg) {
+      left: rem(-158px);
+    }
+  }
+
+  &::after {
+    right: rem(-55px);
+    bottom: 0;
+    transform: scaleX(-1);
+    background-position: right bottom;
+    height: rem(260px);
+
+    @include media-breakpoint-up(sm) {
+      right: rem(-90px);
+      height: rem(330px);
+    }
+
+    @include media-breakpoint-up(md) {
+      right: rem(-122px);
+      height: 100%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      right: rem(-158px);
+    }
+  }
+
+  &::before,
+  &::after {
+    display: block;
+    position: absolute;
+    top: auto;
+    bottom: rem(-10px);
+    z-index: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(208px);
+    height: rem(99px);
+    content: '';
+
+    @include media-breakpoint-up(sm) {
+      bottom: rem(-16px);
+      width: rem(328px);
+      height: rem(155px);
+    }
+
+    @include media-breakpoint-up(md) {
+      bottom: rem(-26px);
+      width: rem(448px);
+      height: rem(212px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: rem(560px);
+      height: rem(266px);
+    }
+  }
+}
+
+.title {
+  @include font-size(24px, 32px);
+  @include make-spacer(mx, auto);
+
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(40px, 56px);
+  }
+}
+
+.content {
+  @include make-spacer(pt, 3);
+  @include make-spacer(pt, 4, sm);
+  @include make-spacer(pt, 5, md);
+}
+
+.description {
+  @include font-size(24px, 32px);
+
+  display: block;
+  color: var(--warning);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(40px, 56px);
+  }
+}
+
+.lead {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, sm);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mx, auto);
+  @include font-size(12px, 16px);
+
+  max-width: 40rem;
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(16px, 32px);
+  }
+}
+
+.subtitle {
+  @include make-spacer(mb, 2);
+  @include font-size(14px, 16px);
+
+  text-align: center;
+  color: var(--white);
+  font-weight: var(--wp-font-weight-regular);
+}

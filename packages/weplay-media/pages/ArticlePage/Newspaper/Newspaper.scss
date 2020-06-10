@@ -1,0 +1,53 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(pb, 3);
+  @include make-spacer(pb, 12, md);
+
+  border-bottom: 1px solid var(--grey-200);
+
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.content {
+  @include make-spacer(pb, 3);
+  @include make-spacer(pb, 6, md);
+}
+
+.article {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.leftSidebar {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+}
+
+.rightSidebar {
+  @include make-spacer(ml, 3);
+
+  display: none;
+  grid-column-start: 3;
+  grid-column-end: 4;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: calc(var(--wp-sticky-section-height) + 2rem);
+}
+
+.bannerWrap {
+  @include make-spacer(mb, 4);
+}

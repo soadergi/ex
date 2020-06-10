@@ -1,0 +1,143 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.timelineItem {
+  position: relative;
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    @include flex(flex-start, stretch);
+
+    &.isEven {
+      flex-direction: row-reverse;
+
+      .timelineBlock {
+        align-items: flex-end;
+        text-align: right;
+      }
+
+      .timelineDate {
+
+        &::before {
+          right: -3rem;
+          left: inherit;
+
+          @include media-breakpoint-up(md) { // stylelint-disable-line
+            right: rem(-70px);
+          }
+        }
+      }
+
+      .timelineImgContainer {
+        @include media-breakpoint-up(sm) {
+          padding-left: rem(1px);
+        }
+      }
+    }
+  }
+}
+
+.timelineWrapper {
+  @include media-breakpoint-up(sm) {
+    max-width: rem(488px);
+  }
+}
+
+.timelineBlock {
+  @include make-spacer(pt, 2);
+  @include make-spacer(px, 6);
+  @include make-spacer(pb, 4);
+  @include make-spacer(pb, 2, sm);
+  @include flex(center, flex-start, column);
+
+  @include media-breakpoint-up(sm) {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-right: rem(70px);
+    padding-left: rem(70px);
+  }
+}
+
+.timelineImgContainer {
+  position: relative;
+
+  @include media-breakpoint-up(sm) {
+    flex: 0 0 50%;
+    padding-right: rem(1px);
+    width: 50%;
+    max-width: 50%;
+  }
+}
+
+.timelineImgWrapper {
+  position: relative;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    @include aspect-ratio;
+  }
+}
+
+.timelineImg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    @include size(100%);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.timelineDate {
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 2, sm);
+
+  display: block;
+  position: relative;
+  line-height: 1.33;
+  color: var(--blue);
+  font-size: rem(18px);
+  font-weight: 500;
+
+  &::before {
+    @include size(rem(24px), 2px);
+
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    left: -3rem;
+    background-color: var(--blue);
+    content: '';
+
+    @include media-breakpoint-up(md) {
+      left: rem(-70px);
+      width: rem(56px);
+    }
+  }
+}
+
+.timelineTitle {
+  @include make-spacer(mb, 2);
+
+  line-height: 1.66;
+  font-size: rem(24px);
+  font-weight: 700;
+
+  @include media-breakpoint-up(md) {
+    line-height: 1.17;
+    font-size: rem(34px);
+  }
+}
+
+.timelineText {
+  @include make-spacer(mb, 0);
+
+  line-height: 1.75;
+}

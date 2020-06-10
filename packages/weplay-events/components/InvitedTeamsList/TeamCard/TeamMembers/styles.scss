@@ -1,0 +1,85 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include size(100%);
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: rem(148px) 1fr;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: rem(176px) 1fr;
+  }
+}
+
+.listContainer {
+  scrollbar-color: var(--blue) var(--grey-100);
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    border-radius: 2px;
+    height: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 2px;
+    background-color: var(--grey-100);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: var(--blue);
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+.list {
+  @include reset-list;
+
+  position: relative;
+
+  &::after {
+    @include size(rem(2px), 100%);
+
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 1px;
+    background-color: var(--grey-100);
+    content: none;
+
+    @include media-breakpoint-up(md) {
+      content: '';
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    @include flex;
+    @include make-spacer(pb, 3);
+  }
+}
+
+.listItem {
+  @include make-spacer(pr, 2);
+
+  position: relative;
+  cursor: pointer;
+  min-width: rem(96px);
+
+  &:not( :last-child ) {
+    @include make-spacer(mb, 2, md);
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 100%;
+    min-width: 0;
+  }
+}

@@ -1,0 +1,37 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  width: 100%;
+}
+
+.header {
+  @include make-spacer(mb, 4);
+}
+
+.error {
+  @include font-size(12px, 18px);
+
+  color: var(--error);
+}
+
+.message {
+  @extend %buttonLink;
+
+  @include font-size(12px, 12px);
+  @include make-spacer(px, 0);
+  @include make-spacer(mx, 1);
+
+  font-weight: 500;
+}
+
+.link {
+  @extend %buttonLink;
+
+  @include font-size(12px, 12px);
+  @include make-spacer(px, 0);
+  @include make-spacer(mx, auto);
+  @include make-spacer(mt, 1);
+
+  display: block;
+  font-weight: 500;
+}

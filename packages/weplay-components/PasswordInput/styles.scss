@@ -1,0 +1,23 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: relative;
+}
+
+.input {
+  @include input;
+  @include make-spacer(pr, 8);
+}
+
+.button {
+  @include font-size(10px, 16px);
+
+  position: absolute;
+  top: 50%;
+  right: rem(8px);
+  transform: translateY(-50%);
+  z-index: 1;
+  border: 0;
+  background-color: transparent;
+  text-decoration: none;
+}

@@ -1,0 +1,112 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.page {
+  @include make-spacer(pb, 4);
+  @include flex($direction: column);
+}
+
+.title {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 2);
+
+  font-weight: 700;
+}
+
+.subTitle {
+  @include font-size(16px, 32px);
+  @include make-spacer(mb, 3);
+}
+
+.hero {
+  @include make-spacer(pt, 3);
+
+  position: relative;
+  background-color: var(--royal-blue);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: hidden;
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    background-position: top;
+    background-size: 100%;
+  }
+}
+
+.background {
+  @include media-breakpoint-down(sm) {
+    height: auto;
+  }
+}
+
+.router {
+  @include make-spacer(pb, 3);
+
+  border-bottom: rem(1px) solid var(--white-alpha-024);
+}
+
+.wrapper {
+  @include media-breakpoint-up(md) {
+    @include flex(space-between, center);
+  }
+}
+
+.seo {
+  @include make-spacer(mb, 10);
+
+  order: 3;
+}
+
+.isNew {
+  position: relative;
+
+  &::before {
+    @include font-size(12px);
+    @include make-spacer(p, half);
+    @include make-spacer(pl, 1);
+    @include make-spacer(pr, 1);
+
+    display: block;
+    position: absolute;
+    top: 0;
+    right: rem(-50px);
+    border-radius: rem(2px);
+    background: var(--magenta-alpha-024);
+    color: var(--magenta);
+    content: 'New';
+  }
+}
+
+.dark {
+  $one-pixel: rem(1px);
+
+  position: relative;
+
+  &::after {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #1f2b42;
+    width: 100%;
+    height: $one-pixel;
+    content: '';
+  }
+}
+
+.topTitle {
+  @include font-size(20px, 28px);
+  @include make-spacer(mb, 1);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.topSubTitle {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 2);
+
+  font-weight: var(--wp-font-weight-normal);
+}

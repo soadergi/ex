@@ -1,0 +1,68 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include size(100%);
+  @include make-spacer(m, auto);
+
+  border-right: 1px solid var(--dark-grey);
+}
+
+.link {
+  @include make-spacer(px, 1);
+  @include make-spacer(px, 2, sm);
+  @include make-spacer(px, 3, lg);
+  @include size(100%);
+  @include flex(center, center);
+
+  position: relative;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.isActive {
+    background-color: var(--grey-500-alpha-008);
+
+    &::after {
+      @include size(0);
+
+      display: block;
+      position: absolute;
+      bottom: rem(-1px);
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 0 rem(8px) rem(8px) rem(8px);
+      border-style: solid;
+      border-color: transparent transparent var(--white) transparent;
+      content: '';
+
+    }
+  }
+}
+
+.content {
+  @include flex(center, flex-start, column);
+}
+
+.title {
+  @include font-size(14px);
+
+  position: relative;
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.subtitle {
+  @include font-size(12px);
+  @include make-spacer(mt, 1);
+
+  display: none;
+  color: var(--grey-400);
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+}
+

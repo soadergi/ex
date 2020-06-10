@@ -1,0 +1,18 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.wrapper {
+  @include make-spacer(pt, 3);
+
+  overflow-x: auto;
+}
+
+.roundRobin {
+  @include make-spacer(pt, 3);
+}
+
+.loader {
+  @include size(100%, rem(500px));
+
+  position: relative;
+}

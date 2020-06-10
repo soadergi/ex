@@ -1,0 +1,35 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  position: relative;
+  min-height: rem(200px);
+  max-height: rem(800px);
+  overflow: hidden;
+
+  &::after {
+    @include size(100%, rem(80px));
+    @include gradient-y(rgba(255,255,255,0), #{var(--white)});
+
+    display: block;
+    position: absolute;
+    bottom: rem(-16px);
+    z-index: 0;
+    content: '';
+  }
+
+  &.isOpened {
+    @include size(auto);
+
+    max-height: initial;
+    overflow: visible;
+
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.item {
+  display: grid;
+}

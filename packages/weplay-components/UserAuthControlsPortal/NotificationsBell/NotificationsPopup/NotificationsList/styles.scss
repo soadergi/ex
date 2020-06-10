@@ -1,0 +1,23 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  max-height: 80vh;
+  overflow: auto;
+
+  @include media-breakpoint-up(sm) {
+    max-height: rem(440px);
+  }
+}
+
+.empty {
+  @include size(rem(128px));
+}
+
+.message {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 0);
+
+  text-align: center;
+  color: var(--grey-500);
+}

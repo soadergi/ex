@@ -1,0 +1,13 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.table {
+  @include make-spacer(mb, 4);
+}
+
+.counter {
+  @include make-spacer(mb, 2);
+}
+
+.container {
+  @include make-spacer(px, 0);
+}

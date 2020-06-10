@@ -1,0 +1,194 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+// ------------------------------------
+//   #SCOREBOARD
+// ------------------------------------
+
+.group {
+  display: block;
+}
+
+.arrow {
+  @include transition(transform);
+
+  transform: rotateZ(-90deg);
+  font-size: rem(10px);
+  fill: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}
+
+.title {
+  @include flex(space-between, center);
+  @include font-size(14px, 32px);
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 2, sm);
+
+  position: relative;
+  color: var(--grey-500);
+
+  &::after {
+    @include transition(opacity);
+
+    position: absolute;
+    bottom: rem(-8px);
+    left: 0;
+    border-bottom: 1px solid var(--grey-300);
+    width: 100%;
+    height: 0;
+    content: '';
+
+    @include media-breakpoint-up(sm) {
+      content: none;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(18px, 32px);
+
+    pointer-events: none;
+  }
+
+  &.isOpen {
+
+    &::after {
+      opacity: 0;
+    }
+
+    .arrow {
+      transform: rotateZ(0);
+    }
+  }
+}
+
+.games {
+  @include make-spacer(mb, 2);
+
+  position: relative;
+  border: 1px solid var(--grey-300);
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+}
+
+.game {
+
+  &:not( :last-child ) {
+    border-bottom: 1px solid var(--grey-300);
+  }
+}
+
+.loadMore {
+  @include make-spacer(pt, 3);
+
+  text-align: center;
+}
+
+.block {
+  overflow: auto;
+
+  &.roundRobin {
+    display: block;
+
+    .title {
+      color: var(--grey-500);
+
+      &::after {
+        content: none;
+      }
+    }
+
+    .games {
+      border: 0;
+      border-radius: 0;
+      background-color: transparent;
+
+      &::after {
+        @include gradient-y(transparent, #{var(--grey-100)});
+        @include transition(#{opacity, visibility});
+
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        visibility: hidden;
+        opacity: 1;
+        width: 100%;
+        height: rem(40px);
+        content: '';
+
+        @include media-breakpoint-up(md) {
+          content: none;
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        column-gap: rem(48px);
+        column-count: 2;
+      }
+
+      &.isExpanded {
+
+        &::after {
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+    }
+
+    .game {
+      border: 1px solid var(--grey-300);
+      background-color: var(--white);
+      overflow: hidden;
+      break-inside: avoid;
+
+      &:first-child {
+        border-radius: rem(8px) rem(8px) 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 rem(8px) rem(8px);
+      }
+
+      &:not( :last-child ) {
+        border-bottom: 0;
+      }
+
+      &.hasBorderBottom {
+        @include media-breakpoint-up(md) {
+          border-bottom: 1px solid var(--grey-300);
+        }
+      }
+
+      &.hasBorderRadiusBottom {
+        @include media-breakpoint-up(md) {
+          border-radius: 0 0 rem(8px) rem(8px);
+        }
+      }
+
+      &.hasBorderRadiusTop {
+        @include media-breakpoint-up(md) {
+          border-radius: rem(8px) rem(8px) 0 0;
+        }
+      }
+    }
+  }
+}
+
+.forgeOfMastersLeagueSecondSeason {
+  @include make-spacer(mt, 8);
+
+  display: block;
+}
+
+.forgeOfMastersLanSecondSeason {
+  @include make-spacer(mt, 8);
+
+  display: block;
+}

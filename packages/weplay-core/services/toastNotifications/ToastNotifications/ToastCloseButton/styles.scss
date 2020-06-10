@@ -1,0 +1,17 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @extend %buttonReset;
+
+  @include transition(transform);
+
+  position: absolute;
+  top: rem(16px);
+  right: rem(16px);
+  transform-origin: 50% 50%;
+  color: var(--grey-500);
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+}

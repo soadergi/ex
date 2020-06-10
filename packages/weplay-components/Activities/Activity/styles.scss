@@ -1,0 +1,44 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.item {
+  @include flex(flex-start, center);
+  @include make-spacer(mr, 2);
+
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--grey-500);
+  font-size: 0.75rem;
+
+  &:last-child {
+    @include make-spacer(mr, 0);
+  }
+}
+
+.icon {
+  color: var(--grey-500);
+}
+
+.eye {
+  font-size: 0.625rem;
+}
+
+.comment {
+  font-size: 0.878rem;
+}
+
+.share {
+  font-size: 1rem;
+}
+
+.clock {
+  font-size: 0.875rem;
+}
+
+// Icon white color
+
+.white {
+
+  .icon {
+    color: var(--white);
+  }
+}

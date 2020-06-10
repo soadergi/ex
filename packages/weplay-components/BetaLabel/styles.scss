@@ -1,0 +1,12 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include font-size(10px);
+
+  position: absolute;
+  top: rem(-5px);
+  left: calc(100% + #{rem(8px)});
+  text-transform: none;
+  color: var(--magenta);
+  font-weight: var(--wp-font-weight-normal);
+}

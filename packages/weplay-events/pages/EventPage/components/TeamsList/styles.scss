@@ -1,0 +1,45 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.grid {
+  --grid-gap: #{rem(16px)};
+
+  @include make-spacer(mx, auto);
+
+  @include media-breakpoint-up(sm) {
+    grid-gap: var(--grid-gap);
+  }
+
+  @include media-breakpoint-up(md) {
+    --grid-gap: #{rem(24px)};
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
+}
+
+.gridItem {
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+
+    &:not( :last-child ) {
+      @include make-spacer(mb, 3);
+    }
+  }
+}
+
+.title {
+  @include make-spacer(mb, 4);
+  @include font-size(20px, 28px);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(24px, 32px);
+  }
+}
+
+.inlineTabs {
+  @include make-spacer(mb, 3);
+}

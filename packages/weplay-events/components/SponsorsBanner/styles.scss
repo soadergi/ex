@@ -1,0 +1,22 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pt, 2);
+  @include make-spacer(pt, 3, md);
+
+  position: relative;
+  box-shadow: 4px 4px 14px var(--black-alpha-024);
+  background-color: var(--black);
+
+  &.light {
+    @include make-spacer(py, 2, lg);
+
+    background-color: var(--grey-100);
+  }
+}
+
+.list {
+  @include reset-list;
+  @include make-spacer(mx, auto);
+  @include flex(center, center, $wrap: wrap);
+}

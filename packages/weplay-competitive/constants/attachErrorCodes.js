@@ -1,0 +1,4 @@
+export const ATTACH_GAME_ERRORS = {
+  GAME_NOT_FOUND: '5010',
+  PRIVATE_PROFILE: '5011',
+}

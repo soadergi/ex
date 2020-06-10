@@ -1,0 +1,46 @@
+@mixin league-page {
+
+  &.leaguePage {
+    @include make-spacer(py, 1);
+    @include make-spacer(py, half, sm);
+
+    position: absolute;
+    bottom: 0;
+    border-bottom: rem(1px) solid var(--blue-alpha-008);
+    width: 100%;
+
+    .container {
+      --max-width: #{rem(1080px)};
+
+      @include make-spacer(px, 0, md);
+
+      @include media-breakpoint-up(lg) {
+        --max-width: #{rem(1392px)};
+      }
+    }
+
+    .item {
+
+      &:not( :last-child ) {
+        @include make-spacer(mr, 3);
+        @include make-spacer(mr, 4, sm);
+      }
+    }
+
+    .link {
+      @include make-spacer(py, 1);
+      @include make-spacer(px, 0);
+      @include font-size(20px, 24px);
+
+      color: var(--white);
+
+      &:hover {
+        color: var(--blue);
+      }
+
+      @include media-breakpoint-up(sm) {
+        @include font-size(24px, 30px);
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: auto rem(592px) rem(368px) auto;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: auto rem(752px) rem(448px) auto;
+  }
+}
+
+.imgWrap {
+  @include make-spacer(mr, 2);
+  @include make-spacer(mr, 5, sm);
+  @include make-spacer(mr, 0, md);
+
+  position: relative;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  height: rem(160px);
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    height: rem(336px);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-column: 1 / span 2;
+    height: rem(464px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: rem(440px);
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: rem(560px);
+  }
+}
+
+.contentWrap {
+  @include make-spacer(mt, 4);
+  @include make-spacer(mt, 6, sm);
+  @include make-spacer(mt, 0, md);
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(pr, 0, md);
+  @include make-spacer(pl, 6, md);
+
+  @include media-breakpoint-up(md) {
+    grid-column: 3 / 4;
+  }
+}

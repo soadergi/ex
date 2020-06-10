@@ -1,0 +1,14 @@
+@mixin white {
+
+  &White {
+    border-color: var(--white);
+    background-color: var(--white);
+    color: var(--blue);
+
+    &:hover {
+      border-color: var(--white);
+      background-color: transparent;
+      color: var(--white);
+    }
+  }
+}

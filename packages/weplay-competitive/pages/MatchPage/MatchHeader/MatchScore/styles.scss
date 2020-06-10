@@ -1,0 +1,65 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$icon-offset: rem(-32px);
+$icon-width: rem(32px);
+$icon-height: rem(32px);
+
+.winner {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+}
+
+.icon {
+  align-self: center;
+  width: $icon-width;
+  height: $icon-height;
+  color: var(--white);
+}
+
+.wrapper {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.score {
+  @include word-break;
+  @include font-size(32px);
+
+  position: relative;
+  text-align: center;
+  color: var(--white);
+  font-weight: 700;
+
+  &:first-child {
+
+    .winner {
+      left: $icon-offset;
+    }
+  }
+
+  &:last-child {
+
+    .winner {
+      right: $icon-offset;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(64px);
+  }
+}
+
+.container {
+  --column-width: #{rem(48px)};
+
+  display: grid;
+  grid-template-columns: var(--column-width) $icon-width var(--column-width);
+  grid-column-gap: rem(8px);
+
+  @include media-breakpoint-up(sm) {
+    --column-width: #{rem(96px)};
+  }
+}

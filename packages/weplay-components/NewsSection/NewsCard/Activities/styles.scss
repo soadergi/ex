@@ -1,0 +1,35 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include reset-list;
+  @include flex(flex-start, center, row, wrap);
+
+  &.white {
+
+    .item {
+      color: var(--white);
+    }
+  }
+}
+
+.item {
+  @include font-size(12px);
+  @include make-spacer(mr, 2);
+  @include flex(flex-start, center);
+
+  white-space: nowrap;
+  color: var(--grey-500);
+
+  &:last-child {
+    @include make-spacer(mr, 0);
+  }
+}
+
+.text {
+  @include make-spacer(pl, half);
+}
+
+.icon {
+  @include make-spacer(mr, half);
+  @include size(rem(16px));
+}

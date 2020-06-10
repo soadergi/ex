@@ -1,0 +1,224 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.link {
+  @include word-break;
+  @include font-size(12px, 16px);
+}
+
+.title {
+  @include font-size(14px, 22px);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--royal-blue);
+  font-weight: 700;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.subTitle {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 0);
+  @include make-spacer(mt, 1.5);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.headerWrapper {
+  display: grid;
+  grid-template-columns: rem(40px) 1fr;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-rows: rem(40px);
+    grid-template-columns: rem(56px) rem(400px);
+  }
+}
+
+.footer {
+  @include make-spacer(pb, half);
+
+  grid-column: 1;
+  width: rem(320px);
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+    width: rem(200px);
+  }
+}
+
+.icon {
+  @include flex($display: inline-flex);
+  @include size(rem(16px));
+  @include make-spacer(mr, 1);
+
+  vertical-align: middle;
+
+  @include media-breakpoint-up(md) {
+    @include size(rem(24px));
+  }
+}
+
+.column {
+  @include make-spacer(py, half);
+  @include make-spacer(mb, 0, md);
+
+  align-self: center;
+  color: var(--royal-blue);
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(py, 3);
+  }
+
+  &.header {
+    @include make-spacer(pl, 2, sm);
+
+    @include media-breakpoint-up(md) {
+      width: rem(352px);
+    }
+
+    &.num {
+      @include make-spacer(px, 1);
+      @include make-spacer(pt, 2.5);
+
+      width: 4rem;
+
+      @include media-breakpoint-up(md) {
+        width: rem(100px);
+      }
+    }
+  }
+}
+
+.headerText {
+  @include make-spacer(mx, 1);
+  @include make-spacer(pb, 0, md);
+  @include font-size(14px, 22px);
+
+  display: grid;
+  align-self: center;
+  color: var(--royal-blue);
+
+  &:first-child {
+
+    .column {
+      color: var(--white);
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(mx, 2);
+    @include font-size(16px, 24px);
+  }
+}
+
+.columnTitle {
+  @include make-spacer(mb, 1);
+  @include font-size(12px, 16px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.main {
+  @include make-spacer(mb, 0);
+  @include font-size(16px, 24px);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.subText {
+  @include make-spacer(mb, 0);
+  @include font-size(16px, 24px);
+
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.topText {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: inline;
+  }
+}
+
+.iconCup {
+  @include make-spacer(pr, 0);
+
+  min-width: rem(40px);
+
+  svg {
+    display: none;
+  }
+}
+
+.num {
+  @include make-spacer(px, 2);
+  @include make-spacer(pt, 2.5);
+
+  width: rem(40px);
+  text-align: right;
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(px, 1);
+    @include make-spacer(py, 1.5);
+  }
+}
+
+.block {
+  display: grid;
+  grid-template-columns: rem(180px) rem(53px) 1fr;
+  border: 0;
+  color: var(--royal-blue);
+
+  &:nth-child( even ) {
+    background: rgba(58, 187, 233, 0.08);
+  }
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr rem(180px) rem(180px);
+  }
+
+  &.isMyDonation {
+    background: rgba(59, 187, 233, 0.2);
+  }
+}
+
+.matches {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+}
+
+.points {
+  justify-self: auto;
+
+  @include media-breakpoint-up(sm) {
+    justify-self: end;
+  }
+}
+
+.prize {
+  @include make-spacer(pl, 8);
+  @include make-spacer(pt, 0);
+  @include make-spacer(pl, 0, sm);
+  @include font-size(14px, 22px);
+
+  font-weight: var(--wp-font-weight-regular);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}

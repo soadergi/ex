@@ -1,0 +1,74 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.wrapper {
+  @include flex(flex-start, center, column);
+
+  @include media-breakpoint-up(md) {
+    @include flex(flex-start, stretch, row);
+  }
+}
+
+.winnerBlock {
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 2, md);
+  @include make-spacer(mr, 4, lg);
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 0, md);
+
+  flex: 0 0 auto;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: 17rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    flex: 0 0 12.5rem;
+    width: auto;
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex: 0 0 16rem;
+  }
+}
+
+.contentBlock {
+  @include make-spacer(mb, 3);
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include font-size(14px, 24px);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(md) {
+    @include font-size(18px, 24px);
+  }
+}
+
+.description {
+  @include font-size(12px, 24px);
+
+  color: var(--black);
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(14px, 24px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(16px, 24px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(18px, 24px);
+  }
+}

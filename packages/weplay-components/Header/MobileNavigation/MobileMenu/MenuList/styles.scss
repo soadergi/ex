@@ -1,0 +1,48 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  cursor: pointer;
+  width: 100%;
+}
+
+.title {
+  @extend %buttonReset;
+
+  @include font-size(12px, 18px);
+  @include make-spacer(px, 2);
+  @include make-spacer(py, 1);
+  @include flex(space-between, center);
+
+  width: 100%;
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.text {
+  position: relative;
+}
+
+.arrow {
+  @include font-size(12px);
+}
+
+.icon {
+  transform: rotate(180deg);
+  transform-origin: center;
+  color: var(--grey-500);
+
+  &.isArrowUp {
+    transform: rotate(0);
+  }
+}
+
+.list {
+  @include reset-list;
+
+  overflow: hidden;
+
+  &.isCollapsed {
+    height: 0;
+  }
+}

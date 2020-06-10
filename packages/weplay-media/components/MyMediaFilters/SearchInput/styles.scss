@@ -1,0 +1,102 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.search {
+  position: relative;
+}
+
+.input {
+  @include font-size(16px, 24px);
+  @include make-spacer(pl, 2);
+  @include make-spacer(pr, 4);
+  @include make-spacer(py, 0);
+  @include transition(border-color);
+  @include size(100%, rem(32px));
+
+  display: block;
+  outline: none;
+  border: 1px solid var(--grey-300);
+  border-radius: 4px;
+  background-color: var(--white);
+  text-align: left;
+  color: var(--royal-blue);
+  font-weight: 400;
+
+  &::placeholder {
+    @include transition(#{opacity, text-indent});
+
+    opacity: 1;
+    color: var(--grey-500);
+    font-size: rem(14px);
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+    margin: 0;
+  }
+
+  &:focus {
+    border-color: var(--grey-500);
+
+    &::placeholder {
+      opacity: 0;
+      text-indent: 8px;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(14px, 24px);
+  }
+}
+
+.wrapper {
+  background-color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    width: rem(272px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include transition(width);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition-delay: 0.2s;
+    z-index: 1;
+
+    &.focus {
+      transition-delay: initial;
+      width: 100%;
+    }
+  }
+}
+
+.icon {
+  @include size(16px);
+  @include transition(color);
+
+  color: var(--grey-500);
+}
+
+.button {
+  @include make-spacer(p, 0);
+  @include flex(center, center);
+  @include size(rem(32px), 100%);
+
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  border: 0;
+  background: transparent;
+  text-decoration: none;
+
+  &:hover {
+
+    .icon {
+      color: var(--blue);
+    }
+  }
+}

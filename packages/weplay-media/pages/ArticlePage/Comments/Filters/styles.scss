@@ -1,0 +1,47 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include reset-list;
+  @include flex(flex-start, center, row, wrap);
+
+  @include media-breakpoint-up(sm) {
+    justify-content: center;
+  }
+}
+
+.item {
+  @include make-spacer(ml, 0);
+  @include make-spacer(mr, 3);
+  @include make-spacer(ml, 3, sm);
+  @include make-spacer(mr, auto, sm);
+
+  font-weight: 500;
+}
+
+.button {
+  @include make-spacer(pb, 1);
+
+  position: relative;
+  color: var(--grey-500);
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: rem(2px);
+    content: '';
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.isActive {
+    color: var(--royal-blue);
+
+    &::after {
+      background-color: var(--blue);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include reset-list;
+  @include flex;
+  @include make-spacer(pb, 3);
+  @include make-spacer(pb, 0, md);
+
+  overflow-x: auto;
+  white-space: nowrap;
+
+  @include media-breakpoint-up(md) {
+    white-space: normal;
+  }
+}

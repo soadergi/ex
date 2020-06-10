@@ -1,0 +1,104 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+// ====================================
+// New Styles
+// ====================================
+
+// Non-compiled files
+
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+// /====================================
+
+.block {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(pr, 0, md);
+  @include make-spacer(pl, 4, md);
+  @include make-spacer(pl, 8, lg);
+
+  position: absolute;
+  bottom: rem(24px);
+  left: 0;
+  z-index: 3;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    bottom: rem(40px);
+  }
+
+  @include media-breakpoint-up(md) {
+    bottom: rem(48px);
+    max-width: rem(736px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    bottom: rem(56px);
+    max-width: rem(904px);
+  }
+
+  @include media-breakpoint-up(xl) {
+    bottom: rem(64px);
+    max-width: rem(1168px);
+  }
+}
+
+.header {
+  @include flex($align-items: center);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, md);
+}
+
+.title {
+  @include make-spacer(mb, 0);
+  @include make-spacer(mr, 2);
+  @include make-spacer(mr, 3, md);
+  @include font-size(20px, 24px);
+
+  color: var(--white);
+  font-weight: 700;
+}
+
+.navigationContainer {
+  width: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  @include media-breakpoint-up(sm) {
+    width: 100%;
+  }
+}
+
+.navigation {
+  @include reset-list;
+
+  display: grid;
+  grid-template-columns: repeat(3, rem(52px));
+  grid-column-gap: rem(16px);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: rem(24px);
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-column-gap: rem(48px);
+  }
+}
+
+.dots {
+  @include reset-list;
+  @include flex;
+}
+
+.dot {
+  @include size(rem(12px));
+  @include make-spacer(mr, 1);
+
+  border-radius: 50%;
+  background-color: var(--grey-500);
+
+  &.isActive {
+    background-color: var(--blue);
+  }
+}

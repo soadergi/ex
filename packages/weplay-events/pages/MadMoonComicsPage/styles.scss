@@ -1,0 +1,195 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    @include size(100%, rem(100px));
+    @include gradient-y(transparent, #{var(--royal-blue)});
+
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    content: '';
+
+    @include media-breakpoint-up(sm) {
+      @include size(100%, rem(200px));
+    }
+  }
+}
+
+.content {
+  @include make-spacer(pt, 4);
+  @include make-spacer(pt, 8, sm);
+  @include make-spacer(pb, 0);
+  @include make-spacer(pb, 6, sm);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  max-width: rem(784px);
+  text-align: center;
+}
+
+.logo {
+  @include make-spacer(mx, auto);
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 5, sm);
+  @include size(rem(272px), auto);
+
+  display: block;
+  position: relative;
+  min-height: rem(78px);
+}
+
+.title {
+  @include make-spacer(mb, 3);
+  @include font-size(24px, 32px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.description {
+  @include make-spacer(mb, 1);
+  @include font-size(16px, 24px);
+
+  color: var(--grey-200);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.text {
+  @include make-spacer(mb, 1);
+  @include font-size(16px, 24px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.wrapDropDown {
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 6, sm);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  max-width: rem(256px);
+}
+
+.hint {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mb, 3);
+  @include font-size(12px, 18px);
+
+  color: var(--white-alpha-064);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.wrap {
+  @include flex(center);
+
+  position: relative;
+  visibility: hidden;
+}
+
+.readyForAnimation {
+  visibility: visible;
+
+  .image {
+
+    &:nth-of-type( 1 ) {
+      transform: translateX(100%);
+      animation: appearFirstLeft 2s ease-in-out;
+
+      @include media-breakpoint-up(lg) {
+        transform: translateX(82%);
+      }
+    }
+
+    &:nth-of-type( 2 ) {
+      transform: translateX(32%);
+      animation: appearSecondLeft 1s ease-in-out;
+    }
+
+    &:nth-of-type( 4 ) {
+      transform: translateX(-32%);
+      animation: appearSecondToLastRight 1s ease-in-out;
+    }
+
+    &:nth-of-type( 5 ) {
+      transform: translateX(-100%);
+      animation: appearLastRight 2s ease-in-out;
+
+      @include media-breakpoint-up(lg) {
+        transform: translateX(-82%);
+      }
+    }
+  }
+}
+
+.image {
+  @include box-shadow(0 24px 40px var(--black-alpha-08));
+
+  height: rem(280px);
+
+  &:nth-of-type( 3 ) {
+    z-index: 3;
+  }
+
+  &:nth-of-type( 2 ),
+  &:nth-of-type( 4 ) {
+    @include make-spacer(mt, 4);
+
+    z-index: 2;
+  }
+
+  &:nth-of-type( 1 ),
+  &:nth-of-type( 5 ) {
+    @include make-spacer(mt, 9);
+
+    z-index: 1;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: rem(465px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: rem(582px);
+  }
+}
+
+@keyframes appearFirstLeft {
+
+  0% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes appearSecondLeft {
+
+  0% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes appearLastRight {
+
+  0% {
+    transform: translateX(-200%);
+  }
+}
+
+@keyframes appearSecondToLastRight {
+
+  0% {
+    transform: translateX(-100%);
+  }
+}

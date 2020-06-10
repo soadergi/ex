@@ -1,0 +1,56 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--blue);
+
+  &::before {
+    @include size(100%, calc(100vh / 3));
+
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: $z-1;
+    background: linear-gradient(rgba(1, 4, 13, 0) 0%, #01040d 100%);
+    content: '';
+  }
+}
+
+.container {
+  @include make-spacer(mx, auto);
+  @include make-spacer(mt, 3);
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 0, sm);
+
+  position: relative;
+  z-index: $z-1;
+  max-width: rem(480px);
+}
+
+.content {
+  @include make-spacer(pt, 5);
+
+  position: relative;
+}
+
+.header {
+  @include flex(flex-start, flex-start, column);
+  @include make-spacer(mb, 4);
+}
+
+.navLink {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, sm);
+}
+
+.body {
+  position: relative;
+  border: 2px solid var(--blue);
+  border-radius: rem(4px);
+  box-shadow: inset 0 0 rem(16px) #7289da;
+  background-color: var(--royal-blue-alpha-08);
+  overflow: hidden;
+}

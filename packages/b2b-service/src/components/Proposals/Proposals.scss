@@ -1,0 +1,100 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: rem(24px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-gap: rem(48px);
+  }
+}
+
+.list {
+  @include reset-list;
+  @include make-spacer(mt, 3);
+
+  width: 100%;
+}
+
+.item {
+  @include flex(flex-start, center, column);
+  @include make-spacer(pt, 3);
+  @include make-spacer(pt, 6, sm);
+  @include make-spacer(pb, 4);
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 6, sm);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, sm);
+  @include make-spacer(mb, 0, lg);
+
+  border: 1px solid var(--grey-100);
+  border-radius: rem(3px);
+  background-color: var(--white);
+
+  &:last-of-type {
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: rem(24px);
+      grid-column-gap: rem(24px);
+    }
+
+    .info {
+      @include make-spacer(mb, 0);
+    }
+  }
+}
+
+.info {
+  @include make-spacer(pl, 2);
+  @include make-spacer(mb, 2);
+
+  position: relative;
+
+  &::before {
+    @include size(rem(6px));
+
+    position: absolute;
+    top: rem(8px);
+    left: 0;
+    border-radius: 50%;
+    background-color: var(--blue);
+    content: '';
+  }
+
+  &:last-of-type {
+    @include make-spacer(mb, 0);
+  }
+}
+
+.image {
+  @include absolute-center;
+
+  z-index: -1;
+}
+
+.date {
+  @include font-size(12px, 18px);
+  @include make-spacer(mt, 1);
+  @include make-spacer(mb, 0);
+
+  color: var(--grey-500);
+}
+
+.title {
+  @include make-spacer(mb, 0);
+  @include font-size(20px, 28px);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.icon {
+  @include make-spacer(mb, 1);
+
+  color: var(--blue);
+}

@@ -1,0 +1,23 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.message {
+  @include font-size(18px, 32px);
+  @include make-spacer(mb, 1);
+  @include make-spacer(mx, auto);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    max-width: rem(569px);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: none;
+  }
+}
+
+.messageLink {
+  @include make-spacer(mx, half);
+
+  text-decoration: underline;
+}

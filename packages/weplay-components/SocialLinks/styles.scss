@@ -1,0 +1,97 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.list {
+  @include reset-list;
+  @include flex(flex-start, center);
+}
+
+.item {
+  @include make-spacer(mr, 2);
+
+  line-height: 1;
+
+  &:last-child {
+    @include make-spacer(mr, 0);
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-right: rem(12px);
+  }
+}
+
+.block {
+  position: relative;
+
+  &.header {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  &.mobile {
+    display: none;
+
+    @include media-breakpoint-between(sm, md) {
+      display: block;
+    }
+  }
+
+  &.footer {
+    @include make-spacer(pl, 2);
+    @include make-spacer(mb, 3);
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  &.promo {
+
+    .list {
+      @include flex(center, center, $wrap: wrap);
+
+      @include media-breakpoint-up(md) {
+        justify-content: flex-start;
+      }
+    }
+
+    .item {
+      @include make-spacer(my, 1);
+      @include make-spacer(my, 2, sm);
+      @include make-spacer(mx, 1);
+      @include make-spacer(mx, 0, md);
+
+      &:not( :last-child ) {
+        @include make-spacer(mr, 4, md);
+      }
+    }
+  }
+
+  &.teamMember {
+
+    .item { //stylelint-disable-line
+
+      &:not( :last-child ) {
+        @include make-spacer(mr, 1);
+      }
+    }
+  }
+
+  &.leaguePage {
+
+    .list {
+      justify-content: center;
+    }
+
+    .item { //stylelint-disable-line
+      @include make-spacer(mx, 1);
+    }
+  }
+
+  &.voteMVP {
+
+    .item { //stylelint-disable-line
+      fill: var(--grey-400);
+    }
+  }
+}

@@ -1,0 +1,92 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(py, 2);
+
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-gap: rem(8px);
+  border-bottom: 1px solid var(--white-alpha-008);
+}
+
+.wrapRow {
+  @include flex($align-items: center);
+
+  height: 100%;
+}
+
+.wrapVideoColumn {
+  @include flex;
+
+  height: 100%;
+}
+
+.wrapIcon {
+  @include make-spacer(mr, 1);
+  @include size(rem(21px));
+  @include flex(center, center);
+}
+
+.button {
+  @extend %buttonReset;
+
+  @include flex($align-items: center);
+  @include font-size(12px, 18px);
+
+  color: var(--blue);
+}
+
+.buttonText {
+  border-bottom: 1px dashed var(--blue);
+}
+
+.grayLine {
+  @include make-spacer(mx, 1);
+  @include size(1px, 100%);
+
+  display: block;
+  border: 0;
+  background-color: var(--white-alpha-008);
+}
+
+.link {
+  @extend %buttonReset;
+
+  @include flex($align-items: center);
+  @include font-size(12px, 18px);
+
+  color: var(--blue);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.label {
+  @include make-spacer(mt, 2);
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, 1);
+  }
+}
+
+.icon {
+  @include transition(#{fill, transform});
+
+  transform: rotate(0);
+  color: var(--blue);
+}
+
+.iconArrow {
+  @include media-breakpoint-only(xs) {
+    display: none;
+  }
+}
+
+.isExpanded {
+
+  .iconArrow {
+    transform: rotate(180deg);
+  }
+}

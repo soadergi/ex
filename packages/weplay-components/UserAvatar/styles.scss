@@ -1,0 +1,87 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+@mixin premium-position($size, $x, $y) {
+
+  &.isPremium {
+
+    .iconWrapper {
+      @include size(#{$size / $rem-base}rem);
+
+      top: #{$x / $rem-base}rem;
+      left: #{$y / $rem-base}rem;
+    }
+
+    .icon {
+      font-size: #{$size / $rem-base}rem;
+    }
+  }
+}
+
+.block {
+  @include size(2.5rem);
+
+  position: relative;
+  flex-shrink: 0;
+
+  &.isPremium {
+    position: relative;
+    border-radius: 50%;
+    box-shadow: none;
+    background-color: var(--premium);
+    padding: rem(2px);
+
+    .iconWrapper {
+      @include size(rem(20px));
+
+      display: block;
+      position: absolute;
+      top: rem(-2px);
+      left: rem(-2px);
+      z-index: 3;
+
+      &::before {
+        @include size(50%);
+        @include absolute-center;
+
+        border-radius: 50%;
+        background-color: var(--white);
+        content: '';
+      }
+    }
+
+    .icon {
+      @include absolute-center;
+      @include font-size(20px);
+
+      color: var(--premium);
+    }
+  }
+
+  @each $avatar in $avatars {
+
+    &.size-#{map-get($avatar, size)} {
+      @include size(#{map-get($avatar, size) / $rem-base}rem);
+      @include premium-position(
+        map-get($avatar, icon-size),
+        map-get($avatar, icon-x),
+        map-get($avatar, icon-y)
+      );
+    }
+  }
+
+  @each $breakpoint, $num in $grid-breakpoints {
+    @include media-breakpoint-up(#{$breakpoint}) {
+      @each $avatar in $avatars {
+
+        &.size-#{map-get($avatar, size)}-#{$breakpoint} {
+          @include size(#{map-get($avatar, size) / $rem-base}rem);
+          @include premium-position(
+            map-get($avatar, icon-size),
+            map-get($avatar, icon-x),
+            map-get($avatar, icon-y)
+          );
+        }
+      }
+    }
+  }
+}

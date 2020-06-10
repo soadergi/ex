@@ -1,0 +1,39 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+// ====================================
+// New Styles
+// ====================================
+
+// Non-compiled files
+
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+// /====================================
+
+.block {
+  --slide-height: calc(100vh - 48px - var(--wp-sticky-section-height));
+  --slide-animation-duration: 4.5s;
+  --stroke-animation-duration: 4s;
+
+  position: relative;
+  background-color: var(--grey-300);
+  height: var(--slide-height);
+  overflow: hidden;
+
+  :global {
+
+    .slick-slider {
+      @include size(100%);
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    --slide-height: #{rem(582px)};
+
+    min-height: var(--slide-height);
+  }
+
+  @include media-breakpoint-up(xl) {
+    --slide-height: #{rem(808px)};
+  }
+}

@@ -1,0 +1,37 @@
+@mixin cta {
+
+  &Cta {
+    @include gradient-directional(#{var(--blue)}, #{var(--blue-active)}, $deg: 235deg);
+
+    position: relative;
+    z-index: 3;
+    border: 0;
+    min-height: rem(40px);
+
+    &::after {
+      @include gradient-directional(#{var(--blue)}, #{var(--blue-active)}, $deg: 235deg);
+      @include transition(#{opacity});
+      @include size(100%);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      z-index: 0;
+      border-radius: rem(40px);
+      content: '';
+    }
+
+    .text {
+      position: relative;
+      z-index: 3;
+    }
+
+    &:hover {
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

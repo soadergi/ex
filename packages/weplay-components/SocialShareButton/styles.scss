@@ -1,0 +1,130 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.wrapButton {
+
+  &:not( :last-of-type ) {
+    @include make-spacer(mr, 3);
+  }
+}
+
+.button {
+  $social: (
+    'twitter': var(--twitter),
+    'telegram': var(--telegram),
+    'reddit': var(--reddit),
+    'facebook': var(--facebook),
+    'vk': var(--vk),
+  );
+
+  @include size(rem(48px));
+  @include flex(center, center);
+
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+
+  &:hover {
+    background: none;
+  }
+
+  @each $socials, $color in $social {
+
+    &.isMultiColored {
+
+      &.#{$socials} {
+        color: $color;
+      }
+    }
+
+    &.hasBorderMultiColored {
+
+      &.#{$socials} {
+        border: 2px solid $color;
+        color: $color;
+      }
+    }
+  }
+
+  &.white {
+    border: 2px solid var(--white);
+    color: var(--white);
+  }
+
+  &.magenta {
+    border: 0;
+    color: var(--magenta);
+  }
+
+  &.blue {
+    border: 0;
+    color: var(--blue);
+  }
+
+  &.borderNone {
+    @include size(rem(24px));
+
+    border: 0;
+    color: var(--white);
+  }
+
+  &.circle {
+    @include make-spacer(p, 2);
+    @include transition(#{background-color, color});
+
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--white);
+
+    &:hover {
+      background-color: var(--blue);
+      color: var(--white);
+    }
+  }
+
+  &.article {
+    @include size(auto);
+
+    justify-content: flex-start;
+    border: 0;
+    color: var(--grey-400);
+
+    @each $socials, $color in $social {
+
+      &.#{$socials} {
+
+        &:hover {
+          color: $color;
+        }
+      }
+    }
+  }
+
+  &.miniGames {
+    @include size(auto);
+
+    justify-content: flex-start;
+    border: 0;
+    color: var(--blue);
+
+    @each $socials, $color in $social {
+
+      &.#{$socials} {
+
+        &:hover {
+          color: $color;
+        }
+      }
+    }
+  }
+}
+
+.icon {
+
+  &Arrow {
+    @include make-spacer(mr, 0);
+    @include make-spacer(ml, half);
+
+    z-index: 1;
+  }
+}

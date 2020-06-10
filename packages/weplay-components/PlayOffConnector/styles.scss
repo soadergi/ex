@@ -1,0 +1,197 @@
+@import 'weplay-core/styles/playoff-config';
+
+.path {
+  @include size(100%, 50%);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  &::before {
+    @include size(50%, $one-pixel);
+
+    left: 0;
+  }
+
+  &::after {
+    @include size($one-pixel, 100%);
+
+    left: 50%;
+  }
+
+  &::before,
+  &::after {
+    display: block;
+    position: absolute;
+    top: -$one-pixel;
+    background-color: var(--grey-300);
+    content: '';
+  }
+}
+
+.connector {
+  @include size($relations-width, 100%);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  &::before {
+    @include size(50%, $one-pixel);
+
+    display: block;
+    position: absolute;
+    top: -$one-pixel;
+    right: 0;
+    background-color: var(--grey-300);
+  }
+
+  &.isOdd {
+
+    &::before {
+      content: '';
+    }
+
+    .path {
+      top: 0;
+      bottom: auto;
+
+      &::before,
+      &::after {
+        top: auto;
+        bottom: 0;
+      }
+    }
+  }
+
+  &.fromGameToWinner {
+
+    &::before {
+      top: calc(50% - #{$one-pixel});
+      right: 50%;
+      content: '';
+    }
+
+    .path {
+      top: auto;
+      bottom: 50%;
+      height: $relations-from-game-to-winner-height;
+
+      &::after {
+        top: auto;
+        bottom: 0;
+      }
+
+      &::before {
+        top: 0;
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+
+  &.isRelatedToGame {
+
+    &::before {
+      top: auto;
+      right: 50%;
+      bottom: 50%;
+      margin-top: 0;
+      margin-bottom: -$relations-match-height;
+      content: '';
+    }
+
+    &::after {
+      @include size(50%, $one-pixel);
+
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      background-color: var(--grey-300);
+      content: '';
+    }
+
+    .path {
+      bottom: 50%;
+      margin-bottom: -$relations-match-height;
+      height: $relations-match-height * 2;
+
+      &::after {
+        height: 100%;
+      }
+    }
+
+    &.isOdd {
+
+      &::before {
+        top: 50%;
+        bottom: auto;
+        margin-top: -$relations-match-height;
+        margin-bottom: 0;
+      }
+
+      .path {
+        top: 50%;
+        margin-top: -$relations-match-height;
+      }
+    }
+  }
+
+  &.isGrandFinal {
+    top: 25%;
+    bottom: auto;
+    height: calc(50% - #{$round-shift-y-lvl-one + ($one-pixel * 2)});
+
+    &::before {
+      top: -$one-pixel;
+    }
+
+    &::after {
+      bottom: $one-pixel;
+    }
+
+    &::before,
+    &::after {
+      @include size(50%, $one-pixel);
+
+      display: block;
+      position: absolute;
+      left: 0;
+      background-color: var(--grey-300);
+      content: '';
+    }
+
+    .path { // stylelint-disable-line
+      height: 100%;
+
+      &::before {
+        top: calc(50% + #{$match-height / 2 - rem(16px)}); // don't ask me why
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+
+  &.isTournamentModule {
+    width: $tm-relations-width;
+  }
+}
+
+.forgeOfMastersLan {
+
+  &.connector {
+
+    &.isGrandFinal {
+      height: rem(417px);
+
+      .path {
+
+        &::before { /* stylelint-disable-line */
+          top: rem(168.5px);
+        }
+      }
+    }
+  }
+}

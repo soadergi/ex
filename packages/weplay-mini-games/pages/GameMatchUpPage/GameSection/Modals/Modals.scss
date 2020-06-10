@@ -1,0 +1,100 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.container {
+  @include make-spacer(pt, 3);
+  @include make-spacer(pt, 5, sm);
+  @include make-spacer(px, 3);
+  @include gradient-y(var(--royal-blue-alpha-09) 1.45%, #{var(--royal-blue) 75.8%});
+
+  position: relative;
+  border: 1px solid var(--white-alpha-008);
+  text-align: center;
+}
+
+.title {
+  @include font-size(32px, 40px);
+}
+
+.subtitle {
+  @include font-size(16px, 24px);
+
+  color: var(--grey-500);
+}
+
+.text {
+  @include font-size(16px, 24px);
+}
+
+.buttons {
+  @include make-spacer(mb, 4);
+}
+
+.button {
+  width: 100%;
+
+  &:first-of-type {
+    @include make-spacer(mr, 0);
+    @include make-spacer(mr, 3, sm);
+    @include make-spacer(mb, 2);
+    @include make-spacer(mb, 0, sm);
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}
+
+.caption {
+  @include font-size(12px, 12px);
+
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.duration {
+  @include font-size(24px, 32px);
+
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.pairs {
+  @include flex(space-between);
+  @include make-spacer(mx, auto);
+  @include make-spacer(mb, 3);
+
+  width: rem(140px);
+
+  @include media-breakpoint-up(sm) {
+    width: rem(248px);
+  }
+}
+
+.image {
+  @include size(rem(58px));
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(112px));
+  }
+}
+
+.shareWrap {
+  @include make-spacer(py, 3);
+
+  border-top: 1px solid var(--white-alpha-008);
+}
+
+.imageWrap {
+  @include flex(flex-start, center, column);
+}
+
+.bye {
+  @include size(auto, rem(146px));
+  @include make-spacer(mt, 2);
+  @include make-spacer(mt, 3, sm);
+
+
+  @include media-breakpoint-up(sm) {
+    height: rem(225px);
+  }
+}

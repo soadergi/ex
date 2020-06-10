@@ -1,0 +1,10 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 0, md);
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+}

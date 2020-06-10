@@ -1,0 +1,9 @@
+@startuml
+
+object Anchor {
+  logAnchorClick: func.isRequired,
+  anchor: shape({}).isRequired,
+  scrollHandler: func.isRequired,
+}
+
+@enduml

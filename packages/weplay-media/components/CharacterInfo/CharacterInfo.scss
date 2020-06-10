@@ -1,0 +1,121 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  color: var(--white);
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(448px, 1fr));
+    grid-gap: rem(48px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(2, minmax(576px, 1fr));
+  }
+}
+
+.image {
+  @include media-breakpoint-up(md) {
+    position: relative;
+    height: rem(286px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: rem(375px);
+  }
+}
+
+.hero {
+  @include absolute-center;
+  @include size(100%);
+
+  z-index: 1;
+  object-fit: contain;
+}
+
+.bg {
+  object-fit: contain;
+  z-index: 0;
+}
+
+.wrap {
+  @include make-spacer(pb, 3);
+  @include make-spacer(mb, 3);
+
+  border-bottom: 1px solid var(--white-alpha-024);
+
+  @include media-breakpoint-up(md) {
+    @include flex(space-between);
+  }
+}
+
+.name {
+  @include flex(flex-start, center);
+  @include make-spacer(mb, 3);
+}
+
+.avatar {
+  border: 1px solid var(--white-alpha-024);
+  border-radius: 50%;
+}
+
+.title {
+  @include make-spacer(ml, 2);
+  @include make-spacer(mb, 0);
+  @include font-size(32px, 40px);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(48px, 56px);
+  }
+}
+
+.atack {
+  @include make-spacer(pr, 2);
+  @include make-spacer(mr, 1);
+  @include make-spacer(mr, 0, lg);
+
+  border-right: 1px solid var(--white-alpha-024);
+  min-width: rem(90px);
+}
+
+.roles {
+  @include reset-list;
+  @include flex(space-between, center);
+  @include make-spacer(mt, 1);
+  @include make-spacer(mt, 0, md);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(md) {
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+
+.rates {
+  @include reset-list;
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 6, sm);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: rem(16px);
+}
+
+.rate {
+  @include font-size(20px, 28px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.label {
+  @include font-size(12px, 18px);
+
+  display: block;
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+

@@ -1,0 +1,23 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.divisions {
+  @include make-spacer(mb, 3);
+
+  display: grid;
+  grid-template-columns: rem(448px);
+
+  .title {
+    @include font-size(16px, 32px);
+
+    background-color: var(--grey-200);
+    text-align: center;
+    color: var(--grey-500);
+    font-weight: 500;
+  }
+}
+
+.listWrap {
+  display: grid;
+  grid-template-columns: repeat(2, rem(212px));
+  grid-column-gap: rem(24px);
+}

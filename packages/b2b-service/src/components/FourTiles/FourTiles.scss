@@ -1,0 +1,39 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mt, 5);
+  @include make-spacer(mt, 6, sm);
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: rem(24px);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: rem(48px);
+    grid-column-gap: rem(16px);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: rem(320px) 1fr;
+    grid-column-gap: rem(48px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: rem(400px) 1fr;
+    grid-row-gap: rem(56px);
+  }
+}
+
+.button {
+  @extend %button;
+
+  @include make-spacer(mx, auto);
+  @include make-spacer(py, half);
+  @include font-size(14px, 24px);
+
+  display: block;
+}

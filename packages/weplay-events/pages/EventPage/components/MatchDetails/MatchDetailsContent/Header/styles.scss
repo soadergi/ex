@@ -1,0 +1,181 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 3, sm);
+  @include make-spacer(py, 3);
+  @include flex($align-items: center, $direction: column);
+
+  position: relative;
+}
+
+.background {
+  z-index: -1;
+}
+
+.close {
+  position: absolute;
+  top: rem(24px);
+  right: rem(16px);
+
+  @include media-breakpoint-up(sm) {
+    right: rem(24px);
+  }
+}
+
+.icon {
+  cursor: pointer;
+  color: var(--white);
+}
+
+.label {
+  @include make-spacer(px, 1);
+  @include make-spacer(py, half);
+  @include make-spacer(mx, auto);
+  @include font-size(12px, 18px);
+
+  border-radius: rem(2px);
+  background-color: var(--blue-alpha-024);
+  max-width: rem(74px);
+  color: var(--blue);
+
+  &.isLive {
+    @include font-size(12px);
+
+    background-color: var(--magenta);
+    color: var(--white);
+    font-weight: var(--wp-font-weight-regular);
+  }
+}
+
+.wrapScore {
+  @include make-spacer(mt, 3);
+  @include flex(center, center);
+
+  max-width: rem(144px);
+  color: var(--grey-500);
+}
+
+.score {
+  @include flex;
+  @include make-spacer(mr, 0);
+  @include make-spacer(ml, 1);
+  @include size(rem(64px), auto);
+  @include font-size(24px, 32px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+
+  &:nth-of-type( 1 ) {
+    @include make-spacer(mr, 1);
+    @include make-spacer(ml, 0);
+
+    justify-content: flex-end;
+
+    .iconWinner {
+      @include make-spacer(mr, 1);
+      @include make-spacer(ml, 0);
+    }
+  }
+
+  &:nth-of-type( 2 ) {
+    @include flex;
+
+    .iconWinner {
+      @include make-spacer(mr, 0);
+      @include make-spacer(ml, 1);
+    }
+  }
+
+  &.scoreParticipantB {
+    flex-direction: row-reverse;
+  }
+}
+
+.wrapName {
+  @include make-spacer(mt, 3);
+
+  display: grid;
+  grid-template-columns: 1fr rem(16px) 1fr;
+  align-items: flex-start;
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    align-items: center;
+  }
+}
+
+.participant {
+  @include flex($align-items: center);
+
+  &:nth-of-type( 1 ) {
+
+    .avatar {
+      @include make-spacer(mr, 1);
+    }
+
+    .nickname {
+      @include make-spacer(mr, 1);
+      @include make-spacer(mr, 2, sm);
+
+      text-align: right;
+    }
+
+    @include media-breakpoint-only(xs) {
+      align-items: flex-end;
+    }
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &:nth-of-type( 2 ) {
+
+    .avatar {
+      @include make-spacer(ml, 1);
+    }
+
+    .nickname {
+      @include make-spacer(ml, 1);
+      @include make-spacer(ml, 2, sm);
+    }
+
+    @include media-breakpoint-only(xs) {
+      align-items: flex-start;
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    flex-direction: column;
+  }
+}
+
+.divider {
+  @include make-spacer(mt, 1);
+  @include make-spacer(mt, 0, sm);
+
+  text-align: center;
+}
+
+.nickname {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mt, 0, sm);
+
+  color: var(--white);
+}
+
+.iconWinner {
+  color: var(--warning);
+}
+
+.description {
+  @include make-spacer(mt, 3);
+  @include make-spacer(mb, 0);
+  @include font-size(14px, 22px);
+
+  display: inline;
+  text-align: center;
+  color: var(--grey-400);
+}

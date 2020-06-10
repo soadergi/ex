@@ -1,0 +1,119 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.section {
+  position: relative;
+  color: var(--royal-blue);
+}
+
+.block {
+  @include flex($direction: column-reverse);
+  @include make-spacer(py, 0);
+  @include make-spacer(py, 8, md);
+  @include make-spacer(py, 12, lg);
+
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr rem(456px);
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: rem(96px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: 1fr rem(576px);
+    column-gap: rem(128px);
+  }
+}
+
+.wrap {
+  @include media-breakpoint-up(md) {
+    max-width: rem(456px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(576px);
+  }
+}
+
+.background {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: rem(320px);
+  object-fit: cover;
+
+  @include media-breakpoint-up(md) {
+    @include size(100%);
+
+    top: 0;
+    right: rem(656px);
+    bottom: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    right: rem(808px);
+  }
+}
+
+.image {
+  @include make-spacer(mt, 6);
+  @include make-spacer(mt, 0, md);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: auto;
+    max-width: rem(574px);
+  }
+}
+
+.button {
+  @include make-spacer(mb, 3);
+
+  @include media-breakpoint-only(xs) {
+    width: 100%;
+  }
+}
+
+.title {
+  @include make-spacer(mb, 3);
+  @include font-size(24px, 32px);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-only(xs) {
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.description {
+  @include make-spacer(mb, 6);
+  @include font-size(14px, 22px);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-only(xs) {
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.text {
+  color: var(--success);
+  font-weight: var(--wp-font-weight-normal);
+}

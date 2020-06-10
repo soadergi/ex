@@ -1,0 +1,114 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex(flex-start, stretch, column);
+  @include box-shadow(0 0 8px 4px var(--black-alpha-024));
+  @include make-spacer(mb, 6);
+  @include make-spacer(px, 2);
+  @include make-spacer(py, 7);
+
+  position: relative;
+  background-color: var(--royal-blue);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: rem(360px);
+  overflow: hidden;
+  color: var(--white);
+
+  &::before {
+    @include size(100%);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.24);
+    content: '';
+  }
+
+  &::after {
+    @include absolute-center;
+    @include size(100%);
+
+    background-color: var(--royal-blue-alpha-048);
+    content: '';
+  }
+
+  @include media-breakpoint-up(sm) {
+    min-height: rem(726px);
+  }
+
+  &.lightTheme {
+
+    &::after {
+      background-color: transparent;
+      content: '';
+    }
+  }
+}
+
+.wrap {
+  @include make-spacer(m, auto);
+
+  max-width: rem(720px);
+  text-align: center;
+}
+
+.image {
+  @include make-spacer(mx, auto);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 6, md);
+}
+
+.title {
+  @include font-size(32px, 40px);
+  @include make-spacer(mb, 3);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(64px, 80px);
+  }
+}
+
+.text {
+  @include font-size(18px, 22px);
+  @include make-spacer(mb, 6);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(20px, 30px);
+  }
+}
+
+.button {
+  @include font-size(16px, 48px);
+  @include make-spacer(px, 3);
+
+  font-weight: 500;
+}
+
+.link {
+  @extend %button;
+}
+
+.label {
+  @include make-spacer(mr, 1);
+
+  &:last-of-type {
+    @include make-spacer(mr, 0);
+  }
+}
+
+.content {
+  @include flex(space-between, stretch, column);
+
+  position: relative;
+  flex: 1 0 auto;
+  z-index: 2;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    align-items: center;
+  }
+}

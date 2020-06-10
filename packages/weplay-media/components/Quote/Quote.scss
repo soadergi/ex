@@ -1,0 +1,101 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(my, 7);
+  @include make-spacer(my, 10, sm);
+}
+
+.border {
+  @include size(100%, 1px);
+
+  position: relative;
+  background-color: var(--grey-200);
+
+  &::after {
+    @include absolute-center;
+    @include size(rem(56px), rem(64px));
+
+    display: inline-block;
+    top: 0;
+    background-color: var(--white);
+    content: '';
+  }
+}
+
+.separator {
+  @include absolute-center;
+  @include font-size(64px);
+  @include gradient-x(#{var(--blue-active)}, #{var(--blue)});
+
+  top: 0;
+  z-index: 1;
+  -webkit-background-clip: text; // stylelint-disable-line
+  -webkit-text-fill-color: transparent;
+}
+
+.content {
+  @include make-spacer(py, 6);
+
+  &.hasAuthor {
+    @include flex($direction: column);
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+    }
+  }
+}
+
+.author {
+  @include flex;
+  @include font-size(12px, 18px);
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 3, sm);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, sm);
+
+  flex-direction: row;
+  flex-shrink: 0;
+  order: 2;
+  max-width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: column;
+    order: 0;
+    max-width: rem(160px);
+  }
+}
+
+.avatar {
+  @include make-spacer(mb, 0);
+  @include make-spacer(mb, 2, sm);
+  @include make-spacer(mr, 2);
+  @include make-spacer(mr, 0, sm);
+}
+
+.name {
+  @include make-spacer(m, 0);
+
+  color: var(--royal-blue);
+  font-weight: 700;
+}
+
+.info {
+  @include make-spacer(m, 0);
+
+  color: var(--grey-500);
+}
+
+.text {
+  @include font-size(20px, 32px);
+  @include gradient-x(#{var(--blue-active)}, #{var(--blue)});
+
+  align-self: center;
+  -webkit-background-clip: text; // stylelint-disable-line
+  text-align: left;
+  -webkit-text-fill-color: transparent;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(22px, 34px);
+  }
+}

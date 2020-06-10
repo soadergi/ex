@@ -1,0 +1,9 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+:global {
+
+  .twitter-tweet {
+    margin: 0 !important; /* stylelint-disable-line declaration-no-important */
+    width: 100% !important; /* stylelint-disable-line declaration-no-important */
+  }
+}

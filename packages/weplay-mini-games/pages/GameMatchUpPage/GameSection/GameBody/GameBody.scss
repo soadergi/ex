@@ -1,0 +1,20 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 2);
+
+  position: relative;
+  background-color: var(--grey-500-alpha-024);
+}
+
+.row {
+  @include make-spacer(mb, 1);
+
+  display: flex;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+

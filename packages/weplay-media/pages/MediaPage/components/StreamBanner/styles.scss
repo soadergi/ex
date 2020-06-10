@@ -1,0 +1,327 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.label {
+  @include size(rem(64px), rem(24px));
+  @include flex(center, center);
+  @include make-spacer(mr, 2);
+  @include make-spacer(mr, 4, sm);
+  @include make-spacer(mr, 2, lg);
+  @include font-size(16px, 32px);
+
+  flex-basis: auto;
+  flex-shrink: 0;
+  border-radius: 32px;
+  background: var(--blue-active);
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 500;
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(80px), rem(32px));
+    @include font-size(18px, 32px);
+  }
+}
+
+.banner {
+  @include flex(center, stretch, column);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(py, 2);
+
+  position: relative;
+  border-top: 2px solid var(--blue);
+  background-color: var(--royal-blue);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+  }
+
+  .label {
+
+    &.isLive {
+      background: radial-gradient($magenta 8%, #ff0ca3 100%);
+      color: var(--white);
+    }
+  }
+}
+
+.button {
+  @include make-spacer(ml, 0);
+  @include make-spacer(mt, 1);
+  @include make-spacer(mt, 0, sm);
+  @include make-spacer(ml, 2, sm);
+  @include make-spacer(ml, 8, md);
+  @include font-size(14px, 32px);
+
+  flex-basis: auto;
+  flex-shrink: 0;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(18px, 40px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-width: 14rem;
+  }
+}
+
+.content {
+  @include flex(center, center, column);
+
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.container {
+  @include flex(flex-start, flex-start, row);
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: rem(1072px);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center, row);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(848px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1120px);
+  }
+}
+
+.wrapper {
+  @include flex(flex-start, flex-start, column);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center, row);
+
+    width: 100%;
+  }
+}
+
+.text {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 0);
+
+  text-align: left;
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(20px, 28px);
+  }
+}
+
+.image {
+  display: block;
+  position: absolute;
+  height: auto;
+}
+
+.leftImage {
+  bottom: 0;
+  left: 0;
+  width: rem(154px);
+
+  @include media-breakpoint-up(sm) {
+    bottom: rem(-8px);
+    width: rem(188px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    bottom: rem(-48px);
+    width: rem(280px);
+  }
+}
+
+.rightImage {
+  display: none;
+  background-size: cover;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+    top: 0;
+    right: rem(-56px);
+    width: rem(144px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    right: rem(-65px);
+    width: rem(232px);
+  }
+}
+
+.reshuffle {
+  background-position: 0 0;
+
+  .rightImage {
+    @include size(rem(40px), 100%);
+
+    display: block;
+    top: 0;
+    left: rem(-8px);
+
+    @include media-breakpoint-up(sm) {
+      content: '';
+    }
+
+    @include media-breakpoint-up(md) {
+      left: 0;
+    }
+  }
+
+  .text {
+    color: var(--royal-blue);
+  }
+
+  @include media-breakpoint-up(sm) {
+    background-position: 50% 50%;
+  }
+}
+
+.lockAndLoad {
+  @include make-spacer(px, 0);
+
+  .rightImage {
+    background-size: cover;
+
+    @include media-breakpoint-up(sm) {
+      @include size(rem(144px), rem(88px));
+
+      display: block;
+      top: 0;
+      right: rem(-56px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include size(rem(232px), rem(152px));
+
+      top: 0;
+      right: rem(-65px);
+    }
+  }
+
+  .leftImage {
+    width: rem(232px);
+
+    @include media-breakpoint-up(sm) {
+      bottom: 0;
+      width: rem(228px);
+    }
+
+    @include media-breakpoint-up(sm) {
+      bottom: rem(-8px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      bottom: rem(-48px);
+      width: rem(280px);
+    }
+  }
+
+  .button {
+    min-height: auto;
+    font-weight: 500;
+  }
+
+  .label {
+    background: var(--error);
+  }
+}
+
+.winterMadness {
+
+  .rightImage {
+    top: 0;
+
+    @include media-breakpoint-up(sm) {
+      @include size(rem(144px), rem(88px));
+
+      right: rem(-56px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include size(rem(232px), rem(152px));
+
+      right: rem(-65px);
+    }
+  }
+
+  .leftImage {
+    width: rem(232px);
+
+    @include media-breakpoint-up(sm) {
+      bottom: 0;
+      width: rem(228px);
+    }
+
+    @include media-breakpoint-up(sm) {
+      bottom: rem(-8px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      bottom: rem(-48px);
+      width: rem(280px);
+    }
+  }
+
+  .button {
+    min-height: auto;
+    font-weight: 500;
+  }
+
+  .label {
+    background: var(--error);
+  }
+}
+
+.radiant {
+
+  .container {
+    @include media-breakpoint-up(sm) {
+      @include make-spacer(px, 0);
+    }
+  }
+
+  .leftImage {
+    width: rem(198px);
+
+    @include media-breakpoint-up(sm) {
+      bottom: rem(-20px);
+      width: rem(232px);
+    }
+
+    @include media-breakpoint-up(md) {
+      bottom: rem(-20px);
+      left: rem(-10px);
+      width: rem(228px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      bottom: rem(-40px);
+      left: rem(-23px);
+      width: rem(278px);
+    }
+  }
+}

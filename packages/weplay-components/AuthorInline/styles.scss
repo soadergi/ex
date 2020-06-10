@@ -1,0 +1,112 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$author-avatar-size: rem(24px);
+$columnist-avatar-size: rem(32px);
+
+@mixin avatar-size($size) {
+  @include size($size);
+
+  flex: 0 0 $size;
+  max-width: $size;
+}
+
+.author {
+  @include flex($display: inline-flex);
+
+  &Name {
+    @include flex($align-items: center);
+    @include transition(color);
+
+    max-width: 100%;
+    color: var(--royal-blue);
+    font-size: rem(12px);
+
+    span {
+      @include media-breakpoint-up(sm) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: var(--blue);
+    }
+
+    @include media-breakpoint-up(sm) {
+      max-width: 19rem;
+      white-space: nowrap;
+    }
+
+    &Light {
+
+      .authorName {
+        color: var(--white);
+      }
+
+      &:hover {
+
+        .authorName {
+          @include transition(color);
+
+          text-decoration: none;
+          color: var(--blue);
+        }
+      }
+    }
+
+    &.gray {
+      color: var(--grey-500);
+
+      &:hover {
+        color: var(--blue);
+      }
+    }
+  }
+
+  &Avatar {
+    @include avatar-size($author-avatar-size);
+    @include make-spacer(mr, 1);
+  }
+
+  &Article {
+    @include make-spacer(my, 1);
+    @include make-spacer(mr, 1);
+  }
+
+  &Columnist {
+    @include make-spacer(pr, 1);
+
+    align-items: center;
+    border: 1px solid var(--warning);
+    border-radius: rem(32px);
+
+    .authorAvatar {
+      @include avatar-size($author-avatar-size);
+
+      @include media-breakpoint-up(md) {
+        @include avatar-size($columnist-avatar-size);
+      }
+    }
+  }
+
+  &.isInline {
+    border: 0;
+
+    .author {
+
+      &Avatar {
+        display: none;
+      }
+
+      &Name {
+        color: var(--grey-500);
+
+        &:hover {
+          text-decoration: none;
+          color: var(--blue);
+        }
+      }
+    }
+  }
+}

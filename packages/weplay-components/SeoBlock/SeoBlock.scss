@@ -1,0 +1,95 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.title {
+  @include font-size(24px, 32px);
+
+  color: var(--royal-blue);
+}
+
+.text {
+  @include font-size(14px, 24px);
+
+  position: relative;
+  height: rem(96px);
+  overflow: hidden;
+  color: var(--grey-500);
+
+  &::after {
+    @include size(100%, 0);
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 0 rem(32px) rem(32px) var(--white);
+    content: '';
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.icon {
+  @include make-spacer(ml, 1);
+  @include transition(transform);
+
+  width: rem(16px);
+  fill: var(--blue);
+}
+
+.button {
+  @include reset-button;
+  @include make-spacer(mt, 3);
+  @include font-size(16px, 24px);
+
+  color: var(--blue);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.block {
+
+  &.isOpened {
+
+    .icon {
+      transform: rotateZ(180deg);
+    }
+
+    .text {
+      height: auto;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  &.isDarkMode {
+
+    .text {
+
+      &::after {
+        box-shadow: 0 0 rem(32px) rem(32px) var(--royal-blue);
+      }
+    }
+  }
+}
+
+.isDisclaimer {
+  @include make-spacer(py, 5);
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 4, sm);
+
+  border: 1px solid var(--grey-200);
+  background-color: var(--grey-100);
+
+  .text {
+    height: auto;
+    color: var(--royal-blue);
+
+    &::after {
+      content: none;
+    }
+  }
+}

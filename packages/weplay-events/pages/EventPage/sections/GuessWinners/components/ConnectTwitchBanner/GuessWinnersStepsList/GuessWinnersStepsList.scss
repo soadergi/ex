@@ -1,0 +1,59 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include reset-list;
+  @include make-spacer(mt, 10);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(576px);
+  }
+}
+
+.item {
+  @include make-spacer(pl, 4);
+
+  &:not( :last-child ) {
+    @include make-spacer(mb, 8);
+  }
+}
+
+.number {
+  @include make-spacer(mb, 0);
+  @include font-size(96px);
+
+  position: absolute;
+  left: 0;
+  color: var(--blue-alpha-016);
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(96px);
+  }
+}
+
+.title {
+  @include make-spacer(pt, 1);
+  @include make-spacer(mb, 1);
+  @include font-size(18px, 26px);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(20px, 28px);
+  }
+}
+
+.description {
+  @include make-spacer(mb, 0);
+  @include font-size(14px, 22px);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}

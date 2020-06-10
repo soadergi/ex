@@ -1,0 +1,60 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex($align-items: center, $display: inline-block);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, md);
+
+  vertical-align: middle;
+  color: var(--grey-500);
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, 2);
+    @include make-spacer(mr, 3, lg);
+  }
+
+  &.isLink {
+    @include make-spacer(mb, 2);
+    @include make-spacer(mb, 0, md);
+
+    line-height: normal;
+    font-weight: var(--wp-font-weight-normal);
+
+    &:not( :last-child ) {
+      @include make-spacer(mr, 2);
+      @include make-spacer(mr, 3, lg);
+    }
+  }
+
+  &.isLastTip {
+    @include media-breakpoint-up(md) {
+
+      &::after {
+        @include size(rem(1px), rem(24px));
+        @include make-spacer(ml, 2);
+        @include make-spacer(ml, 3, lg);
+
+        display: inline-block;
+        background-color: var(--grey-200);
+        vertical-align: middle;
+        content: '';
+      }
+    }
+  }
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+
+  &.isError {
+    color: var(--error);
+  }
+
+  &.isSuccess {
+    color: var(--success);
+  }
+
+  &.isMagenta {
+    color: var(--magenta);
+  }
+}

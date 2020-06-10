@@ -1,0 +1,72 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(py, 1);
+  @include make-spacer(px, 2);
+  @include make-spacer(mx, 1);
+  @include make-spacer(mx, 2, lg);
+
+  position: relative;
+  height: 5.5rem;
+  overflow: hidden;
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include font-size(12px, 16px);
+  @include transition(#{color}, 0.32s);
+
+  display: block;
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  left: 1rem;
+  z-index: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--white);
+  font-weight: 500;
+
+  @include media-breakpoint-up(md) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.link {
+  @include size(100%);
+  @include flex(center, center);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  background-image: url('weplay-core/img/logo-grey.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 85%;
+  height: 100%;
+  overflow: hidden;
+  text-decoration: none;
+
+  &::before {
+    @include size(100%);
+    @include transition(#{background}, 0.32s);
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: var(--black-alpha-048);
+    content: '';
+  }
+
+  &:hover {
+
+    &::before {
+      background-color: var(--black-alpha-08);
+    }
+  }
+}

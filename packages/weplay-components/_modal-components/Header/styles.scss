@@ -1,0 +1,31 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.header {
+  @include make-spacer(mb, 4);
+
+  position: relative;
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include font-size(28px, 32px);
+
+  font-weight: 700;
+}
+
+.subtitle {
+  @include font-size(18px, 32px);
+  @include make-spacer(mt, 0);
+  @include make-spacer(mt, 2, md);
+
+  font-weight: 400;
+
+  @include media-breakpoint-up(md) {
+    @include font-size(14px, 18px);
+  }
+}
+
+.center {
+  text-align: center;
+}
+

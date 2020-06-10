@@ -1,0 +1,7 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.wrapper {
+  @include size(100%);
+
+  position: relative;
+}

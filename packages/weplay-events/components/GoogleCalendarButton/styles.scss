@@ -1,0 +1,13 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.text {
+  @include font-size(12px, 16px);
+
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.addToCalendarLink {
+  @include flex(flex-end, center);
+}

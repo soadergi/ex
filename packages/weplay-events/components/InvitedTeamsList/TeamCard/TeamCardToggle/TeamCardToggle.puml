@@ -1,0 +1,9 @@
+@startuml
+
+object TeamCardToggle {
+  handleClick: func.isRequired,
+  isExpanded: bool.isRequired,
+  i18nTexts: shape({}).isRequired,
+}
+
+@enduml

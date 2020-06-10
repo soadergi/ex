@@ -1,0 +1,43 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.subTitle {
+  @include font-size(24px);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+
+  font-weight: 700;
+}
+
+.header {
+  @include make-spacer(mb, 2);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center);
+  }
+
+  &.isSectionTitle {
+    @include make-spacer(mb, 4);
+
+    .subTitle {
+      @include font-size(32px, 40px);
+    }
+  }
+}
+
+.icon {
+  @include make-spacer(ml, 1);
+  @include transition(transform);
+}
+
+.toggleShowAll {
+  @include font-size(16px);
+
+  font-weight: 400;
+
+  &.isOpen {
+
+    .icon {
+      transform: rotateZ(180deg);
+    }
+  }
+}

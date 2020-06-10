@@ -1,0 +1,41 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(flex-start, center);
+
+  &.white {
+
+    .button {
+      color: var(--white);
+    }
+  }
+
+  &.blue {
+
+    .button {
+      color: var(--blue);
+    }
+  }
+
+  &.grey {
+
+    .button {
+      color: var(--grey-300);
+    }
+  }
+}
+
+.button {
+  @extend %buttonReset;
+
+  display: inline-flex;
+  color: var(--grey-500);
+}
+
+.counter {
+  @include make-spacer(ml, 1);
+  @include font-size(12px);
+
+  display: inline-block;
+  color: var(--grey-500);
+}

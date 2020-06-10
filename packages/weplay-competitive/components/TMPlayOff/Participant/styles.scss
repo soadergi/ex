@@ -1,0 +1,117 @@
+@import '../config';
+
+$score-width: rem(24px);
+$invited-team-connector-width: rem(12px);
+
+.user {
+  @include flex(flex-start, center);
+
+  position: relative;
+  flex: 1 1 50%;
+}
+
+.score,
+.wrapHyphenCoefficient {
+  @include font-size(16px, 24px);
+  @include flex(center, center);
+  @include transition(color);
+
+  position: relative;
+  flex: 0 1 $score-width;
+  min-width: 1rem;
+  height: 100%;
+  text-align: center;
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.wrapper {
+  @include flex(flex-start, center);
+}
+
+.name {
+  @include word-break;
+  @include font-size(12px, 16px);
+  @include transition(color);
+
+  flex: 0 0 6.5rem;
+  max-width: 6.5rem;
+  max-height: rem(30px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  color: var(--royal-blue);
+}
+
+.icon {
+  @include font-size(16px, 16px);
+  @include flex(center, center);
+  @include make-spacer(ml, 1);
+
+  position: relative;
+  flex: 0 0 rem(24px);
+  z-index: 0;
+  height: 100%;
+}
+
+.invited {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.participant {
+  @include size(100%, 50%);
+  @include flex(space-between, center);
+  @include transition(background-color);
+
+  position: relative;
+  padding-right: $match-padding-x;
+  padding-left: $match-padding-x;
+  color: var(--grey-300);
+
+  &:nth-of-type( 1 ) {
+    @include make-spacer(pl, 1);
+
+    border-radius: rem(4px) 0 0 0;
+  }
+
+  &:nth-of-type( 2 ) {
+    @include make-spacer(pl, 1);
+
+    border-radius: 0 0 0 rem(4px);
+  }
+
+  .iconCup {
+    @include size(rem(24px));
+  }
+
+  .iconSkull {
+    color: var(--magenta);
+  }
+
+  &.winner {
+
+    .score {
+      color: var(--blue);
+    }
+  }
+
+  &.isHovered {
+    background-color: var(--grey-200);
+  }
+
+  &.isCurrentUser {
+    background-color: var(--blue);
+
+    .name {
+      color: var(--white);
+    }
+
+    .score {
+      color: var(--white);
+    }
+  }
+}
+

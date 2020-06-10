@@ -1,0 +1,8 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pb, 1);
+
+  display: none;
+  text-align: center;
+}

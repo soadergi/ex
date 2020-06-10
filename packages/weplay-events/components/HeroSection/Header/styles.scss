@@ -1,0 +1,208 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(space-between, center, row, wrap);
+
+  position: relative;
+  flex: 0 0 auto;
+  z-index: 2;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    min-height: rem(48px);
+  }
+
+  @include media-breakpoint-up(md) {
+    min-height: rem(68px);
+  }
+}
+
+.logo {
+  @include make-spacer(pt, 2);
+  @include make-spacer(pt, 0, sm);
+
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    @include absolute-center;
+
+    width: auto;
+  }
+}
+
+.image {
+  --logo-hero-max-width: auto;
+
+  @include make-spacer(mb, 0);
+  @include make-spacer(mx, auto);
+
+  max-width: var(--logo-hero-max-width);
+}
+
+.winterMadness {
+
+  .image {
+    --logo-hero-max-width: #{rem(102px)};
+
+    @include media-breakpoint-up(sm) {
+      --logo-hero-max-width: #{rem(160px)};
+    }
+
+    @include media-breakpoint-up(md) {
+      --logo-hero-max-width: #{rem(214px)};
+    }
+  }
+}
+
+.lockAndLoad {
+
+  .image {
+    --logo-hero-max-width: #{rem(32px)};
+
+    @include media-breakpoint-up(sm) {
+      --logo-hero-max-width: #{rem(48px)};
+    }
+
+    @include media-breakpoint-up(md) {
+      --logo-hero-max-width: #{rem(72px)};
+    }
+  }
+}
+
+.radiant {
+
+  .image {
+    --logo-hero-max-width: #{rem(104px)};
+
+    @include media-breakpoint-up(sm) {
+      --logo-hero-max-width: #{rem(160px)};
+    }
+
+    @include media-breakpoint-up(md) {
+      --logo-hero-max-width: #{rem(216px)};
+    }
+  }
+}
+
+.dire {
+
+  .image {
+    --logo-hero-max-width: #{rem(104px)};
+
+    @include media-breakpoint-up(sm) {
+      --logo-hero-max-width: #{rem(157px)};
+    }
+
+    @include media-breakpoint-up(md) {
+      --logo-hero-max-width: #{rem(214px)};
+    }
+  }
+}
+
+.forgeOfMastersGroup {
+
+  .image {
+    --logo-hero-max-width: #{rem(40px)};
+
+    @include media-breakpoint-up(md) {
+      --logo-hero-max-width: #{rem(56px)};
+    }
+  }
+}
+
+.dotaUnderlords {
+
+  .logo {
+    @include media-breakpoint-up(sm) {
+      top: 0;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .image {
+    --logo-hero-max-width: #{rem(240px)};
+
+    @include media-breakpoint-up(md) {
+      --logo-hero-max-width: #{rem(252px)};
+    }
+  }
+}
+
+.reshuffleMadness2019 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
+
+  .image {
+    --logo-hero-max-width: #{rem(92px)};
+
+    @include media-breakpoint-up(md) {
+      --logo-hero-max-width: #{rem(132px)};
+    }
+  }
+
+  .logo {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+}
+
+.forgeOfMastersLeagueSecondSeason {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
+
+  .image {
+    --logo-hero-max-width: #{rem(123px)};
+
+    @include media-breakpoint-up(md) {
+      --logo-hero-max-width: #{rem(200px)};
+    }
+  }
+
+  .logo {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+}
+
+.forgeOfMastersLanSecondSeason {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+
+  .image {
+    --logo-hero-max-width: #{rem(80px)};
+
+    @include media-breakpoint-up(md) {
+      --logo-hero-max-width: #{rem(136px)};
+    }
+  }
+
+  .logo {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    @include media-breakpoint-only(xs) {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      order: 1;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 2fr 0.9fr 2fr;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 2fr 1fr 2fr;
+  }
+}

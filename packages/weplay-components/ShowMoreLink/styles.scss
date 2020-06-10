@@ -1,0 +1,22 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.showAll {
+  @include make-spacer(pt, 3);
+  @include font-size(16px, 24px);
+
+  display: block;
+  color: var(--blue);
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+
+  &.isVisible {
+    display: block;
+  }
+}

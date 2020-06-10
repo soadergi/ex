@@ -1,0 +1,17 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: rem(24px);
+  overflow-x: auto;
+
+  @include media-breakpoint-up(lg) {
+    overflow-x: hidden;
+  }
+}
+
+.title {
+  @include font-size(32px, 40px);
+  @include make-spacer(mb, 4);
+}

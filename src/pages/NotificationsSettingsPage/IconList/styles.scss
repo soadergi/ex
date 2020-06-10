@@ -1,0 +1,54 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+$tooltip-position: rem(-84px);
+
+.block {
+  @include flex(space-between, center);
+  @include reset-list;
+
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: flex;
+  }
+}
+
+.icon {
+  position: relative;
+  color: var(--grey-500);
+
+  &:nth-last-child( -n+2 ) {
+
+    .tooltip {
+      right: 0;
+      left: auto;
+
+      @include media-breakpoint-up(md) {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+
+  &:hover {
+
+    .tooltip {
+      display: block;
+    }
+  }
+}
+
+.tooltip {
+  @include font-size(12px);
+  @include make-spacer(p, 1);
+
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  border-radius: rem(2px);
+  background-color: var(--royal-blue);
+  min-width: rem(55px);
+  color: var(--white);
+}

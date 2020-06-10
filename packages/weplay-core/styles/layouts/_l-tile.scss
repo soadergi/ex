@@ -1,0 +1,118 @@
+// ------------------------------------
+//   #L-TILE
+// ------------------------------------
+
+@import 'weplay-core/styles/_initialization.scss';
+
+.l-tile {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 2rem;
+  grid-column-gap: 1rem;
+
+  &--row_full-width {
+    grid-template-columns: 1fr;
+    justify-content: center;
+
+    @include media-breakpoint-up(sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-gap: 2rem;
+  }
+
+  &--row {
+    grid-template-rows: none;
+    grid-template-columns: 1fr;
+
+    @include media-breakpoint-up(sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-template-rows: minmax(100px, max-content);
+      grid-template-columns: none;
+    }
+  }
+
+  &--top {
+    grid-template-areas: 'b3' 'b1' 'b2';
+    grid-template-rows: max-content;
+    align-items: start;
+
+    & > * {
+
+      &:nth-child( 1 ) {
+        grid-area: b1;
+      }
+
+      &:nth-child( 2 ) {
+        grid-area: b2;
+      }
+
+      &:nth-child( 3 ) {
+        grid-area: b3;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      grid-template-areas: 'b3' 'b1' 'b2';
+      grid-template-columns: 1fr;
+      grid-column-gap: 1rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-template-areas: 'b1 b1 b3' 'b2 b2 b3';
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-column-gap: 2rem;
+    }
+
+    @media (min-width: rem(768px)) {
+      grid-template-areas: 'b1 b1' 'b2 b3' 'b2 b3';
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &--row_half {
+    grid-template-columns: 1fr;
+    grid-row-gap: 1rem;
+    justify-content: center;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 1rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-row-gap: 2rem;
+    }
+  }
+
+  &--wide {
+    @include media-breakpoint-up(md) {
+      grid-gap: 1.5rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-gap: 3rem;
+    }
+  }
+}

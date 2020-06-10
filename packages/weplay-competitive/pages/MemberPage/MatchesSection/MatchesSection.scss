@@ -1,0 +1,9 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.showMore {
+  @include make-spacer(mt, 3);
+}
+
+.container {
+  @include make-spacer(px, 0);
+}

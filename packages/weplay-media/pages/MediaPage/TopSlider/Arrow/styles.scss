@@ -1,0 +1,48 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.arrow {
+  @include size(2rem, 5.5rem);
+
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -2rem;
+  z-index: 1;
+  background-color: var(--grey-100);
+  cursor: pointer;
+
+  @include media-breakpoint-up(md) {
+    @include flex(flex-end, center);
+  }
+
+  @include media-breakpoint-up(lg) {
+    right: -1.5rem;
+  }
+
+  &.left {
+    right: auto;
+    left: -2rem;
+
+    @include media-breakpoint-up(md) {
+      @include flex(flex-start, center);
+    }
+
+    @include media-breakpoint-up(lg) {
+      left: -1.5rem;
+    }
+  }
+}
+
+.icon {
+  @include font-size(11px, 16px);
+
+  transform: rotate(-90deg);
+  fill: var(--grey-500);
+}
+
+.left {
+
+  .icon {
+    transform: rotate(90deg);
+  }
+}

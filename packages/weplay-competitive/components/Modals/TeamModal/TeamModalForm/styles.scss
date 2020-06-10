@@ -1,0 +1,52 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.add {
+  @include flex(flex-start, center);
+}
+
+.avatar {
+  @include make-spacer(mr, 1);
+
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--grey-300);
+}
+
+.link {
+  @include font-size(12px, 16px);
+  @include make-spacer(p, 0);
+
+  border: 0;
+  background-color: transparent;
+  color: var(--blue);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.info {
+  @include font-size(12px, 16px);
+
+  display: block;
+  color: var(--black-alpha-032);
+}
+
+.tag {
+  max-width: 8.5rem;
+}
+
+.controls {
+  @include flex(center, center, column);
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+}
+
+.button {
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}

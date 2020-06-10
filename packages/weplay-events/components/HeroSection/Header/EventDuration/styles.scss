@@ -1,0 +1,9 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.icon {
+  @include make-spacer(mr, 1);
+}
+
+.text {
+  @include make-spacer(mb, 0);
+}

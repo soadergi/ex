@@ -1,0 +1,28 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(center, flex-start, column);
+
+  width: rem(98px);
+}
+
+.imagesWrapper {
+  @include flex(space-between, center);
+
+  width: 100%;
+}
+
+.image {
+  @include size(rem(18px), rem(22px));
+}
+
+.fullCardDeck {
+  @include make-spacer(pt, 1);
+
+  margin: 0 auto;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

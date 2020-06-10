@@ -1,0 +1,91 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(pt, 8);
+
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.content {
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  max-width: rem(742px);
+}
+
+.title {
+  @include make-spacer(mb, 3);
+  @include font-size(24px, 32px);
+
+  color: var(--twitch);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.subTitle {
+  @include make-spacer(mb, 1);
+  @include font-size(20px, 28px);
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.text {
+  @include font-size(16px, 24px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-normal);
+
+  &:not( :last-child ) {
+    @include make-spacer(mb, 3);
+  }
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+}
+
+.wrapLinks {
+  @include make-spacer(mt, 5);
+
+  @include media-breakpoint-only(xs) {
+    @include flex(center, $direction: column);
+
+    text-align: center;
+  }
+}
+
+.twitchLink {
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 4, sm);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, sm);
+  @include make-spacer(py, 2);
+  @include make-spacer(px, 3);
+  @include font-size(14px);
+  @include transition(background-color);
+
+  display: inline-block;
+  border-radius: rem(4px);
+  background-color: var(--twitch);
+  max-height: rem(46px);
+  color: var(--white);
+  font-weight: var(--wp-font-weight-regular);
+
+  &:hover {
+    background-color: var(--twitch-hover);
+    text-decoration: none;
+  }
+}
+
+.internalLink {
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 0, sm);
+  @include font-size(14px);
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-regular);
+}
+

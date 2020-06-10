@@ -1,0 +1,43 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$sponsors-grid: (
+  sm: rem(136px),
+  md: rem(168px),
+  lg: rem(160px),
+);
+
+.wrapper {
+  @include make-spacer(py, 3);
+
+  position: relative;
+  background-color: var(--grey-100);
+  overflow: hidden;
+}
+
+.background {
+  @include absolute-center();
+
+  width: rem(440px);
+  max-width: 100%;
+}
+
+.content {
+  position: relative;
+}
+
+.list {
+  @include reset-list();
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(map-get($sponsors-grid, sm), 1fr));
+  grid-gap: 1rem;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(auto-fill, minmax(map-get($sponsors-grid, md), 1fr));
+    grid-gap: 1.5rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(4, map-get($sponsors-grid, lg));
+  }
+}

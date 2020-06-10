@@ -1,0 +1,45 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  --width: 127;
+  --height: 32;
+  --aspect-ratio: calc(var(--height) / var(--width));
+  --color: var(--blue);
+
+  @include flex(center, center, $display: inline-flex);
+
+  width: 100%;
+  max-width: rem(calc(var(--width) * 1px));
+  color: var(--color);
+
+  &.small {
+    --width: 51;
+  }
+
+  &.fluid {
+    max-width: 100%;
+  }
+
+  &.dark {
+    --color: var(--royal-blue);
+  }
+
+  &.white {
+    --color: var(--white);
+  }
+}
+
+.container {
+  @include size(100%, 0);
+
+  position: relative;
+  padding-top: calc(var(--aspect-ratio) * 100%);
+}
+
+.svg {
+  @include absolute-center;
+  @include size(100%);
+
+  display: inline-block;
+  fill: currentColor;
+}

@@ -1,0 +1,135 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+
+.block {
+  @include flex(center, center);
+  @include make-spacer(px, 1);
+  @include make-spacer(px, 2, sm);
+  @include size(100%);
+
+  @include media-breakpoint-up(sm) {
+    width: rem(184px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: rem(200px);
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: rem(219px);
+  }
+}
+
+.indicator {
+  @include size(rem(24px), 100%);
+  @include flex(center, center);
+  @include make-spacer(mr, 1, sm);
+
+  position: relative;
+  top: 1px;
+  flex-basis: auto;
+  flex-shrink: 0;
+}
+
+.live {
+  @include flex(center, center);
+
+  position: relative;
+  height: 100%;
+}
+
+.stroke {
+  @include size(rem(2px), 50%);
+
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+
+  &::after {
+    @include size(100%);
+
+    display: block;
+    background-color: var(--magenta);
+    animation: live-stroke 2s linear infinite;
+    content: '';
+  }
+}
+
+.notification {
+  @include make-spacer(mr, 0);
+}
+
+.content {
+  display: none;
+  width: rem(184px);
+  height: 100%;
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    @include flex(center, flex-start, column);
+  }
+
+  @include media-breakpoint-up(md) {
+    width: auto;
+  }
+}
+
+.title {
+  @include font-size(12px);
+
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.date {
+  @include font-size(12px);
+  @include make-spacer(mt, 1);
+
+  display: block;
+  color: var(--blue);
+}
+
+.link {
+  @include font-size(12px);
+  @include make-spacer(mt, 1);
+
+  color: var(--white-alpha-08);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--blue);
+  }
+}
+
+@keyframes live-stroke {
+
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateY(-90%);
+  }
+
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  90%,
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}

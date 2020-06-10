@@ -1,0 +1,76 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 6, sm);
+
+  margin-top: rem(-16px);
+  border: rem(1px) solid var(--white-alpha-024);
+  background-color: var(--royal-blue);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    margin-top: rem(-48px);
+  }
+}
+
+.body,
+.header {
+  display: grid;
+  grid-template-columns: rem(64px) 1fr rem(64px);
+  grid-column-gap: rem(8px);
+}
+
+.body {
+  @include make-spacer(mb, 3);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr rem(112px) 1fr;
+  }
+}
+
+.header {
+  @include make-spacer(mb, 2);
+
+  align-items: center;
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr rem(96px) 1fr;
+  }
+}
+
+.title {
+  @include make-spacer(mb, 0);
+  @include font-size(16px);
+
+  grid-column: 2 / 3;
+}
+
+.timer {
+  @include make-spacer(mt, 1);
+  @include make-spacer(mt, 4, sm);
+
+  text-align: center;
+}
+
+.timerTitle {
+  @include make-spacer(mb, 1);
+  @include font-size(12px);
+}
+
+.countdown {
+  @include make-spacer(mb, 0);
+  @include font-size(24px);
+
+  color: var(--white);
+  font-weight: 700;
+
+  &.warning {
+    color: var(--error);
+  }
+}

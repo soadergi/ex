@@ -1,0 +1,23 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  min-height: 1rem;
+  text-align: center;
+}
+
+.list {
+  @include reset-list;
+  @include flex(center, center);
+}
+
+.link {
+  @include make-spacer(p, 0);
+  @include font-size(10px, 12px);
+
+  display: inline-block;
+  border: 0;
+  box-shadow: none;
+  background-color: transparent;
+  vertical-align: middle;
+  color: var(--grey-500);
+}

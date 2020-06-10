@@ -1,0 +1,9 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.content {
+  @include make-spacer(pl, 4, md);
+  @include make-spacer(pb, 4);
+  @include make-spacer(pb, 0, md);
+
+  height: 100%;
+}

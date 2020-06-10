@@ -1,0 +1,57 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  max-width: rem(486px);
+}
+
+.button {
+  width: 100%;
+
+  .icon {
+    @include make-spacer(mr, 1);
+  }
+
+  &.twitchButton {
+
+    &:hover {
+      background-color: var(--twitch-hover);
+      text-decoration: none;
+    }
+  }
+}
+
+.field {
+  @include media-breakpoint-up(sm) {
+    @include flex( $align-items: center, $wrap: nowrap,);
+  }
+}
+
+.inputSumm {
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(mr, 2);
+
+    width: rem(220px);
+  }
+}
+
+.tipLink {
+  @include font-size(12px, 18px);
+  @include make-spacer(mb, 2);
+
+  display: block;
+}
+
+.or {
+  @include font-size(16px, 24px);
+
+  text-align: center;
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    text-align: left;
+  }
+}
+
+.errors {
+  min-height: rem(16px);
+}

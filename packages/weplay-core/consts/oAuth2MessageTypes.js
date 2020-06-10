@@ -1,0 +1,1 @@
+export const O_AUTH2_SUCCESS = 'O_AUTH2_SUCCESS'

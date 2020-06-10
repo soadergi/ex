@@ -1,0 +1,66 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pt, 5);
+  @include make-spacer(pt, 6, sm);
+  @include make-spacer(pb, 3);
+}
+
+.title {
+  @include font-size(24px, 32px);
+  @include make-spacer(mt, 1);
+  @include make-spacer(mb, 3);
+
+  text-align: left;
+  color: var(--black);
+  font-weight: 700;
+}
+
+.section {
+  @include make-spacer(mb, 6);
+
+  text-align: left;
+}
+
+.buttonTelegram {
+  @include make-spacer(mb, 4);
+}
+
+.button {
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, 1);
+  }
+}
+
+.buttonSettings {
+  @extend %buttonBorderWhite;
+
+  color: var(--blue);
+}
+
+.checkbox {
+  @include flex(space-between, $direction: row-reverse);
+
+  width: 100%;
+  color: var(--black);
+
+  &:not( :last-child ) {
+    @include make-spacer(mb, 2);
+  }
+
+  .wrapper {
+    @include make-spacer(mr, 0);
+  }
+}
+
+.text {
+  @include make-spacer(mr, 2);
+
+  color: var(--grey-500);
+}
+
+.footer {
+  @include flex;
+}
+

@@ -1,0 +1,64 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+// Margin and Padding
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $length in $spacers {
+
+        .u-#{$abbrev}#{$infix}-#{$size} {
+          #{$prop}: $length !important; /* stylelint-disable-line declaration-no-important */
+        }
+
+        .u-#{$abbrev}t#{$infix}-#{$size},
+        .u-#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-top: $length !important; /* stylelint-disable-line declaration-no-important */
+        }
+
+        .u-#{$abbrev}r#{$infix}-#{$size},
+        .u-#{$abbrev}x#{$infix}-#{$size} {
+          #{$prop}-right: $length !important; /* stylelint-disable-line declaration-no-important */
+        }
+
+        .u-#{$abbrev}b#{$infix}-#{$size},
+        .u-#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-bottom: $length !important; /* stylelint-disable-line declaration-no-important */
+        }
+
+        .u-#{$abbrev}l#{$infix}-#{$size},
+        .u-#{$abbrev}x#{$infix}-#{$size} {
+          #{$prop}-left: $length !important; /* stylelint-disable-line declaration-no-important */
+        }
+      }
+    }
+
+    // Some special margin utils
+
+    .u-m#{$infix}-auto {
+      margin: auto !important; /* stylelint-disable-line declaration-no-important */
+    }
+
+    .u-mt#{$infix}-auto,
+    .u-my#{$infix}-auto {
+      margin-top: auto !important; /* stylelint-disable-line declaration-no-important */
+    }
+
+    .u-mr#{$infix}-auto,
+    .u-mx#{$infix}-auto {
+      margin-right: auto !important; /* stylelint-disable-line declaration-no-important */
+    }
+
+    .u-mb#{$infix}-auto,
+    .u-my#{$infix}-auto {
+      margin-bottom: auto !important; /* stylelint-disable-line declaration-no-important */
+    }
+
+    .u-ml#{$infix}-auto,
+    .u-mx#{$infix}-auto {
+      margin-left: auto !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+}

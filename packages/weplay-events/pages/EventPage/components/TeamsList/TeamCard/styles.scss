@@ -1,0 +1,48 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex($direction: column);
+  @include size(100%, auto);
+
+  border: rem(1px) solid var(--grey-300);
+  box-shadow: 1px 1px 8px var(--royal-blue-alpha-016);
+  background-color: var(--royal-blue);
+  overflow: hidden;
+  color: var(--white);
+
+  &.isExpanded {
+    height: 100%;
+  }
+}
+
+.header {
+  @include make-spacer(p, 4);
+  @include flex(space-between, center);
+}
+
+.info {
+  @include flex(space-between, center);
+  @include make-spacer(mt, 0);
+
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    @include flex(flex-end, center);
+  }
+}
+
+.body {
+  @include make-spacer(px, 4);
+  @include make-spacer(pt, 3);
+  @include make-spacer(pt, 0, sm);
+  @include make-spacer(pb, 6);
+}
+
+.teamRegion {
+  @include font-size(12px, 16px);
+
+  text-transform: capitalize;
+  color: var(--grey-500);
+}
+

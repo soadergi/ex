@@ -1,0 +1,5 @@
+export const TEAM_STATUSES = {
+  ACTIVE: 'ACTIVE',
+  BANNED: 'BANNED',
+  DELETED: 'DELETED',
+}

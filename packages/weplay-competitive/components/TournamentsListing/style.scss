@@ -1,0 +1,48 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.tournamentTable {
+  width: 100%;
+}
+
+.wrapper {
+  @include make-spacer(mb, 2);
+
+  @include media-breakpoint-up(sm) {
+    grid-column: 1 / 3;
+  }
+}
+
+.header {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: table-header-group;
+  }
+}
+
+.item {
+  @include make-spacer(pb, 2);
+  @include make-spacer(px, 2);
+
+  color: var(--royal-blue);
+
+  &:first-child {
+    @include make-spacer(pl, 0);
+  }
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1rem;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 1.5rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: table-row-group;
+  }
+}

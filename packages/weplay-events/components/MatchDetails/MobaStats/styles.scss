@@ -1,0 +1,54 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: relative;
+
+  &:nth-child( odd ) {
+    background-color: var(--grey-100);
+  }
+}
+
+.previewHeroes {
+  @include flex(center, center);
+  @include make-spacer(p, 1);
+  @include make-spacer(pb, 0);
+  @include font-size(10px, 16px);
+
+  color: var(--grey-500);
+}
+
+.matchTime {
+  @include font-size(10px, 16px);
+  @include make-spacer(px, 2);
+
+  position: relative;
+  color: var(--grey-500);
+}
+
+.socialLinksWrapper {
+  @include flex(center, center, column, wrap);
+  @include make-spacer(pt, 1);
+  @include make-spacer(pb, 1);
+}
+
+.winnerLeft {
+  @include size(rem(8px));
+
+  position: absolute;
+  top: 50%;
+  left: rem(4px);
+  transform: translateY(-50%);
+  border-radius: 1rem;
+  background-color: var(--success);
+  padding: 1px;
+  color: var(--white);
+
+  &.winnerRight {
+    right: rem(4px);
+    left: auto;
+  }
+}
+
+.scoreWrapper {
+  @include flex(center, flex-start);
+}

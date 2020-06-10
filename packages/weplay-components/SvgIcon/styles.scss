@@ -1,0 +1,8 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.icon {
+  @include size(rem(16px));
+  @include transition(fill);
+
+  display: block;
+}

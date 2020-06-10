@@ -1,0 +1,33 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.steam {
+  @include make-spacer(mb, 6);
+}
+
+.header {
+  @include flex(space-between, center);
+  @include make-spacer(mb, 3);
+}
+
+.status {
+  @include flex(space-between, center);
+  @include make-spacer(mb, 1);
+  @include font-size(16px, 24px);
+}
+
+.statusValue {
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.statusTitle {
+  color: var(--grey-500);
+}
+
+.error {
+  @include font-size(12px, 18px);
+  @include make-spacer(mb, 3);
+}
+
+.text {
+  @include font-size(24px, 30px);
+}

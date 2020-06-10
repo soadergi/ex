@@ -1,0 +1,15 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.header {
+  @include flex(flex-start, flex-start, column, wrap);
+  @include make-spacer(pt, 2, md);
+  @include make-spacer(mb, 0);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(flex-start, baseline);
+  }
+}
+
+.title {
+  pointer-events: none;
+}

@@ -1,0 +1,12 @@
+/* stylelint-disable */
+:global {
+  <% _.each(symbols, function(symbol) { %>.<%= symbol.name %> {
+    display: block;
+    width: <%= symbol.ratio %>em;
+    height: 1em;
+    fill: #000;
+  }
+
+  <% }); %>
+}
+/* stylelint-enable */

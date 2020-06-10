@@ -1,0 +1,28 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  border-bottom: 0;
+
+  &:nth-child( even ) {
+    background: var(--grey-100);
+  }
+
+  &.isDefault {
+
+    td {
+      @include make-spacer(p, 2);
+
+      text-align: right;
+
+      &:first-child {
+        border-right: 1px solid var(--grey-300);
+        width: 9rem;
+        text-align: left;
+
+        @include media-breakpoint-up(md) {
+          border-right: 0;
+        }
+      }
+    }
+  }
+}

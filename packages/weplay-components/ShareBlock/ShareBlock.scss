@@ -1,0 +1,60 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.description {
+  @include font-size(20px, 24px);
+
+  color: var(--white);
+  font-weight: 700;
+}
+
+.wrapContent {
+  @include make-spacer(mt, 0);
+  @include make-spacer(mt, 2, sm);
+  @include flex($wrap: wrap);
+}
+
+.grayLine {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(mx, 3);
+
+    display: block;
+    background-color: var(--grey-500);
+    width: 1px;
+  }
+}
+
+.link {
+  @extend %button;
+  @extend %buttonCta;
+  @extend %buttonPromoMedium;
+
+  @include make-spacer(mt, 3);
+  @include make-spacer(mt, 0, sm);
+  @include make-spacer(px, 3);
+  @include flex(center, center);
+  @include font-size(16px);
+
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}
+
+.icon {
+  @include font-size(24px);
+
+  &Arrow {
+    @include make-spacer(mr, 0);
+    @include make-spacer(ml, half);
+
+    z-index: 1;
+  }
+}
+
+.text {
+  z-index: 3;
+}

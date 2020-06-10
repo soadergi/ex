@@ -1,0 +1,103 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include size(rem(96px));
+
+  position: relative;
+  border-radius: rem(8px);
+  overflow: hidden;
+
+  &::after {
+    @include size(100%, rem(40px));
+    @include gradient-y(transparent, #{var(--royal-blue-alpha-08)});
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+  }
+
+  &::before {
+    @include size(100%);
+    @include transition(opacity);
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    border-radius: rem(8px);
+    box-shadow: inset 0 0 0 2px var(--blue);
+    content: '';
+  }
+
+  &.isActive,
+  &:not( .isDisabled ):hover {
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.content {
+  @include flex(flex-end, center, column);
+  @include size(100%);
+  @include make-spacer(p, 1);
+
+  position: relative;
+  z-index: 2;
+}
+
+.link {
+  @include size(100%);
+
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.launcher {
+  @include reset-button;
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+}
+
+.image {
+  @include absolute-center;
+
+  z-index: -1;
+
+  &.isDisabled {
+    filter: grayscale(1);
+  }
+}
+
+.button {
+  @include font-size(12px, 20px);
+  @include make-spacer(px, 1);
+  @include make-spacer(py, 0);
+  @include make-spacer(mb, 1);
+  @include transition(#{background-color, color, border-color});
+
+  border: rem(2px) solid var(--blue);
+  border-radius: rem(24px);
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.message {
+  @include font-size(12px, 16px);
+
+  text-align: center;
+  color: var(--magenta);
+}
+

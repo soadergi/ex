@@ -1,0 +1,22 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.timeline {
+  @include reset-list;
+
+  position: relative;
+  margin-bottom: 5rem;
+
+  @include media-breakpoint-up(sm) {
+
+    &::before {
+      @include size(2px, 100%);
+
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -1px;
+      background-color: var(--blue);
+      content: '';
+    }
+  }
+}

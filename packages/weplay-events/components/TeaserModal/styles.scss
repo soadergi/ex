@@ -1,0 +1,77 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pl, 5);
+  @include make-spacer(pr, 5);
+  @include make-spacer(pl, 0, md);
+  @include make-spacer(pr, 0, md);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 94;
+  background: var(--black-alpha-032);
+  height: 100vh;
+}
+
+.wrap {
+  position: relative;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include media-breakpoint-up(lg) {
+    top: 50%;
+  }
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  max-width: rem(896px);
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(992px);
+  }
+}
+
+.wrapVideo {
+  @include aspect-ratio;
+}
+
+.videoPlayer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: rem(8px);
+  overflow: hidden;
+}
+
+.close {
+  @include flex(center, center);
+  @include make-spacer(p, 0);
+  @include transition(transform);
+
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  transform-origin: 50% 50%;
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+
+  &Icon {
+    @include size(24px);
+
+    color: var(--white);
+  }
+}

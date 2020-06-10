@@ -1,0 +1,83 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.cell {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 3, lg);
+  @include make-spacer(py, 2);
+
+  &:first-child {
+    width: 100%;
+  }
+
+  &:not( :first-child ) {
+    text-align: center;
+  }
+
+  &.points,
+  &.score {
+    @include make-spacer(pl, 0);
+    @include make-spacer(pl, 3, lg);
+
+    text-align: right;
+  }
+}
+
+.user {
+  @include flex(flex-start, center);
+}
+
+.userAvatar {
+  @include make-spacer(mr, 1);
+  @include make-spacer(mr, halh, sm);
+
+  @include media-breakpoint-only(sm) {
+    @include size(3rem);
+
+    flex: 0 0 3rem;
+    max-width: 3rem;
+  }
+}
+
+.userName {
+  @include font-size(14px, 24px);
+
+  display: block;
+  color: var(--royal-blue);
+  font-weight: 500;
+}
+
+.betLogo {
+  @include make-spacer(mb, 1);
+
+  width: rem(48px);
+}
+
+.icon {
+  color: var(--grey-500);
+  font-size: rem(24px);
+}
+
+.data {
+  @include font-size(14px, 16px);
+
+  color: var(--royal-blue);
+}
+
+.participant {
+  @include make-spacer(py, 2);
+
+  background-color: var(--white);
+
+  &.strength,
+  &.agility,
+  &.intelligence,
+  &.lockAndLoad {
+
+    &:nth-last-child( 2 ) {
+
+      .icon {
+        display: none;
+      }
+    }
+  }
+}

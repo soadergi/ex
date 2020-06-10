@@ -1,0 +1,12 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.wrapper {
+  @include flex(space-between, center);
+  @include make-spacer(pb, 2);
+}
+
+.tip {
+  @include font-size(16px, 24px);
+
+  color: var(--grey-500);
+}

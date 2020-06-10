@@ -1,0 +1,114 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+// -----------------------------------
+//   #C-NOTIFICATION
+// -----------------------------------
+
+.title {
+  @include make-spacer(mb, 2);
+  @include font-size(20px, 24px);
+
+  color: var(--white);
+  font-weight: 700;
+}
+
+.text {
+  @include make-spacer(mb, 0);
+
+  display: block;
+  position: relative;
+  max-width: 13rem;
+  line-height: 1.71;
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 0.875rem;
+  }
+}
+
+.close {
+  @include flex(center, center);
+  @include size(16px);
+  @include make-spacer(p, 0);
+  @include transition(transform);
+
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  transform-origin: 50% 50%;
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+
+.icon {
+  color: var(--white);
+}
+
+.button {
+  @extend %button;
+  @extend %buttonSuccess;
+}
+
+.container {
+  @include transition(#{opacity, transform, visibility});
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  transform: translateY(rem(16px));
+  visibility: hidden;
+  opacity: 0;
+  z-index: 300;
+  width: 100%;
+
+  &.isShown {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  @include make-spacer(pl, 3);
+  @include make-spacer(pr, 5);
+  @include make-spacer(py, 2);
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background-color: var(--royal-blue-alpha-08);
+  width: 100%;
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 8px;
+    max-width: 21rem;
+  }
+
+  &.error {
+    background-color: var(--error-alpha-08);
+  }
+
+  &.invite {
+    @include make-spacer(px, 2);
+
+    .text {
+      @include font-size(16px, 24px);
+    }
+
+    @include media-breakpoint-up(sm) {
+      width: auto;
+      max-width: none;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.indicator {
+  @include make-spacer(mb, 1);
+
+  display: block;
+}

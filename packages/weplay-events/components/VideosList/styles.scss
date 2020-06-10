@@ -1,0 +1,26 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.videosList {
+  display: block;
+  position: relative;
+}
+
+.wrapper {
+  @include media-breakpoint-up(sm) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 1rem;
+  }
+}
+
+.video {
+  @include make-spacer(mb, 4);
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+
+  @include media-breakpoint-only(sm) {
+    @include make-spacer(mb, 0);
+  }
+}

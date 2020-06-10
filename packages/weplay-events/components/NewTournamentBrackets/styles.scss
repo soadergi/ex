@@ -1,0 +1,53 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.header {
+  @include make-spacer(mb, 4);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center);
+  }
+}
+
+.title {
+  @include font-size(32px, 40px);
+  @include make-spacer(mb, 0);
+
+  color: var(--royal-blue);
+  font-weight: 700;
+}
+
+.link {
+  display: block;
+  font-weight: 500;
+}
+
+.tabs {
+  @include flex(center, stretch);
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 6, md);
+  @include make-spacer(mb, 7, lg);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: rem(16px);
+  box-shadow: inset 1px 1px 8px var(--black-alpha-008);
+  background: var(--grey-100);
+
+  @include media-breakpoint-up(sm) {
+    border-radius: rem(40px);
+    background-color: var(--grey-200);
+  }
+
+  @include media-breakpoint-up(md) {
+    border-radius: rem(56px);
+  }
+}
+
+.forgeOfMastersGroup {
+
+  &.tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

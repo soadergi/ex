@@ -1,0 +1,98 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(pb, 6);
+  @include make-spacer(pb, 0, sm);
+  @include make-spacer(mb, 6);
+  @include make-spacer(mb, 0, sm);
+
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+
+  &::after {
+    @include gradient-y(#{var(--royal-blue)}, transparent, 0%, 100%);
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotate(180deg);
+    width: 100%;
+    height: rem(190px);
+    content: '';
+  }
+
+  @include media-breakpoint-up(sm) {
+    border: 0;
+  }
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  object-fit: cover;
+
+  @include media-breakpoint-up(sm) {
+    top: 0;
+    right: -5%;
+    width: 63%;
+  }
+
+  @include media-breakpoint-up(md) {
+    top: 27%;
+    right: -5%;
+    width: 120%;
+  }
+}
+
+.content {
+  @include make-spacer(pl, 3);
+
+  position: relative;
+  z-index: 1;
+  border-left: 2px solid var(--gold);
+  color: var(--white);
+}
+
+.teamLogo {
+  @include size(rem(64px));
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 4, sm);
+
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(72px));
+  }
+}
+
+.title,
+.prize {
+  @include make-spacer(mb, 0);
+  @include font-size(24px, 32px);
+
+  font-weight: 700;
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(32px);
+  }
+}
+
+.text {
+  @include make-spacer(mt, 0);
+  @include make-spacer(mt, 1, md);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 1, sm);
+  @include make-spacer(mb, 2, md);
+  @include font-size(14px, 24px);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+

@@ -1,0 +1,122 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: rem(8px);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.image {
+  @include absolute-center;
+
+  display: block;
+  max-height: 100%;
+
+  &.isDisabled {
+    filter: grayscale(1);
+  }
+}
+
+.content {
+  @include size(100%);
+  @include make-spacer(p, 1);
+  @include flex(space-between, flex-start, column);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.textEllipsis {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mapName {
+  @include font-size(12px);
+  @include make-spacer(mt, auto);
+
+  color: var(--white);
+  font-weight: 700;
+}
+
+.name {
+  @include font-size(12px);
+  @include make-spacer(mb, 1);
+
+  width: 100%;
+  color: var(--white);
+}
+
+.moveState {
+  @include font-size(24px);
+  @include make-spacer(mb, 1);
+  @include transition(#{transform, opacity});
+
+  transform: translateY(rem(8px));
+  opacity: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  &.isSuccess {
+    color: var(--success);
+  }
+
+  &.isBan {
+    color: var(--error);
+  }
+}
+
+.link {
+  @include reset-button;
+  @include aspect-ratio;
+  @include transition(border-color);
+
+  position: relative;
+  border: rem(1px) solid transparent;
+  border-radius: rem(8px);
+  overflow: hidden;
+  text-align: left;
+
+  &::after {
+    @include size(100%);
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: var(--royal-blue-alpha-048);
+    content: '';
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .moveState {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    &.isPicking {
+      border-color: var(--success);
+    }
+
+    &.isBanning {
+      border-color: var(--error);
+    }
+  }
+
+  &.isDisabled {
+    pointer-events: none;
+  }
+}

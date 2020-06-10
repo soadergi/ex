@@ -1,0 +1,91 @@
+{
+  "name": "ssr-platform-service",
+  "version": "5.0.11",
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env PORT=3000 HOST=localhost ENV_LABEL=localhost LOG_LEVEL=debug CLOUD_CONFIG_URL=http://configuration-service-dev.marathon.mesos:38888 nodemon --inspect server/index.js",
+    "build": "next build",
+    "start": "node --inspect server/index.js"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.19.0",
+    "classnames": "^2.2.5",
+    "express": "^4.17.1",
+    "formik": "^1.5.7",
+    "next": "^9.1.7",
+    "next-compose-plugins": "^2.2.0",
+    "next-redux-wrapper": "^4.0.1",
+    "next-transpile-modules": "^2.3.1",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "ramda": "^0.26.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-intl": "^3.2.1",
+    "react-redux": "^7.1.1",
+    "react-resize-detector": "^4.2.0",
+    "react-slide-toggle": "^0.1.13",
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "ssr-platform-service": "^5.0.11",
+    "svg-sprite-loader": "^4.1.6",
+    "weplay-competitive": "^15.2.0",
+    "weplay-components": "^17.2.0",
+    "weplay-core": "^18.2.0",
+    "weplay-events": "^15.3.0",
+    "weplay-media": "^18.1.0",
+    "weplay-node-cloud-config": "^1.0.14",
+    "weplay-node-logger": "^1.0.14",
+    "weplay-node-registration": "^1.0.14",
+    "weplay-node-shutdown": "^1.0.14",
+    "weplay-platform": "^6.0.5",
+    "weplay-singleton": "^0.5.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.7.4",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "file-loader": "^4.2.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "nodemon": "^1.19.3",
+    "prettier": "^1.19.1",
+    "prettier-eslint": "^9.0.1",
+    "prettier-eslint-cli": "^5.0.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-concentric-order": "^3.4.1",
+    "stylelint-config-sass-guidelines": "^6.0.0",
+    "stylelint-order": "^3.1.0",
+    "stylelint-scss": "^3.10.1",
+    "url-loader": "^2.1.0"
+  }
+}

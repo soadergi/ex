@@ -1,0 +1,32 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.breadcrumbs {
+  @include make-spacer(pt, 3);
+  @include make-spacer(pt, 5, sm);
+
+  &.grey {
+    background-color: var(--grey-100);
+  }
+}
+
+.topMaterials {
+  @include make-spacer(pb, 6, sm);
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 6, sm);
+
+  background-color: var(--grey-100);
+}
+
+.lastMaterials {
+  @include make-spacer(pb, 5);
+  @include make-spacer(pb, 6, sm);
+
+  &.columnist {
+    @include make-spacer(pt, 5);
+    @include make-spacer(pt, 6, sm);
+  }
+}
+
+.emptyBlock {
+  @include make-spacer(py, 3);
+}

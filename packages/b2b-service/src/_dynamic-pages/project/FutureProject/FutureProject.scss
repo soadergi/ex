@@ -1,0 +1,33 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.projectPage {
+  @include flex(space-between, center, column-reverse);
+
+  h3 {
+    @include font-size(48px, 60px);
+  }
+
+  img {
+    @include make-spacer(mt, 6);
+    @include make-spacer(mt, 0, md);
+
+    @include media-breakpoint-up(md) {
+      max-width: rem(448px);
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row-reverse;
+  }
+}
+
+.heroWrap {
+  position: relative;
+}
+
+.sectionGrey {
+  @include make-spacer(px, 2);
+
+  background-color: var(--grey-100);
+}

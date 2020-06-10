@@ -1,0 +1,42 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex( $align-items: center );
+
+  color: var(--white);
+
+  &.md {
+
+    .timer {
+      @include font-size(48px, 56px);
+    }
+
+    .icon {
+      @include font-size(3rem);
+    }
+  }
+
+  &.sm {
+    @include make-spacer(mb, 3);
+
+    .timer {
+      @include font-size(20px, 28px);
+    }
+
+    .icon {
+      @include font-size(2rem);
+    }
+  }
+
+  &.isWarning {
+    color: var(--error);
+  }
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+}
+
+.timer {
+  font-weight: var(--wp-font-weight-bold);
+}

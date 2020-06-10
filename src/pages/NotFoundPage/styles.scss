@@ -1,0 +1,54 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  background: var(--black);
+  height: calc(100vh - var(--wp-sticky-head-height));
+}
+
+.video {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.button {
+  position: absolute;
+  bottom: rem(64px);
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+
+  @include media-breakpoint-up(md) {
+    bottom: rem(64px);
+    animation-name: button-animation;
+    animation-duration: 6.5s;
+  }
+}
+
+.image {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+@keyframes button-animation {
+
+  0% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

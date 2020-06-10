@@ -1,0 +1,12 @@
+@mixin promo-small {
+
+  &PromoSmall {
+    @include font-size(14px, 32px);
+
+    font-weight: 500;
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(18px, 40px);
+    }
+  }
+}

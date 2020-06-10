@@ -1,0 +1,78 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.value {
+  @include font-size(14px, 16px);
+
+  white-space: nowrap;
+  color: var(--grey-500);
+}
+
+.block {
+  display: block;
+  cursor: pointer;
+
+  &:last-child {
+    @include make-spacer(pb, 0);
+  }
+
+  &.isActive {
+
+    .button {
+      background-color: var(--grey-100);
+    }
+
+    .value {
+      color: var(--blue);
+    }
+  }
+
+  &.dropdown {
+    @include make-spacer(py, 0);
+
+    .button {
+      @include make-spacer(py, 1);
+      @include make-spacer(px, 2);
+
+      line-height: 1;
+
+      &:hover {
+
+        .value {
+          color: var(--blue);
+        }
+      }
+    }
+
+    .value {
+      @include font-size(12px, 18px);
+
+      text-transform: uppercase;
+    }
+  }
+
+  &.gray {
+
+    .button {
+      background-color: var(--grey-500);
+
+      &:hover {
+        background-color: var(--grey-300);
+      }
+    }
+  }
+}
+
+.button {
+  @include make-spacer(pl, 2);
+  @include make-spacer(py, half);
+  @include size(100%);
+
+  position: relative;
+  border: 0;
+  background: transparent;
+  text-align: left;
+
+  &:hover {
+    background-color: var(--grey-100);
+  }
+}

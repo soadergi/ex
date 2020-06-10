@@ -1,0 +1,33 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.tr {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &:nth-child( even ) {
+    background-color: var(--grey-100);
+  }
+}
+
+.cell {
+  @include make-spacer(p, 2);
+  @include font-size(16px, 24px);
+}
+
+.text {
+  @include flex;
+
+  color: var(--grey-500);
+}
+
+.value {
+  font-weight: 700;
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+  @include size(rem(24px));
+
+  flex: 0 0 rem(24px);
+  color: var(--grey-500);
+}

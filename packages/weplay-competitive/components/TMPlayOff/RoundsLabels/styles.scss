@@ -1,0 +1,18 @@
+@import '../config';
+
+.labels {
+  @include font-size(14px);
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 2, md);
+
+  display: inline-flex;
+
+  @include media-breakpoint-up(md) {
+    justify-content: center;
+    min-width: 100%;
+  }
+}
+
+
+

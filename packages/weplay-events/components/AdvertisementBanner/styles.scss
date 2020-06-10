@@ -1,0 +1,172 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: relative;
+  border-radius: rem(8px);
+  background-color: var(--royal-blue);
+  width: 100%;
+  overflow: hidden;
+}
+
+.link {
+  display: block;
+}
+
+.text {
+  display: block;
+  z-index: 1;
+}
+
+.image {
+  z-index: 0;
+}
+
+.innerLink {
+  @include make-spacer(pt, 4);
+  @include make-spacer(pt, 3, sm);
+  @include make-spacer(pt, 0, md);
+  @include make-spacer(pb, 4);
+  @include make-spacer(pb, 0, sm);
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 4, sm);
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .link {
+    @extend %button;
+    @extend %buttonCta;
+    @extend %buttonPromoMedium;
+
+    @include font-size(14px);
+    @include make-spacer(px, 4);
+
+    order: 4;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    @include media-breakpoint-up(sm) {
+      order: 2;
+    }
+
+    @include media-breakpoint-up(md) {
+      order: inherit;
+      max-width: rem(301px);
+    }
+  }
+}
+
+.reshuffleMadness2019 {
+
+  .bannerLogo {
+    max-width: rem(183px);
+
+    @include media-breakpoint-up(md) {
+      max-width: rem(200px);
+    }
+  }
+
+  .openQualifiersImage {
+    display: none;
+    order: 1;
+    width: 100%;
+    max-width: rem(219px);
+
+    @include media-breakpoint-up(sm) {
+      display: block;
+      order: 3;
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-spacer(m, 0);
+
+      order: inherit;
+      max-width: rem(239px);
+    }
+  }
+
+  .decorationImage {
+    order: 2;
+    max-width: rem(252px);
+
+    @include media-breakpoint-up(sm) {
+      order: 4;
+    }
+
+    @include media-breakpoint-up(md) {
+      order: inherit;
+      max-width: rem(301px);
+    }
+  }
+
+  &.innerLink {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    grid-gap: rem(32px);
+
+    @include media-breakpoint-up(sm) {
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: rem(16px);
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.forgeOfMastersLeagueSecondSeason {
+
+  .link {
+    @include media-breakpoint-only(sm) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+
+  .bannerLogo {
+    max-width: rem(132px);
+
+    @include media-breakpoint-up(md) {
+      max-width: rem(124px);
+    }
+  }
+
+  .openQualifiersImage {
+    @include make-spacer(mb, 4);
+    @include make-spacer(mb, 0, md);
+
+    width: 100%;
+    max-width: rem(376px);
+
+    @include media-breakpoint-up(md) {
+      @include make-spacer(m, 0);
+
+      max-width: rem(400px);
+    }
+  }
+
+  &.innerLink {
+    @include make-spacer(pt, 2);
+    @include make-spacer(pt, 2, md);
+    @include make-spacer(pb, 4, sm);
+    @include make-spacer(pb, 2, md);
+    @include make-spacer(pr, 0);
+    @include make-spacer(px, 4, md);
+
+    grid-template-rows: none;
+    grid-template-columns: 1fr;
+
+    @include media-breakpoint-up(md) {
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+}

@@ -1,0 +1,22 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.nickname {
+  @include make-spacer(ml, 2);
+  @include make-spacer(mb, 0);
+  @include font-size(16px, 24px);
+  @include flex(center, center);
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.invitedTeamIcon {
+  @include make-spacer(ml, 1);
+
+  color: var(--blue);
+}
+
+.participant {
+  @include flex(flex-start, center);
+}

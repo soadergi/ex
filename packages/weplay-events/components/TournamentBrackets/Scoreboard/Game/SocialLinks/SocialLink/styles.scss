@@ -1,0 +1,113 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+@mixin icon-color($default, $hover) {
+
+  .icon {
+    color: ($default);
+
+    &:hover {
+      color: ($hover);
+    }
+  }
+}
+
+$keys: (
+  twi: (
+    default: var(--twitch),
+    hover: var(--twitch-hover)
+  ),
+  hltv: (
+    default: var(--white),
+    hover: var(--white)
+  ),
+  dotabuff: (
+    default: var(--white),
+    hover: var(--white)
+  ),
+  yt: (
+    default: var(--youtube),
+    hover: var(--youtube-hover)
+  ),
+  news: (
+    default: var(--blue),
+    hover: var(--blue-hover)
+  ),
+);
+
+.block {
+  @include make-spacer(mr, 1);
+
+  display: block;
+  line-height: 1;
+
+  &:last-child {
+    @include make-spacer(mr, 0);
+  }
+}
+
+.icon {
+  fill: var(--grey-500);
+}
+
+.link {
+  display: inline-block;
+  vertical-align: middle;
+  pointer-events: none;
+
+  &.twi {
+    font-size: 1rem;
+  }
+
+  &.hltv {
+    background-color: var(--grey-500);
+    font-size: 1rem;
+
+    .icon {
+      color: var(--white);
+    }
+  }
+
+  &.dotabuff {
+    background-color: var(--grey-500);
+    font-size: 1rem;
+
+    .icon {
+      color: var(--white);
+    }
+  }
+
+  &.yt {
+    font-size: 0.667rem;
+  }
+
+  &.news {
+    font-size: 1rem;
+  }
+
+  &.isActive {
+    pointer-events: all;
+
+    @each $key, $value in $keys {
+
+      &.#{$key} {
+        @include icon-color(map-get($value, default), map-get($value, hover));
+      }
+    }
+
+    &.hltv {
+      background-color: var(--hltv);
+
+      &:hover {
+        background-color: var(--hltv-hover);
+      }
+    }
+
+    &.dotabuff {
+      background-color: var(--youtube);
+
+      &:hover {
+        background-color: var(--youtube-hover);
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pt, 2);
+  @include make-spacer(pt, 0, md);
+  @include make-spacer(pl, 3, md);
+
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: 1fr rem(160px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: 1fr rem(240px);
+  }
+}
+
+.details {
+  @include make-spacer(pb, 2, md);
+
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    @include make-spacer(pt, 2);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+}
+
+.label {
+  @include make-spacer(mb, 1);
+  @include font-size(12px, 16px);
+
+  color: var(--grey-500);
+}
+
+.text {
+  @include make-spacer(mb, 2);
+  @include font-size(18px, 24px);
+
+  color: var(--white);
+  font-weight: 500;
+}
+
+.link {
+  @include make-spacer(mb, 3);
+  @include font-size(18px, 24px);
+  @include transition(border-color);
+
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px solid var(--blue);
+  text-decoration: none;
+
+  &:hover {
+    border-color: transparent;
+    text-decoration: none;
+  }
+}
+
+.flag {
+  @include size(rem(24px), rem(16px));
+
+  position: relative;
+  border: 1px solid var(--grey-200);
+  overflow: hidden;
+}
+
+.flagImage {
+  display: block;
+  position: absolute;
+  top: rem(-4px);
+  left: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.preview {
+  --width: #{rem(144px)};
+
+  @include size(var(--width), auto);
+  @include make-spacer(mx, auto);
+  @include make-spacer(p, 1);
+
+  position: relative;
+  align-self: start;
+
+  &::after {
+    @include size(100%, rem(64px));
+    @include gradient-y(transparent, #{var(--royal-blue)});
+
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: rem(8px);
+    left: 0;
+    z-index: 2;
+    content: '';
+  }
+
+  @include media-breakpoint-up(md) {
+    --width: #{rem(160px)};
+  }
+
+  @include media-breakpoint-up(lg) {
+    --width: #{rem(240px)};
+  }
+}
+
+.footer {
+  @include media-breakpoint-down(sm) {
+    @include flex(space-between, center);
+  }
+}
+
+.socials {
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}

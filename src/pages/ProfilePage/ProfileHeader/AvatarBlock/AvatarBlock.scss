@@ -1,0 +1,132 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(space-between, center);
+
+  @include media-breakpoint-down(xs) {
+    display: block;
+  }
+}
+
+.section {
+  @include media-breakpoint-up(sm) {
+    @include flex(flex-start, center);
+  }
+}
+
+.userAvatar {
+  @extend %buttonFile;
+
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 2, sm);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+
+  position: relative;
+
+  &:hover {
+
+    .overlay {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.avatar {
+  $size: 128px;
+
+  @include size(rem($size));
+
+  position: relative;
+  flex: 0 0 rem($size);
+  border-radius: 50%;
+  max-width: rem($size);
+}
+
+.overlay {
+  @include flex(center, center, column);
+  @include size(100%);
+  @include make-spacer(px, 1);
+  @include transition(#{opacity, visibility});
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+  border-radius: 50%;
+  background: var(--black-alpha-048);
+  cursor: pointer;
+}
+
+.icon {
+  color: var(--white);
+}
+
+.placeholder {
+  @include font-size(14px, 16px);
+  @include make-spacer(mt, 1);
+
+  display: inline-block;
+  text-align: center;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.title {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 0);
+
+  color: var(--royal-blue);
+}
+
+.description {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 0);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(14px, 24px);
+  }
+}
+
+.name {
+  @include font-size(16px, 24px);
+  @include make-spacer(pr, 2);
+
+  display: inline-block;
+  position: relative;
+  color: var(--white);
+
+  &::after {
+    @include size(rem(8px));
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: var(--error);
+    content: '';
+  }
+
+  &.isOnline {
+
+    &::after {
+      background-color: var(--success);
+    }
+  }
+}
+
+.info {
+  @include font-size(12px, 18px);
+
+  color: var(--white-alpha-064);
+}
+
+.link {
+  @include font-size(12px, 18px);
+}

@@ -1,0 +1,49 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.latestNews {
+  @include size(100%);
+
+  .title {
+    @include font-size(40px, 32px);
+    @include make-spacer(my, 3);
+
+    color: var(--blue);
+    font-weight: 700;
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(28px, 32px);
+    }
+  }
+
+  .list {
+    @include reset-list();
+
+    @include media-breakpoint-up(sm) {
+      display: grid;
+      grid-template-columns: repeat(2 , 1fr);
+      grid-column-gap: rem(24px);
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
+
+.more {
+
+  .moreLink {
+    @include font-size(14px, 24px);
+
+    font-weight: 500;
+
+    @include media-breakpoint-up(lg) {
+      @include font-size(16px, 24px);
+    }
+  }
+}

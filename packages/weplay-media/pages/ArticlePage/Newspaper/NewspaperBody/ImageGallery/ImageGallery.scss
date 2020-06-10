@@ -1,0 +1,50 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.header {
+  @include flex(center, center);
+
+  background-color: var(--grey-100);
+  color: var(--grey-500);
+}
+
+.text {
+  @include make-spacer(mr, 1);
+  @include make-spacer(py, 1);
+  @include font-size(12px, 16px);
+}
+
+.arrow {
+  @include flex(center, center);
+  @include size(2rem, 4rem);
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transition-duration: 300ms;
+  z-index: 1;
+  background-color: var(--black-alpha-048);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--white-alpha-024);
+  }
+
+  &.left {
+    right: auto;
+    left: 0;
+  }
+}
+
+.icon {
+  @include font-size(28px, 16px);
+
+  color: var(--white);
+}
+
+.left {
+
+  .icon {
+    transform: rotate(180deg);
+  }
+}

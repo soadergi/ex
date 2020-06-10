@@ -1,0 +1,194 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(space-between, flex-start, column);
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 3, sm);
+
+  position: relative;
+  background: #4a45ce;
+  padding-bottom: rem(130px);
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--white);
+
+  &::before {
+    @include size(100%);
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: 1;
+    background: #4a45ce;
+    content: '';
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding-bottom: rem(220px);
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 0;
+  }
+}
+
+.modal {
+  @include make-spacer(mt, 7);
+
+  color: var(--royal-blue);
+}
+
+.modalTitle {
+  @include font-size(24px, 32px);
+  @include make-spacer(mb, 3);
+
+  text-align: center;
+  font-weight: 700;
+}
+
+.modalText {
+  @include make-spacer(mb, 3);
+
+  text-align: center;
+  color: var(--grey-500);
+}
+
+.link {
+  width: 100%;
+  color: var(--blue);
+}
+
+.button {
+  @extend %button;
+
+  @include make-spacer(mb, 3);
+
+  width: 100%;
+
+  .icon {
+    @include font-size(24px);
+  }
+
+  &.discord {
+    border-color: var(--discord);
+    background-color: var(--discord);
+
+    &:hover {
+      border-color: var(--discord-hover);
+      background-color: var(--discord-hover);
+    }
+  }
+
+  &.telegram {
+    border-color: var(--telegram);
+    background-color: var(--telegram);
+
+    &:hover {
+      border-color: var(--telegram-hover);
+      background-color: var(--telegram-hover);
+    }
+  }
+}
+
+.divider {
+  @include make-spacer(mb, 3);
+  @include size(100%, rem(1px));
+
+  background-color: var(--grey-200);
+}
+
+.video {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+
+  &.animation {
+
+    &.oracle {
+      animation-name: oracle-opacity;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out;
+    }
+
+    &.sphere {
+      animation-name: sphere-opacity;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out;
+    }
+  }
+}
+
+.image {
+  position: absolute;
+  top: rem(176px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: rem(274px);
+
+  &.animation {
+
+    &.sphereImg {
+      animation-name: sphere-zoom;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out;
+    }
+  }
+}
+
+@keyframes sphere-zoom {
+
+  0% {
+    transform: translateX(-50%) scale(1) rotate(0);
+  }
+
+  50% {
+    transform: translateX(-50%) scale(0) rotate(900deg);
+  }
+
+  100% {
+    transform: translateX(-50%) scale(1) rotate(1800deg);
+  }
+}
+
+@keyframes oracle-opacity {
+
+  0% {
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sphere-opacity {
+
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

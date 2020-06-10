@@ -1,0 +1,24 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex(space-between, $direction: column);
+  @include make-spacer(pt, 0);
+  @include make-spacer(pt, 5, sm);
+  @include make-spacer(pb, 6);
+
+  border-top: 0;
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    border-top: 1px solid var(--grey-200-alpha-048);
+  }
+
+  @include media-breakpoint-only(sm) {
+    flex-wrap: wrap;
+  }
+
+  @include media-breakpoint-only(md) {
+    flex-wrap: wrap;
+  }
+}

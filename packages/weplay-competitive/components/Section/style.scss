@@ -1,0 +1,212 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.wrapper {
+  @include tournament-wrapper;
+}
+
+.header {
+  @include make-spacer(mb, 4);
+
+  @include media-breakpoint-up(sm) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-column-gap: rem(16px);
+  }
+}
+
+.title {
+  @include flex;
+
+  @include media-breakpoint-up(sm) {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  &Icon {
+    @include make-spacer(mr, 1);
+    @include make-spacer(mt, half);
+    @include flex($align-items: flex-start);
+  }
+
+  &Text {
+    @include make-spacer(m, 0);
+    @include font-size(32px, 40px);
+
+    font-weight: 700;
+  }
+}
+
+.subTitle {
+  @include make-spacer(mb, 0);
+  @include make-spacer(mt, 2);
+  @include font-size(16px, 24px);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    grid-row: 2;
+    grid-column: 1 / 3;
+  }
+}
+
+.icon {
+  @include flex($align-items: center);
+}
+
+.label {
+  @include make-spacer(ml, 2);
+
+  align-self: center;
+}
+
+.linkIcon {
+  @include flex($align-items: center);
+  @include make-spacer(mr, 1);
+  @include size(rem(24px));
+  @include transition(fill);
+
+  color: var(--blue);
+
+  &.isSmall {
+    @include size(rem(16px));
+  }
+}
+
+.link {
+  @include transition(color);
+  @include make-spacer(p, 0);
+  @include make-spacer(mt, 2);
+  @include make-spacer(mt, 0, sm);
+  @include flex(flex-start, center);
+
+  border: 0;
+  background-color: transparent;
+  color: var(--blue);
+
+  &:hover {
+    color: var(--blue-hover);
+
+    .linkIcon {
+      color: var(--blue-hover);
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    grid-row: 1;
+    justify-content: center;
+  }
+}
+
+.anchorCorrector {
+  --top-padding: 1.5rem;
+
+  position: relative;
+
+  @include media-breakpoint-up(sm) {
+    top: calc((var(--wp-anchor-menu-height) + var(--wp-sticky-section-height) + var(--top-padding)) * -1);
+  }
+}
+
+// Modification
+
+.block {
+  @include make-spacer(py, 6);
+  @include make-spacer(py, 8, md);
+
+  &.small {
+    @include make-spacer(py, 0);
+
+    .container,
+    .wrapper {
+      @include make-spacer(px, 0);
+    }
+
+    .header {
+      @include make-spacer(mb, 3);
+    }
+  }
+
+  &.noContainerPaddingX {
+
+    .container,
+    .wrapper {
+      @include make-spacer(px, 0);
+    }
+  }
+
+  &.noPaddingY {
+    @include make-spacer(py, 0);
+  }
+
+  &.greyBackground {
+    background-color: var(--grey-100);
+  }
+
+  &.textWhite {
+
+    .subTitle {
+      color: var(--white);
+    }
+  }
+
+  &.ladderItem {
+
+    .wrapper {
+      @include make-spacer(px, 0);
+
+      @include media-breakpoint-up(sm) {
+        @include tournament-wrapper;
+      }
+    }
+
+    .header {
+      @include make-spacer(mb, 1);
+      @include make-spacer(mb, 0, sm);
+
+      position: relative;
+    }
+
+    .title {
+      @include make-spacer(mt, 0);
+      @include make-spacer(mt, 6, sm);
+      @include make-spacer(mb, 0);
+      @include make-spacer(mb, 2, sm);
+      @include make-spacer(pt, 3);
+    }
+
+    .titleText {
+      @include font-size(24px, 32px);
+
+      @include media-breakpoint-up(sm) {
+        @include font-size(32px, 40px);
+      }
+    }
+
+    .link {
+      display: none;
+
+      @include media-breakpoint-up(sm) {
+        display: block;
+      }
+    }
+
+    .linkBtn {
+      @include flex;
+
+      position: absolute;
+      top: -2rem;
+      left: 0;
+
+      .linkIcon {
+        @include make-spacer(mr, 1);
+
+        transform: rotate(180deg);
+        color: var(--blue);
+      }
+
+      @include media-breakpoint-up(sm) {
+        top: rem(8px);
+      }
+    }
+  }
+}

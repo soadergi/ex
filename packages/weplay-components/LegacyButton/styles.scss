@@ -1,0 +1,106 @@
+/* stylelint-disable scss/at-import-no-partial-leading-underscore, scss/at-import-partial-extension-blacklist  */
+@import 'weplay-core/styles/_initialization.scss';
+
+// ------------------------------------
+//   #C-BUTTON
+// ------------------------------------
+
+.block {
+  @extend %button;
+
+  // Border buttons
+
+  &Border {
+
+    &Blue {
+      @extend %buttonBorderBlue;
+    }
+
+    &White {
+      @extend %buttonBorderWhite;
+    }
+
+    &Less {
+      @extend %buttonBorderLess;
+    }
+
+    &Magenta {
+      @extend %buttonBorderMagenta;
+    }
+  }
+
+  &White {
+    @extend %buttonWhite;
+  }
+
+  &File {
+    @extend %buttonFile;
+  }
+
+  &Promo {
+
+    &Medium {
+      @extend %buttonPromoMedium;
+    }
+
+    &Small {
+      @extend %buttonPromoSmall;
+    }
+  }
+
+  // Gradient buttons
+
+  &Cta {
+    @extend %buttonCta;
+  }
+
+  // Success buttons
+
+  &Success {
+    @extend %buttonSuccess;
+  }
+
+  // Danger
+
+  &Danger {
+    @extend %buttonDanger;
+  }
+
+  //Link
+
+  &Link {
+    @extend %buttonLink;
+  }
+
+  //Reset
+
+  &Reset {
+    @extend %buttonReset;
+  }
+
+  //Accent
+
+  &Pink {
+    @extend %buttonPink;
+  }
+
+  //Premium
+
+  &Premium {
+    @extend %buttonPremium;
+  }
+
+  &Wide {
+    @include make-spacer(mb, 1);
+
+    width: rem(208px);
+    max-width: 100%;
+
+    @include media-breakpoint-down(xs) {
+      @include flex(center, center);
+
+      width: 100%;
+    }
+
+  }
+}

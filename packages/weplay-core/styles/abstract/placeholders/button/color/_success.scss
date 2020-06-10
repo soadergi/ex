@@ -1,0 +1,12 @@
+@mixin success {
+
+  &Success {
+    border: 2px solid var(--success);
+    background-color: var(--success);
+
+    &:hover {
+      border-color: var(--success-hover);
+      background-color: var(--success-hover);
+    }
+  }
+}

@@ -1,0 +1,101 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(py, 8);
+
+  background-color: var(--white);
+  width: 100%;
+}
+
+.wrap {
+  @include flex(space-between, $direction: column-reverse);
+  @include make-spacer(mb, 8);
+
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.content {
+  @include size(100%, auto);
+
+  max-width: 100%;
+  max-height: 100%;
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(456px);
+    min-height: rem(248px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(576px);
+  }
+}
+
+.title {
+  @include make-spacer(mb, 3);
+  @include font-size(24px, 32px);
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.description {
+  @include make-spacer(mb, 6);
+  @include font-size(16px, 24px);
+
+  color: var(--royal-blue);
+}
+
+.buttonHide {
+  @include make-spacer(mx, auto);
+  @include make-spacer(px, 3);
+  @include make-spacer(py, 2);
+
+  display: block;
+  width: 100%;
+  font-weight: var(--wp-font-weight-regular);
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+    min-width: rem(154px);
+  }
+}
+
+.subscribeTournamentBanner {
+  background-color: var(--white);
+}
+
+.voteForCoreButton {
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 2, sm);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+}
+
+.button {
+  @include media-breakpoint-only(xs) {
+    width: 100%;
+  }
+}
+
+.hint {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 18px);
+
+  text-align: center;
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    text-align: left;
+  }
+}

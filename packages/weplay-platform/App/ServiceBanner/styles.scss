@@ -1,0 +1,71 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pl, 2);
+  @include make-spacer(pr, 5);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(py, 1);
+
+  display: block;
+  border-bottom: 1px solid var(--dark-grey);
+  background-color: var(--royal-blue);
+  width: 100%;
+  min-height: rem(56px);
+  color: var(--white);
+}
+
+.container {
+  @include flex(center, center, row, wrap);
+}
+
+.message {
+  @include make-spacer(my, 1);
+  @include font-size(16px, 24px);
+
+  text-align: center;
+  color: var(--white);
+}
+
+.link {
+  @include font-size(16px, 16px);
+  @include make-spacer(ml, 3, sm);
+  @include make-spacer(my, 1);
+
+  color: var(--blue);
+  font-weight: 400;
+
+  &:hover {
+    background: none;
+    text-decoration: underline;
+    color: var(--blue);
+  }
+}
+
+.close {
+  @include font-size(16px);
+
+  position: absolute;
+  top: rem(16px);
+  right: rem(16px);
+
+  :global {
+
+    .g-icon {
+      fill: var(--white);
+    }
+  }
+
+  &:hover {
+
+    :global {
+
+      .g-icon {
+        fill: var(--blue);
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    right: rem(24px);
+  }
+}

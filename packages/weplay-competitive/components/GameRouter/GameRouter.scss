@@ -1,0 +1,24 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(py, 2);
+
+  position: relative;
+  z-index: 2;
+  border-top: rem(1px) solid var(--white-alpha-024);
+}
+
+.list {
+  @include reset-list;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, rem(96px));
+  grid-auto-flow: column;
+  grid-gap: rem(24px);
+  overflow-x: auto;
+  white-space: nowrap;
+
+  @include media-breakpoint-up(md) {
+    white-space: normal;
+  }
+}

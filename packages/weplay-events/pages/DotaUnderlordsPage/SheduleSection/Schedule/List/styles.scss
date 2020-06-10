@@ -1,0 +1,50 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  --lighter-blue: #152139;
+}
+
+.list {
+  @include reset-list;
+
+  border-radius: rem(8px);
+}
+
+.dateWrap {
+  @include make-spacer(px, 2);
+  @include make-spacer(pt, 4);
+  @include make-spacer(pb, 2);
+
+  border-top-left-radius: rem(8px);
+  border-top-right-radius: rem(8px);
+  background-color: var(--lighter-blue);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.date {
+  @include font-size(14px, 18px);
+
+  color: var(--white);
+}
+
+.iconWrap {
+  @include make-spacer(mr, 5);
+}
+
+.icon {
+  color: var(--blue);
+}
+
+.item {
+  background-color: var(--royal-blue);
+
+  &:nth-child( even ) {
+    background-color: var(--lighter-blue);
+  }
+
+  &:last-child {
+    border-bottom-left-radius: rem(8px);
+    border-bottom-right-radius: rem(8px);
+  }
+}

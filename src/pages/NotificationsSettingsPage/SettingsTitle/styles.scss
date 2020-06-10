@@ -1,0 +1,32 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mb, 3);
+
+  @include media-breakpoint-up(sm) {
+    display: grid;
+    grid-template-columns: 1fr rem(153px);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr rem(249px);
+  }
+
+}
+
+.titleBlock {
+  @include flex(flex-start, center);
+}
+
+.title {
+  @include font-size(24px, 30px);
+  @include make-spacer(ml, 1);
+
+  font-weight: 700;
+}
+
+.icon {
+  color: var(--blue);
+}
+

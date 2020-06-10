@@ -1,0 +1,119 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: relative;
+  background: var(--royal-blue);
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.background {
+  top: rem(72px);
+  max-height: rem(1080px);
+}
+
+.header {
+  position: relative;
+  background: var(--grey-500-alpha-008);
+  height: rem(40px);
+
+  @include media-breakpoint-up(sm) {
+    height: rem(72px);
+  }
+}
+
+.logoWrap {
+  @include size(rem(50px), rem(64px));
+  @include make-spacer(mx, auto);
+
+  display: block;
+  position: absolute;
+  top: rem(8px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(88px), rem(112px));
+
+    top: rem(16px);
+  }
+}
+
+.logo {
+  @include size(100%);
+}
+
+.content {
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 0, sm);
+  @include make-spacer(pt, 10);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  max-width: rem(504px);
+}
+
+.gameMenu {
+  @include make-spacer(pb, 1);
+}
+
+.gameHead {
+  @include make-spacer(mb, 3);
+}
+
+.scoreWrapper {
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center);
+  }
+}
+
+.grid {
+  @include make-spacer(mt, 3);
+
+  display: grid;
+  grid-template-columns: repeat(2, rem(110px));
+  grid-gap: rem(8px);
+  align-items: center;
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(mt, 0);
+  }
+}
+
+.currentScore {
+  @include make-spacer(mr, 1);
+}
+
+.navWrap {
+  @include make-spacer(mb, 3);
+}
+
+.banner {
+  @include make-spacer(mb, 3);
+  @include make-spacer(pb, 3, sm);
+
+  padding-bottom: rem(152px);
+}
+
+.eventBannerImage {
+  @include size(rem(160px), auto);
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  @include media-breakpoint-up(sm) {
+    right: rem(24px);
+    width: rem(148px);
+  }
+}
+
+.tournamentBannerImage {
+  @include size(auto, rem(165px));
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

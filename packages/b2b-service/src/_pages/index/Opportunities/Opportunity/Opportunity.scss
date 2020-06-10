@@ -1,0 +1,51 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include media-breakpoint-up(lg) {
+    @include flex(space-between, center, $direction: row);
+  }
+}
+
+.image {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 6, sm);
+  @include make-spacer(mb, 0, lg);
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(576px);
+  }
+}
+
+.title {
+  @include font-size(32px, 40px);
+  @include make-spacer(mb, 3);
+}
+
+.text {
+  @include make-spacer(mb, 0);
+
+  white-space: pre-wrap;
+  color: var(--grey-500);
+}
+
+.button {
+  @extend %button;
+
+  @include make-spacer(py, half);
+  @include make-spacer(mt, 3);
+  @include font-size(14px, 32px);
+
+  border: 0;
+}
+
+.content {
+  @include media-breakpoint-up(lg) {
+    max-width: rem(576px);
+  }
+}
+
+.dateWrap {
+  @include make-spacer(mb, 2);
+  @include flex(flex-start, center);
+}

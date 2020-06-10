@@ -1,0 +1,82 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$transition: 0.1s;
+
+.circle {
+  @include size(100%);
+
+  display: block;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    @include transition(#{background-color}, $transition);
+
+    border-radius: 16px;
+    box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.07);
+    background-color: var(--grey-300);
+    width: 100%;
+    height: rem(12px);
+
+    @include media-breakpoint-up(sm) {
+      height: rem(16px);
+    }
+  }
+
+  &::after {
+    @include transition(#{transform}, $transition);
+    @include box-shadow(0 0 6px rgba(53, 73, 93, 0.2));
+    @include size(rem(16px));
+
+    left: 0;
+    border-radius: 50%;
+    background-color: var(--white);
+
+    @include media-breakpoint-up(sm) {
+      @include size(rem(24px));
+    }
+  }
+
+  &::after,
+  &::before {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    content: '';
+  }
+}
+
+.block {
+  @include size(rem(32px), rem(16px));
+
+  display: block;
+  position: relative;
+  flex: 0 0 auto;
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(48px), rem(24px));
+  }
+
+  &.isHighlighted {
+
+    .circle {
+
+      &::after {
+        @include box-shadow(0 0 6px var(--blue-alpha-064));
+      }
+    }
+  }
+}
+
+.input {
+  display: none;
+}
+
+.input:checked + .circle::before {
+  background-color: var(--blue);
+}
+
+.input:checked + .circle::after {
+  transform: translate(100%, -50%);
+  background-color: var(--white);
+}

@@ -1,0 +1,32 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.prize {
+  @include make-spacer(mr, 1);
+  @include make-spacer(ml, 1);
+  @include make-spacer(ml, 2, sm);
+  @include make-spacer(mr, 2, sm);
+  @include make-spacer(mb, 1);
+
+  text-align: left;
+}
+
+.label {
+  @include font-size(10px, 16px);
+
+  display: block;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(12px, 16px);
+  }
+}
+
+.sum {
+  @include font-size(14px, 24px);
+
+  display: block;
+  font-weight: 500;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(22px, 32px);
+  }
+}

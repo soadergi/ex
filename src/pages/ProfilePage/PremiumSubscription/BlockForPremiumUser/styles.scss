@@ -1,0 +1,18 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.text {
+  color: var(--grey-500);
+}
+
+.date {
+  color: var(--royal-blue);
+}
+
+.check {
+  @include flex(start, start);
+
+  color: var(--success);
+}
+
+

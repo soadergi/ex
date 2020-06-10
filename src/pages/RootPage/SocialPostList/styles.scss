@@ -1,0 +1,120 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  position: relative;
+  height: rem(360px);
+
+  &::after {
+    @include size(100%, rem(56px));
+    @include gradient-y(transparent, #{var(--white)});
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    content: '';
+  }
+
+  .button {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @include media-breakpoint-up(sm) {
+    height: 100%;
+
+    &::after {
+      content: none;
+    }
+
+    .button {
+      display: none;
+    }
+  }
+
+  &.isExpanded {
+    height: auto;
+
+    &::after {
+      content: none;
+    }
+
+    .button {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .listWrap {
+      height: auto;
+    }
+  }
+}
+
+.listWrap {
+  @include flex;
+
+  height: rem(360px);
+
+  @include media-breakpoint-up(sm) {
+    display: inline-block;
+    column-count: 1;
+    width: 100%;
+    height: initial;
+    overflow: hidden;
+  }
+
+  @include media-breakpoint-up(md) {
+    column-gap: rem(8px);
+    column-count: 2;
+  }
+}
+
+.item {
+  @include make-spacer(mb, 0);
+  @include make-spacer(mb, 1, sm);
+  @include make-spacer(mr, 1);
+  @include make-spacer(mr, 0, md);
+
+  break-inside: auto;
+  flex-shrink: 0;
+  width: rem(220px);
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    break-inside: auto;
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(md) {
+    break-inside: avoid;
+  }
+}
+
+.button {
+  @include make-spacer(mx, auto);
+  @include make-spacer(pr, 2);
+
+  @extend %buttonLink;
+
+  display: block;
+  position: relative;
+  bottom: rem(24px);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 3;
+
+  &::after {
+    @include size(rem(7px));
+    @include make-spacer(m, auto);
+
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotateZ(-45deg);
+    border-bottom: rem(2px) solid var(--blue);
+    border-left: rem(2px) solid var(--blue);
+    content: '';
+  }
+}

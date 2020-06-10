@@ -1,0 +1,42 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(flex-start, center);
+
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+
+    .hint {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.text {
+  @include make-spacer(ml, 1);
+  @include font-size(12px);
+}
+
+.hint {
+  @include transition(#{opacity, visibility});
+
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 3;
+  border-radius: rem(4px);
+}
+
+.middle {
+
+  .hint {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}

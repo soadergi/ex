@@ -1,0 +1,196 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.c-promocode-banner {
+  @include make-spacer(mb, 4);
+
+  position: relative;
+
+  &__container {
+
+    //@include make-spacer(my, 4);
+    @include make-spacer(px, 3);
+    @include make-spacer(py, 5);
+    @include make-spacer(p, 5, sm);
+
+    border-radius: 8px;
+    background-image: url('./img/promocode-banner-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  &__title {
+    @include make-spacer(mb, 0);
+    @include make-spacer(mb, 6);
+    @include make-spacer(mb, 8, sm);
+    @include make-spacer(mx, auto);
+
+    max-width: rem(336px);
+    line-height: 1.45;
+    color: var(--white);
+    font-size: rem(22px);
+    font-weight: 500;
+
+    @include media-breakpoint-up(sm) {
+      max-width: rem(432px);
+      line-height: 1.42;
+      font-size: rem(28px);
+    }
+
+    @include media-breakpoint-up(md) {
+      max-width: rem(688px);
+    }
+  }
+
+  &__subtitle {
+    @include make-spacer(mb, 4);
+
+    line-height: 2;
+    color: var(--white);
+    font-size: 1rem;
+  }
+
+  &__digit {
+    position: absolute;
+    top: 50%;
+    left: rem(-22px);
+    transform: translateY(-50%);
+    z-index: 0;
+    line-height: 0.93;
+    white-space: nowrap;
+    color: #1e6498;
+    font-size: rem(50px);
+    font-weight: 700;
+
+    @include media-breakpoint-up(sm) {
+      font-size: rem(60px);
+    }
+  }
+
+  &__btn {
+    @include make-spacer(mb, 1);
+    @include make-spacer(mt, 6);
+    @include make-spacer(mt, 7, sm);
+    @include make-spacer(mt, 8, md);
+    @include make-spacer(mx, auto);
+
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 24px;
+    max-width: rem(224px);
+    text-align: center;
+    line-height: 2.48;
+    font-size: rem(18px);
+
+    @include media-breakpoint-up(sm) {
+      max-width: rem(240px);
+    }
+  }
+
+  &__link {
+    line-height: 1.33;
+    font-size: rem(12px);
+    font-weight: 500;
+  }
+
+  &__rune {
+    display: block;
+    position: absolute;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    &--purple {
+      bottom: -32px;
+      left: -16px;
+      max-width: rem(92px);
+
+      @include media-breakpoint-up(sm) {
+        left: -32px;
+        max-width: rem(132px);
+      }
+    }
+
+    &--bounty {
+      top: 80px;
+      right: -80px;
+      max-width: rem(272px);
+
+      @include media-breakpoint-up(sm) {
+        top: -48px;
+        right: -96px;
+        max-width: rem(336px);
+      }
+    }
+  }
+
+  &-steps {
+    @include flex(center, center, column);
+    @include reset-list;
+
+    @include media-breakpoint-up(md) {
+      @include flex(center, center);
+    }
+
+    &__item {
+      @include make-spacer(mb, 4);
+      @include make-spacer(mb, 5, sm);
+      @include make-spacer(mb, 0, md);
+
+      position: relative;
+      text-align: left;
+      line-height: 1.78;
+      color: var(--white);
+      font-size: rem(18px);
+      font-weight: 500;
+      counter-increment: myCount;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: rem(-22px);
+        transform: translateY(-50%);
+        z-index: 0;
+        line-height: 0.93;
+        white-space: nowrap;
+        color: #1e6498;
+        font-size: rem(50px);
+        font-weight: 700;
+        content: counter(myCount);
+
+        @include media-breakpoint-up(sm) {
+          font-size: rem(60px);
+        }
+      }
+
+      &:last-child {
+        @include make-spacer(mr, 0, md);
+      }
+
+      @include media-breakpoint-up(sm) {
+        line-height: 1.45;
+        font-size: rem(22px);
+      }
+
+      @include media-breakpoint-up(md) {
+        margin-right: rem(112px);
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin-right: rem(144px);
+      }
+    }
+
+    &__text {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}

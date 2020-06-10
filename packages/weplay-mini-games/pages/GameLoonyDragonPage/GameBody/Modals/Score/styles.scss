@@ -1,0 +1,39 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(center, center, column);
+
+  &.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: rem(24px);
+  }
+}
+
+.wrapper {
+  @include flex(center, center, column);
+}
+
+.bestScore {
+  text-shadow: 0 0 8px var(--blue);
+  color: var(--blue);
+}
+
+.bestText {
+  color: var(--blue);
+}
+
+.score,
+.bestScore {
+  @include font-size(32px, 40px);
+
+  font-weight: 700;
+}
+
+.text,
+.bestText {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 1);
+
+  text-align: center;
+}

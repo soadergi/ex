@@ -1,0 +1,133 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.backgroundUrl {
+  --hero-main-bg-offset-bottom: #{rem(56px)};
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 100%;
+  height: calc(100% + var(--hero-main-bg-offset-bottom));
+}
+
+.wrap {
+  @include flex(stretch, stretch, column);
+  @include make-spacer(pt, 3);
+
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    padding-top: rem(24px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: rem(40px);
+  }
+}
+
+.block {
+  @include flex(stretch, stretch, column);
+
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    text-align: center;
+  }
+
+  &.forgeOfMastersGroup {
+    @include make-spacer(pb, 4);
+
+    .backgroundUrl {
+      --hero-main-bg-offset-bottom: 0;
+    }
+
+    .wrap {
+      @include make-spacer(pt, 7);
+      @include make-spacer(pt, 10, sm);
+      @include make-spacer(pt, 18, md);
+      @include make-spacer(pt, 20, lg);
+    }
+  }
+
+  &.dotaUnderlords {
+    @include make-spacer(pb, 6);
+    @include make-spacer(pb, 7, md);
+
+    .wrap {
+      @include make-spacer(pt, 5);
+    }
+
+    .removeBackgroundUrl {
+      --hero-main-bg-offset-bottom: 0;
+    }
+
+    &.hasMarginBottom {
+      @include make-spacer(mb, 0);
+    }
+  }
+
+  &.reshuffleMadness2019 {
+    @include make-spacer(pb, 0);
+
+    .wrap {
+      @include make-spacer(pt, 3);
+    }
+
+    .removeBackgroundUrl {
+      --hero-main-bg-offset-bottom: 0;
+
+      position: static;
+    }
+
+    &.hasMarginBottom {
+      @include make-spacer(mb, 0);
+    }
+
+    &.hasPaddingBottom {
+      @include make-spacer(pb, 4);
+    }
+  }
+
+  &.forgeOfMastersLeagueSecondSeason {
+
+    .backgroundUrl {
+      --hero-main-bg-offset-bottom: 0;
+    }
+
+    .wrap {
+      @include make-spacer(pt, 7);
+      @include make-spacer(pt, 10, sm);
+      @include make-spacer(pt, 14, md);
+    }
+
+    &.hasPaddingBottom {
+      @include make-spacer(pb, 4);
+    }
+  }
+
+  &.forgeOfMastersLanSecondSeason {
+
+    .backgroundUrl {
+      --hero-main-bg-offset-bottom: 0;
+
+      overflow: hidden;
+    }
+
+    .wrap {
+      @include make-spacer(pt, 7);
+      @include make-spacer(pt, 10, sm);
+      @include make-spacer(pt, 14, md);
+    }
+
+    &.hasPaddingBottom {
+      @include make-spacer(pb, 4);
+    }
+  }
+}

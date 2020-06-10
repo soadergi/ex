@@ -1,0 +1,14 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(flex-start, center, $wrap: wrap);
+}
+
+.title {
+  @include font-size(16px, 24px);
+  @include make-spacer(mr, 2);
+}
+
+.share {
+  @include make-spacer(mt, 0);
+}

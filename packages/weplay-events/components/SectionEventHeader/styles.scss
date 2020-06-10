@@ -1,0 +1,93 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mb, 4);
+  @include font-size(24px, 32px);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(md) {
+    @include flex(space-between);
+  }
+}
+
+.wrap {
+  @include media-breakpoint-up(sm) {
+    @include flex($align-items: center);
+  }
+}
+
+.rightPart {
+  @include make-spacer(mt, 3);
+  @include make-spacer(mt, 0, sm);
+  @include flex($align-items: center);
+
+  @include media-breakpoint-only(sm) {
+    justify-content: flex-end;
+  }
+}
+
+.title {
+  @include make-spacer(mb, 0);
+  @include font-size(20px, 28px);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(24px, 32px);
+  }
+}
+
+.description {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mb, 0);
+  @include size(100%, auto);
+  @include font-size(12px, 18px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.wrapSelect {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mt, 0, sm);
+  @include make-spacer(ml, 0);
+  @include make-spacer(ml, 2, sm);
+  @include size(100%, auto);
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(177px), auto);
+  }
+}
+
+.sponsorImage {
+  max-height: rem(48px);
+}
+
+.link {
+  @include font-size(14px, 22px);
+
+  color: var(--blue);
+  font-weight: var(--wp-font-weight-normal);
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, 2);
+  }
+}
+
+.hasDescription {
+
+  .rightPart {
+    @include make-spacer(pb, 0);
+    @include make-spacer(pb, 3, md);
+  }
+}
+
+.text {
+  @include make-spacer(mr, 2);
+  @include font-size(14px, 22px);
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-normal);
+}

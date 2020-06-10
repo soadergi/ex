@@ -1,0 +1,62 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+
+  &:nth-of-type( 1 ) {
+    text-align: right;
+  }
+
+  &:nth-of-type( 2 ) {
+    text-align: left;
+  }
+}
+
+.link {
+  @include make-spacer(pb, 1);
+  @include make-spacer(pb, 2, sm);
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 4, sm);
+  @include make-spacer(px, 5, md);
+  @include font-size(16px, 24px);
+
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--white);
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(18px, 24px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(24px, 24px);
+  }
+
+  &.isActive {
+    position: relative;
+    color: var(--blue);
+    font-weight: 500;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(-285deg, transparent 0%, #{var(--blue)} 25%, #{var(--blue)} 50%, #{var(--blue)} 75%, transparent 100%);
+      width: 100%;
+      height: rem(4px);
+      content: '';
+    }
+  }
+
+  // TODO: This styles uses just for disabled state before the LAN
+
+  &.isDisabled {
+    cursor: default;
+    color: var(--grey-500);
+  }
+}

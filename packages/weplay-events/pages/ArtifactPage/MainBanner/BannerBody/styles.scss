@@ -1,0 +1,63 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.banner {
+
+  &Body {
+    @include flex(space-between, center, column);
+    @include make-spacer(pt, 3);
+    @include make-spacer(pt, 0, sm);
+
+    position: relative;
+    flex: 1 0 auto;
+    z-index: 2;
+    text-align: center;
+
+    &Text {
+      @include flex(center, center, column);
+
+      flex: 1;
+      min-height: rem(240px);
+    }
+  }
+
+  &Title {
+    @include font-size(22px, 24px);
+    @include make-spacer(mb, 1);
+    @include make-spacer(mb, 3, lg);
+
+    text-align: center;
+    color: var(--white);
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(32px, 40px);
+
+      max-width: rem(400px);
+    }
+
+    @include media-breakpoint-up(md) {
+      @include font-size(32px, 48px);
+
+      max-width: rem(480px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include font-size(36px, 48px);
+
+      max-width: none;
+    }
+  }
+
+  &Description {
+    @include font-size(14px, 24px);
+    @include make-spacer(mb, 0);
+    @include make-spacer(mb, 3, sm);
+    @include make-spacer(mb, 4, lg);
+
+    max-width: rem(416px);
+    color: var(--white);
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(16px, 24px);
+    }
+  }
+}

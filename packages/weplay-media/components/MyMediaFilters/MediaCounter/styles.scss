@@ -1,0 +1,11 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.counter {
+  @include font-size(12px, 16px);
+  @include make-spacer(my, 2);
+  @include make-spacer(mt, 3, md);
+  @include make-spacer(mb, 0, md);
+
+  display: block;
+  color: var(--grey-500);
+}

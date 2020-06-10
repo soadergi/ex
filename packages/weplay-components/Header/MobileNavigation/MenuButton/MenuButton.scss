@@ -1,0 +1,69 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @extend %buttonReset;
+
+  @include flex(center, center);
+  @include size(100%);
+
+  border-right: 1px solid var(--grey-500-alpha-024);
+}
+
+.burger {
+  @include flex;
+  @include make-spacer(p, 0);
+  @include size(rem(24px), rem(16px));
+
+  position: relative;
+
+  .inner {
+    @include size(100%, rem(2px));
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(0);
+    transition-delay: 0.13s;
+    transition-duration: 0.13s;
+    border-radius: rem(2px);
+    background-color: var(--white);
+
+    &::after {
+      transform: translateY(rem(-14px));
+      transition: transform 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s linear 0.22s;
+    }
+
+    &::before {
+      transform: translateY(rem(-7px));
+      transition: transform 0.1s cubic-bezier(0.33333, 0, 0.66667, 0.33333) 0.16s;
+    }
+
+    &::after,
+    &::before {
+      @include size(100%, rem(2px));
+
+      position: absolute;
+      left: 0;
+      background-color: var(--white);
+      content: '';
+    }
+  }
+
+  &.isMenuOpened {
+
+    .inner {
+      transform: translate3d(0, -7px, 0) rotate(-45deg);
+      transition-delay: 0.22s;
+
+      &::after {
+        transform: translateY(0);
+        opacity: 0;
+      }
+
+      &::before {
+        transform: translateY(0) rotate(-90deg);
+      }
+    }
+  }
+}

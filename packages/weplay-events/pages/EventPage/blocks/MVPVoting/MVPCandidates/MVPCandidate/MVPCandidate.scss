@@ -1,0 +1,43 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.textVoted {
+  @include make-spacer(mb, 0);
+  @include font-size(14px);
+
+  text-align: center;
+  color: var(--success);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.textShare {
+  @include make-spacer(ml, half);
+
+  color: var(--blue);
+}
+
+.iconVoted {
+  @include make-spacer(mr, 1);
+  @include size(rem(20px));
+
+  border-radius: 50%;
+  background-color: var(--success);
+  color: var(--royal-blue);
+}
+
+.candidate {
+  position: relative;
+}
+
+.mvpWinner {
+  @include flex;
+  @include make-spacer(mb, 2);
+}
+
+.button {
+  @include size(100%, auto);
+}
+
+.buttonShare {
+  min-height: auto;
+}

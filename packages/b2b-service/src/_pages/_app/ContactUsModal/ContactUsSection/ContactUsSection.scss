@@ -1,0 +1,7 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(py, 8);
+  @include make-spacer(py, 12, md);
+}

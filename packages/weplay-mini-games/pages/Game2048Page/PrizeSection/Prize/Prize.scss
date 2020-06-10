@@ -1,0 +1,45 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include size(100%, rem(128px));
+  @include flex(center, center);
+  @include make-spacer(my, 0);
+
+  position: relative;
+
+  &::before {
+    @include absolute-center;
+    @include size(rem(72px), rem(88px));
+
+    display: block;
+    box-shadow: 0 0 110px var(--blue);
+    content: '';
+
+    @include media-breakpoint-up(sm) {
+      @include size(rem(104px), rem(144px));
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    height: rem(193px);
+  }
+
+  &.mobileBig {
+    height: rem(193px);
+
+    &::before {
+      @include size(rem(72px), rem(88px));
+    }
+  }
+}
+
+.image {
+  @include size(auto, rem(128px));
+
+  position: relative;
+  z-index: $z-1;
+
+  @include media-breakpoint-up(sm) {
+    @include size(auto, rem(152px));
+  }
+}

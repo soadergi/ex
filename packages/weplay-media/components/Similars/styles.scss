@@ -1,0 +1,25 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include size(100%, auto);
+}
+
+.title {
+  @include make-spacer(mb, 2);
+  @include font-size(12px, 18px);
+
+  text-transform: uppercase;
+  color: var(--royal-blue);
+  font-weight: 700;
+}
+
+.list {
+
+  &.bottom {
+    @include media-breakpoint-up(sm) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 1rem;
+    }
+  }
+}

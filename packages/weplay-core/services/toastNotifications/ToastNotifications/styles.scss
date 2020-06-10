@@ -1,0 +1,82 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pb, 3, sm);
+  @include make-spacer(pr, 4, sm);
+
+  position: fixed;
+  top: rem(80px);
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+
+  .toast:nth-child( n+4 ) {
+    position: fixed;
+    top: -9999px;
+    left: -9999px;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: rem(400px);
+  }
+}
+
+.toast {
+  @include make-spacer(mt, 1);
+
+  position: relative;
+  width: 100%;
+}
+
+.progress {
+  animation: trackProgress linear 1;
+
+  @keyframes trackProgress {
+    // we need this because autoclose tooltip triggers progressBar onAnimationEnd
+
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes moveInUp {
+
+  from {
+    transform: translate3d(40px, 0, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.moveInUp {
+  animation-name: moveInUp;
+}
+
+@keyframes moveOutDown {
+
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+}
+
+.moveOutDown {
+  animation-name: moveOutDown;
+}

@@ -1,0 +1,18 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1.5rem;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

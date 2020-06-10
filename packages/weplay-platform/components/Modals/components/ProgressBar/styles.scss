@@ -1,0 +1,80 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.icon {
+  position: relative;
+  bottom: 2px;
+  fill: var(--grey-300);
+}
+
+:global {
+
+  .c-steps-progressbar {
+    @include make-spacer(mb, 3);
+
+    position: relative;
+
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: var(--grey-300);
+      width: 100%;
+      height: rem(4px);
+      content: '';
+    }
+
+    &__back {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: var(--blue);
+      width: 0;
+      height: rem(4px);
+    }
+
+    &__body {
+      @include flex(space-between, center);
+
+      height: rem(4px);
+    }
+
+    &__item {
+      @include transition(background-color);
+      @include size(rem(10px));
+
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      border-radius: 50%;
+      background-color: var(--grey-300);
+
+      &::after {
+        @include absolute-center();
+        @include transition(background-color);
+        @include size(rem(3px));
+
+        border-radius: 50%;
+        background-color: var(--white);
+        content: '';
+      }
+
+      &:last-child {
+        left: 2px;
+        background-color: transparent;
+        width: auto;
+        height: auto;
+      }
+
+      &.is-round {
+        background-color: var(--blue);
+      }
+
+      &.is-pass {
+
+        &::after {
+          background-color: var(--blue);
+        }
+      }
+    }
+  }
+}

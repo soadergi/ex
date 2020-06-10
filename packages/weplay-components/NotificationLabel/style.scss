@@ -1,0 +1,100 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.notification {
+  --size: 1rem;
+  --dot-size: calc(var(--size) / 2);
+
+  @include size(var(--size));
+
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    @include size(var(--size));
+
+    display: block;
+    transform: scale(0);
+    opacity: 0.24;
+    border-radius: 50%;
+    background-color: var(--magenta);
+    content: '';
+  }
+
+  &::before {
+    @include size(var(--dot-size));
+    @include absolute-center;
+
+    display: block;
+    border-radius: 50%;
+    background-color: var(--magenta);
+    content: '';
+  }
+
+  &.large {
+    --size: 1.25rem;
+  }
+
+  &.xl {
+    --size: 1.5rem;
+  }
+
+  &.isSuccess {
+
+    &::after,
+    &::before {
+      background-color: var(--success);
+    }
+  }
+
+  &.isDisabled {
+
+    &::after,
+    &::before {
+      background-color: var(--grey-200);
+    }
+  }
+
+  &.isNotify {
+
+    &::after,
+    &::before {
+      background-color: var(--blue);
+    }
+  }
+
+  &.isDefault {
+
+    &::after,
+    &::before {
+      background-color: var(--grey-500);
+    }
+  }
+
+  &.isWarning {
+
+    &::after,
+    &::before {
+      background-color: var(--warning);
+    }
+  }
+
+  &.isActive {
+
+    &::after {
+      animation: pulse 2s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes pulse {
+
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

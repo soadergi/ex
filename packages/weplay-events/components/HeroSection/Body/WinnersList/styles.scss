@@ -1,0 +1,113 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.button {
+  @include font-size(12px, 16px);
+  @include make-spacer(py, 3);
+  @include make-spacer(px, 0);
+
+  position: relative;
+  z-index: 10;
+  border: 0;
+  background-color: transparent;
+  color: var(--blue);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.wrap {
+  background-color: var(--grey-100);
+  width: 100%;
+}
+
+.container {
+  @include flex(center, center, column);
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  background-color: var(--grey-100);
+  width: 100%;
+  max-width: 67rem;
+
+  @include media-breakpoint-up(md) {
+    max-width: 53rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 70rem;
+  }
+}
+
+.list {
+  @include reset-list;
+
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    margin: 0 auto;
+    width: rem(648px);
+  }
+}
+
+.item {
+  @include flex(space-between, center);
+  @include make-spacer(py, 3);
+
+  position: relative;
+  border-bottom: 1px solid var(--grey-300);
+}
+
+.winners {
+  @include make-spacer(pt, 7);
+  @include make-spacer(pb, 2);
+  @include make-spacer(pb, 4, md);
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+
+  &.forgeOfMastersGroup {
+    padding: 0;
+  }
+
+  &.forgeOfMastersLan {
+    padding: 0;
+
+    .wrap {
+      @include make-spacer(py, 2);
+    }
+  }
+
+  &.dotaUnderlords {
+    @include make-spacer(p, 0);
+  }
+
+  &.reshuffleMadness2019 {
+    @include make-spacer(p, 0);
+  }
+
+  &.forgeOfMastersLeagueSecondSeason {
+    @include make-spacer(p, 0);
+  }
+
+  &.forgeOfMastersLanSecondSeason {
+    @include make-spacer(p, 0);
+  }
+}
+
+.icon {
+  @include size(16px);
+
+  @include media-breakpoint-up(sm) {
+    @include size(32px);
+  }
+}
+
+.label {
+  color: var(--grey-500);
+}

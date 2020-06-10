@@ -1,0 +1,32 @@
+@import '../../abstract/helpers/all';
+
+//
+// Layout variables
+//
+
+:root {
+  // TODO: @Anton, see which vars we have really need
+  --wp-header-height: 3.5rem;
+  --wp-two-columns-sidebar: 16rem;
+  --wp-subheader-height: 2.5rem;
+  --wp-anchor-menu-height: 3rem;
+  --wp-mobile-tournament-info-height: #{rem(28px)};
+  --wp-main-header-height: #{rem(68px)};
+  --wp-submenu-height: #{rem(50px)};
+  --wp-sticky-section-height: #{rem(118px)};
+  --wp-sticky-head-height: var(--wp-main-header-height);
+  --wp-cookie-policy-height: 0;
+
+  @include media-breakpoint-up(md) {
+    --wp-sidebar-body-width: 12rem;
+    --wp-content-width: 35rem;
+    --wp-tournament-width: 68rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    --wp-content-width: 46rem;
+    --wp-sidebar-body-width: 11rem;
+    --wp-two-columns-sidebar: 22rem;
+    --wp-main-header-height: #{rem(84px)};
+  }
+}

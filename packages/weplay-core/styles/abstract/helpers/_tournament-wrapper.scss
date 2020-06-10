@@ -1,0 +1,12 @@
+@mixin tournament-wrapper {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+  @include make-spacer(mx, auto);
+
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    max-width: var(--wp-tournament-width);
+  }
+}

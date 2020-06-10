@@ -1,0 +1,194 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  position: relative;
+  background-color: var(--royal-blue);
+  overflow: hidden;
+  color: var(--white);
+
+  &::after {
+    @include size(100%, 1px);
+
+    position: absolute;
+    bottom: 0;
+    background-color: var(--white-alpha-008);
+    content: '';
+  }
+}
+
+.contentWrap {
+  @include make-spacer(pt, 6);
+  @include make-spacer(pt, 9, sm);
+  @include make-spacer(pt, 12, md);
+  @include make-spacer(mx, auto);
+
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(960px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1200px);
+  }
+}
+
+.curLeague {
+  @include make-spacer(pb, 6);
+  @include make-spacer(pb, 9, sm);
+  @include make-spacer(pb, 12, md);
+  @include make-spacer(mb, 9);
+  @include make-spacer(mb, 0, md);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  @include media-breakpoint-only(sm) {
+    grid-column: span 2;
+  }
+
+  @include media-breakpoint-up(md) {
+    border: 0;
+  }
+}
+
+.backgroundUrl {
+  @include size(100%, auto);
+
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+}
+
+.curLeagueLogo {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mt, 6);
+  @include make-spacer(mt, 9, sm);
+  @include make-spacer(mt, 12, md);
+  @include size(rem(72px), auto);
+
+  position: relative;
+}
+
+.container {
+  display: block;
+  position: relative;
+
+  @include media-breakpoint-only(sm) {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: 2fr rem(288px) rem(232px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: 2fr rem(334px) rem(284px);
+  }
+}
+
+.title {
+  @include make-spacer(pr, 0);
+  @include make-spacer(pr, 9, md);
+  @include font-size(32px, 40px);
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(48px, 60px);
+  }
+}
+
+.description {
+  @include make-spacer(pr, 0);
+  @include make-spacer(pr, 9, md);
+  @include font-size(14px, 24px);
+
+  @include media-breakpoint-up(md) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.link {
+  @extend %button;
+  @extend %buttonBorderWhite;
+
+  @include font-size(16px, 44px);
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 6, sm);
+
+  border-radius: rem(24px);
+  background-color: transparent;
+
+  &:hover {
+    border-color: var(--white);
+    background-color: var(--white);
+    color: var(--royal-blue);
+  }
+}
+
+.curVideos {
+  @include make-spacer(pr, 0);
+  @include make-spacer(pr, 5, md);
+  @include flex($direction: column);
+
+  @include media-breakpoint-up(sm) {
+    @include flex($direction: row, $wrap: nowrap);
+
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+.buttonTeaser {
+  @include reset-button;
+  @include size(auto);
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 3, sm);
+
+  position: relative;
+  flex-shrink: 0;
+  color: var(--white);
+
+  &:last-child {
+    @include make-spacer(mt, 2);
+    @include make-spacer(mt, 0, sm);
+    @include make-spacer(mr, 0);
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(180px), rem(165px));
+  }
+}
+
+.curLeagueTeaser {
+  @include size(100%, auto);
+
+  position: relative;
+  top: 0;
+  left: 0;
+
+  @include media-breakpoint-up(sm) {
+    @include size(100%, rem(102px));
+  }
+}
+
+.videoInfo {
+  @include font-size(12px, 24px);
+  @include make-spacer(px, 1);
+
+  position: absolute;
+  bottom: rem(70px);
+  left: rem(8px);
+  border-radius: rem(2px);
+  background-color: var(--black-alpha-08);
+  color: var(--white);
+}
+
+.teaserTitle {
+  @include make-spacer(mt, 2);
+  @include font-size(16px, 24px);
+
+  text-align: left;
+}

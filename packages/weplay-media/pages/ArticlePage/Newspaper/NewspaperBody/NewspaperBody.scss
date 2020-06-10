@@ -1,0 +1,18 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mb, 4);
+  @include make-spacer(pb, 4);
+
+  border-bottom: 1px solid var(--grey-300);
+}
+
+.description {
+  @include word-break;
+  @include make-spacer(pb, 3);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mt, 4);
+
+  border-bottom: 1px solid var(--grey-300);
+  font-weight: 700;
+}

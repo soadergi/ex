@@ -1,0 +1,46 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'mods/tournament-module';
+@import 'mods/league-page';
+
+.container {
+  --max-width: 67rem;
+
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+  @include make-spacer(mx, auto);
+
+  max-width: var(--max-width);
+
+  @include media-breakpoint-up(md) {
+    --max-width: 53rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    --max-width: 70rem;
+  }
+}
+
+.list {
+  @include flex;
+  @include reset-list;
+}
+
+.link {
+  @include make-spacer(p, 2);
+  @include font-size(16px, 16px);
+  @include transition(color);
+
+  display: block;
+  color: var(--royal-blue);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--blue);
+  }
+}
+
+.block {
+  @include tournament-module;
+  @include league-page;
+}

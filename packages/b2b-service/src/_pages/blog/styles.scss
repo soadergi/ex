@@ -1,0 +1,273 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+:global {
+  @import 'weplay-core/styles/v-2-0/_styles.scss';
+}
+
+@mixin section {
+  @include make-spacer(mx, auto);
+  @include make-spacer(px, 0);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 4, md);
+  @include make-spacer(px, 0, lg);
+
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1024px);
+  }
+}
+
+.wrap {
+  position: relative;
+}
+
+.block {
+  @include make-spacer(mx, auto);
+
+  width: 100%;
+
+  p:not( [class] ) {
+    @include font-size(18px, 32px);
+    @include make-spacer(my, 3);
+
+    font-weight: 400;
+
+    &:first-child {
+      @include make-spacer(mt, 0);
+    }
+  }
+
+  h1,
+  h2 {
+    @include font-size(20px, 24px);
+    @include make-spacer(mb, 2);
+
+    font-weight: 700;
+  }
+
+  h1 {
+    @include media-breakpoint-up(sm) {
+      @include font-size(48px, 60px);
+      @include make-spacer(mb, 6);
+    }
+  }
+
+  h2 {
+    @include media-breakpoint-up(sm) {
+      @include font-size(32px, 40px);
+      @include make-spacer(mt, 4);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(736px);
+  }
+}
+
+.imgBlock {
+  @include section;
+  @include make-spacer(mb, 6);
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.buttonWrap {
+  @include flex(center);
+}
+
+.button {
+  @include make-spacer(py, half);
+  @include font-size(14px, 24px);
+
+  @extend %button;
+}
+
+.background {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.formBlock {
+  @include make-spacer(mx, auto);
+
+  text-align: center;
+}
+
+.contactDescriptionWrap {
+  @include make-spacer(mb, 4);
+}
+
+.sectionGrey {
+  @include make-spacer(px, 2);
+
+  background-color: var(--grey-100);
+}
+
+.contactDescription {
+  @include font-size(18px, 30px);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(20px, 30px);
+  }
+}
+
+.officesBlock {
+  @include make-spacer(pb, 6);
+  @include make-spacer(mt, 6);
+
+  border-bottom: 1px solid var(--grey-200);
+}
+
+.officesWrap {
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    @include flex(space-around);
+  }
+}
+
+.emailsBlock {
+  @include make-spacer(mt, 6);
+  @include make-spacer(mb, 5);
+  @include make-spacer(mb, 12, sm);
+
+  display: block;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.bigText {
+  white-space: pre-wrap;
+}
+
+.servicesPage {
+
+  &:nth-child( even ) {
+    @include make-spacer(my, 6);
+
+    flex-direction: row-reverse;
+  }
+}
+
+.aboutUsPage {
+  flex-direction: row-reverse;
+}
+
+.techiiaTitle {
+  @include make-spacer(mx, auto);
+
+  text-align: center;
+}
+
+.teamTitle {
+  @include font-size(32px, 40px);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, sm);
+
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(48px, 60px);
+  }
+}
+
+.teamText {
+  @include font-size(16px, 24px);
+
+  text-align: center;
+  white-space: pre-wrap;
+  color: var(--grey-500);
+}
+
+.techiiaWrap {
+  position: relative;
+}
+
+.techiiaText {
+  @include font-size(16px, 28px);
+  @include make-spacer(py, 4);
+  @include make-spacer(mb, 0);
+
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(24px, 36px);
+  }
+}
+
+.techiiaBackground {
+  object-fit: contain;
+}
+
+.quoteWrap {
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+:global { // stylelint-disable-line
+
+  .btbSlider {
+
+    ul {
+      @include reset-list;
+      @include flex(space-between);
+      @include make-spacer(mx, auto);
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    li {
+      @include size(rem(24px));
+
+      display: inline-block;
+      position: relative;
+    }
+
+    button {
+      @include reset-button;
+      @include absolute-center;
+      @include font-size(0);
+      @include size(rem(8px));
+
+      display: inline-block;
+      border: 1px solid var(--blue);
+      border-radius: 50%;
+    }
+
+    .slick-active > button { // stylelint-disable-line
+      background-color: var(--blue);
+    }
+  }
+}
+
+.heroWrap {
+  position: relative;
+}
+
+.btnWrap {
+  @include flex(center, center);
+  @include make-spacer(mt, 6);
+}
+
+.link {
+  @extend %button;
+}

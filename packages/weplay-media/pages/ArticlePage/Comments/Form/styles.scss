@@ -1,0 +1,118 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mb, 3);
+  @include flex;
+
+  &.inside {
+    @include make-spacer(pl, 7, sm);
+  }
+}
+
+.radialCounter {
+  @include transition(#{opacity, visibility});
+
+  position: absolute;
+  top: -1.5rem;
+  bottom: auto;
+  left: 1rem;
+  visibility: hidden;
+  opacity: 0;
+
+  @include media-breakpoint-up(sm) {
+    top: auto;
+    bottom: 1rem;
+  }
+
+  &.isShown {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.form {
+  border: 0;
+  border-radius: 8px;
+  width: 100%;
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    border: 1px solid var(--grey-300);
+  }
+}
+
+.input {
+  @include size(100%, 5rem);
+  @include make-spacer(p, 0);
+  @include font-size(14px);
+
+  border: 0;
+  background-color: transparent;
+  height: rem(82px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  resize: none;
+
+  &::placeholder {
+    @include transition(#{opacity, text-indent, visibility});
+  }
+
+  &::before {
+    @include transition(#{opacity, text-indent, visibility});
+
+    position: absolute;
+    visibility: visible;
+    color: var(--grey-500);
+    content: attr(data-placeholder);
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(p, 2);
+    @include make-spacer(pb, 0);
+  }
+
+  &.inputPseudoFocus {
+    outline: none;
+
+    &::placeholder {
+      opacity: 0;
+      text-indent: rem(8px);
+    }
+
+    &::before {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}
+
+.wrapper {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 0, sm);
+  @include make-spacer(pt, 2);
+  @include make-spacer(pt, 0, sm);
+  @include make-spacer(pb, 4);
+  @include make-spacer(pb, 0, sm);
+
+  border: 1px solid var(--grey-300);
+  border-radius: rem(8px);
+
+  @include media-breakpoint-up(sm) {
+    border: 0;
+  }
+}
+
+.controls {
+  @include make-spacer(p, 2);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(flex-end);
+
+    position: relative;
+  }
+}
+
+.buttonBlock {
+  @include flex(flex-end);
+}
+

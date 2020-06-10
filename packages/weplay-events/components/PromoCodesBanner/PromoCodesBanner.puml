@@ -1,0 +1,22 @@
+@startuml
+
+!include OrderedList/OrderedList.puml
+
+object PromoCodesBanner {
+  promocodesCount: string.isRequired,
+  agreementUrls: string.isRequired,
+  i18nTexts: shape({}).isRequired,
+  pageName: string.isRequired,
+  images: shape({
+    background: string.isRequired,
+    additional: array.isRequired,
+  }).isRequired,
+  isMediumWidth: bool.isRequired,
+  registrationSource: string.isRequired,
+  stepsList: arrayOf(PropTypes.string).isRequired,
+  modifiers: arrayOf(PropTypes.string),
+}
+
+PromoCodesBanner --|> OrderedList
+
+@enduml

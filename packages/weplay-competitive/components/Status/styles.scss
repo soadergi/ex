@@ -1,0 +1,16 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include font-size(12px);
+
+  text-align: center;
+  color: var(--grey-400);
+
+  &.isWarning {
+    color: var(--magenta);
+  }
+
+  &.isSuccess {
+    color: var(--success);
+  }
+}

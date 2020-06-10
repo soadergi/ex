@@ -1,0 +1,18 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.image {
+  @include make-spacer(mx, auto);
+  @include size(auto, rem(256px));
+
+  display: block;
+  position: relative;
+
+  @include media-breakpoint-up(sm) {
+    height: rem(352px);
+  }
+
+  @include media-breakpoint-up(md) {
+    height: rem(384px);
+  }
+}

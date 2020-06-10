@@ -1,0 +1,46 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 2);
+  @include size(100%, auto);
+
+  position: relative;
+  border-radius: rem(4px);
+  background-color: var(--blue);
+  color: var(--white);
+
+  &::after {
+    position: absolute;
+    bottom: rem(-8px);
+    left: rem(16px);
+    border-top: rem(8px) solid var(--blue);
+    border-right: rem(8px) solid transparent;
+    border-left: rem(8px) solid transparent;
+    content: '';
+  }
+
+  @include media-breakpoint-up(sm) {
+    max-width: rem(288px);
+  }
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include font-size(16px, 24px);
+
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.text {
+  @include make-spacer(mb, 2);
+  @include font-size(14px, 22px);
+
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.button {
+  @include font-size(14px, 22px);
+
+  background-color: var(--white);
+  color: var(--blue);
+}

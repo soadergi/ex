@@ -1,0 +1,30 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 1);
+
+  display: flex;
+  border-bottom: 1px solid var(--grey-300);
+}
+
+.button {
+  @extend %buttonLink;
+
+  @include make-spacer(mr, 2);
+  @include font-size(16px, 24px);
+
+  border-bottom: 2px solid transparent;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.text {
+  @include make-spacer(mr, 2);
+
+  border-bottom: 2px solid var(--blue);
+  line-height: 2;
+  color: var(--blue);
+  font-size: rem(16px);
+  font-weight: 500;
+}

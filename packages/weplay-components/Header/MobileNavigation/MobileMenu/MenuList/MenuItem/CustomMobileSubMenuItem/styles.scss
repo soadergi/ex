@@ -1,0 +1,9 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.text {
+  color: #15a3e5;
+}
+
+.label {
+  @include make-spacer(ml, 1);
+}

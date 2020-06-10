@@ -1,0 +1,14 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mt, 3);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: rem(16px);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

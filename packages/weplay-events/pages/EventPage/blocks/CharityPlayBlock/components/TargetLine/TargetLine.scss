@@ -1,0 +1,63 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mx, auto);
+
+  position: relative;
+}
+
+.wrap {
+  @include flex($direction: column);
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.column {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+
+  text-align: left;
+
+  @include media-breakpoint-up(sm) {
+    text-align: center;
+
+    &:first-child {
+      text-align: left;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 2, sm);
+  @include font-size(14px, 22px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.raisedSum {
+  @include make-spacer(mb, 2);
+  @include font-size(48px, 56px);
+
+  color: var(--blue);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.sum {
+  @include make-spacer(mb, 2);
+  @include font-size(24px, 32px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+}
+

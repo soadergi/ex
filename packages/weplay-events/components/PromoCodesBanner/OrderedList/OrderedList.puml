@@ -1,0 +1,8 @@
+@startuml
+
+object OrderedList {
+  list: arrayOf(PropTypes.string).isRequired,
+  modifiers: arrayOf(PropTypes.string),
+}
+
+@enduml

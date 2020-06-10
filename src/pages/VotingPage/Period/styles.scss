@@ -1,0 +1,28 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.container {
+  @include flex(center, center);
+}
+
+.tile {
+  @include flex(center, center);
+  @include make-spacer(px, 2);
+  @include font-size(16px, 56px);
+
+  position: relative;
+  border-radius: 2px;
+  background-color: var(--grey-200-alpha-048);
+  height: rem(56px);
+  color: var(--royal-blue);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(22px, 56px);
+  }
+}
+
+.delimeter {
+  @include make-spacer(mx, 1);
+  @include font-size(10px, 12px);
+
+  color: var(--grey-500);
+}

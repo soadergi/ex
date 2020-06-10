@@ -1,0 +1,18 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "ignoreChanges": ["ignored-file", "*.md"],
+      "verifyAccess": false,
+      "registry": "http://ec2-3-120-159-84.eu-central-1.compute.amazonaws.com:4873",
+      "message": "chore(release): published new versions"
+    }
+  }
+}
+

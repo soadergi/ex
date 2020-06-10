@@ -1,0 +1,56 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.title {
+  @include font-size(48px, 60px);
+  @include make-spacer(mb, 2);
+
+  text-align: center;
+  font-weight: 700;
+}
+
+.text {
+  @include make-spacer(mb, 3);
+
+  text-align: center;
+}
+
+.list {
+  @include reset-list;
+  @include make-spacer(mb, 6);
+}
+
+.listItem {
+  @include make-spacer(mb, 3);
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+}
+
+.itemWrap {
+  @include flex($align-items: center);
+  @include font-size(16px, 24px);
+
+  font-weight: 700;
+}
+
+.icon {
+  @include make-spacer(mr, 2);
+
+  color: var(--blue);
+}
+
+.controlWrap {
+  @include flex(center, $direction: column-reverse);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, $direction: row);
+  }
+}
+
+.skipBtn {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mt, 0, sm);
+
+  color: var(--white);
+}

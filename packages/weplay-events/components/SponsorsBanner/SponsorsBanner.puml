@@ -1,0 +1,13 @@
+@startuml
+
+!include ./SponsorItem/SponsorItem.puml
+
+title Sponsors Banner
+
+object SponsorsBanner {
+    sponsors: array of objects is required (from container)
+}
+
+SponsorsBanner <|-- SponsorItem
+
+@enduml

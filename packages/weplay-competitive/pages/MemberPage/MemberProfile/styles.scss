@@ -1,0 +1,170 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.profile {
+  position: relative;
+  background-color: var(--royal-blue);
+  min-height: rem(380px);
+  overflow: hidden;
+
+  &::after {
+    @include gradient-y(transparent, #{var(--royal-blue-alpha-08)});
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: rem(190px);
+    content: '';
+  }
+}
+
+.profileCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.preview {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, md);
+  @include make-spacer(mx, auto);
+  @include make-spacer(mr, 2, md);
+  @include size(8rem);
+
+  flex: 0 0 8rem;
+  max-width: 8rem;
+}
+
+.data {
+  display: block;
+}
+
+.content {
+  @include font-size(12px, 16px);
+  @include flex(flex-end, center, column);
+  @include make-spacer(pb, 3, md);
+
+  position: relative;
+  z-index: 2;
+  min-height: rem(380px);
+  color: var(--grey-300);
+
+  @include media-breakpoint-up(md) {
+    @include flex(space-between, flex-end, row);
+  }
+}
+
+.left,
+.right {
+  text-align: center;
+}
+
+.left {
+  @include media-breakpoint-up(md) {
+    @include flex(flex-start, center);
+
+    text-align: left;
+  }
+}
+
+.right {
+  @include media-breakpoint-up(md) {
+    text-align: right;
+  }
+}
+
+.status {
+  @include make-spacer(mb, 1);
+
+  display: block;
+  color: var(--success);
+}
+
+.name {
+  @include make-spacer(mb, 1);
+  @include font-size(18px, 24px);
+
+  display: block;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.date {
+  @include make-spacer(mb, 1);
+
+  display: block;
+}
+
+.controls {
+  @include flex(center, center);
+  @include reset-list();
+
+  @include media-breakpoint-up(md) {
+    @include flex(flex-end, center);
+  }
+}
+
+.control {
+  @include make-spacer(mr, 4);
+  @include make-spacer(mb, 1);
+
+  &:last-child {
+    @include make-spacer(mr, 0);
+  }
+}
+
+.controlItem {
+  @include flex(center, center);
+  @include transition(color);
+
+  color: var(--white);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--blue);
+  }
+}
+
+.country {
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 0, md);
+}
+
+.countryFlag {
+  @include make-spacer(mr, 1);
+
+  display: inline-block;
+  width: rem(20px);
+  vertical-align: middle;
+}
+
+.controlIcon {
+  @include make-spacer(mr, 1);
+  @include size(1.5rem);
+
+  fill: var(--white);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.tip {
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 0, md);
+
+  display: block;
+  text-align: right;
+  color: var(--grey-500);
+}
+
+.error {
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 0, md);
+
+  display: block;
+  text-align: right;
+  color: var(--error);
+}

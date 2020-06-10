@@ -1,0 +1,59 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include reset-list;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: rem(24px);
+  }
+}
+
+.item {
+  @include flex($display: inline-flex);
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, md);
+
+  vertical-align: top;
+  color: var(--grey-500);
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, 2);
+    @include make-spacer(ml, 0, md);
+  }
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+
+  &.isSuccess {
+    background-color: var(--success);
+  }
+
+  &.isError {
+    background-color: var(--error);
+  }
+}
+
+.skull {
+  @include size(rem(24px));
+
+  color: var(--magenta);
+}
+
+.mouse {
+  @include size(rem(24px));
+
+  color: var(--grey-500);
+}
+
+.roundIcon {
+  @include size(rem(16px));
+
+  display: block;
+  opacity: 0.24;
+  margin-top: rem(2px);
+  border-radius: 50%;
+}

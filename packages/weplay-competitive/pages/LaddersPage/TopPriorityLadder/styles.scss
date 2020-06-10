@@ -1,0 +1,101 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex($direction:column);
+
+  position: relative;
+  z-index: 0;
+  border: rem(1px) solid var(--white-alpha-008);
+  border-radius: rem(4px);
+  //TO DO: add var
+  background-color: #162137;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    @include flex($direction:row);
+  }
+}
+
+.background {
+  @include size(300px);
+
+  position: absolute;
+  right: -7%;
+  bottom: -7%;
+}
+
+.status {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.info {
+  @include make-spacer(p, 4);
+
+  z-index: 0;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: 55%;
+  }
+}
+
+.img {
+  z-index: 0;
+  text-align: center;
+
+  @include media-breakpoint-only(md) {
+    align-self: flex-end;
+  }
+}
+
+.imgBanner {
+  width: 100%;
+
+  @include media-breakpoint-only(sm) {
+    width: 50%;
+  }
+}
+
+.prize {
+  @include flex($align-items: flex-end);
+  @include make-spacer(pb, 3);
+}
+
+.icon {
+  color: var(--grey-500);
+}
+
+.text {
+  @include font-size(14px, 14px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.title {
+  @include font-size(32px, 40px);
+  @include make-spacer(pt, 6);
+  @include make-spacer(pb, 3);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.link {
+  color: var(--white);
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.subtitle {
+  @include font-size(16px, 24px);
+  @include make-spacer(pb, 4);
+
+  color: var(--white);
+}

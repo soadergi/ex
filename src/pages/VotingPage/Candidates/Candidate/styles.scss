@@ -1,0 +1,168 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.card {
+  @include make-spacer(p, 3);
+  @include make-spacer(p, 2, md);
+  @include make-spacer(p, 3, lg);
+
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 1px 1px 8px var(--black-alpha-024);
+  background-color: var(--white);
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+
+  &::before {
+    @include size(100%, 4px);
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(63, 237, 246, 0.84) 0%, rgba(104, 124, 219, 0.84) 39.41%, rgba(93, 84, 203, 0.84) 58.57%, rgba(152, 73, 155, 0.84) 77.25%, rgba(252, 57, 84, 0.84) 99.98%), linear-gradient(0deg, rgba($royal-blue, 0.24), rgba($royal-blue, 0.24)), linear-gradient(0deg, $white, $white), var(--white);
+    content: '';
+  }
+
+  &.hasStage2 {
+
+    &::before {
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      background: radial-gradient(250px at 99% 6%, #00a8d2 0%, rgba(0, 168, 210, 0.65) 100%);
+    }
+  }
+}
+
+.avatar {
+  @include size(rem(88px));
+  @include make-spacer(mr, 2);
+  @include box-shadow(0 4px 4px var(--blue-alpha-032));
+  @include make-spacer(mx, auto);
+  @include make-spacer(mb, 1);
+
+  flex: 0 0 rem(88px);
+  border-radius: 50%;
+  max-width: rem(88px);
+
+  @include media-breakpoint-only(md) {
+    @include size(rem(80px));
+
+    flex: 0 0 rem(80px);
+    max-width: rem(80px);
+  }
+}
+
+.name {
+  @include font-size(18px, 24px);
+  @include make-spacer(mb, 2);
+
+  font-weight: 700;
+
+  @include media-breakpoint-only(md) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.votes {
+  @include flex(center, center);
+  @include make-spacer(mb, 1);
+}
+
+.votesIcon {
+  @include size(rem(16px));
+  @include make-spacer(mb, 0);
+  @include make-spacer(mr, 1);
+  @include font-size(16px, 16px);
+
+  background-color: var(--grey-200);
+}
+
+.icon {
+  fill: var(--grey-500);
+}
+
+.votesText {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 0);
+
+  color: var(--royal-blue);
+}
+
+.button {
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 2, md);
+  @include font-size(14px, 38px);
+
+  width: 100%;
+  max-width: rem(272px);
+  font-weight: 500;
+
+  &:disabled {
+    opacity: 1;
+    border-color: var(--blue);
+    cursor: default;
+    color: var(--blue);
+  }
+
+  @include media-breakpoint-only(md) {
+    @include font-size(12px, 28px);
+    @include make-spacer(px, 1);
+  }
+
+  @extend %button;
+}
+
+.essay {
+  @include make-spacer(mb, 3);
+  @include font-size(14px, 16px);
+
+  display: block;
+  font-weight: 500;
+}
+
+.footer {
+  @include make-spacer(px, 1);
+  @include make-spacer(pt, 3);
+  @include make-spacer(pt, 2, md);
+  @include make-spacer(pt, 3, lg);
+
+  border-top: 1px solid var(--grey-300);
+}
+
+.footerText {
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 16px);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-only(md) {
+    @include font-size(10px, 16px);
+  }
+}
+
+.hasVoted {
+  @include box-shadow(1px 1px 16px var(--blue-alpha-032));
+
+  .name {
+    color: var(--magenta);
+  }
+}
+
+.isClosed {
+
+  .votesText {
+    @include font-size(12px, 16px);
+
+    color: var(--royal-blue);
+  }
+}
+
+.EditorChoice {
+  background-image: url('./img/participants-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .votes {
+    visibility: hidden;
+  }
+}

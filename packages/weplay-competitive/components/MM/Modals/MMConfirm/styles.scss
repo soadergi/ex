@@ -1,0 +1,45 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.content {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 6, sm);
+  @include make-spacer(pt, 6);
+
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+}
+
+.title {
+  @include make-spacer(mb, 2);
+  @include font-size(24px, 32px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.subTitle {
+  @include font-size(16px, 24px);
+}
+
+.main {
+  @include make-spacer(mr, 2);
+
+  @include media-breakpoint-down(sm) {
+    @include make-spacer(mr, 0);
+    @include make-spacer(mb, 2);
+
+    width: 100%;
+  }
+}
+
+.extra {
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.footer {
+  @include make-spacer(mt, 3);
+}

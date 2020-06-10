@@ -1,0 +1,61 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 3, sm);
+
+  display: grid;
+  position: relative;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: rem(32px) 1fr;
+  align-items: center;
+  column-gap: rem(24px);
+  row-gap: rem(8px);
+  border-top: 1px solid var(--grey-200);
+  border-right: 1px solid var(--grey-200);
+  border-left: 1px solid var(--grey-200);
+
+  &:last-child {
+    border-bottom: 1px solid var(--grey-200);
+  }
+
+  @include media-breakpoint-up(sm) {
+    grid-template-rows: auto;
+    grid-template-columns: rem(32px) 1fr rem(80px);
+    column-gap: rem(24px);
+    row-gap: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: rem(32px) 1fr rem(160px) rem(80px);
+  }
+}
+
+.number {
+  @include font-size(16px, 24px);
+  @include transition(color);
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.text {
+  @include font-size(14px, 22px);
+  @include transition(color);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-normal);
+
+  @include media-breakpoint-only(xs) {
+    grid-column: 2;
+  }
+
+  @include media-breakpoint-up(sm) {
+    text-align: right;
+  }
+}
+
+.isMarked {
+  background-color: var(--blue-alpha-008);
+}

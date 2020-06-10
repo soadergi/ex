@@ -1,0 +1,6 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.page {
+  @include make-spacer(pb, 4);
+  @include flex($direction: column);
+}

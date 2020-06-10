@@ -1,0 +1,93 @@
+//
+// Project Colors
+//
+
+:root {
+  --white: #fff;
+  --white-alpha-008: #{rgba($white, 0.08)};
+  --white-alpha-024: #{rgba($white, 0.24)};
+  --white-alpha-064: #{rgba($white, 0.64)};
+  --white-alpha-08: #{rgba($white, 0.8)};
+  --grey-100: #f5f7fa;
+  --grey-200: #e1e6f0;
+  --grey-200-alpha-024: #{rgba($grey-200, 0.24)};
+  --grey-200-alpha-048: #{rgba($grey-200, 0.48)};
+  --grey-300: #c1cde6;
+  --grey-300-alpha-016: #{rgba($grey-300, 0.16)};
+  --grey-400: #919cb3;
+  --grey-500: #63708a;
+  --grey-500-alpha-008: #{rgba($grey-500, 0.08)};
+  --grey-500-alpha-024: #{rgba($grey-500, 0.24)};
+  --grey-500-alpha-04: #{rgba($grey-500, 0.4)};
+  --grey-500-alpha-064: #{rgba($grey-500, 0.64)};
+  --dark-grey: #1f2b42;
+  --black: #000;
+  --black-alpha-008: #{rgba($black, 0.08)};
+  --black-alpha-024: #{rgba($black, 0.24)};
+  --black-alpha-032: #{rgba($black, 0.32)};
+  --black-alpha-048: #{rgba($black, 0.48)};
+  --black-alpha-08: #{rgba($black, 0.8)};
+  --royal-blue: #010e28;
+  --royal-blue-alpha-016: #{rgba($royal-blue, 0.16)};
+  --royal-blue-alpha-048: #{rgba($royal-blue, 0.48)};
+  --royal-blue-alpha-08: #{rgba($royal-blue, 0.8)};
+  --royal-blue-alpha-09: #{rgba($royal-blue, 0.9)};
+  --blue: #3bbbe9;
+  --blue-alpha-008: #{rgba($blue, 0.08)};
+  --blue-alpha-016: #{rgba($blue, 0.16)};
+  --blue-alpha-024: #{rgba($blue, 0.24)};
+  --blue-alpha-032: #{rgba($blue, 0.32)};
+  --blue-alpha-064: #{rgba($blue, 0.64)};
+  --blue-hover: #{darken($blue, 10%)};
+  --blue-active: #102b9e;
+  --blue-active-alpha-05: #{rgba($blue-active, 0.5)};
+  --success: #28c772;
+  --success-hover: #{darken($success, 10%)};
+  --success-alpha-008: #{rgba($success, 0.08)};
+  --success-alpha-024: #{rgba($success, 0.24)};
+  --warning: #ff9f21;
+  --warning-alpha-024: #{rgba($warning, 0.24)};
+  --gold: #fdbd07;
+  --premium: #c6973a;
+  --premium-hover: #{darken($premium, 10%)};
+  --bronze: #c55a18;
+  --magenta: #ff1967;
+  --magenta-alpha-024: #{rgba($magenta, 0.24)};
+  --magenta-hover: #{darken($magenta, 5%)};
+  --error: #e30e2c;
+  --error-hover: #{darken($error, 10%)};
+  --error-alpha-008: #{rgba($error, 0.08)};
+  --error-alpha-024: #{rgba($error, 0.24)};
+  --error-alpha-08: #{rgba($error, 0.8)};
+  // Social colors
+  --twitter: #00aced;
+  --twitter-hover: #{darken($twitter, 5%)};
+  --telegram: #08c;
+  --telegram-hover: #{darken($telegram, 5%)};
+  --linkedin: #0077b5;
+  --linkedin-hover: #{darken($linkedin, 5%)};
+  --vk: #4c75a3;
+  --vk-hover: #{darken($vk, 5%)};
+  --facebook: #4267b2;
+  --facebook-hover: #{darken($facebook, 5%)};
+  --hltv: #486ea1;
+  --hltv-hover: #{darken($hltv, 5%)};
+  --discord: #7289da;
+  --discord-hover: #{darken($discord, 5%)};
+  --twitch: #6441a4;
+  --twitch-hover: #{darken($twitch, 5%)};
+  --reddit: #ff4500;
+  --faceit: #f50;
+  --faceit-hover: #{darken($faceit, 10%)};
+  --instagram: #e1306c;
+  --instagram-hover: #{darken($instagram, 10%)};
+  --youtube: #f00;
+  --youtube-hover: #{darken($youtube, 10%)};
+  --google: #518ef8;
+  --google-hover: #{darken($google, 10%)};
+  --steam: #b0c9df;
+  // Gradients
+  --gradient-first-color-artifact-winner: #e95648;
+  --gradient-second-color-artifact-winner: #a6db9a;
+  --gradient-third-color-artifact-winner: #3fd1e6;
+}

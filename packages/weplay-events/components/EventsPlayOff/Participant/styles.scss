@@ -1,0 +1,274 @@
+@import '../config';
+
+$score-width: rem(48px);
+$invited-team-connector-width: rem(12px);
+
+.user {
+  @include flex(flex-start, center);
+
+  position: relative;
+  flex: 1 1 50%;
+}
+
+.score,
+.wrapHyphenCoefficient {
+  @include font-size(20px, 24px);
+  @include flex(center, center);
+  @include transition(color);
+
+  position: relative;
+  flex: 0 1 $score-width;
+  min-width: 1rem;
+  height: 100%;
+  text-align: center;
+  color: var(--grey-500);
+  font-weight: 600;
+}
+
+.name {
+  @include word-break;
+  @include font-size(12px, 16px);
+  @include transition(color);
+
+  flex: 0 0 6.5rem;
+  max-width: 6.5rem;
+  max-height: rem(30px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  color: var(--grey-300);
+
+  &.isActive {
+    color: var(--grey-500);
+  }
+}
+
+.finalist {
+  @include font-size(16px, 16px);
+  @include flex(center, center);
+
+  position: relative;
+  flex: 0 0 rem(56px);
+  z-index: 0;
+  background-color: var(--grey-100);
+  height: 100%;
+}
+
+.invited {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.userAvatar {
+  @include flex(flex-start, center);
+}
+
+.avatar {
+  @include size(rem(40px));
+  @include make-spacer(mr, 1);
+
+  flex: 0 0 rem(40px);
+  border: rem(1px) solid var(--grey-300);
+  border-radius: 50%;
+  max-width: rem(40px);
+
+  &.isTournamentModule {
+    @include size(rem(40px));
+
+    flex: 0 0 rem(40px);
+    border: rem(1px) solid var(--grey-300);
+    box-shadow: none;
+    max-width: rem(40px);
+  }
+}
+
+.participant {
+  @include size(100%, 50%);
+  @include flex(space-between, center);
+
+  position: relative;
+  padding-right: $match-padding-x;
+  padding-left: $match-padding-x;
+  color: var(--grey-300);
+
+  &::before {
+    @include gradient-x(#{var(--blue-active)}, #{var(--blue)});
+    @include size(100%);
+    @include transition(opacity);
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    content: '';
+  }
+
+  &:nth-of-type( 1 ) {
+    @include make-spacer(pr, 0);
+    @include make-spacer(pl, 1);
+
+    &::before {
+      border-radius: rem(8px) rem(8px) 0 0;
+    }
+
+    .wrapHyphenCoefficient {
+      border-radius: 0 rem(8px) 0 0;
+    }
+
+    .finalist {
+      border-radius: 0 rem(8px) 0 0;
+    }
+  }
+
+  &:nth-of-type( 2 ) {
+    @include make-spacer(pl, 1);
+    @include make-spacer(pr, 0);
+
+    &::before {
+      border-radius: 0 0 rem(8px) rem(8px);
+    }
+
+    .wrapHyphenCoefficient {
+      border-radius: 0 0 rem(8px) 0;
+    }
+
+    .finalist {
+      border-radius: 0 0 rem(8px) 0;
+    }
+  }
+
+  .iconCup {
+    @include size(rem(24px));
+  }
+
+  .ic-gold-star {
+    @include size(rem(16px));
+  }
+
+  &.winner {
+
+    .name {
+      color: var(--royal-blue);
+    }
+
+    .score {
+      color: var(--blue);
+    }
+  }
+
+  &.isFinalist {
+
+    &::before {
+      width: calc(100% - #{$score-width});
+    }
+  }
+
+  &.isHovered {
+
+    &::before {
+      opacity: 1;
+    }
+
+    .name,
+    .user,
+    .score {
+      color: var(--white);
+    }
+  }
+}
+
+.wrapHyphenCoefficient {
+  @include font-size(12px, 16px);
+
+  flex: 0 1 rem(56px);
+  background-color: var(--grey-100);
+  font-weight: 500;
+
+
+  .hyphenCoefficient {
+    --color: var(--blue-active);
+
+    color: var(--color);
+
+    &.esBet {
+      --color: #9f1b40;
+    }
+
+    &.egb {
+      --color: #fc0;
+    }
+
+    &.lootBet {
+      --color: #018b59;
+    }
+  }
+}
+// TODO: commented but may be needed later
+//.invitedTeamConnector {
+//  @include size($invited-team-connector-width, 100%);
+//
+//  position: absolute;
+//  left: -$invited-team-connector-width;
+//  z-index: -2;
+//
+//  .path {
+//    @include size(100%, 50%);
+//
+//    position: relative;
+//
+//    &::before {
+//      @include size(100%, $one-pixel);
+//
+//      display: block;
+//      position: absolute;
+//      bottom: -$one-pixel;
+//      left: 0;
+//      background-color: var(--grey-300);
+//      content: '';
+//    }
+//
+//    &::after {
+//      @include size($one-pixel, 100%);
+//
+//      display: block;
+//      position: absolute;
+//      top: 0;
+//      left: 0;
+//      background-color: var(--grey-300);
+//      content: '';
+//    }
+//  }
+//}
+
+.forgeOfMastersLeagueSecondSeason {
+
+  &.isParticipantFinal {
+    @include size(100%);
+
+    .wrapHyphenCoefficient {
+      border-radius: 0 rem(8px) rem(8px) 0;
+    }
+
+    .score {
+      display: none;
+    }
+  }
+}
+
+.forgeOfMastersLanSecondSeason {
+
+  &.isParticipantFinal {
+    @include size(100%);
+
+    .wrapHyphenCoefficient {
+      border-radius: 0 rem(8px) rem(8px) 0;
+    }
+
+    .score {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,193 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pt, 5);
+  @include make-spacer(pb, 3);
+  @include make-spacer(pb, 6, sm);
+  @include make-spacer(pt, 7, md);
+
+  position: relative;
+  background-color: var(--grey-300);
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  max-width: rem(1080px);
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1392px);
+  }
+}
+
+.backgroundUrl {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.header {
+  @include make-spacer(pt, 2);
+  @include make-spacer(pt, 4, sm);
+  @include make-spacer(pt, 6, lg);
+  @include make-spacer(px, 3);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 15rem;
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(pb, 4);
+
+    grid-template-columns: repeat(3, 1fr);;
+  }
+}
+
+.content {
+  @include flex(center, center, column);
+  @include make-spacer(mb, 0);
+  @include make-spacer(mx, auto);
+  @include make-spacer(mt, 0);
+  @include make-spacer(pt, 3);
+  @include make-spacer(pt, 6, sm);
+
+  max-width: rem(560px);
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    max-width: rem(560px);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(640px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 100%;
+  }
+}
+
+.votesCountDescription {
+  @include font-size(20px, 40px);
+
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 500;
+
+  .votesCountNumber {
+    font-weight: 700;
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(22px, 40px);
+  }
+}
+
+.title {
+  @include font-size(28px, 32px);
+  @include make-spacer(pt, 1);
+
+  color: var(--white);
+  font-weight: 600;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(44px, 48px);
+  }
+}
+
+.description {
+  @include font-size(16px, 24px);
+  @include make-spacer(pt, 1);
+  @include make-spacer(my, 0);
+
+  color: var(--white);
+  font-weight: 400;
+}
+
+.firstPlacePrize {
+  @include flex;
+}
+
+.data {
+  @include make-spacer(mt, 6);
+  @include make-spacer(mb, 0);
+  @include font-size(14px, 16px);
+
+  text-align: center;
+  color: var(--white);
+  font-weight: 500;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(20px, 24px);
+  }
+}
+
+.text {
+  @include make-spacer(mt, 3);
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 16px);
+
+  text-align: center;
+  color: var(--white);
+}
+
+.sumWrap {
+  @include flex(center, center, $display: inline-flex);
+  @include make-spacer(mt, 1);
+  @include make-spacer(mb, 0);
+  @include make-spacer(px, 3);
+  @include make-spacer(py, half);
+  @include make-spacer(mx, auto);
+  @include font-size(16px, 24px);
+
+  border-radius: rem(20px);
+  background-color: var(--white-alpha-024);
+  min-width: rem(192px);
+  color: var(--white);
+  font-weight: 500;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(24px, 30px);
+  }
+}
+
+.wrap {
+  @include flex($direction: column);
+}
+
+.icon {
+  @include size(rem(16px));
+  @include make-spacer(mr, 1);
+
+  fill: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(24px));
+  }
+
+  @include media-breakpoint-up(md) {
+    @include size(rem(32px));
+  }
+}
+
+.prizeList {
+  @include reset-list;
+  @include flex(center, center, row, wrap);
+  @include make-spacer(mt, 4);
+
+  color: var(--white);
+}
+
+.wrapDropDown {
+  @include make-spacer(pt, 1);
+
+  position: relative;
+  margin: auto;
+  width: rem(256px);
+  text-align: center;
+}

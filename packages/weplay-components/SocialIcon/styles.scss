@@ -1,0 +1,116 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include transition(color);
+
+  display: block;
+
+  &.grey {
+    color: var(--grey-400);
+  }
+
+  &.blue {
+    color: var(--blue);
+  }
+
+  &.darkBlue {
+    color: var(--dark-blue);
+  }
+
+  &.white {
+    color: var(--white);
+  }
+
+  &.magenta {
+    color: var(--magenta);
+  }
+
+  &.telegramMedia {
+
+    &:hover,
+    &:active {
+      color: var(--telegram);
+    }
+  }
+
+  &.facebook {
+
+    &:hover,
+    &:active {
+      color: var(--facebook);
+    }
+  }
+
+  &.twitter {
+
+    &:hover,
+    &:active {
+      color: var(--twitter);
+    }
+  }
+
+  &.linkedin {
+
+    &:hover,
+    &:active {
+      color: var(--linkedin);
+    }
+  }
+
+  &.vk {
+
+    &:hover,
+    &:active {
+      color: var(--vk);
+    }
+  }
+
+  &.reddit {
+
+    &:hover,
+    &:active {
+      color: var(--reddit);
+    }
+  }
+
+  &.darkGrey {
+    color: var(--grey-500);
+
+    &:hover,
+    &:active {
+      color: var(--white);
+    }
+  }
+
+  &.youtube {
+
+    &:hover,
+    &:active {
+      color: var(--youtube);
+    }
+  }
+
+  &.twitch {
+
+    &:hover,
+    &:active {
+      color: var(--twitch);
+    }
+  }
+
+  &.steam {
+
+    &:hover,
+    &:active {
+      color: var(--steam);
+    }
+  }
+
+  &.instagram {
+
+    &:hover,
+    &:active {
+      color: var(--instagram);
+    }
+  }
+}

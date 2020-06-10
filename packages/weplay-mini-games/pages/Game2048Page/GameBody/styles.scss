@@ -1,0 +1,56 @@
+@import 'weplay-core/styles/_initialization.scss';
+// TODO: think about encapsulation
+@import '2048-game/src/styles/animations';
+
+
+.block {
+  @include make-spacer(p, 2);
+
+  position: relative;
+  border-radius: rem(4px);
+  background: var(--grey-500-alpha-024);
+
+  :global {
+    @import '2048-game/src/styles/game.scss';
+  }
+
+  &.modalActive {
+    @include make-spacer(p, 0);
+
+    .gameWrapper {
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+    }
+  }
+}
+
+.testBlock {
+  @include size(rem(475px));
+}
+
+.shareWrap {
+  @include make-spacer(mt, 3);
+}
+
+.gameContainer {
+  @include make-spacer(mx, auto);
+
+  line-height: 2;
+  font-size: rem(12px);
+  font-weight: 500;
+
+  @include media-breakpoint-down(xs) {
+    line-height: 1.25;
+    font-size: rem(10px);
+  }
+}
+
+.reset {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mb, 3);
+  @include font-size(16px, 24px);
+  @include flex(space-between, center);
+
+  color: var(--grey-500);
+}

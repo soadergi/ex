@@ -1,0 +1,31 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.wrapper {
+  @include flex(center, center, column);
+}
+
+.link {
+  @include font-size(12px, 16px);
+  @include make-spacer(mt, 2);
+
+  color: var(--blue);
+}
+
+.button {
+  @extend %button;
+  @extend %buttonPink;
+
+  @include font-size(16px, 44px);
+
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+
+  &.isDisabled {
+    opacity: 0.48;
+    cursor: no-drop;
+    pointer-events: none;
+  }
+}

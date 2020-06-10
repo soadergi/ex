@@ -1,0 +1,98 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$agility-gradient: (
+  start-color: #{var(--success)},
+  end-color: #{var(--warning)},
+);
+
+.winner {
+  @include flex(flex-start, center, column);
+  @include make-spacer(pt, 1);
+  @include make-spacer(mt, 2);
+  @include make-spacer(mt, 0, sm);
+
+  position: relative;
+}
+
+.label {
+  @include make-spacer(mb, 2);
+  @include font-size(20px, 24px);
+
+  text-align: center;
+  color: var(--white);
+}
+
+.container {
+  position: relative;
+}
+
+.imageWrap {
+  @include size(rem(80px));
+  @include make-spacer(mx, auto);
+  @include make-spacer(mb, 1);
+
+  position: relative;
+  border-radius: 50%;
+  padding: 2px;
+  overflow: hidden;
+
+  &::before {
+    @include size(100%);
+    @include gradient-x-three-colors(
+      #{var(--gradient-first-color-artifact-winner)},
+      #{var(--gradient-second-color-artifact-winner)},
+      50%,
+      #{var(--gradient-third-color-artifact-winner)}
+    );
+
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    content: '';
+  }
+
+  &.agility {
+
+    &::before {
+      @include gradient-x(map-get($agility-gradient, start-color), map-get($agility-gradient, end-color));
+    }
+  }
+}
+
+.figure {
+  @include flex(center, center);
+  @include size(100%);
+
+  position: relative;
+  z-index: 2;
+  border-radius: 50%;
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.name {
+  @include make-spacer(py, half);
+  @include make-spacer(px, 3);
+  @include make-spacer(mb, 0);
+  @include make-spacer(mx, auto);
+  @include font-size(22px, 32px);
+
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  border-radius: 20px;
+  background-color: var(--grey-100);
+  text-align: center;
+  color: var(--grey-500);
+  font-weight: 500;
+}

@@ -1,0 +1,23 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  position: relative;
+
+  &.hasNotification {
+    color: var(--white);
+
+    &::before {
+      @include size(14px);
+
+      display: block;
+      position: absolute;
+      top: rem(-2px);
+      right: rem(-2px);
+      border: 2px solid var(--royal-blue);
+      border-radius: 50%;
+      background-color: var(--magenta);
+      content: '';
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.wrap {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+
+  &:nth-child( odd ) {
+    @include make-spacer(pl, 0, md);
+
+    @include media-breakpoint-between(sm, md) {
+      justify-self: end;
+    }
+  }
+
+  &:nth-child( even ) {
+    @include make-spacer(pr, 0, md);
+
+    @include media-breakpoint-between(sm, md) {
+      justify-self: start;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+  }
+}

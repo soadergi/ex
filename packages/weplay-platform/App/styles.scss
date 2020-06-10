@@ -1,0 +1,27 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex($direction: column);
+
+  position: relative;
+  min-height: 100%;
+}
+
+.stickySection {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 101;
+  width: 100%;
+}
+
+.wrapper {
+  position: relative;
+  flex: 1;
+  min-height: rem(568px);
+
+  &.fullHeight {
+    min-height: 100vh;
+  }
+}

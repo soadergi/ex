@@ -1,0 +1,69 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex(center, center);
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 101;
+  background-color: var(--royal-blue);
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrap {
+  @include make-spacer(mx, auto);
+  @include flex(center, center, column);
+
+  width: 100%;
+  max-width: rem(288px);
+
+  @include media-breakpoint-up(sm) {
+    max-width: rem(376px);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(632px);
+  }
+}
+
+.backgroundImage {
+  z-index: -1;
+}
+
+.icon {
+  @include font-size(102px);
+
+  color: var(--blue);
+}
+
+.title {
+  @include make-spacer(mt, 3);
+  @include font-size(24px, 32px);
+
+  text-align: center;
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.description {
+  @include make-spacer(mt, 3);
+  @include font-size(14px, 22px);
+
+  text-align: center;
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.share {
+  @include make-spacer(mt, 6);
+}

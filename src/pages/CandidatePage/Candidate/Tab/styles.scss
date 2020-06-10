@@ -1,0 +1,98 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.button {
+  @include font-size(16px, 16px);
+  @include make-spacer(p, 0);
+
+  position: relative;
+  flex: auto;
+  border: 0;
+  background-color: transparent;
+  height: rem(32px);
+  text-align: center;
+  color: var(--grey-500);
+
+  &::before {
+    @include transition(#{opacity, visibility});
+
+    position: absolute;
+    top: 0;
+    left: -1px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    box-shadow: 2px 2px 31px var(--royal-blue-alpha-016);
+    background: var(--white);
+    width: calc(100% + 2px);
+    height: 100%;
+    content: '';
+  }
+
+  &:first-child,
+  &:first-child::before {
+    border-radius: 1rem 0 0 1rem;
+
+    @include media-breakpoint-up(sm) {
+      border-radius: rem(40px) 0 0 rem(40px);
+    }
+
+    @include media-breakpoint-up(md) {
+      border-radius: rem(56px) 0 0 rem(56px);
+    }
+  }
+
+  &:last-child,
+  &:last-child::before {
+    border-radius: 0 1rem 1rem  0;
+
+    @include media-breakpoint-up(sm) {
+      border-radius: 0 rem(40px) rem(40px) 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      border-radius: 0 rem(56px) rem(56px) 0;
+    }
+  }
+
+  &:last-child::after {
+    content: none;
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(18px, 18px);
+
+    height: rem(40px);
+  }
+
+  @include media-breakpoint-up(md) {
+    width: rem(120px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(20px, 20px);
+
+    width: rem(192px);
+  }
+
+  &.isActive {
+    background-color: var(--white);
+    color: var(--royal-blue);
+    font-weight: 500;
+
+    &::before {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+}
+
+.text {
+  display: block;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

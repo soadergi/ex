@@ -1,0 +1,47 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.pagination {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, md);
+  @include flex(space-between, center);
+
+  border-radius: 0.5rem;
+  background-color: var(--grey-100);
+  overflow: hidden;
+}
+
+.item {
+  @include size(rem(40px));
+  @include make-spacer(p, 0);
+  @include transition(#{background-color});
+
+  position: relative;
+  border: 0;
+  background-color: transparent;
+
+  &:disabled,
+  &[disabled] {
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: var(--grey-200);
+  }
+}
+
+.arrow {
+  @include absolute-center();
+  @include size(rem(16px));
+
+  fill: var(--grey-500);
+}
+
+.boubleArrow {
+  @include size(rem(24px));
+}
+
+.invert {
+  transform: translate(-50%, -50%) rotateZ(-180deg);
+  transform-origin: center;
+}

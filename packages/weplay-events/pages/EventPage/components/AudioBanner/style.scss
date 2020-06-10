@@ -1,0 +1,16 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mx, auto);
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    width: auto;
+  }
+}
+
+.section {
+  background-color: var(--royal-blue);
+}

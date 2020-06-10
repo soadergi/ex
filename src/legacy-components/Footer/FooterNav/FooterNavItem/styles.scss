@@ -1,0 +1,93 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.text {
+
+  &::after {
+    @include size(3px);
+
+    display: inline-block;
+    margin-right: 4px;
+    margin-left: 4px;
+    border-radius: 50%;
+    background: var(--grey-500);
+    vertical-align: middle;
+    content: '';
+  }
+
+  @include media-breakpoint-only(md) {
+    opacity: 0;
+  }
+}
+
+.block {
+  display: inline;
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+
+    .text {
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.link {
+  @include transition(color);
+  @include font-size(rem(12px), rem(12px));
+
+  text-decoration: none;
+  color: var(--grey-500);
+
+  .icon {
+    @include make-spacer(mr, half);
+
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 1rem;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: var(--blue);
+  }
+}
+
+.feedback {
+  @include make-spacer(mb, 2);
+
+  display: block;
+
+  .link {
+    line-height: 1.33;
+    color: var(--white);
+
+    .text {
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .icon {
+      fill: var(--white);
+
+      @include media-breakpoint-only(md) {
+        position: relative;
+        left: 4px;
+        fill: var(--grey-500);
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: var(--blue);
+
+      .icon {
+        fill: var(--blue);
+      }
+    }
+  }
+}

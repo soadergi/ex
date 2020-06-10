@@ -1,0 +1,67 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.item {
+  @include make-spacer(mb, 6);
+
+  text-align: center;
+
+  &::before {
+    content: none;
+  }
+
+  @media (min-width: 768px) {
+    @include make-spacer(mr, 2);
+
+    flex: 0 0 30%;
+    align-self: flex-start;
+    max-width: 30%;
+    text-align: left;
+
+    &:last-child {
+      @include make-spacer(mr, 0);
+    }
+  }
+}
+
+.text {
+  @include make-spacer(mb, 1);
+
+  display: block;
+  position: relative;
+  line-height: 1.45;
+  font-size: rem(22px);
+  font-weight: 700;
+}
+
+.digit {
+  position: relative;
+  top: rem(12px);
+  left: rem(8px);
+  z-index: -1;
+  line-height: 0;
+  color: var(--blue);
+  font-size: rem(60px);
+  font-weight: 700;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    left: rem(-18px);
+  }
+}
+
+.subtext {
+  @include font-size(14px, 32px);
+
+  font-weight: 500;
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(16px, 32px);
+  }
+}
+
+.noteText {
+  @include font-size(12px, 24px);
+  @include make-spacer(mt, 1);
+
+  display: block;
+}

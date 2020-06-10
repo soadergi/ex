@@ -1,0 +1,23 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include media-breakpoint-up(sm) {
+    @include flex;
+
+    align-self: flex-start;
+    width: 100%;
+  }
+}
+
+.button {
+  align-self: flex-start;
+}
+
+.mmButton {
+  @include make-spacer(mt, 2);
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(ml, 2);
+    @include make-spacer(mt, 0);
+  }
+}

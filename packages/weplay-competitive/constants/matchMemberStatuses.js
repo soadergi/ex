@@ -1,0 +1,5 @@
+export const MATCH_MEMBER_STATUSES = {
+  OFFLINE: 'OFFLINE',
+  ONLINE: 'ONLINE',
+  READY: 'READY',
+}

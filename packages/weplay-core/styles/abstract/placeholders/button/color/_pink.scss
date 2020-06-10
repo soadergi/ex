@@ -1,0 +1,12 @@
+@mixin pink {
+
+  &Pink {
+    border-color: var(--magenta);
+    background-color: var(--magenta);
+
+    &:hover {
+      border-color: var(--magenta-hover);
+      background-color: var(--magenta-hover);
+    }
+  }
+}

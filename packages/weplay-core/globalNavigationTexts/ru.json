@@ -1,0 +1,55 @@
+{
+  "locale": "ru",
+  "globalNavigation": {
+    "media": {
+      "name": "Медиа",
+      "description": "Новости, статьи и видео"
+    },
+    "events": {
+      "name": "Ивенты",
+      "description": "WePlay! Турниры и лиги"
+    },
+    "tournaments": {
+      "name": "Турнирная платформа",
+      "description": "Соревнования"
+    }
+  },
+  "footer": {
+    "rules": "Правила",
+    "blockNames": {
+      "socials": "Присоединяйся",
+      "subscription": "Подписывайся"
+    },
+    "copyright": "WePlay! Все права защищены",
+    "promoBlock" : {
+      "btnText": "Подписаться",
+      "checkboxLabel": "Разрешаю обработку моих личных данных",
+      "email": "Email"
+    },
+    "techiia": {
+      "address": "1013 Centre RD STE 403B, г. Вильмингтон, штат Делавер, США",
+      "textBefore": "Часть IT-холдинга",
+      "link": "TECHIIA",
+      "textAfter": ""
+    }
+  },
+  "header": {
+    "signInButton": "Войти",
+    "moreButton": "Больше",
+    "notifications": {
+      "title": "Уведомления",
+      "markAsRead": "Пометить как прочитанное",
+      "settings": "Настройки",
+      "deleteTitle": "Точно удалить это уведомление?",
+      "deleteButton": "Удалить",
+      "cancelButton": "Я передумал",
+      "emptyStateTitle": "Пока тут как в Пустоши",
+      "emptyStateText": "Настрой уведомления, чтобы оживить это место"
+    }
+  },
+  "globalSeo": {
+    "title":  "ᐈ WePlay! – Новости киберспорта • Всё о киберспорте и соревновательном гейминге",
+    "description":  "WePlay! ⚡⚡⚡ Всё о киберспорте и соревновательном гейминге ⚡⚡⚡ Киберспортивные новости, аналитика, обзоры, репортажи на WePlay! Самые актуальные новости!",
+    "keywords":  "новости киберспорта"
+  }
+}

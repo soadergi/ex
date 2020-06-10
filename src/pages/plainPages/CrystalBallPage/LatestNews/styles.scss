@@ -1,0 +1,29 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.latestNews {
+  @include flex(flex-start, center);
+}
+
+.title {
+  @include font-size(14px, 22px);
+  @include make-spacer(ml, 1);
+
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+}
+
+.link {
+  @include flex(flex-start, center);
+  @include transition(color);
+  @include make-spacer(mr, 2);
+
+  color: var(--white);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--blue);
+  }
+}

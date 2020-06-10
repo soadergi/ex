@@ -1,0 +1,22 @@
+@mixin border-magenta {
+
+  &BorderMagenta {
+    border-color: var(--magenta);
+    background-color: transparent;
+    color: var(--magenta);
+
+    .icon {
+      fill: var(--magenta);
+    }
+
+    &:hover {
+      border-color: var(--magenta-hover);
+      background-color: var(--magenta-hover);
+      color: var(--white);
+
+      .icon {
+        fill: var(--white);
+      }
+    }
+  }
+}

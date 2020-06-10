@@ -1,0 +1,155 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$item-height: rem(48px);
+$item-width: rem(208px);
+
+.user {
+  @include flex(flex-start, center);
+}
+
+.name,
+.score {
+  color: var(--grey-500);
+}
+
+.score {
+  @include make-spacer(ml, 1);
+  @include font-size(16px, 24px);
+
+  display: block;
+  min-width: 1rem;
+  text-align: center;
+  color: var(--grey-500);
+}
+
+.name {
+  @include font-size(12px, 16px);
+
+  display: block;
+  flex: 0 0 6.5rem;
+  max-width: 6.5rem;
+  max-height: rem(30px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+  word-wrap: break-word;
+  color: var(--grey-300);
+
+  &.isActive {
+    color: var(--grey-500);
+  }
+}
+
+.winner {
+
+  .name {
+    color: var(--royal-blue);
+  }
+
+  .score {
+    color: var(--blue);
+  }
+}
+
+.finalist,
+.invited {
+  @include make-spacer(mr, 1);
+  @include make-spacer(ml, half);
+  @include font-size(16px, 16px);
+
+  position: relative;
+  z-index: 2;
+}
+
+.data {
+  @include flex(space-between, center);
+
+  font-size: 1rem;
+}
+
+// TODO: Remove styles coefficient after moving to component
+
+.coefficient {
+  @include make-spacer(mx, 1);
+  @include gradient-x(#{var(--blue-active)}, #{var(--blue)});
+
+  display: block;
+  position: relative;
+  z-index: 2;
+  border-radius: rem(16px);
+  padding: 1px;
+  width: rem(48px);
+  height: rem(16px);
+
+  &:hover {
+    text-decoration: none;
+
+    .coefficientText {
+      background-color: transparent;
+      color: var(--white);
+    }
+  }
+
+  &Text {
+    @include font-size(10px, 16px);
+    @include flex(center, center);
+    @include transition(#{color, background-color});
+
+    border-radius: rem(16px);
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    color: #1164bd;
+  }
+}
+
+.userAvatar {
+  @include flex(flex-start, center);
+
+  position: relative;
+}
+
+.avatar {
+  @include size(rem(24px));
+  @include make-spacer(mr, 1);
+
+  flex: 0 0 rem(24px);
+  border-radius: 50%;
+  box-shadow: 0 4px 4px var(--blue-alpha-032);
+  max-width: rem(24px);
+}
+
+.participant {
+  @include flex(space-between, center);
+
+  box-sizing: border-box;
+  width: $item-width;
+  height: $item-height;
+  color: var(--grey-300);
+
+  &:first-child {
+    @include make-spacer(pt, 2);
+    @include make-spacer(pb, 1);
+
+    box-shadow: 0 1px 0 0 var(--grey-300);
+  }
+
+  &:last-child {
+    @include make-spacer(pb, 2);
+    @include make-spacer(pt, 1);
+  }
+
+  &.hasAvatar {
+
+    .name {
+      flex: 0 0 auto;
+      padding-top: rem(2px);
+      max-width: 100%;
+    }
+
+    .invited {
+      margin-left: rem(-16px);
+    }
+  }
+}

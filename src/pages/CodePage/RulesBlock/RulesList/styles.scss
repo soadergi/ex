@@ -1,0 +1,15 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.list {
+  @include reset-list;
+  @include flex(flex-start, flex-start, column);
+
+  max-width: rem(320px);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: inherit;
+  }
+}

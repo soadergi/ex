@@ -1,0 +1,49 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  position: relative;
+  background-color: var(--royal-blue);
+  overflow: hidden;
+}
+
+.content {
+  @include make-spacer(py, 4);
+  @include size(100%);
+
+  display: grid;
+  position: relative;
+  text-align: center;
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include font-size(20px, 28px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.description {
+  @include make-spacer(mb, 0);
+  @include font-size(16px, 24px);
+
+  color: var(--grey-300);
+}
+
+.image {
+  position: absolute;
+  top: 55%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+
+  @include media-breakpoint-up(sm) {
+    top: 70%;
+    left: 35%;
+  }
+
+  @include media-breakpoint-up(md) {
+    top: 85%;
+    left: 43%;
+  }
+}

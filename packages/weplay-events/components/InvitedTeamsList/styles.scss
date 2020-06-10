@@ -1,0 +1,42 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.grid {
+  --grid-gap: #{rem(16px)};
+
+  @include make-spacer(mx, auto);
+
+  @include media-breakpoint-up(sm) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-gap: var(--grid-gap);
+  }
+
+  @include media-breakpoint-up(md) {
+    --grid-gap: #{rem(24px)};
+  }
+
+  @include media-breakpoint-up(lg) {
+    --grid-gap: #{rem(40px)};
+  }
+
+  &.paddingBottom {
+    @include make-spacer(pb, 4);
+    @include make-spacer(pb, 7, md);
+    @include make-spacer(pb, 8, lg);
+
+    &.forgeOfMastersGroup {
+      @include make-spacer(pb, 0);
+    }
+  }
+}
+
+.gridItem {
+  position: relative;
+
+  @include media-breakpoint-down(xs) {
+
+    &:not( :last-child ) {
+      @include make-spacer(mb, 2);
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.close {
+  display: block;
+  position: absolute;
+  top: rem(8px);
+  right: rem(8px);
+  z-index: 1;
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--grey-300);
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &:hover {
+    color: var(--blue);
+  }
+}
+
+.block {
+  @include make-spacer(pt, 5);
+  @include make-spacer(pt, 0, sm);
+
+  position: fixed;
+  top: var(--wp-sticky-section-height);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: none;
+  z-index: 95;
+  border: 0;
+  border-radius: 0;
+  background-color: var(--white);
+  min-width: rem(288px);
+  max-width: none;
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    @include box-shadow;
+
+    position: relative;
+    top: 0;
+    z-index: 11;
+    border: 1px solid var(--grey-300);
+    border-radius: rem(8px);
+    width: 100%;
+    max-width: rem(288px);
+
+    .close {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+//
+// Font size
+//
+
+$wp-fs-base: rem(16px);
+$wp-fs-p: $wp-fs-base;
+$wp-fs-h1-lg: rem(48px);
+$wp-fs-h1: rem(40px);
+$wp-fs-h2: rem(32px);
+$wp-fs-h3: rem(24px);
+$wp-fs-h4: rem(20px);
+$wp-fs-h5: $wp-fs-base;
+$wp-fs-h6: $wp-fs-base;
+
+//
+// Line height
+//
+
+$wp-lh-base: (rem(24px) / $wp-fs-p);
+$wp-lh-h1-lg: (rem(60px) / $wp-fs-h1-lg);
+$wp-lh-h1: (rem(50px) / $wp-fs-h1);
+$wp-lh-h2: (rem(40px) / $wp-fs-h2);
+$wp-lh-h3: (rem(30px) / $wp-fs-h3);
+$wp-lh-h4: (rem(24px) / $wp-fs-h4);
+$wp-lh-h5: (rem(24px) / $wp-fs-h5);
+$wp-lh-h6: (rem(24px) / $wp-fs-h6);
+
+//
+// Headings
+//
+
+$headings-styles: (
+  'h1': (
+    null: ($wp-fs-h1, 700, $wp-lh-h1),
+    sm: ($wp-fs-h1, 700, $wp-lh-h1),
+    md: ($wp-fs-h1, 700, $wp-lh-h1),
+    lg: ($wp-fs-h1, 700, $wp-lh-h1),
+    xl: ($wp-fs-h1-lg, 700, $wp-lh-h1-lg)
+  ),
+  'h2': (
+    null: ($wp-fs-h2, 700, $wp-lh-h2),
+    sm: ($wp-fs-h2, 700, $wp-lh-h2),
+    md: ($wp-fs-h2, 700, $wp-lh-h2),
+    lg: ($wp-fs-h2, 700, $wp-lh-h2),
+    xl: ($wp-fs-h2, 700, $wp-lh-h2)
+  ),
+  'h3': (
+    null: ($wp-fs-h3, 700, $wp-lh-h3),
+    sm: ($wp-fs-h3, 700, $wp-lh-h3),
+    md: ($wp-fs-h3, 700, $wp-lh-h3),
+    lg: ($wp-fs-h3, 700, $wp-lh-h3),
+    xl: ($wp-fs-h3, 700, $wp-lh-h3)
+  ),
+  'h4': (
+    null: ($wp-fs-h4, 700, $wp-lh-h4),
+    sm: ($wp-fs-h4, 700, $wp-lh-h4),
+    md: ($wp-fs-h4, 700, $wp-lh-h4),
+    lg: ($wp-fs-h4, 700, $wp-lh-h4),
+    xl: ($wp-fs-h4, 700, $wp-lh-h4)
+  ),
+  'h5': (
+    null: ($wp-fs-h5, 700, $wp-lh-h5),
+    sm: ($wp-fs-h5, 700, $wp-lh-h5),
+    md: ($wp-fs-h5, 700, $wp-lh-h5),
+    lg: ($wp-fs-h5, 700, $wp-lh-h5),
+    xl: ($wp-fs-h5, 700, $wp-lh-h5)
+  ),
+  'h6': (
+    null: ($wp-fs-h6, 700, $wp-lh-h6),
+    sm: ($wp-fs-h6, 700, $wp-lh-h6),
+    md: ($wp-fs-h6, 700, $wp-lh-h6),
+    lg: ($wp-fs-h6, 700, $wp-lh-h6),
+    xl: ($wp-fs-h6, 700, $wp-lh-h6)
+  )
+);
+
+$headings-class-names: (
+  '.c-h1': (
+    null: ($wp-fs-h1, 700, $wp-lh-h1),
+    sm: ($wp-fs-h1, 700, $wp-lh-h1),
+    md: ($wp-fs-h1, 700, $wp-lh-h1),
+    lg: ($wp-fs-h1, 700, $wp-lh-h1),
+    xl: ($wp-fs-h1-lg, 700, $wp-lh-h1-lg)
+  ),
+  '.c-h2': (
+    null: ($wp-fs-h2, 700, $wp-lh-h2),
+    sm: ($wp-fs-h2, 700, $wp-lh-h2),
+    md: ($wp-fs-h2, 700, $wp-lh-h2),
+    lg: ($wp-fs-h2, 700, $wp-lh-h2),
+    xl: ($wp-fs-h2, 700, $wp-lh-h2)
+  ),
+  '.c-h3': (
+    null: ($wp-fs-h3, 700, $wp-lh-h3),
+    sm: ($wp-fs-h3, 700, $wp-lh-h3),
+    md: ($wp-fs-h3, 700, $wp-lh-h3),
+    lg: ($wp-fs-h3, 700, $wp-lh-h3),
+    xl: ($wp-fs-h3, 700, $wp-lh-h3)
+  ),
+  '.c-h4': (
+    null: ($wp-fs-h4, 700, $wp-lh-h4),
+    sm: ($wp-fs-h4, 700, $wp-lh-h4),
+    md: ($wp-fs-h4, 700, $wp-lh-h4),
+    lg: ($wp-fs-h4, 700, $wp-lh-h4),
+    xl: ($wp-fs-h4, 700, $wp-lh-h4)
+  ),
+  '.c-h5': (
+    null: ($wp-fs-h5, 700, $wp-lh-h5),
+    sm: ($wp-fs-h5, 700, $wp-lh-h5),
+    md: ($wp-fs-h5, 700, $wp-lh-h5),
+    lg: ($wp-fs-h5, 700, $wp-lh-h5),
+    xl: ($wp-fs-h5, 700, $wp-lh-h5)
+  ),
+  '.c-h6': (
+    null: ($wp-fs-h6, 700, $wp-lh-h6),
+    sm: ($wp-fs-h6, 700, $wp-lh-h6),
+    md: ($wp-fs-h6, 700, $wp-lh-h6),
+    lg: ($wp-fs-h6, 700, $wp-lh-h6),
+    xl: ($wp-fs-h6, 700, $wp-lh-h6)
+  )
+);

@@ -1,0 +1,104 @@
+@import 'config';
+
+.playoff {
+  display: grid;
+  position: relative;
+  grid-template-rows: rem(32px) 1fr;
+  grid-row-gap: rem(32px);
+  z-index: 1;
+  padding-right: $one-pixel;
+  padding-left: $one-pixel;
+
+  &.hasGrandFinal {
+    justify-content: end;
+    z-index: 0;
+    padding-left: 0;
+  }
+
+  &.hasConnector {
+
+    &::before {
+      @include size(50%, $one-pixel);
+
+      display: block;
+      position: absolute;
+      top: calc(50% + #{$game-padding-y - $one-pixel});
+      right: 0;
+      z-index: -1;
+      background-color: var(--grey-300);
+      content: '';
+    }
+  }
+
+  &.superFinal {
+    @include make-spacer(px, 0);
+    @include make-spacer(pt, 5);
+
+    grid-auto-rows: auto;
+    justify-content: center;
+  }
+
+  &.hasFinalRound {
+    @include make-spacer(pr, 0);
+    @include make-spacer(pt, 5);
+
+    grid-auto-rows: auto;
+    justify-content: center;
+    padding-left: rem(2px);
+  }
+
+  &.fullBracketSuperFinal {
+    @include make-spacer(pt, 0);
+    @include make-spacer(pl, 6);
+
+    &.hasConnector {
+
+      &::before {
+        @include size(100%, $one-pixel);
+
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        z-index: -1;
+        background-color: var(--grey-300);
+        content: '';
+      }
+    }
+  }
+
+  &.isTournamentModule {
+    padding-right: rem(2px);
+    padding-left: rem(2px);
+  }
+
+  &.forgeOfMastersLan {
+    @include make-spacer(px, 0);
+
+    justify-content: start;
+  }
+}
+
+.grid {
+  @include flex(flex-start, stretch);
+
+  position: relative;
+  width: 100%;
+
+  &.isReverted {
+    top: -$one-pixel;
+    transform: scaleX(-1);
+  }
+}
+
+.note {
+  @include flex($align-items: center);
+  @include font-size(12px, 16px);
+
+  color: var(--grey-400);
+}
+
+.iconNote {
+  @include make-spacer(mr, 1);
+  @include size(rem(24px));
+}

@@ -1,0 +1,122 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  position: relative;
+}
+
+.content {
+  @include make-spacer(p, 2);
+
+  display: grid;
+  grid-template-columns: rem(24px) 1fr rem(24px);
+  grid-column-gap: rem(8px);
+  align-items: start;
+
+  &.isUnread {
+    background-color: var(--grey-100);
+  }
+}
+
+.icon {
+  color: var(--grey-500);
+}
+
+.text {
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 18px);
+
+  word-break: break-word;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(14px, 21px);
+  }
+}
+
+.textWrap {
+  cursor: pointer;
+}
+
+.btnWrap {
+  @include flex($display: column);
+  @include make-spacer(mt, 1);
+  @include font-size(12px, 18px);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between);
+  }
+}
+
+.date {
+  @include reset-list;
+  @include make-spacer(mt, 1);
+  @include make-spacer(mt, 0, sm);
+
+  li {
+    display: inline-block;
+
+    &:last-child {
+      @include make-spacer(ml, half);
+      @include make-spacer(pl, 1);
+
+      position: relative;
+
+      &::before {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        content: '\2022';
+      }
+    }
+  }
+}
+
+.button {
+  @include make-spacer(px, 0);
+
+  color: var(--grey-500);
+}
+
+.separator {
+  @include make-spacer(mx, half);
+}
+
+.alert {
+  @include make-spacer(p, 2);
+}
+
+.message {
+  @include flex($align-items: center);
+  @include font-size(14px, 21px);
+
+  font-weight: 700;
+}
+
+.controlsWrap {
+  @include flex;
+  @include make-spacer(pl, 4);
+}
+
+.alertButton {
+  color: var(--royal-blue);
+
+  &:hover {
+    background-color: var(--grey-100);
+    color: var(--royal-blue);
+  }
+}
+
+.remove {
+  @include make-spacer(mr, 2);
+  @include make-spacer(px, 2);
+
+  background-color: var(--error);
+  color: var(--white);
+
+  &:hover {
+    background-color: var(--error-hover);
+    color: var(--white);
+  }
+}

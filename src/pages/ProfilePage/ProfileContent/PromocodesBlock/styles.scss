@@ -1,0 +1,40 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 3);
+  @include make-spacer(mt, 3, sm);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 4, sm);
+
+  position: relative;
+  background-position: center;
+  background-repeat: repeat-y;
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    border-radius: rem(8px);
+  }
+}
+
+.title {
+  @include make-spacer(mb, 2);
+  @include font-size(18px, 32px);
+
+  max-width: rem(378px);
+  font-weight: 500;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.button {
+  @extend %button;
+}
+
+.text {
+  @include make-spacer(mb, 3);
+
+  max-width: rem(378px);
+  line-height: 1.75;
+}

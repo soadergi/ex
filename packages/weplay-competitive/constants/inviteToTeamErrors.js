@@ -1,0 +1,5 @@
+export const INVITE_TO_TEAM_ERRORS = {
+  EXPIRED_LINK: 2,
+  ONLY_ONE_TEAM: 3,
+  BANNED_MEMBER: 4,
+}

@@ -1,0 +1,22 @@
+{
+  "name": "weplay-mini-games",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "2048-game": "^1.0.2",
+    "@loadable/component": "^5.10.2",
+    "classnames": "^2.2.5",
+    "moment": "^2.24.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.4",
+    "reselect": "^4.0.0",
+    "weplay-components": "^17.2.0",
+    "weplay-core": "^18.2.0",
+    "weplay-mini-games": "^1.0.0",
+    "weplay-singleton": "^0.5.5"
+  }
+}

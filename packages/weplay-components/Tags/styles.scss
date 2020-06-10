@@ -1,0 +1,7 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.tags {
+  @include reset-list;
+  @include flex(flex-start, center, row, wrap);
+  @include make-spacer(mb, 1);
+}

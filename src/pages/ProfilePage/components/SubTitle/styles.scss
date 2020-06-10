@@ -1,0 +1,8 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mt, 3);
+  @include make-spacer(mb, 0);
+
+  color: var(--grey-500);
+}

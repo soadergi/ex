@@ -1,0 +1,162 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mb, 3);
+
+  border: 1px solid var(--grey-200);
+  border-radius: rem(8px);
+  width: 100%;
+  overflow: hidden;
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+
+  &.isOpened {
+
+    .body {
+      height: auto;
+    }
+  }
+
+  &.hasSuccess {
+
+    .icon,
+    .description,
+    .body,
+    .header .btn {
+      display: none;
+    }
+
+    .title {
+      color: var(--blue);
+      font-weight: 500;
+    }
+  }
+
+  &.isClosed {
+
+    .content {
+      @include flex(flex-start, center);
+
+      @include media-breakpoint-down(xs) {
+        @include flex(flex-start, flex-start);
+      }
+    }
+
+    .textBlock {
+      @include make-spacer(ml, 2);
+
+      @include media-breakpoint-down(xs) {
+        @include make-spacer(ml, 1);
+      }
+    }
+
+    .description {
+      @include make-spacer(mb, 0);
+    }
+  }
+}
+
+.header {
+  @include flex(flex-start, stretch, column);
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 4, sm);
+  @include make-spacer(py, 2);
+
+  background-color: var(--grey-100);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center, row, wrap);
+  }
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.title {
+  @include font-size(22px, 32px);
+  @include flex(flex-start, center);
+  @include make-spacer(mb, 0);
+
+  font-weight: 400;
+
+  @include media-breakpoint-down(xs) {
+    max-width: 90%;
+  }
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
+
+}
+
+.checkWhite {
+  color: var(--white);
+}
+
+.description {
+  @include font-size(14px, 24px);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+
+  color: var(--grey-500);
+}
+
+.btn {
+  @include transition(#{opacity, visibility, background-color, border-color});
+
+  visibility: visible;
+  opacity: 1;
+
+  @include media-breakpoint-down(xs) {
+    width: 100%;
+  }
+
+  &.isHidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.body {
+  height: 0;
+}
+
+.container {
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 4, sm);
+  @include make-spacer(pt, 3);
+  @include make-spacer(pb, 4);
+}
+
+.successBtn {
+  @include make-spacer(px, half);
+  @include size(rem(48px));
+
+  flex-basis: auto;
+  flex-shrink: 0;
+  border: 0;
+  background: linear-gradient(260deg, #{var(--blue)} 0%, #{var(--blue-active)} 100%);
+  min-width: auto;
+  pointer-events: none;
+
+  .icon {
+    margin-right: 0;
+
+    @include media-breakpoint-down(xs) {
+      font-size: rem(14px);
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    @include size(rem(32px));
+
+    font-size: 0.8rem;
+  }
+}

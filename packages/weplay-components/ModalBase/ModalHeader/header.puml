@@ -1,0 +1,9 @@
+@startuml
+
+Object Header {
+    title: string
+    children: node
+    className: string
+}
+
+@enduml

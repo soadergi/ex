@@ -1,0 +1,53 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.info {
+  @include make-spacer(ml, 1);
+
+  flex: 1;
+}
+
+.status {
+  @include flex(space-between, center, wrap);
+}
+
+.name {
+  @include transition(color);
+  @include font-size(14px, 21px);
+
+  display: block;
+  color: var(--royal-blue);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--blue);
+  }
+}
+
+.subtitle {
+  @include font-size(12px, 16px);
+
+  display: block;
+  color: var(--grey-500);
+}
+
+.block {
+  @include flex(flex-start, center, row);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.playerInfo {
+  @include flex($align-items: center, $display: inline-flex);
+}
+
+.steam {
+  @include make-spacer(ml, 1);
+
+  color: var(--black);
+
+  &:hover {
+    color: var(--blue);
+  }
+}

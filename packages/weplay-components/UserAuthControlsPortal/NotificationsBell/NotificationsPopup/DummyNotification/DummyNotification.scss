@@ -1,0 +1,19 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(p, 2);
+
+  @include media-breakpoint-up(sm) {
+    width: rem(296px);
+  }
+}
+
+.description {
+  @include make-spacer(mb, 3);
+  @include font-size(12px, 18px);
+}
+
+.button {
+  width: 100%;
+}

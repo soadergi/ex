@@ -1,0 +1,92 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(px, 2);
+  @include make-spacer(py, 3);
+  @include make-spacer(p, 6, md);
+
+  position: relative;
+  border: 1px solid var(--grey-100);
+  border-radius: rem(2px);
+  overflow: hidden;
+  text-align: center;
+}
+
+.success {
+  @include make-spacer(my, 13);
+
+  text-align: center;
+}
+
+.successIcon {
+  @include size(rem(72px));
+  @include make-spacer(mx, auto);
+  @include make-spacer(mb, 3);
+
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--success);
+}
+
+.icon {
+  @include absolute-center;
+
+  color: var(--white);
+}
+
+.bgImage {
+  @include size(rem(780px), auto);
+
+  position: absolute;
+  top: rem(48px);
+  right: rem(-128px);
+  z-index: -1;
+}
+
+.formFieldsWrapper {
+  @include size(rem(288px), auto);
+  @include make-spacer(mx, auto);
+  @include transition(#{transform, opacity});
+
+  transform: translateY(-56px);
+  transform-origin: center;
+  transition-delay: 100ms;
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+
+  &.isOpen {
+    @include make-spacer(mb, 3);
+    @include make-spacer(mb, 6, md);
+
+    transform: translateY(0);
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    pointer-events: all;
+
+    @include media-breakpoint-up(sm) {
+      width: rem(288px);
+    }
+  }
+}
+
+.titleWrap {
+  text-align: center;
+}
+
+.title {
+  @include font-size(32px, 40px);
+  @include make-spacer(mb, 3);
+}
+
+.text {
+  @include make-spacer(mb, 3);
+
+  color: var(--grey-500);
+}
+
+.button {
+  @extend %buttonPink;
+}

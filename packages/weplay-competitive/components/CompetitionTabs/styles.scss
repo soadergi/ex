@@ -1,0 +1,106 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.indicator {
+  @include font-size(12px, 16px);
+
+  color: var(--grey-500);
+
+  .link {
+    @include font-size(12px, 16px);
+
+    display: block;
+    white-space: nowrap;
+  }
+
+  &.isActive {
+    @include make-spacer(pb, 1);
+    @include make-spacer(pb, 0, md);
+
+    background-color: var(--grey-500-alpha-024);
+    color: var(--white);
+    font-weight: var(--wp-font-weight-bold);
+
+    @include media-breakpoint-up(md) {
+      background-color: transparent;
+      color: var(--blue);
+      font-weight: var(--wp-font-weight-regular);
+    }
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.list {
+  $one-pixel: rem(1px);
+
+  @include make-spacer(mb, 3);
+
+  position: relative;
+
+  &::after {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #1f2b42;
+    width: 100%;
+    height: $one-pixel;
+    content: '';
+  }
+}
+
+.link {
+  @include font-size(16px, 24px);
+  @include make-spacer(pb, 1);
+  @include make-spacer(mr, 3);
+  @include transition;
+
+  display: inline-block;
+  color: var(--white);
+  font-weight: var(--wp-font-weight-regular);
+
+  &:hover,
+  &.isActive {
+    $one-pixel: rem(2px);
+
+    position: relative;
+    color: var(--blue);
+
+    &::after {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background-color: var(--blue);
+      width: 100%;
+      height: $one-pixel;
+      content: '';
+    }
+  }
+
+  &.isNew {
+    position: relative;
+
+    &::before {
+      @include font-size(12px);
+      @include make-spacer(p, half);
+      @include make-spacer(pl, 1);
+      @include make-spacer(pr, 1);
+
+      display: block;
+      position: absolute;
+      top: 0;
+      right: rem(-50px);
+      border-radius: rem(2px);
+      background: var(--magenta-alpha-024);
+      color: var(--magenta);
+      content: 'New';
+    }
+  }
+}

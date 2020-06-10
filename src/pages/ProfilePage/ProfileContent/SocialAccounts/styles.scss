@@ -1,0 +1,31 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.socialAccounts {
+  @include reset-list();
+
+  .item {
+    @include make-spacer(py, 3);
+
+    display: block;
+    border-bottom: 1px solid var(--grey-200);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .text {
+    @include font-size(14px, 32px);
+
+    display: inline-block;
+    padding-top: rem(2px);
+    vertical-align: middle;
+  }
+}
+
+.subtitle {
+  @include make-spacer(mb, 3);
+  @include font-size(20px, 32px);
+
+  font-weight: 700;
+}

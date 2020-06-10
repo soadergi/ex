@@ -1,0 +1,92 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex;
+}
+
+.wrapAvatar {
+  @include flex;
+}
+
+.wrapInfo {
+  @include flex($direction: column);
+}
+
+.candidateWrapper {
+  @include make-spacer(p, 3);
+  @include flex($direction: column);
+
+  position: relative;
+  border: 1px solid var(--grey-300);
+  border-radius: rem(6px);
+  background-color: var(--white);
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: 1.2fr 3fr 1fr;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: 1.7fr 3fr 1fr;
+  }
+
+  &.highLight {
+    border: 0;
+
+    &::before {
+      --start-color: var(--blue-active);
+      --end-color: var(--blue);
+
+      @include gradient-x(#{var(--start-color)}, #{var(--end-color)});
+
+      display: block;
+      position: absolute;
+      top: rem(-2px);
+      right: rem(-2px);
+      bottom: rem(-2px);
+      left: rem(-2px);
+      z-index: -1;
+      border-radius: rem(8px);
+      box-shadow: 4px 4px 16px var(--black-alpha-24);
+      content: '';
+    }
+  }
+
+  &.votingFinished {
+    border: 0;
+
+    &::before {
+      --start-color: var(--blue-active);
+      --end-color: var(--blue);
+
+      @include gradient-x(#{var(--start-color)}, #{var(--end-color)});
+
+      display: block;
+      position: absolute;
+      top: rem(-2px);
+      right: rem(-2px);
+      bottom: rem(-2px);
+      left: rem(-2px);
+      z-index: -1;
+      border-radius: rem(8px);
+      content: '';
+    }
+  }
+}
+
+.candidateVotedWrapper {
+  width: 100%;
+  max-width: calc(100% - 3rem);
+
+  @include media-breakpoint-up(sm) {
+    max-width: calc(67rem / 2);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(1080px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1392px);
+  }
+}

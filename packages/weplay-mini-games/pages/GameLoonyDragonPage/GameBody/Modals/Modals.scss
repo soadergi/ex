@@ -1,0 +1,79 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include transition(#{transform, opacity});
+  @include size(100%, 0);
+
+  transform: scale(0.8);
+  opacity: 0;
+  box-shadow: inset 0 0 rem(16px) #7289da;
+  background: var(--royal-blue-alpha-08);
+  color: var(--white);
+
+  &.visible {
+    @include make-spacer(p, 2);
+    @include make-spacer(pb, 1);
+    @include make-spacer(p, 3, md);
+    @include make-spacer(pb, 1, md);
+    @include flex($justify-content:center, $direction:column);
+
+    transform: scale(1);
+    opacity: 1;
+    height: auto;
+    min-height: rem(480px);
+  }
+
+  &.gameOver {
+    @include flex(space-between, $direction:column);
+  }
+}
+
+.title {
+  @include font-size(32px, 40px);
+  @include make-spacer(mb, 3);
+
+  text-align: center;
+  font-weight: 700;
+}
+
+.text {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 3);
+
+  text-align: center;
+}
+
+.buttonWrapper {
+  @include make-spacer(my, 3);
+
+  display: grid;
+  grid-row-gap: rem(24px);
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: rem(24px);
+  }
+}
+
+.button {
+  width: 100%;
+}
+
+.hintTitle {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 3);
+
+  text-align: left;
+}
+
+.hintText {
+  @include flex(flex-start, flex-start);
+  @include font-size(14px, 22px);
+
+  text-align: left;
+}
+
+.hintIcon {
+  @include make-spacer(mr, 1);
+}

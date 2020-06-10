@@ -1,0 +1,76 @@
+@import '../config';
+
+// Round
+
+.round {
+  --round-background: var(--grey-100);
+
+  display: grid;
+  position: relative;
+  grid-auto-flow: row;
+  align-items: center;
+  background-color: var(--round-background);
+  width: $round-width;
+
+  &.winnersToLosersLvlOne {
+    transform: translateY(-$round-shift-y-lvl-one);
+  }
+
+  &.winnersToLosersLvlTwo {
+    transform: translateY(-$round-shift-y-lvl-two);
+  }
+
+  &.winnersToWinnersLvlOne {
+    transform: translateY(-$round-shift-y-lvl-one / 2);
+  }
+
+  &.isFinal {
+    position: relative;
+    width: $game-width;
+  }
+
+  &.isGrandFinal {
+    transform: translateY(-$game-padding-y - ($one-pixel * 6)); // ($one-pixel * 6) don't ask me why this value
+
+    &.forgeOfMastersLan { // stylelint-disable-line
+      transform: translateY($one-pixel * 6);
+    }
+  }
+
+  &.isTournamentModule {
+    background-color: transparent;
+    width: $tm-round-width;
+  }
+
+}
+
+.hasOffsetTop {
+  transform: translateY($relations-match-height);
+}
+
+.hasRemoveOffSetTop {
+  transform: none;
+}
+
+.superFinal {
+  --round-background: transparent;
+}
+
+.hasFinalRound {
+  --round-background: transparent;
+}
+
+.hasWideRound {
+
+  .round {
+    @include size(rem(512px), auto);
+  }
+
+  .forgeOfMastersLeagueSecondSeason {
+    @include size(auto);
+  }
+
+  .forgeOfMastersLanSecondSeason {
+    @include size(auto);
+  }
+}

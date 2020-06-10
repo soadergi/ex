@@ -1,0 +1,26 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.text {
+  @include flex(center, center);
+  @include font-size(12px);
+  @include transition(color);
+
+  color: var(--white);
+
+  &:hover {
+    color: var(--blue);
+  }
+}
+
+.icon {
+  @include make-spacer(ml, 1);
+
+  color: var(--blue);
+}

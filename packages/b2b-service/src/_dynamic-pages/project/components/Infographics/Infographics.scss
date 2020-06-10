@@ -1,0 +1,30 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.inline {
+  @include make-spacer(mt, 5);
+  @include make-spacer(mt, 6, sm);
+
+  @include media-breakpoint-up(md) {
+    @include flex(space-between);
+  }
+}
+
+.column {
+  @include make-spacer(mt, 5);
+  @include make-spacer(mt, 6, sm);
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.imageWrap {
+  @include make-spacer(mt, 6);
+  @include make-spacer(mt, 0, md);
+}
+
+.image {
+  @include make-spacer(mx, auto);
+}

@@ -1,0 +1,19 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.gameBody {
+  @include transition(opacity);
+}
+
+.shareWrap {
+  @include make-spacer(mt, 2);
+}
+
+.tabHidden {
+  display: none;
+}
+
+.bodyHidden {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}

@@ -1,0 +1,25 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.link {
+  @include reset-button;
+  @include font-size(12px, 16px);
+
+  font-weight: var(--wp-font-weight-normal);
+
+  .icon {
+    color: var(--blue);
+  }
+
+  &:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+}
+
+.tip {
+  @include make-spacer(mt, 1);
+
+  @include media-breakpoint-up(md) {
+    text-align: center;
+  }
+}

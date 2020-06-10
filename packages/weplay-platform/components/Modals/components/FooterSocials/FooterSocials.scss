@@ -1,0 +1,7 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pt, 3);
+
+  text-align: center;
+}

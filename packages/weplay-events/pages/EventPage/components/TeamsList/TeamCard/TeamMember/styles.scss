@@ -1,0 +1,129 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 0, sm);
+  @include make-spacer(pl, 3, md);
+  @include flex(space-between, $direction: column);
+
+  position: relative;
+}
+
+.details {
+  position: relative;
+  min-height: rem(96px);
+}
+
+.label {
+  @include make-spacer(mb, 1);
+  @include font-size(12px, 16px);
+
+  color: var(--grey-500);
+}
+
+.borderArrow {
+  @include make-spacer(mr, 1);
+  @include flex(center, center);
+  @include size(rem(20px));
+
+  border-radius: 50%;
+  background-color: var(--blue);
+}
+
+.icon {
+  color: var(--royal-blue);
+}
+
+.text {
+  @include make-spacer(mb, 2);
+  @include flex;
+  @include font-size(16px, 24px);
+
+  color: var(--white);
+  font-weight: 500;
+}
+
+.link {
+  @include make-spacer(mb, 3);
+  @include font-size(18px, 24px);
+  @include transition(border-color);
+
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px solid var(--blue);
+  text-decoration: none;
+
+  &:hover {
+    border-color: transparent;
+    text-decoration: none;
+  }
+}
+
+.flag {
+  @include make-spacer(mb, 0);
+  @include size(rem(24px), rem(16px));
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  overflow: hidden;
+
+  @include media-breakpoint-only(md) {
+    right: rem(40px);
+  }
+}
+
+.preview {
+  --width: #{rem(144px)};
+
+  @include size(var(--width), auto);
+  @include make-spacer(mx, auto);
+  @include make-spacer(p, 1);
+
+  position: relative;
+  align-self: start;
+
+  &::after {
+    @include size(100%, rem(64px));
+    @include gradient-y(transparent, #{var(--royal-blue)});
+
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: rem(8px);
+    left: 0;
+    z-index: 2;
+    content: '';
+  }
+
+  @include media-breakpoint-up(md) {
+    --width: #{rem(160px)};
+  }
+
+  @include media-breakpoint-up(lg) {
+    --width: #{rem(240px)};
+  }
+}
+
+.footer {
+  @include make-spacer(pb, 4);
+  @include make-spacer(pb, 0, sm);
+
+  @include media-breakpoint-only(xs) {
+    border-bottom: 1px solid var(--dark-grey);
+  }
+
+  @include media-breakpoint-down(sm) {
+    @include flex(space-between, center);
+  }
+}
+
+.socials {
+  @include make-spacer(mt, 0);
+
+  display: grid;
+  grid-template-columns: repeat(5, rem(24px));
+  grid-gap: rem(16px);
+}

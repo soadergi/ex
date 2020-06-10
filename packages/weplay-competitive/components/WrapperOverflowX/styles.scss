@@ -1,0 +1,12 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include media-breakpoint-down(md) {
+    display: grid;
+    overflow-x: auto;
+  }
+}
+
+.wrapper {
+  white-space: nowrap;
+}

@@ -1,0 +1,12 @@
+@import '../config';
+
+.user {
+  @include flex(flex-start, center);
+
+  position: relative;
+  flex-grow: 1;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,10 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.signUpControls {
+  display: block;
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    @include flex(center, center, column);
+  }
+}

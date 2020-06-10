@@ -1,0 +1,71 @@
+@import '../config';
+
+.path {
+  @include size(100%, 50%);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  &::before {
+    @include size(50%, $one-pixel);
+
+    left: 0;
+  }
+
+  &::after {
+    @include size($one-pixel, 100%);
+
+    left: 50%;
+  }
+
+  &::before,
+  &::after {
+    display: block;
+    position: absolute;
+    top: -$one-pixel;
+    background-color: var(--grey-200);
+    content: '';
+  }
+}
+
+.connector {
+  @include size($tm-min-relations-width, 100%);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  &::before {
+    @include size(50%, $one-pixel);
+
+    display: block;
+    position: absolute;
+    top: -$one-pixel;
+    right: 0;
+    background-color: var(--grey-200);
+  }
+
+  &.isOdd {
+
+    &::before {
+      content: '';
+    }
+
+    .path {
+      top: 0;
+      bottom: auto;
+
+      &::before,
+      &::after {
+        top: auto;
+        bottom: 0;
+      }
+    }
+  }
+
+  &.isCollapsed {
+    display: none;
+  }
+}

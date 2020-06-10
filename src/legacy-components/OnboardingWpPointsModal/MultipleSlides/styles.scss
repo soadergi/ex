@@ -1,0 +1,90 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: relative;
+  height: var(--slide-height);
+
+  :global {
+
+    .slick-slider {
+      @include size(100%);
+      @include make-spacer(pb, 8);
+    }
+
+    .slick-prev {
+      display: none;
+    }
+
+    .slick-next {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .slick-dots {
+      @include reset-list;
+      @include make-spacer(mt, 2);
+
+      text-align: center;
+
+      li { // stylelint-disable-line
+        @include make-spacer(mr, 3);
+
+        display: inline-block;
+
+        button { // stylelint-disable-line
+          @extend %buttonReset;
+
+          @include size(rem(8px));
+          @include make-spacer(p, half);
+          @include font-size(0, 0);
+
+          border: 1px solid var(--white);
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        &:last-child { // stylelint-disable-line
+          @include make-spacer(mr, 0);
+        }
+      }
+
+      .slick-active { // stylelint-disable-line
+
+        button { // stylelint-disable-line
+          border-color: var(--blue);
+          background-color: var(--blue);
+        }
+      }
+    }
+  }
+}
+
+.skipButton {
+  @include font-size(14px, 40px);
+  @include make-spacer(px, 2);
+
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  color: var(--white);
+}
+
+.continueButton {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.count {
+  @include make-spacer(mx, auto);
+  @include font-size(12px, 40px);
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-weight: 700;
+}

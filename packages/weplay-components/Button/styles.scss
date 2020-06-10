@@ -1,0 +1,258 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$dot-width: rem(8px);
+$dot-height: rem(8px);
+$dot-radius: $dot-width/2;
+$dot-animation: cubic-bezier(0.18, 0.89, 0.24, 0.96);
+$dot-spacing: $dot-width + $dot-width/2;
+$ratio: 1;
+
+@mixin dot(
+  $width: $dot-width,
+  $height: $dot-height,
+  $radius: $dot-radius
+) {
+  border-radius: $radius;
+  width: $width;
+  height: $height;
+}
+
+@mixin button-disable {
+  opacity: 0.48;
+  cursor: no-drop;
+  pointer-events: none;
+}
+
+.block {
+  @include flex(center, center, $display: inline-flex);
+  @include make-spacer(py, half);
+  @include font-size(14px);
+  @include transition(#{background-color, border-color, color});
+
+  outline: none;
+  border: 0;
+  border-radius: rem(4px);
+  cursor: pointer;
+  max-width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:disabled {
+    @include button-disable;
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+
+  &.left {
+
+    .icon {
+      @include make-spacer(mr, 1);
+    }
+  }
+
+  &.right {
+    flex-direction: row-reverse;
+
+    .icon {
+      @include make-spacer(ml, 1);
+    }
+  }
+
+  &.disabled {
+    @include button-disable;
+  }
+
+  @each $button-size in $button-sizes {
+
+    &.#{map-get($button-size, size)} {
+      @include make-spacer(px, map-get($button-size, spacer));
+
+      min-height: #{rem(map-get($button-size, height))};
+    }
+  }
+
+  &.primary {
+    @each $button-color in $button-primaries {
+
+      &.#{map-get($button-color, type)} {
+        background-color: #{map-get($button-color, bg)};
+        color: #{map-get($button-color, color)};
+
+        .dots {
+          background-color: #{map-get($button-color, color)};
+          color: #{map-get($button-color, color)};
+        }
+
+        &:hover {
+          background-color: #{map-get($button-color, hoverBg)};
+        }
+      }
+    }
+
+    &.isLoading {
+      color: transparent;
+    }
+  }
+
+  &.secondary {
+    border-width: 1px;
+    border-style: solid;
+    background-color: transparent;
+
+    @each $button-outline in $button-secondaries {
+
+      &.#{map-get($button-outline, type)} {
+        border-color: #{map-get($button-outline, border)};
+        color: #{map-get($button-outline, color)};
+
+        .dots {
+          background-color: #{map-get($button-outline, color)};
+          color: #{map-get($button-outline, color)};
+        }
+
+        &:hover {
+          border-color: #{map-get($button-outline, hoverBorder)};
+          background-color: #{map-get($button-outline, hoverBg)};
+          color: #{map-get($button-outline, hoverColor)};
+        }
+      }
+    }
+
+    &.isLoading {
+      color: transparent;
+    }
+  }
+
+  &.ghost {
+    background-color: transparent;
+    color: var(--royal-blue);
+
+    &:hover {
+      background-color: var(--grey-100);
+    }
+
+    &.danger {
+      color: var(--error);
+
+      &:hover {
+        background-color: var(--error-hover);
+        color: var(--white);
+      }
+    }
+  }
+
+  &.ghostWhite {
+    background-color: transparent;
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--grey-100);
+      color: var(--royal-blue);
+    }
+
+    &.danger {
+      color: var(--error);
+
+      &:hover {
+        background-color: var(--error-hover);
+        color: var(--white);
+      }
+    }
+  }
+
+  &.link {
+    @include make-spacer(p, 0);
+
+    background-color: transparent;
+    min-height: auto;
+    color: var(--blue);
+
+    &:visited {
+      color: var(--blue-active);
+    }
+  }
+
+  &.reset {
+    @include make-spacer(p, 0);
+
+    background-color: transparent;
+  }
+
+  &.gold {
+    background-color: var(--premium);
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--premium-hover);
+    }
+  }
+}
+
+.dots {
+  @include dot;
+  @include flex;
+  @include make-spacer(mx, auto);
+
+  position: absolute;
+
+  &::before {
+    animation: dot-stretching-before 1s infinite $dot-animation;
+  }
+
+  &::after {
+    animation: dot-stretching-after 1s infinite $dot-animation;
+  }
+
+  &::before,
+  &::after {
+    @include dot;
+
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: currentColor;
+    content: '';
+  }
+}
+
+@keyframes dot-stretching-before {
+
+  0% {
+    transform: translate(0) scale($ratio, $ratio);
+  }
+
+  50%,
+  60% {
+    transform: translate(-16px) scale($ratio, $ratio);
+  }
+
+  100% {
+    transform: translate(0) scale($ratio, $ratio);
+  }
+}
+
+@keyframes dot-stretching-after {
+
+  0% {
+    transform: translate(0) scale($ratio, $ratio);
+  }
+
+  50%,
+  60% {
+    transform: translate(16px) scale(1, 1);
+  }
+
+  100% {
+    transform: translate(0) scale($ratio, $ratio);
+  }
+}

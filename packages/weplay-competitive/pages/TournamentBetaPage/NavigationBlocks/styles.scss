@@ -1,0 +1,30 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    @include make-spacer(py, 8);
+    @include font-size(192px);
+    @include transition(#{opacity, transform}, $duration: 0.6s);
+
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    opacity: 0;
+    z-index: -1;
+    background-color: var(--white);
+    min-width: 100%;
+    text-align: center;
+    color: var(--grey-100);
+    font-weight: var(--wp-font-weight-bold);
+
+    &.isInView {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+  }
+}

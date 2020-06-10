@@ -1,0 +1,17 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  width: 100%;
+}
+
+.copy {
+  @include make-spacer(pl, 2);
+  @include make-spacer(mb, 0);
+  @include font-size(rem(12px), rem(16px));
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-only(md) {
+    opacity: 0;
+  }
+}

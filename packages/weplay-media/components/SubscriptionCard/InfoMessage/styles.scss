@@ -1,0 +1,21 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 2);
+  @include make-spacer(mt, 2);
+  @include flex(flex-start, center);
+
+  border-radius: 8px;
+  background-color: var(--grey-100);
+}
+
+.text {
+  @include font-size(12px, 16px);
+
+  color: var(--royal-blue);
+  font-weight: 500;
+}
+
+.img {
+  @include make-spacer(mr, 2);
+}

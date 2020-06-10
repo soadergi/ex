@@ -1,0 +1,38 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.isPremium {
+  @include make-spacer(px, 4);
+
+  background: linear-gradient(180deg, #f8c257 0%, #cb9b3d 100%);
+  color: var(--white);
+
+  &:hover {
+    background: linear-gradient(0deg, #f8c257 0%, #cb9b3d 100%);
+    color: var(--white);
+  }
+}
+
+.text {
+  color: var(--grey-500);
+}
+
+.treasuryTitle {
+  @include make-spacer(pb, 2);
+  @include make-spacer(pt, 4);
+  @include font-size(32px, 40px);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.treasuryText {
+  @include flex(space-between, center);
+  @include make-spacer(pb, 1);
+
+  font-weight: var(--wp-font-weight-regular);
+
+  &:first-child {
+    @include make-spacer(mt, 1);
+  }
+}
+

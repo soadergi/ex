@@ -1,0 +1,9 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.counter {
+  @include make-spacer(mb, 2);
+}
+
+.members {
+  @include make-spacer(mb, 4);
+}

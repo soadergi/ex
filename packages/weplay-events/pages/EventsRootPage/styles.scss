@@ -1,0 +1,48 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.icon {
+  @include make-spacer(mr, 2);
+
+  fill: var(--blue);
+}
+
+.wrap {
+  @include make-spacer(py, 8);
+  @include size(100%);
+
+  position: relative;
+  z-index: 4;
+
+  @include media-breakpoint-up(sm) {
+    @include size(50%, auto);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include size(100%);
+  }
+}
+
+.banner {
+  position: relative;
+  background-color: var(--royal-blue);
+  overflow: hidden;
+}
+
+.backgroundUrl {
+  @include size(100%);
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0%, -50%);
+  object-fit: cover;
+
+  @include media-breakpoint-up(lg) {
+    @include size(auto);
+  }
+}
+
+.headline {
+  max-width: rem(576px);
+}

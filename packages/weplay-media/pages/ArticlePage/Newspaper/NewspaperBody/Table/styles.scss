@@ -1,0 +1,78 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(my, 4);
+
+  overflow-x: auto;
+
+  table {
+    @include font-size(14px, 22px);
+
+    border: 0;
+    word-break: keep-all;
+  }
+
+  thead,
+  thead tr {
+    background: var(--royal-blue);
+    color: var(--white);
+  }
+
+  th,
+  td {
+    @include make-spacer(p, 1);
+  }
+
+  tbody tr {
+
+    &:nth-child( odd ) {
+      background: var(--grey-100);
+    }
+  }
+
+  &.adaptive {
+
+    th {
+      display: none;
+
+      @include media-breakpoint-up(md) {
+        display: table-cell;
+      }
+    }
+
+    td {
+      @include flex;
+
+      width: 100%;
+
+      &::before {
+        width: 50%;
+        font-weight: 700;
+        content: attr(data-th) ':';
+      }
+
+      &:first-child {
+        background: var(--royal-blue);
+        color: var(--white);
+      }
+
+      @include media-breakpoint-up(md) {
+        @include make-spacer(px, 2);
+
+        display: table-cell;
+        width: auto;
+
+        &::before {
+          content: none;
+        }
+
+        &:first-child {
+          background: none;
+          color: var(--royal-blue);
+        }
+      }
+    }
+  }
+}
+

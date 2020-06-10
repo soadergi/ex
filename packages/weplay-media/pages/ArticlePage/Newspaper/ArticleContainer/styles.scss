@@ -1,0 +1,28 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mx, auto);
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 4, md);
+  @include make-spacer(px, 0, lg);
+
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1024px);
+  }
+
+  &.grid {
+    @include media-breakpoint-up(sm) {
+      display: grid;
+      grid-template-columns: rem(72px) minmax(0, 1fr);
+      grid-column-gap: rem(24px);
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: rem(72px) minmax(0, 1fr) rem(264px);
+    }
+  }
+}

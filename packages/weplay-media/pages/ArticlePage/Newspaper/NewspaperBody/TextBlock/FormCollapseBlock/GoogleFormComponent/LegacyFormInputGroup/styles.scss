@@ -1,0 +1,48 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+
+  &.hasError {
+
+    .input {
+      border-color: var(--error);
+    }
+
+    .message {
+      opacity: 1;
+      color: var(--error);
+    }
+  }
+}
+
+.label {
+  @include font-size(16px, 24px);
+}
+
+.header {
+  @include flex(flex-start, center);
+  @include make-spacer(mb, half);
+
+  &-link {
+    @include font-size(12px, 16px);
+
+    display: inline-block;
+    align-items: center;
+    margin-left: auto;
+  }
+}
+
+.message {
+  @include transition(opacity);
+  @include font-size(12px, 16px);
+
+  display: block;
+  opacity: 0;
+  margin-top: rem(2px);
+  min-height: rem(16px);
+  color: var(--grey-500);
+}
+
+.field {
+  position: relative;
+}

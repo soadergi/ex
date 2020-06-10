@@ -1,0 +1,49 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include font-size(12px, 18px);
+  @include transition(#{background-color, color, opacity});
+  @include make-spacer(px, 2);
+  @include make-spacer(mr, 2);
+  @include make-spacer(mb, 2);
+  @include flex($align-items: center, $display: inline-flex);
+
+  position: relative;
+  border: 1px solid var(--blue);
+  border-radius: rem(32px);
+  background-color: transparent;
+  cursor: pointer;
+  height: rem(30px);
+  text-transform: uppercase;
+  color: var(--blue);
+  font-weight: var(--wp-font-weight-normal);
+
+  &:hover {
+    background-color: var(--blue);
+    color: var(--white);
+  }
+
+  &.active {
+    background-color: var(--blue);
+    color: var(--white);
+  }
+
+  &.specialTag {
+    border: 1px solid var(--magenta);
+    color: var(--magenta);
+
+    &:hover {
+      background-color: var(--magenta);
+      color: var(--white);
+    }
+
+    &.active {
+      background-color: var(--magenta);
+      color: var(--white);
+    }
+  }
+
+  &.disabled {
+    opacity: 0.7;
+  }
+}

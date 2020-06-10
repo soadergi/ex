@@ -1,0 +1,9 @@
+@startuml
+
+object SocialLink {
+ path: string.isRequired,
+ icon: string.isRequired,
+ modifiers: arrayOf(strings),
+}
+
+@enduml

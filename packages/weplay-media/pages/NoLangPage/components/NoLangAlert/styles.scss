@@ -1,0 +1,22 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.descriptionText {
+  @include make-spacer(mb, 2);
+
+  color: var(--grey-500);
+  font-size: 1rem;
+
+  span {
+    color: var(--royal-blue);
+  }
+}
+
+.icon {
+  width: rem(36px);
+  height: rem(24px);
+
+  @include media-breakpoint-up(sm) {
+    width: rem(48px);
+    height: rem(30px);
+  }
+}

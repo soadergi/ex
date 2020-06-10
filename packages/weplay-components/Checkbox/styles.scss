@@ -1,0 +1,113 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.wrapper {
+  @include size(rem(20px));
+  @include make-spacer(mr, 2);
+  @include transition(background-color);
+
+  position: relative;
+  flex: 0 0 rem(20px);
+  border-radius: 2px;
+  background-color: var(--grey-300);
+  max-width: rem(20px);
+  line-height: 0;
+  font-size: rem(8px);
+
+  .icon {
+    @include absolute-center(scale(0));
+    @include transition(#{opacity, transform, visibility});
+
+    visibility: hidden;
+    opacity: 0;
+    color: var(--white);
+  }
+}
+
+.text {
+  user-select: none;
+}
+
+.block {
+  @include flex($display: inline-flex);
+
+  position: relative;
+  cursor: pointer;
+  min-height: 1rem;
+  vertical-align: middle;
+
+  // modifiers
+
+  &.white {
+    color: var(--white);
+  }
+
+  &.noMargin {
+
+    .wrapper {
+      @include make-spacer(mr, 0);
+    }
+  }
+
+  &.bordered {
+
+    .wrapper {
+      border: 1px solid var(--blue);
+    }
+  }
+
+  &.textMedium {
+    font-size: 1rem;
+  }
+
+  &.subscribeForm {
+    @include make-spacer(mb, 3);
+    @include make-spacer(mb, 0, md);
+
+    color: var(--white);
+
+    .wrapper {
+      border: rem(1px) solid var(--blue);
+    }
+
+    .text {
+      @include make-spacer(pt, half);
+      @include font-size(12px, 16px);
+
+      color: var(--white);
+    }
+  }
+
+  &.colorBlack {
+
+    .text {
+      color: var(--royal-blue);
+    }
+  }
+
+  &.colorGrey {
+    @include make-spacer(mb, 0);
+
+    .text {
+      color: var(--grey-500);
+    }
+  }
+}
+
+// css checked styles
+
+.input {
+  display: none;
+
+  &:checked {
+
+    ~ .wrapper {
+      background-color: var(--blue);
+
+      .icon {
+        transform: translate(-50%, -50%) scale(1);
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}

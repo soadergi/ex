@@ -1,0 +1,39 @@
+@import '../config';
+
+// Round
+
+.round {
+  @include make-spacer(py, 1);
+
+  display: grid;
+  position: relative;
+  grid-auto-flow: row;
+  align-items: center;
+  width: 100%;
+  min-width: $tm-min-game-width;
+  max-width: $tm-max-game-width;
+
+  &:last-child {
+    margin-right: $tm-min-relations-width * -1;
+  }
+
+  &.isOngoing {
+
+    &::before {
+      @include size(100%);
+
+      position: absolute;
+      top: 0;
+      left: $tm-min-relations-width / 2 * -1;
+      content: '';
+    }
+  }
+
+  &.isThirdPlaceMatchExist {
+    @include flex(center, $direction: column);
+  }
+
+  &.isCollapsed {
+    display: block;
+  }
+}

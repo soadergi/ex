@@ -1,0 +1,52 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+// An example how to structure `SCSS` inside selector
+// Follow this structure and safe your life
+
+// Declarations order list
+// 1. Variables must be at the top of selector
+// 2. Mixin declaration WITHOUT arguments
+// 3. Mixin declaration WITH arguments
+// 4. Regular properties
+// 5. Pseudo elements `::before`, `::after`
+// 6. Nested Selectors
+// 7. Pseudo classes `:hover`, `:active`, `:focus`, etc.
+// 8. Selector media queries
+// 9. State classes
+// 10. Modifiers
+
+.example {
+  --color: #f00;
+  $length: 50%; // 1
+
+  @include transition; // 2
+  @include size($length); // 3
+
+  display: block; // 4
+  overflow: hidden;
+
+  &::before { // 5
+    content: '';
+  }
+
+  .nestedSelectors { // 6
+    color: #f00;
+  }
+
+  &:hover { // 7
+    color: #f00;
+  }
+
+  @include media-breakpoint-up(lg) { // 8
+    text-align: center;
+    color: #30009d;
+  }
+
+  &.isActive { // 9
+    color: #0bccee;
+  }
+
+  &.modifier { // 10
+    color: #ff8f8f;
+  }
+}

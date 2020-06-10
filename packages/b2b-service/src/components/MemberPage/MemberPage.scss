@@ -1,0 +1,86 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  --wp-footer: #{rem(130px)};
+
+  overflow: hidden;
+
+  @include media-breakpoint-up(lg) {
+    --wp-footer: #{rem(88px)};
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    min-height: calc(100vh - (var(--wp-submenu-height) + var(--wp-main-header-height) + var(--wp-footer)));
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: 1fr 1.5fr 35rem;
+  }
+}
+
+.teamSlideText {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 6, md);
+  @include make-spacer(mb, 8);
+  @include size(100%);
+}
+
+.textWrap {
+  @include make-spacer(pr, 0);
+  @include make-spacer(pr, 6, md);
+}
+
+.imageWrap {
+  @include size(auto, 100%);
+}
+
+.memberImage {
+  @include size(100%, rem(178px));
+
+  object-fit: cover;
+
+  @include media-breakpoint-up(sm) {
+    @include size(100%, rem(316px));
+  }
+
+  @include media-breakpoint-up(md) {
+    @include size(100%, rem(528px));
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 100%;
+  }
+}
+
+.memberTitle {
+  @include font-size(32px, 40px);
+  @include make-spacer(mb, 3);
+
+  font-weight: 700;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(40px, 48px);
+  }
+}
+
+.memberPosition {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 3);
+
+  font-weight: 500;
+}
+
+.memberText {
+  @include font-size(16px, 24px);
+
+  white-space: pre-wrap;
+  color: var(--grey-500);
+}
+
+.image {
+  @include size(100%);
+
+  object-fit: cover;
+}

@@ -1,0 +1,20 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  text-align: center;
+  font-weight: 700;
+}
+
+.title {
+  @include font-size(12px);
+  @include make-spacer(mb, 1);
+
+  color: var(--white);
+}
+
+.counter {
+  @include font-size(24px);
+  @include make-spacer(mb, 0);
+
+  color: var(--magenta);
+}

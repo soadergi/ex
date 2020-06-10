@@ -1,0 +1,12 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(py, 3);
+  @include make-spacer(mb, 1);
+  @include flex(space-between, center);
+}
+
+
+.langSelector {
+  display: block;
+}

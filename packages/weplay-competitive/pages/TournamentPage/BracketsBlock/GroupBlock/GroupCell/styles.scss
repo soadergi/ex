@@ -1,0 +1,71 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.cell {
+  position: relative;
+
+  &:nth-child( 3 ) {
+    text-align: right;
+    font-weight: 700;
+  }
+
+  &.isCancelled {
+    background-color: var(--error-alpha-024);
+  }
+
+  &.isOngoing {
+    background-color: var(--success-alpha-024);
+  }
+}
+
+.linkText {
+  @include transition(#{opacity,transform});
+
+  transform: translateY(rem(16px));
+  opacity: 0;
+  margin-bottom: rem(2px);
+  text-decoration: underline;
+  color: var(--white);
+}
+
+.wrapper {
+  @include flex(space-between, center);
+}
+
+.link {
+  @include flex(center, center);
+  @include size(100%);
+  @include transition(background-color);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--blue);
+
+    .linkText {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.icon {
+  @include make-spacer(ml, 1);
+
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.skull {
+  @include size(rem(24px));
+
+  color: var(--magenta);
+}
+
+.arrow {
+  transform: rotateZ(-90deg);
+  color: var(--grey-500);
+}

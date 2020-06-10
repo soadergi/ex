@@ -1,0 +1,58 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.navigation {
+  @include flex(space-between, center);
+  @include make-spacer(my, 4);
+  @include make-spacer(my, 5, sm);
+  @include make-spacer(my, 6, lg);
+
+  width: 100%;
+}
+
+.navigationItem {
+  @include transition(color);
+
+  color: var(--royal-blue);
+
+  &:hover {
+    color: var(--blue);
+  }
+}
+
+.icon {
+  @include make-spacer(ml, 1);
+}
+
+.slideBtn {
+  @include flex(space-between, center);
+  @include font-size(0, 0);
+
+  &:hover {
+
+    .text,
+    .icon {
+      @include transition(color);
+
+      color: var(--blue);
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+
+  &.leftBtn {
+
+    .icon {
+      @include make-spacer(ml, 0);
+      @include make-spacer(mr, 1);
+
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.text {
+  color: var(--royal-blue);
+}

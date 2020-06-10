@@ -1,0 +1,12 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.detailsButton {
+  @include make-spacer(p, 0);
+  @include font-size(14px, 22px);
+
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  color: var(--blue);
+}

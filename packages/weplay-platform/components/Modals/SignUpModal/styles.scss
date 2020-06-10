@@ -1,0 +1,120 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.body {
+  width: 100%;
+}
+
+.header {
+  @include make-spacer(mb, 2);
+
+  position: relative;
+}
+
+.title {
+  @include font-size(28px, 32px);
+
+  font-weight: 700;
+}
+
+.subtitle {
+  @extend %buttonLink;
+
+  @include font-size(18px, 32px);
+  @include make-spacer(ml, 2);
+
+  font-weight: 400;
+}
+
+.error {
+  @include font-size(12px, 18px);
+
+  color: var(--error);
+}
+
+.checkbox {
+  @include make-spacer(mb, 3);
+}
+
+.message {
+  @extend %buttonLink;
+
+  @include font-size(12px, 12px);
+  @include make-spacer(px, 0);
+  @include make-spacer(mx, 1);
+
+  font-weight: 500;
+}
+
+.section {
+  @include make-spacer(my, 1);
+}
+
+.controls {
+  @include flex(center, center, column);
+
+  text-align: center;
+}
+
+.signUpControls {
+  display: block;
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    @include flex(center, center, column);
+  }
+}
+
+.link {
+  @extend %buttonLink;
+
+  @include font-size(12px, 12px);
+  @include make-spacer(px, 0);
+  @include make-spacer(mx, auto);
+  @include make-spacer(mt, 1);
+
+  display: block;
+  font-weight: 500;
+}
+
+.checkboxText {
+  @include font-size(12px, 20px);
+}
+
+.footer {
+  @include make-spacer(pt, 3);
+
+  text-align: center;
+}
+
+.line {
+  @include make-spacer(mb, 2);
+
+  position: relative;
+
+  &::after {
+    @include size(100%, 1px);
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: 1px;
+    background-color: var(--grey-300);
+    content: '';
+  }
+}
+
+.button {
+  width: 100%;
+}
+
+.footerTitle {
+  @include font-size(12px, 16px);
+  @include make-spacer(px, 1);
+
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  background-color: var(--white);
+  color: var(--grey-500);
+}
+

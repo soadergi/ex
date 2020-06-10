@@ -1,0 +1,145 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+@import './config';
+
+.block {
+  @include make-spacer(p, 2);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 0;
+  row-gap: rem(16px);
+  border-top: 1px solid var(--grey-200);
+  border-right: 1px solid var(--grey-200);
+  border-left: 1px solid var(--grey-200);
+
+  &:last-child {
+    border-bottom: 1px solid var(--grey-200);
+  }
+
+  @include media-breakpoint-up(sm) {
+    column-gap: rem(8px);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: rem(104px) rem(320px) 1fr rem(160px);
+    align-items: flex-start;
+    row-gap: 0;
+  }
+}
+
+.isFinished {
+
+  &.block,
+  .match {
+    background-color: var(--grey-100);
+  }
+}
+
+.wrapStatusMatch {
+  @include flex($align-items: center);
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(16px);
+  }
+}
+
+.wrapLinks {
+  @include flex(center, center);
+
+  grid-column: 1;
+  justify-content: flex-end;
+
+  @include media-breakpoint-only(sm) {
+    grid-column: 3;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column: auto;
+    justify-content: flex-start;
+    column-gap: rem(16px);
+  }
+}
+
+.time {
+  @include make-spacer(mr, 2);
+  @include make-spacer(mr, 0, md);
+  @include font-size(14px, 22px);
+}
+
+.live {
+  @include make-spacer(px, 1);
+  @include make-spacer(py, half);
+  @include font-size(12px);
+
+  display: inline-grid;
+  align-items: center;
+  border-radius: rem(2px);
+  background-color: var(--magenta);
+  text-align: center;
+  color: var(--white);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.participants {
+  grid-column: 1/3;
+
+  @include media-breakpoint-up(md) {
+    grid-column: auto;
+  }
+}
+
+.nameMatch {
+  @include make-spacer(ml, 0);
+  @include make-spacer(ml, 3, md);
+  @include font-size(14px, 22px);
+
+  grid-column: 1/3;
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    grid-column: 1/2;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-column: auto;
+  }
+}
+
+.scrollButton {
+  @include make-spacer(p, 0);
+  @include make-spacer(mr, 2);
+  @include make-spacer(mr, 0, md);
+  @include font-size(14px, 22px);
+
+  border: 0;
+  background-color: transparent;
+  color: var(--magenta);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.match {
+  display: grid;
+  row-gap: rem(8px);
+  position: relative;
+  grid-column: 1/4;
+  background-color: var(--white);
+
+  .detailsButton {
+    @include make-spacer(px, 0);
+    @include font-size(14px, 22px);
+
+    position: relative;
+    border: 0;
+    background-color: transparent;
+    color: var(--blue);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-column: auto;
+  }
+}

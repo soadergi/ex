@@ -1,0 +1,61 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  display: block;
+
+  :global {
+
+    .slick-arrow {
+      @include reset-button;
+      @include size(rem(72px));
+      @include font-size(16px);
+      @include transition(#{background-color, color});
+
+      position: absolute;
+      z-index: 1;
+      border-radius: 50%;
+      background-color: var(--blue);
+      color: var(--white);
+
+      &::before {
+        @include absolute-center;
+        @include size(rem(100px));
+        @include transition(#{background-color});
+
+        border-radius: 50%;
+        background-color: var(--blue-alpha-016);
+        content: '';
+      }
+
+      &:hover {
+        background-color: var(--white);
+        color: var(--blue);
+
+        &::before {
+          background-color: var(--white-alpha-024);
+        }
+      }
+    }
+
+    .slick-prev {
+      top: 50%;
+      left: rem(50px);
+
+      @include media-breakpoint-up(xl) {
+        left: 16.5%;
+        transform: translate(-16.5%, -50%);
+      }
+    }
+
+    .slick-next {
+      top: 50%;
+      right: rem(50px);
+
+      @include media-breakpoint-up(xl) {
+        right: 15.5%;
+        transform: translate(-15.5%, -50%);
+      }
+    }
+  }
+}

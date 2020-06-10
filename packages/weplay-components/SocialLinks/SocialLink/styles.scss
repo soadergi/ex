@@ -1,0 +1,204 @@
+// ------------------------------------
+//   #C-SOCIAL-LINKS-ITEM
+// ------------------------------------
+
+@import 'weplay-core/styles/_initialization.scss';
+
+.icon {
+  color: var(--grey-500-alpha-04);
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+
+    .vk {
+      color: var(--vk-hover);
+    }
+
+    .facebook {
+      color: var(--facebook-hover);
+    }
+
+    .twitter {
+      color: var(--twitter-hover);
+    }
+
+    .instagram {
+      color: var(--instagram-hover);
+    }
+
+    .youtube {
+      color: var(--youtube-hover);
+    }
+
+    .telegramMedia {
+      color: var(--telegram-hover);
+    }
+
+    .zendesk {
+      color: var(--youtube);
+    }
+
+    .twitch {
+      color: var(--twitch-hover);
+    }
+
+    .liquipedia {
+      color: #042b4c;
+    }
+  }
+
+  &.white {
+
+    .icon {
+      color: var(--white);
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      .vk {
+        color: var(--vk-hover);
+      }
+
+      .facebook {
+        color: var(--facebook-hover);
+      }
+
+      .twitter {
+        color: var(--twitter-hover);
+      }
+
+      .instagram {
+        color: var(--instagram-hover);
+      }
+
+      .youtube {
+        color: var(--youtube-hover);
+      }
+
+      .telegramMedia {
+        color: var(--telegram-hover);
+      }
+
+      .zendesk {
+        color: var(--youtube);
+      }
+    }
+  }
+
+  &.footer {
+
+    .icon {
+      color: var(--grey-500);
+
+      &:hover {
+        color: var(--white);
+      }
+    }
+  }
+
+  &.promo {
+    @include size(rem(32px));
+    @include flex(center, center);
+
+    border-radius: 50%;
+
+    .icon { // stylelint-disable-line
+      color: var(--white);
+    }
+
+    &:hover {
+
+      .icon {
+        color: var(--white);
+      }
+
+      &.facebook {
+        background-color: var(--facebook-hover);
+      }
+
+      &.linkedin {
+        background-color: var(--linkedin-hover);
+      }
+
+      &.vk {
+        background-color: var(--vk-hover);
+      }
+
+      &.twitter {
+        background-color: var(--twitter-hover);
+      }
+
+      &.instagram {
+        background-color: var(--instagram-hover);
+      }
+
+      &.youtube {
+        background-color: var(--youtube-hover);
+      }
+
+      &.telegramMedia {
+        background-color: var(--telegram-hover);
+      }
+
+      &.zendesk {
+        background-color: var(--youtube-hover);
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      @include size(rem(40px));
+    }
+
+    &.facebook {
+      background-color: var(--facebook);
+    }
+
+    &.linkedin {
+      background-color: var(--linkedin);
+    }
+
+    &.vk {
+      background-color: var(--vk);
+    }
+
+    &.twitter {
+      background-color: var(--twitter);
+    }
+
+    &.instagram {
+      background-color: var(--instagram);
+    }
+
+    &.youtube {
+      background-color: var(--youtube);
+    }
+
+    &.telegramMedia {
+      background-color: var(--telegram);
+    }
+
+    &.zendesk {
+      background-color: var(--youtube);
+    }
+  }
+
+  &.grey {
+
+    .icon {
+      color: var(--grey-300);
+    }
+  }
+
+  &.blue {
+
+    .icon {
+      color: var(--blue);
+    }
+  }
+}

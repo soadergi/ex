@@ -1,0 +1,10 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.list {
+  display: grid;
+  grid-row-gap: 1rem;
+
+  @include media-breakpoint-up(md) {
+    grid-row-gap: 0.5rem;
+  }
+}

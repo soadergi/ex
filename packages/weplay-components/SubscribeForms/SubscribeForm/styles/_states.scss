@@ -1,0 +1,31 @@
+@mixin states {
+
+  &.hasSuccess {
+
+    .submitBtn {
+      pointer-events: none;
+    }
+  }
+
+  &.hasBackground {
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &.hasOverlay {
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: var(--black-alpha-032);
+      background-image: none;
+      width: 100%;
+      height: 100%;
+      content: '';
+    }
+  }
+}

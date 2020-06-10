@@ -1,0 +1,49 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mt, 3);
+
+  position: relative;
+
+  &.blue {
+
+    .link {
+      color: var(--blue);
+    }
+
+    .copy {
+      color: var(--grey-500);
+    }
+  }
+}
+
+.logoWrap {
+  @include flex(space-between, center);
+  @include make-spacer(py, 3);
+}
+
+.logo {
+  @include size(rem(96px), rem(24px));
+  @include make-spacer(mr, 3);
+
+  flex: 0 0 auto;
+}
+
+.list {
+  @include reset-list;
+  @include flex($direction: column);
+}
+
+.link {
+  @include font-size(12px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.copy {
+  @include make-spacer(pt, 3);
+  @include font-size(12px, 18px);
+
+  border-top: 1px solid var(--white-alpha-024);
+}

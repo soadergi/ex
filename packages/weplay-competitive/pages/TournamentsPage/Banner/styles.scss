@@ -1,0 +1,17 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include media-breakpoint-up(sm) {
+    @include flex(flex-start, center);
+  }
+}
+
+.title {
+  @include font-size(24px, 30px);
+  @include make-spacer(mr, 3, sm);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+
+  color: var(--white);
+  font-weight: 700;
+}

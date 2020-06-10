@@ -1,0 +1,19 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.label {
+  @include flex;
+  @include font-size(16px);
+  @include make-spacer(mb, 2);
+
+  font-weight: 700;
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+
+  color: var(--error);
+
+  &.isSuccess {
+    color: var(--success);
+  }
+}

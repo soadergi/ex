@@ -1,0 +1,27 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include size(100%);
+
+  display: grid;
+  position: relative;
+  grid-template-rows: repeat(auto-fit, rem(56px));
+  align-items: center;
+}
+
+.team {
+  @include size(100%, rem(56px));
+
+  justify-content: flex-start;
+  border-top: 1px solid var(--grey-200);
+  border-right: 1px solid var(--grey-200);
+  border-left: 1px solid var(--grey-200);
+}
+
+.lastEmptyCell {
+  @include size(100%, rem(56px));
+
+  border-top: 1px solid var(--grey-200);
+  border-right: 1px solid var(--grey-200);
+}

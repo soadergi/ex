@@ -1,0 +1,16 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$grid-fixed-cell: rem(352px);
+
+.grid {
+  @include make-spacer(pt, 3);
+  @include make-spacer(pb, 6);
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: 1fr $grid-fixed-cell;
+    grid-row-gap: rem(32px);
+    grid-column-gap: rem(24px);
+  }
+}
+

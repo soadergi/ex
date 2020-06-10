@@ -1,0 +1,19 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.hotMediaWrapper {
+  display: grid;
+  grid-row-gap: rem(32px);
+  grid-column-gap: 0;
+
+  @include media-breakpoint-up(sm) {
+    grid-row-gap: rem(24px);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-column-gap: rem(24px);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-column-gap: rem(48px);
+  }
+}

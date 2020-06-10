@@ -1,0 +1,18 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.footerNav {
+  @include make-spacer(pl, 2);
+  @include make-spacer(pr, 3, md);
+  @include make-spacer(mb, 3);
+
+  width: 100%;
+  line-height: 1;
+}
+
+.list {
+  @include reset-list;
+
+  &:not( :last-child ) {
+    @include make-spacer(mb, 2);
+  }
+}

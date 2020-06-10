@@ -1,0 +1,53 @@
+:global {
+  @charset "utf-8";
+
+  // Mixins, Functions & Sass Variables
+  //
+  // Non Compiled Files
+
+  @import 'abstract/variables/all';
+  @import 'abstract/helpers/all';
+
+  //
+  // Reboot default styles by Bootstrap reset method
+  //
+
+  @import 'reset/reboot';
+
+  //
+  // Global styles & Custom Properties
+  //
+
+  @import 'base/variables/all';
+  @import 'base/global';
+  @import 'base/typography';
+
+  //
+  // Layouts
+  // TODO: Use each style file where it needs to be used. Some files can be global
+  //
+  //
+  // Components
+  // TODO: Use each style file where it needs to be used
+  //
+
+  @import 'components/c-modal';
+  @import 'components/c-top-screen';
+  @import 'components/c-zendeck';
+
+  // Utilities contains classes helpers.
+  // Each class changes one property and uses `!important` declaration.
+  // Utilities are the only files can use `!important`.
+
+  @import 'utilities/u-spacing';
+  @import 'utilities/u-colors';
+  @import 'utilities/u-text';
+  @import 'utilities/u-display';
+  @import 'utilities/u-visibility';
+
+  //
+  // Special behavior implementation on touch devices
+  //
+
+  @import 'reset/disable-on-touch-devices';
+}

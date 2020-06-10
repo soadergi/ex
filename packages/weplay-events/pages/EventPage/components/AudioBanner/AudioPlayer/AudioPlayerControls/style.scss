@@ -1,0 +1,162 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mt, 5);
+
+  &.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+.logo {
+  @include make-spacer(mr, 3);
+}
+
+.content {
+  width: 100%;
+}
+
+.wrapContent {
+  @include flex;
+}
+
+.label {
+  @include make-spacer(mr, 1);
+  @include size(rem(40px), rem(20px));
+  @include flex(center, center);
+  @include font-size(12px);
+
+  border-radius: rem(2px);
+  background-color: var(--magenta);
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.text {
+  @include font-size(12px, 18px);
+
+  color: var(--grey-500);
+}
+
+.title {
+  @include make-spacer(mt, 1);
+  @include make-spacer(mb, 0);
+  @include font-size(16px, 24px);
+
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--white);
+  font-weight: var(--wp-font-weight-regular);
+
+  @include media-breakpoint-up(md) {
+    max-width: 75%;
+  }
+}
+
+.controls {
+  @include font-size(14px, 22px);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr rem(100px) rem(32px) 1fr;
+  grid-gap: rem(24px);
+  max-width: rem(296px);
+  color: var(--white);
+}
+
+.wrapProgressbar {
+  @include flex($align-items: center);
+
+  position: relative;
+}
+
+.progressbar {
+  @include size(100%, rem(2px));
+
+  z-index: 1;
+
+  &::-webkit-slider-runnable-track {
+    @include size(100%, rem(2px));
+
+    background-color: var(--blue);
+  }
+
+  &::-ms-track {
+    @include size(100%, rem(2px));
+
+    background-color: var(--blue);
+  }
+
+  &::-moz-range-track {
+    @include size(100%, rem(2px));
+
+    background-color: var(--blue);
+  }
+
+  &::-webkit-slider-thumb {
+    @include size(rem(10px));
+
+    appearance: none;
+    position: relative;
+    margin-top: rem(-4px);
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--blue);
+    cursor: pointer;
+  }
+
+  &::-ms-thumb {
+    @include size(rem(10px));
+
+    appearance: none;
+    position: relative;
+    margin-top: rem(-4px);
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--blue);
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    @include size(rem(10px));
+
+    appearance: none;
+    position: relative;
+    margin-top: rem(-4px);
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--blue);
+    cursor: pointer;
+  }
+}
+
+.progressbarDot {
+  --size: 1.5rem;
+  --dot-size: calc(var(--size) / 3);
+
+  @include flex(center, center);
+  @include size(var(--size));
+
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: var(--blue-alpha-032);
+  cursor: pointer;
+
+  &::before {
+    @include size(var(--dot-size));
+
+    display: block;
+    border-radius: 50%;
+    background-color: var(--blue);
+    content: '';
+  }
+}
+
+.icon {
+  cursor: pointer;
+}

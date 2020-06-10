@@ -1,0 +1,15 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.title {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 2);
+
+  color: var(--white);
+  font-weight: 700;
+}
+
+.block {
+  @include make-spacer(pb, 3, md);
+
+  border-bottom: rem(1px) solid var(--white-alpha-024);
+}

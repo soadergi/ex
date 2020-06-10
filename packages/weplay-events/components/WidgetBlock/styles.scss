@@ -1,0 +1,27 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex($wrap: wrap);
+
+  @include media-breakpoint-up(md) {
+    @include flex($wrap: nowrap);
+
+    height: rem(172px);
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: rem(152px);
+  }
+}
+
+.wrap {
+  @include size(100%);
+
+  border: 8px solid var(--royal-blue);
+  background-color: var(--royal-blue);
+
+  @include media-breakpoint-down(sm) {
+    @include size(100%, rem(234px));
+  }
+}

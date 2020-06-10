@@ -1,0 +1,114 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex($direction: column);
+  @include make-spacer(pt, 1);
+  @include make-spacer(pb, 0);
+  @include make-spacer(pb, 1, md);
+  @include make-spacer(pl, 1);
+  @include make-spacer(pr, 1);
+  @include make-spacer(pr, 0, md);
+
+  position: relative;
+  background-color: var(--royal-blue);
+  width: 100%;
+  color: var(--white);
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    background-color: var(--blue);
+    width: 100%;
+    height: 3px;
+    content: '';
+
+    @include media-breakpoint-up(md) {
+      bottom: 0;
+      width: 3px;
+      height: auto;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    width: auto;
+  }
+}
+
+.tournament {
+  @include flex($direction: column);
+  @include make-spacer(p, 2);
+
+  &:first-child {
+    @include flex;
+
+    .title {
+      @include flex($align-items: center);
+
+      @include media-breakpoint-up(md) {
+        @include flex($align-items: flex-start);
+      }
+    }
+  }
+}
+
+.button {
+  border: 0;
+  background-color: transparent;
+  text-align: left;
+}
+
+.title {
+  @include make-spacer(mb, 0);
+  @include make-spacer(mb, 1, md);
+  @include font-size(14px, 16px);
+
+  color: var(--white);
+  font-weight: 700;
+}
+
+.icon {
+  @include make-spacer(ml, 1);
+  @include make-spacer(ml, 0, md);
+  @include transition(#{fill, transform});
+
+  transform: rotate(0);
+  color: var(--white);
+}
+
+.description {
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 24px);
+
+  width: 100%;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.isExpanded {
+
+  .tournament {
+    @include transition(background-color);
+
+    z-index: 1;
+    box-shadow: 1px 1px 8px var(--black-alpha-024);
+    background-color: var(--royal-blue);
+
+    &:not( :first-child ) {
+      border-top: 1px solid var(--grey-500);
+    }
+
+    &:hover {
+      background-color: #28334a;
+    }
+  }
+
+  .icon {
+    transform: rotate(180deg);
+    color: var(--grey-500);
+  }
+}

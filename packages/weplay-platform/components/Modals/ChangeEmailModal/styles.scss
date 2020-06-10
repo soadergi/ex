@@ -1,0 +1,8 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.declineButton {
+  @extend %buttonLink;
+
+  @include font-size(12px, 16px);
+  @include make-spacer(mt, 2);
+}

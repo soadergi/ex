@@ -1,0 +1,20 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.tabs {
+  @include make-spacer(mt, 5);
+  @include make-spacer(mt, 8, sm);
+
+  position: relative;
+
+  &::after {
+    @include size(100%, rem(1px));
+
+    display: block;
+    position: absolute;
+    bottom: rem(10px);
+    left: 0;
+    background-color: var(--white-alpha-024);
+    content: '';
+  }
+}

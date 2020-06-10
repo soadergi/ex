@@ -1,0 +1,59 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(py, 0);
+  @include make-spacer(py, 8, md);
+  @include make-spacer(py, 10, lg);
+
+  position: relative;
+}
+
+.cards {
+  @include reset-list;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: rem(24px);
+  }
+}
+
+.card {
+  @include make-spacer(py, 8);
+  @include make-spacer(py, 9, md);
+  @include make-spacer(py, 14, lg);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, md);
+
+  border: 1px solid #e1e6f0;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.icon {
+  @include make-spacer(mb, 2);
+
+  color: var(--blue);
+}
+
+.title {
+  @include make-spacer(mb, 3);
+  @include font-size(24px, 32px);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(24px, 32px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.link {
+  @extend %button;
+}

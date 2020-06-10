@@ -1,0 +1,16 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.note {
+  @include flex(flex-start, center);
+  @include make-spacer(mt, 3);
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 16px);
+
+  color: var(--grey-500);
+}
+
+.noteIcon {
+  @include make-spacer(mr, 1);
+
+  color: var(--blue);
+}

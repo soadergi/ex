@@ -1,0 +1,20 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+  @include make-spacer(mx, auto);
+
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(960px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1200px);
+  }
+}
+

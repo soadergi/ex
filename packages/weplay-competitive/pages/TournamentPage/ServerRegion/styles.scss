@@ -1,0 +1,36 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(px, 3);
+  @include make-spacer(py, 2);
+  @include make-spacer(mt, 4);
+
+  border: 1px solid var(--grey-300);
+  border-radius: 0.5rem;
+}
+
+.title {
+  @include flex($align-items: center);
+  @include make-spacer(mb, 2);
+}
+
+.titleIcon {
+  @include make-spacer(mr, 1);
+
+  color: var(--warning);
+}
+
+.titleText {
+  @include font-size(20px, 28px);
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.text {
+  @include font-size(16px, 24px);
+  @include make-spacer(my, 0);
+  @include make-spacer(pl, 4);
+
+  color: var(--grey-500);
+}

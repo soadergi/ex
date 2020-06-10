@@ -1,0 +1,78 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(px, 2);
+  @include make-spacer(py, 2);
+  @include make-spacer(py, 0, sm);
+
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr;
+  grid-gap: rem(16px);
+  justify-content: space-between;
+
+  &:not( :last-child ) {
+    border-bottom: 1px solid var(--grey-200);
+  }
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr rem(256px);
+    grid-gap: rem(8px);
+    height: rem(56px);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr rem(256px);
+  }
+}
+
+.participant {
+  justify-content: flex-start;
+}
+
+.avatar {
+  @include make-spacer(ml, 0);
+}
+
+.name {
+  width: auto;
+}
+
+.statistic {
+  display: grid;
+  grid-template-columns: repeat(4, rem(56px));
+  grid-gap: rem(4px);
+  justify-content: space-between;
+
+  @include media-breakpoint-up(sm) {
+    grid-gap: rem(8px);
+  }
+}
+
+.cellTitles {
+  @include make-spacer(m, auto);
+  @include font-size(12px, 20px);
+
+  width: rem(56px);
+  text-align: left;
+  color: var(--grey-400);
+  font-weight: var(--wp-font-weight-normal);
+
+  @include media-breakpoint-up(sm) {
+    text-align: right;
+  }
+}
+
+.cell {
+  @include make-spacer(m, auto);
+  @include font-size(14px, 22px);
+
+  width: rem(56px);
+  text-align: left;
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    text-align: right;
+  }
+}

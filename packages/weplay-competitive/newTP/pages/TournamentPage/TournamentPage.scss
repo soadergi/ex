@@ -1,0 +1,36 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.page {
+  @include make-spacer(pb, 16);
+  @include make-spacer(pb, 0, md);
+
+  position: relative;
+  min-height: 100%;
+}
+
+.header {
+  @include font-size(28px, 40px);
+  @include make-spacer(pb, 3);
+  @include make-spacer(mb, 0);
+
+  color: var(--white);
+
+  @include media-breakpoint-up(md) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.wrapper {
+  background-color: var(--royal-blue);
+}
+
+.table {
+  @include make-spacer(pt, 6);
+  @include make-spacer(pt, 8, md);
+}
+
+.content {
+  @include media-breakpoint-up(md) {
+    position: relative;
+  }
+}

@@ -1,0 +1,101 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 3, sm);
+
+  display: grid;
+  row-gap: rem(24px);
+  grid-template-columns: 1fr 1fr;
+  margin-top: -1px;
+  border: 1px solid var(--grey-200);
+
+  @include media-breakpoint-up(sm) {
+    border-right: 1px solid var(--grey-200);
+    border-left: 1px solid var(--grey-200);
+    row-gap: rem(16px);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: rem(150px) 2fr rem(150px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+}
+
+.match {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr rem(12px) 1fr;
+  grid-row: 3/3;
+  grid-column: 1/5;
+  align-items: center;
+
+  @include media-breakpoint-up(sm) {
+    @include flex(center, center);
+
+    grid-row: 2/2;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-row: auto;
+    grid-column: auto;
+  }
+}
+
+.versus {
+  @include make-spacer(mx, 0);
+  @include make-spacer(mx, 2, sm);
+  @include font-size(12px, 18px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.button {
+  @include make-spacer(mx, auto);
+}
+
+.isFinished {
+  background-color: var(--grey-100);
+}
+
+.hasPrediction {
+  background-color: var(--blue-alpha-008);
+
+  .text {
+    color: var(--blue);
+  }
+
+  .icon {
+    background-color: var(--blue);
+  }
+}
+
+.hasGuessed {
+  background-color: var(--success-alpha-008);
+
+  .text {
+    color: var(--success);
+  }
+
+  .icon {
+    background-color: var(--success);
+  }
+}
+
+.hasNotGuessed {
+  background-color: var(--error-alpha-008);
+
+  .text {
+    color: var(--error);
+  }
+
+  .icon {
+    background-color: var(--error);
+  }
+}

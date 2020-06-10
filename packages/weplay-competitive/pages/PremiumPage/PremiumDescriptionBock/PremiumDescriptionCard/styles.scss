@@ -1,0 +1,26 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.imgBlock {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 8, sm);
+
+  text-align: center;
+}
+
+.title {
+  @include font-size(24px, 30px);
+  @include make-spacer(mb, 3);
+
+  text-align: center;
+  font-weight: 700;
+}
+
+.description {
+  @include font-size(16px, 24px);
+
+  display: block;
+  text-align: center;
+  color: var(--grey-500);
+}
+
+

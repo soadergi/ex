@@ -1,0 +1,13 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.input {
+  margin-top: rem(6px);
+  margin-bottom: rem(6px);
+}
+
+.checkboxText {
+  @include font-size(12px, 16px);
+  @include make-spacer(pt, half);
+}
+
+

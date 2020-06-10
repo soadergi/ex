@@ -1,0 +1,88 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.links {
+  @include make-spacer(mt, 4);
+  @include make-spacer(mt, 0, sm);
+
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  grid-template-columns: 1fr rem(64px) 1fr;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    top: auto;
+    bottom: rem(-8px);
+    grid-template-columns: rem(48px) rem(64px) rem(48px);
+    width: auto;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: rem(64px) rem(64px) rem(64px);
+  }
+}
+
+.linksItem {
+  @include flex(center, center);
+
+  position: relative;
+}
+
+.rate {
+  @include flex(center, center);
+
+  border-radius: 1rem;
+  min-width: 3rem;
+  height: 1rem;
+  text-align: center;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &Text {
+    @include font-size(10px, 16px);
+
+    color: var(--white);
+    font-weight: 500;
+  }
+}
+
+.logo {
+  @include transition();
+
+  display: block;
+  width: rem(56px);
+  animation-name: shake;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  text-decoration: none;
+
+  @include media-breakpoint-up(sm) {
+    width: rem(40px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: rem(56px);
+  }
+}
+
+@keyframes shake {
+
+  from,
+  0%,
+  5%,
+  10%,
+  to {
+    transform: scale(1);
+  }
+
+  2.5%,
+  7.5% {
+    transform: scale(1.1);
+  }
+}

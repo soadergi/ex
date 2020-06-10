@@ -1,0 +1,46 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(my, 1);
+  @include flex($align-items: center);
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.button {
+  @include flex(center, center, $display: inline-flex);
+  @include make-spacer(m, 0);
+  @include make-spacer(p, 0);
+  @include font-size(12px, 16px);
+
+  -webkit-appearance: none; // stylelint-disable-line
+  position: relative;
+  outline: none;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--grey-500);
+  font-weight: 700;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; // stylelint-disable-line
+
+  &:not( :last-child ) {
+
+    &::after {
+      @include make-spacer(mx, 2);
+
+      color: var(--grey-500);
+      content: '/';
+    }
+  }
+
+  &.isActive {
+    color: var(--white);
+  }
+}

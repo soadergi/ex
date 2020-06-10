@@ -1,0 +1,109 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, md);
+
+  cursor: pointer;
+
+  &:hover,
+  &.isActive {
+
+    .figure {
+      border-color: var(--blue);
+    }
+
+    .wrapInfo {
+      color: var(--blue);
+    }
+  }
+}
+
+.previewHolder {
+  @include make-spacer(mb, 2);
+
+  position: relative;
+}
+
+.figure {
+  padding-top: 56.25%;
+}
+
+.image {
+  @include absolute-center;
+  @include size(100%);
+
+  object-fit: cover;
+}
+
+.wrapInfo {
+  @include transition(color);
+  @include flex(flex-start, center);
+  @include size(100%, auto);
+
+  color: var(--white);
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+}
+
+.videoInfo {
+  @include font-size(12px, 18px);
+  @include make-spacer(mb, 0);
+}
+
+.button {
+  @include flex(flex-start, $direction: column);
+}
+
+.activities {
+  @include font-size(12px, 18px);
+  @include flex(space-between, center);
+  @include make-spacer(pt, 1);
+
+  width: 100%;
+  color: var(--grey-300);
+}
+
+.info {
+  @include flex(flex-start, center);
+}
+
+.counter {
+  @include make-spacer(ml, 2);
+
+  position: relative;
+
+  &::after {
+    @include size(3px);
+
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: rem(-10px);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: var(--grey-300);
+    content: '';
+  }
+}
+
+.contentLink {
+  @include font-size(20px, 28px);
+
+  width: 100%;
+  color: var(--white);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.tags {
+
+  a {
+    font-weight: var(--wp-font-weight-regular);
+  }
+}

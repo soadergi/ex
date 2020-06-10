@@ -1,0 +1,27 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.icon {
+  @include make-spacer(ml, half);
+  @include transition(#{fill, transform});
+
+  transform: rotate(0);
+
+  &.isExpanded {
+    transform: rotate(180deg);
+  }
+}
+
+.block {
+  @include flex(flex-start, center);
+  @include make-spacer(p, 0);
+  @include make-spacer(ml, 2);
+  @include font-size(14px, 24px);
+  @include transition(color);
+
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  vertical-align: top;
+  text-align: right;
+  color: var(--blue);
+}

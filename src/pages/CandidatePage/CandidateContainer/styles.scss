@@ -1,0 +1,91 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.container {
+  @include size(100%);
+  @include make-spacer(mb, 7, md);
+  @include make-spacer(px, 5);
+  @include make-spacer(px, 9, sm);
+  @include make-spacer(px, 6, md);
+
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    overflow: hidden;
+  }
+}
+
+.button {
+  @include size(rem(40px), 100%);
+  @include flex(center, center);
+  @include make-spacer(p, 0);
+  @include transition();
+
+  position: absolute;
+  top: 0;
+  border: 0;
+  background-color: var(--grey-100);
+
+  &:hover {
+    background-color: var(--grey-200);
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: rem(72px);
+  }
+
+  @include media-breakpoint-up(md) {
+    width: rem(48px);
+  }
+}
+
+.icon {
+  @include font-size(8px, 8px);
+
+  fill: var(--grey-500);
+}
+
+.buttonLeft {
+  @include make-spacer(pr, 1);
+  @include make-spacer(pr, 3, sm);
+  @include make-spacer(pr, 0, md);
+
+  left: 0;
+
+  .icon {
+    transform: rotate(90deg);
+  }
+
+  @include media-breakpoint-down(sm) {
+    justify-content: flex-end;
+  }
+
+  @include media-breakpoint-up(md) {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+}
+
+.buttonRight {
+  @include make-spacer(pl, 1);
+  @include make-spacer(pl, 3, sm);
+  @include make-spacer(pl, 0, md);
+
+  right: 0;
+
+  .icon {
+    transform: rotate(-90deg);
+  }
+
+  @include media-breakpoint-down(sm) {
+    justify-content: flex-start;
+  }
+
+  @include media-breakpoint-up(md) {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+
+.content {
+  flex: 1 0 auto;
+}

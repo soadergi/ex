@@ -1,0 +1,16 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mb, 5);
+  @include size(100%, auto);
+
+  display: inline-block;
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include font-size(24px, 30px);
+
+  font-weight: 400;
+}

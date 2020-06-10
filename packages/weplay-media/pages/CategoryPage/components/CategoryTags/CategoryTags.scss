@@ -1,0 +1,46 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.list {
+  @include reset-list;
+
+  height: 100%;
+  overflow: hidden;
+
+  &.collapsed {
+    height: rem(184px);
+
+    @include media-breakpoint-up(md) {
+      height: rem(92px);
+    }
+  }
+}
+
+.controls {
+  @include make-spacer(mt, 1);
+  @include make-spacer(mb, 5);
+  @include make-spacer(mb, 6, sm);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, $direction: row-reverse);
+  }
+}
+
+.button {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mt, 0, sm);
+  @include make-spacer(mr, 2, sm);
+
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+
+  &.isActive {
+
+    .icon {
+      transform: rotateZ(180deg);
+    }
+  }
+}

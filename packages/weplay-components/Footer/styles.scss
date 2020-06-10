@@ -1,0 +1,108 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(py, 6);
+  @include make-spacer(py, 12, md);
+
+  border-top: 1px solid var(--dark-grey);
+  background-color: var(--royal-blue);
+  background-repeat: no-repeat;
+  background-size: 0;
+
+  @include media-breakpoint-up(md) {
+    background-position: 100% 0;
+    background-size: rem(832px) rem(760px);
+  }
+}
+
+.topWrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 4rem;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-row-gap: 2rem;
+  }
+}
+
+.bottomWrap {
+  @include flex($display: column);
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-row-gap: rem(24px);
+  }
+}
+
+.column {
+
+  &:first-child {
+    grid-row-start: 3;
+  }
+
+  @include media-breakpoint-up(md) {
+
+    &:first-child {
+      grid-row-start: 1;
+    }
+  }
+}
+
+.title {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 3);
+
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.logo {
+  @include size(auto, rem(32px));
+  @include make-spacer(mb, 4);
+
+  display: block;
+  text-decoration: none;
+}
+
+.copyWrap {
+  @include flex($display: column);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center);
+  }
+}
+
+.copyText {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, sm);
+}
+
+.copy {
+  @include make-spacer(mb, half);
+  @include font-size(12px, 18px);
+
+  color: var(--grey-500);
+}
+
+.techiiaLink {
+  @include make-spacer(px, half);
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+  @include font-size(16px);
+
+  fill: var(--white);
+}
+
+.langSelector {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+}

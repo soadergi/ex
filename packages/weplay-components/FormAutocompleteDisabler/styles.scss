@@ -1,0 +1,10 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: fixed;
+  top: -1000px;
+  left: -1000px;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

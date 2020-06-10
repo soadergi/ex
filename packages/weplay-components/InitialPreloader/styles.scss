@@ -1,0 +1,27 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include size(80%, auto);
+  @include absolute-center;
+
+  max-width: 28rem;
+}
+
+.logo {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,110 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mb, 4);
+}
+
+.title {
+  @include font-size(20px, 28px);
+  @include make-spacer(mb, 3);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(24px, 32px);
+  }
+}
+
+.pick {
+  @include font-size(18px, 26px);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, sm);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(20px, 28px);
+  }
+}
+
+.table {
+  @include font-size(14px, 22px);
+  @include make-spacer(mb, 3);
+
+  border: 1px solid var(--white-alpha-024);
+  height: rem(433px);
+  overflow: hidden;
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.th {
+  border-top: 1px solid var(--white-alpha-024);
+  width: 65%;
+  font-weight: var(--wp-font-weight-regular);
+
+  @include media-breakpoint-up(sm) {
+    width: 35%;
+  }
+}
+
+.tr {
+  border: 0;
+
+  &.label {
+    font-weight: var(--wp-font-weight-regular);
+  }
+}
+
+.td {
+  border-top: 1px solid var(--white-alpha-024);
+
+  &:first-of-type {
+    border-top: 0;
+  }
+}
+
+.tbody {
+
+  .tr {
+    display: table-cell;
+
+    @include media-breakpoint-down(xs) {
+      display: table-row;
+
+      &.label,
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+
+  .td {
+    @include flex;
+    @include make-spacer(px, 2);
+
+    @include media-breakpoint-down(xs) {
+
+      &::before {
+        width: 70%;
+        font-weight: var(--wp-font-weight-regular);
+        content: attr(data-th);
+      }
+    }
+  }
+}
+
+.thead {
+  display: none;
+}
+
+.button {
+  @include make-spacer(my, 3);
+  @include make-spacer(mx, auto);
+
+  display: block;
+}

@@ -1,0 +1,49 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.container {
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+  @include make-spacer(mx, auto);
+
+  width: 100%;
+  max-width: rem(1072px);
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(848px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1120px);
+  }
+}
+
+.sectionBody {
+  @include make-spacer(py, 0);
+
+  background-color: transparent;
+  width: 100%;
+
+  &.hasPaddingTop {
+    @include make-spacer(pt, 4);
+    @include make-spacer(pt, 7, md);
+    @include make-spacer(pt, 8, lg);
+  }
+
+  &.hasPaddingBottom {
+    @include make-spacer(pb, 4);
+    @include make-spacer(pb, 7, md);
+    @include make-spacer(pb, 8, lg);
+  }
+
+  &.lightGreyBg {
+    background-color: var(--grey-100);
+  }
+
+  &.hideAllNewsLink {
+
+    .container {
+      display: none;
+    }
+  }
+}

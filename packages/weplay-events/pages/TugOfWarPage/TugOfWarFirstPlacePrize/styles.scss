@@ -1,0 +1,53 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import '../../../components/HeroSection/Prizes/Prize/styles';
+
+.prize {
+  @include make-spacer(mx, 0);
+  @include make-spacer(mb, 3);
+
+  width: 100%;
+  text-align: center;
+}
+
+.label {
+  @include make-spacer(mb, half);
+}
+
+.sum {
+  @include font-size(24px, 32px);
+
+  font-weight: 700;
+}
+
+.plus {
+  @include make-spacer(mx, 1);
+  @include font-size(16px, 24px);
+
+  font-weight: 500;
+}
+
+.sumWrap {
+  @include flex(center, center, $display: inline-flex);
+  @include make-spacer(mt, half);
+  @include make-spacer(mb, 0);
+  @include make-spacer(px, 3);
+  @include make-spacer(py, half);
+  @include make-spacer(mx, auto);
+
+  border-radius: rem(20px);
+  background-color: var(--white-alpha-024);
+}
+
+.description {
+  @include make-spacer(mt, 1);
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 16px);
+
+  color: var(--success);
+}
+
+.icon {
+  @include make-spacer(mr, 2);
+
+  color: var(--white);
+}

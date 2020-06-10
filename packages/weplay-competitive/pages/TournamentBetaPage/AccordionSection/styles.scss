@@ -1,0 +1,104 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: rem(48px);
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.item {
+  @include make-spacer(mb, 4);
+  @include make-spacer(pt, 2);
+  @include make-spacer(px, 2);
+  @include transition(background-color);
+
+  border-radius: rem(4px);
+
+  &.isActive {
+    background-color: var(--grey-100);
+  }
+}
+
+.link {
+  @include reset-button;
+  @include font-size(24px);
+  @include transition(color);
+
+  text-align: left;
+  font-weight: var(--wp-font-weight-bold);
+
+  &:not( .isActive ) {
+
+    &:hover {
+      color: var(--blue);
+    }
+  }
+}
+
+.content {
+  @include make-spacer(pt, 3);
+  @include make-spacer(pb, 2);
+
+  display: none;
+  color: var(--grey-500);
+
+  &.isActive {
+    display: block;
+  }
+}
+
+.images {
+  @include make-spacer(mt, 6);
+  @include make-spacer(mt, 0, md);
+
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.image {
+  @include transition(#{transform, opacity});
+
+  position: absolute;
+  transform: translateX(rem(24px));
+  opacity: 0;
+  width: rem(1200px);
+
+  &.isActive {
+    position: relative;
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.accordion {
+  @include make-spacer(ml, auto, md);
+
+  @include media-breakpoint-up(md) {
+    align-self: center;
+    width: rem(448px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: rem(576px);
+  }
+}
+
+.section {
+  cursor: pointer;
+}

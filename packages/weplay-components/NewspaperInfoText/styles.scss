@@ -1,0 +1,21 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  color: var(--grey-500);
+
+  &.white {
+    color: var(--white);
+  }
+
+  &.gray {
+    color: var(--grey-300);
+  }
+}
+
+.time {
+  @include font-size(12px);
+}
+
+.icon {
+  @include make-spacer(pr, half);
+}

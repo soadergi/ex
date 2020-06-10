@@ -1,0 +1,24 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include reset-list;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(rem(104px), 1fr));
+  grid-row-gap: rem(24px);
+  grid-column-gap: rem(8px);
+}
+
+.wrapper {
+  @include make-spacer(mb, half);
+}
+
+.name {
+  @include font-size(12px, 18px);
+  @include make-spacer(mb, 0);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+}

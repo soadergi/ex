@@ -1,0 +1,118 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(py, 4);
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 4, md);
+  @include make-spacer(px, 6, lg);
+
+  position: relative;
+  z-index: 1;
+  border-radius: 8px;
+  background: var(--royal-blue);
+  overflow: hidden;
+
+  &::before {
+    @include size(rem(332px), 100%);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleY(1);
+    background: url('./img/card-block-bg-left.png') no-repeat bottom/cover;
+    content: '';
+
+    @include media-breakpoint-down(xs) {
+      height: 50%;
+    }
+  }
+
+  &::after {
+    @include size(rem(286px), 60%);
+
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: url('./img/card-block-bg-right.png') no-repeat bottom/contain;
+    content: '';
+
+    @include media-breakpoint-down(xs) {
+      background-size: cover;
+      width: 100%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      border-radius: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    @include make-spacer(px, 0);
+
+    border-radius: 0;
+  }
+}
+
+.wrapper {
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+
+  @include media-breakpoint-down(sm) {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: 67rem;
+  }
+}
+
+.grid {
+  @include media-breakpoint-up(sm) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: rem(16px);
+  }
+}
+
+.cards {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+}
+
+.title {
+  @include make-spacer(mb, 4);
+
+  position: relative;
+  text-align: center;
+  line-height: 1.24;
+  color: var(--white);
+  font-size: rem(28px);
+  font-weight: 700;
+
+  @include media-breakpoint-up(sm) {
+    line-height: 1.25;
+    font-size: rem(32px);
+  }
+}
+
+.showMore {
+  @include make-spacer(py, 4);
+
+  display: none;
+
+  &.isShown {
+    @include flex(center, center);
+  }
+}
+
+.loadMore {
+  @include font-size(14px, 36px);
+
+  z-index: 1;
+}

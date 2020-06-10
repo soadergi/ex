@@ -1,0 +1,32 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include reset-list;
+
+  &.horizontal {
+    @include flex(flex-start, center);
+
+    position: static;
+
+    .item {
+      @include make-spacer(mb, 0);
+      @include make-spacer(mr, 2);
+    }
+
+    .bookmark {
+      order: 6;
+    }
+  }
+}
+
+.item {
+  @include make-spacer(mb, 2);
+
+  color: var(--grey-400);
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+}
+
+

@@ -1,0 +1,97 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 4, sm);
+}
+
+.list {
+  @include reset-list;
+
+  text-align: center;
+
+  @include media-breakpoint-down(xs) {
+    text-align: left;
+  }
+}
+
+.item {
+  display: inline-block;
+}
+
+.wrapper {
+  @include flex($align-items: center, $display: inline-flex);
+  @include make-spacer(mx, 1);
+
+  @include media-breakpoint-down(sm) {
+    display: inline-block;
+  }
+}
+
+.icon {
+  color: var(--grey-300);
+}
+
+.close {
+  @include make-spacer(ml, 2);
+
+  order: 1;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+
+  &:hover {
+
+    .icon {
+      color: var(--magenta);
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    height: rem(16px);
+    font-size: rem(16px);
+  }
+
+  @include media-breakpoint-down(sm) {
+    @include make-spacer(ml, 0);
+    @include make-spacer(mr, 2);
+  }
+}
+
+.title {
+  @include make-spacer(mb, 0);
+
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.27;
+  font-size: rem(44px);
+  font-weight: 700;
+
+  @include media-breakpoint-down(xs) {
+    line-height: 1.14;
+    font-size: rem(28px);
+  }
+}
+
+.subtitle {
+  margin: auto;
+  line-height: 1.71;
+  font-size: rem(14px);
+}
+
+//
+// Modifiers
+//
+
+.blockLight {
+
+  .title {
+    color: var(--white);
+  }
+
+  .subtitle {
+    max-width: rem(560px);
+    color: var(--white);
+  }
+}

@@ -1,0 +1,62 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.settingItem {
+  @include make-spacer(mb, 2);
+  @include make-spacer(p, 1);
+
+  position: relative;
+  border: 2px solid var(--white-alpha-008);
+  border-radius: rem(4px);
+  background-color: #2a354a;
+  cursor: pointer;
+  height: rem(88px);
+
+  .icon {
+    position: absolute;
+    top: rem(4px);
+    right: rem(4px);
+    color: var(--blue);
+  }
+
+  .center {
+    @include make-spacer(p, 1);
+    @include absolute-center;
+
+    width: 100%;
+    text-align: center;
+  }
+
+  &:hover {
+    border-color: var(--blue);
+  }
+
+  &.isActive {
+    border-color: var(--blue);
+    background-color: #2a354a;
+    cursor: default;
+  }
+
+  &.disabled {
+    border-color: var(--white-alpha-008);
+    background-color: #111e38;
+    cursor: not-allowed;
+
+    .heading {
+      color: var(--grey-500);
+    }
+  }
+}
+
+.heading {
+  @include make-spacer(m, 0);
+  @include font-size(16px, 24px);
+
+  color: var(--white);
+}
+
+.error {
+  @include make-spacer(m, 0);
+  @include font-size(12px, 18px);
+
+  color: var(--error);
+}

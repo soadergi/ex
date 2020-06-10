@@ -1,0 +1,51 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 3, sm);
+
+  color: var(--white);
+}
+
+.title {
+  @include font-size(24px, 32px);
+  @include make-spacer(mb, 3);
+
+  text-align: center;
+  font-weight: 700;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.text {
+  @include make-spacer(mb, 3);
+  @include font-size(16px, 24px);
+
+  text-align: center;
+}
+
+.list {
+  @include reset-list;
+  @include make-spacer(mx, auto);
+
+  max-width: rem(280px);
+}
+
+.item {
+  @include make-spacer(mb, 2);
+  @include flex(space-between, center);
+  @include font-size(20px, 28px);
+
+  font-weight: 700;
+
+  &:first-child {
+    text-shadow: 0 0 8px var(--blue);
+    color: var(--blue);
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(24px, 32px);
+  }
+}

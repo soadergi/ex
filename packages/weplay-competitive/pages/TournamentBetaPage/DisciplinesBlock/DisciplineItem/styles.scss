@@ -1,0 +1,44 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.disciplineText {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 18px);
+
+  color: var(--grey-500);
+  font-weight: 500;
+
+  &.isActive {
+    color: var(--royal-blue);
+  }
+}
+
+.icon {
+  @include font-size(rem(48px));
+
+  color: var(--grey-300);
+
+  &.isActive {
+
+    &.csGo {
+      color: var(--royal-blue);
+    }
+
+    &.dota2 {
+      color: var(--youtube-hover);
+    }
+
+    &.underlords {
+      color: var(--telegram);
+    }
+
+    &.tft {
+      color: var(--royal-blue);
+    }
+
+    &.lol {
+      color: var(--royal-blue);
+    }
+  }
+}

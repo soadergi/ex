@@ -1,0 +1,9 @@
+@startuml
+
+object TeamMembers {
+ players: arrayOf(PropTypes.shape({})).isRequired,
+ activePlayer: number.isRequired,
+ setActivePlayer: func.isRequired,
+}
+
+@enduml

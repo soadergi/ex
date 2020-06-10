@@ -1,0 +1,81 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.body {
+  display: block;
+  width: 100%;
+}
+
+.section {
+  @include make-spacer(px, 2);
+  @include make-spacer(pb, 2);
+  @include make-spacer(px, 6, sm);
+
+  border-bottom: rem(1px) solid var(--grey-300);
+
+  &:first-child {
+    border-bottom: 0;
+  }
+}
+
+.text {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mt, 4);
+
+  color: var(--grey-500);
+}
+
+.textBlack {
+  color: var(--black);
+}
+
+.textSecondary {
+  color: var(--grey-500);
+}
+
+.textSm {
+  @include font-size(12px, 18px);
+
+  width: 100%;
+}
+
+.title {
+  width: 100%;
+}
+
+.button {
+  @include make-spacer(mt, 1);
+
+  width: 100%;
+}
+
+.footer {
+  @include flex;
+  @include make-spacer(pt, 2);
+  @include make-spacer(pb, 2);
+  @include make-spacer(pb, 6, sm);
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 6, sm);
+}
+
+.nextButton {
+  @include make-spacer(mr, auto);
+}
+
+.steamError {
+  @include flex($align-items: center);
+  @include make-spacer(p, 1);
+  @include make-spacer(mt, 2);
+  @include make-spacer(mb, 1);
+  @include font-size(12px, 18px);
+
+  border: rem(1px) solid var(--error);
+  border-radius: rem(4px);
+  background: rgba(227, 14, 44, 0.08);
+  width: 100%;
+  color: var(--error);
+}
+
+.link {
+  color: var(--blue);
+}

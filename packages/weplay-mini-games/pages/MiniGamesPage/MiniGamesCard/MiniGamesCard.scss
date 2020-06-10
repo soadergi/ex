@@ -1,0 +1,66 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.imageLink {
+  @include aspect-ratio;
+  @include make-spacer(mb, 2);
+
+  display: block;
+  position: relative;
+  background-color: var(--grey-300);
+  overflow: hidden;
+}
+
+.figure {
+  position: relative;
+}
+
+.image {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.label {
+  position: absolute;
+  top: rem(8px);
+  left: rem(8px);
+  z-index: $z-1;
+}
+
+.title {
+  @include font-size(20px, 28px);
+  @include make-spacer(mb, 3);
+
+  display: block;
+  color: var(--royal-blue);
+  font-weight: 700;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.flex {
+  @include flex(flex-start, center);
+}
+
+.playedText {
+  @include font-size(14px, 22px);
+  @include make-spacer(ml, 1);
+}
+
+.sharedTitle {
+  @include font-size(14px, 22px);
+
+  font-weight: 500;
+}
+
+.prizeText {
+  @include font-size(14px, 22px);
+  @include make-spacer(ml, 1);
+
+  font-weight: var(--wp-font-weight-regular);
+}

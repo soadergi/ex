@@ -1,0 +1,30 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.divider {
+  @include make-spacer(mt, 1);
+  @include make-spacer(mb, 2);
+
+  background-color: var(--grey-200);
+  height: rem(1px);
+}
+
+.treasuryTitle {
+  @include make-spacer(pb, 2);
+  @include make-spacer(pt, 4);
+  @include font-size(32px, 40px);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.treasuryText {
+  @include flex(space-between, center);
+  @include make-spacer(pb, 1);
+
+  font-weight: var(--wp-font-weight-regular);
+
+  &:first-child {
+    @include make-spacer(mt, 1);
+  }
+}
+

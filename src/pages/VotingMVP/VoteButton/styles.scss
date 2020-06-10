@@ -1,0 +1,74 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(center, center, column);
+
+  &.voted {
+    @include flex(center, center, column);
+
+    @include media-breakpoint-up(md) {
+      @include flex(center, flex-end, column);
+    }
+  }
+
+  &.votingFinished {
+    @include flex(center, center, row);
+  }
+}
+
+.wrapDropDown {
+  @include make-spacer(pt, 1);
+  @include make-spacer(my, 0);
+
+  position: relative;
+  max-width: rem(256px);
+  text-align: center;
+}
+
+.button {
+  @include font-size(14px);
+  @include make-spacer(px, 4);
+
+  width: 100%;
+  font-weight: 600;
+
+  @include media-breakpoint-up(md) {
+    width: auto;
+  }
+}
+
+.text {
+  @include font-size(12px, 16px);
+  @include make-spacer(mt, 1);
+  @include make-spacer(mb, 0);
+
+  color: var(--grey-500);
+}
+
+.time {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 0);
+
+  color: var(--grey-500);
+}
+
+.number {
+  @include font-size(20px);
+  @include make-spacer(mb, 0);
+
+  color: var(--royal-blue);
+  font-weight: 500;
+}
+
+.votes {
+  @include font-size(20px, 16px);
+
+  color: var(--royal-blue);
+  font-weight: 500;
+}
+
+.svgIcon {
+  @include make-spacer(mr, 1);
+
+  color: var(--magenta);
+}

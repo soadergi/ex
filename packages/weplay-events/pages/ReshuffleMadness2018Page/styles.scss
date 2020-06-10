@@ -1,0 +1,147 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.topScreen {
+  @include flex(flex-start, stretch, column);
+  @include make-spacer(pb, 1);
+  @include make-spacer(pt, 7);
+
+  position: relative;
+  background-color: var(--grey-300);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: calc(100vh / 3);
+  overflow: hidden;
+
+  &::before {
+    @include absolute-center();
+    @include size(rem(242px));
+
+    display: block;
+    opacity: 0.08;
+    z-index: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+
+    @include media-breakpoint-up(sm) {
+      @include size(rem(485px));
+    }
+
+    @include media-breakpoint-up(md) {
+      @include size(rem(640px));
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: calc(var(--wp-header-height) + 2rem);
+  }
+}
+
+.content {
+  @include flex(space-between, stretch, column);
+
+  position: relative;
+  flex: 1 0 auto;
+  z-index: $z-2;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    align-items: center;
+  }
+}
+
+.logo {
+  @include flex(center, center, column);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, md);
+}
+
+.text {
+  max-width: rem(192px);
+
+  @include media-breakpoint-up(sm) {
+    max-width: rem(320px);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(400px);
+  }
+}
+
+.icon {
+  @include size(40px);
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 2, sm);
+
+  @include media-breakpoint-up(sm) {
+    @include size(64px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include size(88px);
+  }
+}
+
+.label {
+  max-width: rem(192px);
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    max-width: rem(320px);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(400px);
+  }
+}
+
+.description {
+  @include font-size(18px, 24px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-regular);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(22px, 32px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(28px, 32px);
+  }
+}
+
+.date {
+  display: block;
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.c-masonry-grid {
+  @include reset-list;
+
+  display: block;
+
+  @include media-breakpoint-up(md) {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+
+  &__item {
+    @include make-spacer(mb, 2);
+    @include make-spacer(mb, 4, sm);
+    @include make-spacer(px, 2, md);
+
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      width: 50%;
+    }
+  }
+}

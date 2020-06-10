@@ -1,0 +1,71 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(py, 1);
+
+  background-color: var(--grey-100);
+}
+
+.container {
+  @include flex(center, flex-start);
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+  @include make-spacer(mx, auto);
+
+  width: 100%;
+  max-width: rem(1080px);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(center, center);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1392px);
+  }
+}
+
+.decorImage {
+  @include make-spacer(mb, 0);
+  @include make-spacer(mr, 3);
+
+  flex: 0 0 rem(48px);
+  width: rem(48px);
+}
+
+.message {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 0);
+  @include make-spacer(pl, 3);
+  @include make-spacer(pl, 4, md);
+
+  position: relative;
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(md) {
+    @include font-size(18px, 32px);
+  }
+}
+
+.chain {
+  @include font-size(16px);
+
+  position: absolute;
+  top: rem(4px);
+  left: 0;
+  fill: var(--grey-500);
+
+  @include media-breakpoint-up(md) {
+    top: rem(8px);
+  }
+}
+
+.copyLink {
+  vertical-align: baseline;
+  text-decoration: underline;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

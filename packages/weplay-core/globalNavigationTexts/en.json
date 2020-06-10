@@ -1,0 +1,55 @@
+{
+  "locale": "en",
+  "globalNavigation": {
+    "media": {
+      "name": "Media",
+      "description": "News, articles and video footage"
+    },
+    "events": {
+      "name": "Events",
+      "description": "WePlay! Pro tournaments & leagues"
+    },
+    "tournaments": {
+      "name": "Tournament Platform",
+      "description": "Competitive gaming"
+    }
+  },
+  "footer": {
+    "rules": "Policy",
+    "blockNames": {
+      "socials": "Follow us",
+      "subscription": "Subscribe"
+    },
+    "copyright": "WePlay! All rights reserved",
+    "promoBlock" : {
+      "btnText": "Subscribe",
+      "checkboxLabel": "I allow to use my personal data",
+      "email": "Email"
+    },
+    "techiia": {
+      "address": "1013 Centre RD STE 403B, Wilmington, DE, USA",
+      "textBefore": "Part of",
+      "link": "TECHIIA",
+      "textAfter": "IT-holding"
+    }
+  },
+  "header": {
+    "signInButton": "Sign in",
+    "moreButton": "More",
+    "notifications": {
+      "title": "Notifications",
+      "markAsRead": "Mark as read",
+      "settings": "Settings",
+      "deleteTitle": "Are you sure about this?",
+      "deleteButton": "Delete",
+      "cancelButton": "Changed my mind",
+      "emptyStateTitle": "Welcome to this empty lands!",
+      "emptyStateText": "Set up your notifications to liven this place up"
+    }
+  },
+  "globalSeo": {
+    "title":  "ᐈ WePlay! – Esports news • All about esports and competitive gaming",
+    "description":  "WePlay! ⚡⚡⚡ All about esports and competitive gaming ⚡⚡⚡ Esports news, analytics, reviews on WePlay!",
+    "keywords":  "esports news"
+  }
+}

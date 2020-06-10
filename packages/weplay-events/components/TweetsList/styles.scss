@@ -1,0 +1,62 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.tweetsList {
+  position: relative;
+  min-width: 100%;
+}
+
+.tweet {
+  @include make-spacer(mb, 4);
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+
+  @include media-breakpoint-only(sm) {
+    @include make-spacer(mb, 0);
+  }
+}
+
+.wrapper {
+  display: grid;
+  justify-content: center;
+  max-height: inherit;
+  overflow: auto;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 1rem;
+  }
+}
+
+.container {
+  @include size(100%);
+}
+
+.hideCloud {
+  position: relative;
+  max-height: rem(208px);
+  overflow: hidden;
+
+  &::after {
+    @include gradient-y(transparent, #{var(--white)});
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+    content: '';
+  }
+}
+
+.button {
+  @include make-spacer(mt, 5);
+
+  border: 1px solid var(--blue);
+  font-weight: var(--wp-font-weight-regular);
+}

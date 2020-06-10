@@ -1,0 +1,16 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  grid-gap: rem(24px);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-rows: 1fr rem(217px);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-rows: repeat(2, rem(217px));
+  }
+}

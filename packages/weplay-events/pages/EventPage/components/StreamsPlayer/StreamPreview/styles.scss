@@ -1,0 +1,60 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  display: grid;
+  position: relative;
+  grid-gap: rem(16px);
+}
+
+.wrapImage {
+  max-height: rem(100px);
+
+  @include media-breakpoint-only(md) {
+    max-height: rem(80px);
+  }
+}
+
+.image {
+  @include size(100%);
+}
+
+.text {
+  @include font-size(14px, 22px);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.isActive {
+
+  .text {
+    color: var(--blue);
+  }
+}
+
+.isOffline {
+
+  .text {
+    color: var(--grey-400);
+  }
+}
+
+.liveNotification {
+  @include size(rem(40px), rem(20px));
+  @include flex(center, center);
+
+  position: absolute;
+  top: rem(8px);
+  right: rem(8px);
+  border-radius: rem(2px);
+  background-color: var(--magenta);
+}
+
+.liveText {
+  @include font-size(12px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-regular);
+}

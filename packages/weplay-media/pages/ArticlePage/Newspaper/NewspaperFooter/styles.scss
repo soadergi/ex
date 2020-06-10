@@ -1,0 +1,29 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.content {
+  @include flex(space-between, center, row, wrap);
+}
+
+.tags {
+  @include make-spacer(mr, 1);
+}
+
+.paperInfo {
+  @include make-spacer(mb, 1);
+  @include make-spacer(mr, 2);
+}
+
+.button {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mb, 6);
+  @include make-spacer(mb, 3, sm);
+}
+
+.sharing {
+  @include make-spacer(mb, 1);
+}

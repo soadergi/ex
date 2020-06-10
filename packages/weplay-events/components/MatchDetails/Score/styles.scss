@@ -1,0 +1,60 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.mobaTotal {
+  @include make-spacer(p, 0);
+  @include font-size(10px, 16px);
+  @include size(rem(32px), rem(36px));
+
+  display: block;
+  color: var(--grey-500);
+}
+
+.shooterTotal {
+  @include flex(center, center, column);
+  @include font-size(18px, 16px);
+
+  color: var(--black);
+}
+
+.block {
+
+  &:nth-of-type( 1 ) {
+    flex-direction: row;
+
+    &.mobaScore {
+      @include make-spacer(pr, half);
+      @include make-spacer(pl, 0);
+
+      &.shooterScore {
+        @include make-spacer(pr, 1);
+        @include make-spacer(pl, 0);
+      }
+    }
+  }
+}
+
+.mobaScore {
+  @include flex(flex-start, center, row-reverse);
+  @include make-spacer(pl, half);
+}
+
+.shooterScore {
+  @include flex(center, center, row-reverse);
+}
+
+.summary {
+  @include flex(center, center, column);
+  @include size(rem(16px), auto);
+}
+
+.firstPart {
+  @include font-size(10px, 16px);
+
+  color: var(--grey-500);
+}
+
+.secondPart {
+  @include font-size(10px, 16px);
+
+  color: var(--magenta);
+}

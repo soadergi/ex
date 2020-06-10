@@ -1,0 +1,100 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+// ====================================
+// New Styles
+// ====================================
+
+// Non-compiled files
+
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+// /====================================
+
+.block {
+  @include flex(flex-start, flex-start);
+
+  position: relative;
+  cursor: pointer;
+  padding: 2px;
+
+  @include media-breakpoint-up(sm) {
+    min-width: rem(208px);
+  }
+
+  &.isActive {
+
+    .circle {
+      animation: stroke var(--stroke-animation-duration) linear alternate;
+    }
+  }
+}
+
+.imageWrapper {
+  @include make-spacer(mr, 1);
+  @include make-spacer(mr, 2, lg);
+
+  position: relative;
+  padding: rem(2px);
+}
+
+.figure {
+  --size: #{rem(48px)};
+
+  @include flex(center, center);
+  @include size(var(--size));
+  @include make-spacer(mb, 0);
+
+  flex: 0 0 var(--size);
+  border-radius: 50%;
+  overflow: hidden;
+
+  @include media-breakpoint-up(lg) {
+    --size: #{rem(64px)};
+  }
+}
+
+.title {
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 18px);
+
+  color: var(--white);
+  font-weight: 500;
+
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.border {
+  @include absolute-center;
+  @include size(52px);
+
+  @include media-breakpoint-up(lg) {
+    @include size(68px);
+  }
+}
+
+.circle {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2px;
+  stroke-dasharray: var(--stroke-length);
+  stroke-dashoffset: var(--stroke-length);
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+@keyframes stroke {
+
+  0% {
+    stroke-dashoffset: var(--stroke-length);
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

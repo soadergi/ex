@@ -1,0 +1,82 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$grid-container-height: 49rem;
+
+.block {
+  display: block;
+}
+
+.avatar {
+  @include make-spacer(ml, 1);
+
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header {
+  @include make-spacer(mb, 4);
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-column-gap: rem(16px);
+    align-items: center;
+  }
+}
+
+.title {
+  @include flex(flex-start, center);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, md);
+
+  @include media-breakpoint-up(sm) {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  &Text {
+    @include make-spacer(m, 0);
+    @include font-size(24px, 32px);
+
+    font-weight: 700;
+  }
+}
+
+.table {
+  @include font-size(16px, 24px);
+}
+
+.cell {
+
+  &:nth-child( 3 ) {
+    text-align: right;
+    font-weight: 700;
+  }
+}
+
+.tableHeader {
+
+  .cell {
+    @include make-spacer(p, 2);
+
+    background-color: var(--white);
+    color: var(--royal-blue);
+  }
+}
+
+.tableRow {
+
+  &:nth-of-type( odd ) {
+    background-color: var(--white);
+  }
+}
+
+.grid {
+  width: 100%;
+  height: $grid-container-height;
+  overflow: auto;
+}
+
+.content {
+  display: grid;
+}

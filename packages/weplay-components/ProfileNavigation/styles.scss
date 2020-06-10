@@ -1,0 +1,126 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex($direction: column);
+}
+
+.user {
+  @include make-spacer(py, 2);
+  @include make-spacer(mb, 2);
+  @include flex;
+
+  border-bottom: 1px solid var(--grey-200);
+}
+
+.infoWrap {
+  @include flex(center, $direction: column);
+  @include make-spacer(ml, 1);
+}
+
+.name {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 0);
+
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.info {
+  @include font-size(12px, 18px);
+  @include make-spacer(mb, 0);
+
+  color: var(--grey-500);
+}
+
+.category {
+  @include make-spacer(pb, 2);
+  @include make-spacer(mb, 2);
+
+  border-bottom: 1px solid var(--grey-200);
+
+  &:first-of-type {
+    @include make-spacer(pb, 0);
+    @include make-spacer(mb, 0);
+
+    border-top: 0;
+  }
+}
+
+.itemWrap {
+  @include make-spacer(mb, 2);
+}
+
+.accordion {
+  @include reset-button;
+  @include font-size(16px, 24px);
+  @include flex(flex-start);
+
+  width: 100%;
+  color: var(--royal-blue);
+  font-weight: 400;
+
+  &:hover {
+    background-color: transparent;
+    color: var(--blue);
+  }
+
+  &.isOpen {
+    @include make-spacer(mb, 2);
+
+    .icon {
+      transform: rotateZ(180deg);
+      color: var(--black);
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  text-align: left;
+}
+
+.icon {
+  justify-self: flex-end;
+}
+
+.list {
+  @include reset-list;
+  @include make-spacer(mb, 2);
+}
+
+.item {
+  @include make-spacer(ml, 4);
+  @include make-spacer(mb, 2);
+
+  &:last-of-type {
+    @include make-spacer(mb, 0);
+  }
+}
+
+.link {
+  @include transition(color);
+
+  display: block;
+  color: var(--royal-blue);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--blue);
+  }
+
+  &.isActive {
+    color: var(--blue);
+  }
+}
+
+.wrapper {
+  @include flex($align-items: center);
+}
+
+.premium {
+  color: var(--premium);
+
+  &:hover {
+    color: var(--premium-hover);
+  }
+}

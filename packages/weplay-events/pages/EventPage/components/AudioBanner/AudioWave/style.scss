@@ -1,0 +1,90 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+$animation-name: 'pump-it-up';
+
+.block {
+  @include flex(center, center);
+
+  position: relative;
+}
+
+@mixin keyframes($animationName) {
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+$number-of-divs: 50;
+$max-scale: 2;
+$min-scale: 0.1;
+
+@function random-num($min, $max) {
+  $rand: random();
+  $random-num: $min + floor($rand * (($max - $min) + 1));
+
+  @return $random-num;
+}
+
+@for $i from 1 through $number-of-divs {
+  @include keyframes(#{$animation-name+$i}) {
+
+    20% {
+      transform: scaleY(#{random-num($min-scale, $max-scale)});
+    }
+
+    40% {
+      transform: scaleY(#{random-num($min-scale, $max-scale)});
+    }
+
+    60% {
+      transform: scaleY(#{random-num($min-scale, $max-scale)});
+    }
+
+    80% {
+      transform: scaleY(#{random-num($min-scale, $max-scale)});
+    }
+
+    100% {
+      transform: scaleY(#{random-num($min-scale, $max-scale)});
+    }
+  }
+}
+
+.levels {
+  @include flex(flex-end);
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50px;
+}
+
+.level {
+  @include make-spacer(ml, half);
+
+  display: inline-block;
+  position: relative;
+  width: 1px;
+  height: 50px;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--blue);
+    width: 1px;
+    content: ' ';
+  }
+
+  @for $i from 1 through $number-of-divs {
+
+    &:nth-child( #{$i} ) {
+
+      &::after {
+        height: 50px;
+        animation: #{$animation-name+$i} 450 + random(800) + ms linear infinite alternate;
+      }
+    }
+  }
+}

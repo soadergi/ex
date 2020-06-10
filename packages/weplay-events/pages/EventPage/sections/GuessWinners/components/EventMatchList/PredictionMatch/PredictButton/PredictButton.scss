@@ -1,0 +1,21 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.button {
+  @include make-spacer(mx, auto);
+}
+
+.text {
+  @include flex($align-items: center);
+  @include font-size(14px);
+
+  justify-content: center;
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+
+  border-radius: 50%;
+  color: var(--white);
+}

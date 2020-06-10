@@ -1,0 +1,81 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(py, 1);
+  @include make-spacer(py, 2, sm);
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 3, sm);
+  @include make-spacer(px, 2, md);
+  @include make-spacer(px, 3, lg);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center);
+  }
+}
+
+.time {
+  @include make-spacer(pb, 1);
+  @include make-spacer(pb, 0, sm);
+  @include font-size(10px, 16px);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-down(xs) {
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(sm) {
+    flex: 0 0 rem(64px);
+    max-width: rem(64px);
+  }
+}
+
+.participants {
+  @include make-spacer(px, 1, sm);
+
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 4rem 1fr;
+  text-align: center;
+
+  @include media-breakpoint-down(xs) {
+    align-items: start;
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: auto;
+  }
+}
+
+.socialLinks {
+  @include make-spacer(pt, 1);
+  @include make-spacer(pt, 0, sm);
+
+  display: block;
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+}
+
+.socialLinksMobile {
+  @include make-spacer(mt, 1);
+
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}

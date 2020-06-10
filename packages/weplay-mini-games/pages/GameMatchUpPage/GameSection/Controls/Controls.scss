@@ -1,0 +1,33 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mb, 2);
+  @include flex(space-between, flex-start, column);
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+  }
+}
+
+.timers {
+  display: flex;
+
+  > * {
+    @include make-spacer(mr, 3);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.button {
+  @include make-spacer(mt, 2);
+
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 0;
+    width: auto;
+  }
+}

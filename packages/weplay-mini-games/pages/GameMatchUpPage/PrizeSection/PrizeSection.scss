@@ -1,0 +1,98 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mt, 3);
+  @include make-spacer(pt, 3);
+
+  position: relative;
+  border: 1px solid var(--white-alpha-008);
+  background-color: var(--royal-blue-alpha-08);
+}
+
+.content {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 3, sm);
+
+  color: var(--white);
+}
+
+.imageWrap {
+  text-align: center;
+}
+
+.image {
+  @include size(auto, rem(128px));
+
+  @include media-breakpoint-up(sm) {
+    @include size(auto, rem(188px));
+  }
+}
+
+.title {
+  @include font-size(24px, 32px);
+  @include make-spacer(mb, 3);
+
+  text-align: center;
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.text {
+  @include make-spacer(mb, 3);
+  @include font-size(16px, 24px);
+
+  text-align: center;
+  font-weight: var(--wp-font-weight-normal);
+
+  @include media-breakpoint-up(sm) {
+    font-weight: var(--wp-font-weight-regular);
+  }
+}
+
+.list {
+  @include reset-list;
+
+  &:first-of-type {
+    @include make-spacer(mb, 3);
+
+    border-bottom: 1px solid var(--white-alpha-008);
+
+    .item {
+      @include make-spacer(mx, auto);
+
+      max-width: rem(280px);
+    }
+  }
+}
+
+.item {
+  @include make-spacer(mb, 3);
+  @include flex(space-between, center, column);
+  @include font-size(18px, 26px);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  &:first-child {
+    color: var(--blue);
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(20px, 24px);
+  }
+}
+
+.place {
+  @include make-spacer(mb, 1);
+}
+
+.mute {
+  @include font-size(14px, 22px);
+  @include make-spacer(mb, 0);
+  @include make-spacer(mt, 4);
+  @include make-spacer(mt, 5, sm);
+
+  color: var(--grey-500);
+}

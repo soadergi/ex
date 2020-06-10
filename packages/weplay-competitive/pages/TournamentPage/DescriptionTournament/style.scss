@@ -1,0 +1,152 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  background-color: var(--grey-100);
+  overflow: hidden;
+}
+
+.container {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 0);
+
+  p:not( [class] ) {
+    @include make-spacer(my, 2);
+
+    line-height: 1.714;
+    font-size: rem(14px);
+    font-weight: 400;
+
+    @include media-breakpoint-up(sm) {
+      line-height: 2;
+      font-size: rem(16px);
+    }
+  }
+
+  h2 {
+    @include make-spacer(mt, 4);
+    @include make-spacer(mb, 2);
+
+    line-height: 1.5;
+    font-size: rem(16px);
+    font-weight: 700;
+
+    @include media-breakpoint-up(sm) {
+      line-height: 1.25;
+      font-size: rem(32px);
+    }
+  }
+
+  ol {
+    @include reset-list();
+    @include make-spacer(my, 2);
+
+    > li {
+      @include make-spacer(pl, 4);
+      @include make-spacer(mb, 2);
+
+      position: relative;
+      line-height: 2;
+      font-size: 1rem;
+      counter-increment: myCount;
+
+      &::before {
+        position: absolute;
+        top: 0.125rem;
+        left: 0;
+        min-width: 1.5rem;
+        height: 1.5rem;
+        text-align: center;
+        white-space: nowrap;
+        color: var(--blue);
+        font-size: 0.875rem;
+        font-weight: 500;
+        content: counter(myCount) '.';
+
+        @include media-breakpoint-down(xs) { // stylelint-disable-line
+          left: -0.3rem;
+        }
+      }
+
+      &:last-child {
+        @include make-spacer(mb, 0);
+      }
+
+      @include media-breakpoint-down(xs) {
+        padding-left: 1.5rem;
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  ul:not( .c-table-inform__list ) {
+    @include reset-list();
+    @include make-spacer(my, 2);
+
+    li {
+      @include make-spacer(pl, 4);
+      @include make-spacer(mb, 2);
+
+      position: relative;
+      line-height: 2;
+      font-size: 1rem;
+      font-weight: 400;
+
+      &::before {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.5rem;
+        border-radius: 50%;
+        background-color: var(--blue);
+        width: 0.375rem;
+        height: 0.375rem;
+        content: '';
+      }
+
+      &:last-child {
+        @include make-spacer(mb, 0);
+      }
+
+      @include media-breakpoint-down(xs) {
+        padding-left: 1.5rem;
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  //INFO: !!! This styles are using just to prevent behavior of the `iframe`s
+  // which are placed inside migrated news articles from old DB !!!
+
+  > iframe,
+  > p iframe,
+  > *:not( [class] ) iframe {
+    display: block !important; /* stylelint-disable-line declaration-no-important */
+    width: 100% !important; /* stylelint-disable-line declaration-no-important */
+    height: auto !important; /* stylelint-disable-line declaration-no-important */
+    min-height: 13rem !important; /* stylelint-disable-line declaration-no-important */
+
+    @include media-breakpoint-up(sm) {
+      min-height: 20rem !important; /* stylelint-disable-line declaration-no-important */
+    }
+
+    @include media-breakpoint-up(lg) {
+      min-height: 26rem !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+}

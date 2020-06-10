@@ -1,0 +1,9 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.content {
+  @include make-spacer(pt, 4);
+}
+
+.title {
+  @include font-size(20px, 24px);
+}

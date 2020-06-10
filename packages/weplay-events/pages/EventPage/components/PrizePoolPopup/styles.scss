@@ -1,0 +1,30 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(pt, 10);
+  @include make-spacer(pb, 4);
+  @include make-spacer(px, 1);
+  @include make-spacer(px, 2, sm);
+
+  position: relative;
+  background-color: var(--white);
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: rem(616px);
+  }
+}
+
+.wrapCloseIcon {
+  @include make-spacer(pt, 5);
+  @include make-spacer(mb, 2);
+}
+
+.title {
+  @include make-spacer(mb, 5);
+  @include font-size(24px, 32px);
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-bold);
+}

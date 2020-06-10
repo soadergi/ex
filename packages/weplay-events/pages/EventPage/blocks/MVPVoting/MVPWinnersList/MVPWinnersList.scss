@@ -1,0 +1,39 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.mvp {
+  @include make-spacer(mb, 0);
+  @include make-spacer(mb, 6, sm);
+  @include make-spacer(mb, 0, md);
+  @include make-spacer(ml, 0);
+  @include make-spacer(ml, 5, md);
+  @include flex($direction: column);
+  @include size(100%);
+
+  position: relative;
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+
+    &::before {
+      @include size(rem(1px), 100%);
+      @include absolute-center;
+
+      position: absolute;
+      right: 0;
+      background: var(--grey-200);
+      content: '';
+
+      &.isDarkTheme {
+        background-color: var(--dark-grey);
+      }
+    }
+  }
+
+  &.isOffSeparator {
+
+    &::before {
+      content: none;
+    }
+  }
+}

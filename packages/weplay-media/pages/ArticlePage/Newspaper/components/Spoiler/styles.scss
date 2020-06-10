@@ -1,0 +1,76 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.titleBlock {
+  @include flex(center, center);
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 2, sm);
+}
+
+.title {
+  @include font-size(20px);
+  @include make-spacer(mb, 0);
+
+  color: var(--magenta);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.text {
+  @include font-size(16px, 28px);
+
+  position: relative;
+  height: rem(68px);
+  overflow: hidden;
+  color: var(--royal-blue);
+
+  &::after {
+    @include size(100%, 0);
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 0 rem(64px) rem(64px) var(--white);
+    content: '';
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(18px, 32px);
+  }
+}
+
+.icon {
+  @include transition(transform);
+  @include font-size(16px);
+}
+
+.button {
+  @include reset-button;
+  @include make-spacer(ml, 1);
+
+  color: var(--blue);
+}
+
+.block {
+  @include make-spacer(my, 3);
+  @include make-spacer(my, 6, md);
+  @include make-spacer(py, 2);
+
+  border-top: 1px solid var(--magenta);
+  border-bottom: 1px solid var(--magenta);
+
+  &.isOpened {
+
+    .icon {
+      transform: rotateZ(180deg);
+    }
+
+    .text {
+      height: auto;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

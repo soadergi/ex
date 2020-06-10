@@ -1,0 +1,26 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.container {
+  @include tournament-wrapper;
+
+  // Modifier
+
+  &.content {
+    --wp-tournament-width: 44.5rem;
+
+    @include make-spacer(mx, 0);
+    @include make-spacer(px, 0);
+
+    @include media-breakpoint-up(md) {
+      max-width: var(--wp-tournament-width);
+    }
+  }
+
+  &.fluid {
+    @include media-breakpoint-up(md) {
+      @include make-spacer(px, 5);
+
+      max-width: none;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex(space-between, $direction: column);
+
+  min-height: rem(261px);
+
+  @include media-breakpoint-up(sm) {
+    min-height: rem(220px);
+  }
+}
+
+.header {
+  @include make-spacer(mb, 3);
+
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-gap: rem(8px);
+}
+
+.wrapDiscipline {
+  @include flex($align-items: center);
+}
+
+.text {
+  @include make-spacer(m, 0);
+  @include font-size(12px, 24px);
+}
+
+.prizePool {
+  @include make-spacer(m, 0);
+  @include flex(flex-end, center);
+  @include font-size(16px);
+
+  text-align: right;
+  font-weight: 700;
+}
+
+.wrapTournamentName {
+  @include flex(flex-end);
+
+  max-height: rem(24px);
+  text-align: right;
+}
+
+.wrapTitle {
+  @include flex($direction: column);
+
+  text-align: center;
+  font-weight: 700;
+}
+
+.title {
+  @include make-spacer(mb, 0);
+  @include font-size(24px, 32px);
+
+  min-height: rem(62px);
+  text-align: center;
+  color: var(--white);
+  font-weight: 700;
+
+  @include media-breakpoint-up(sm) {
+    min-height: rem(93px);
+  }
+}
+
+.prizePoolGold {
+  color: var(--gold);
+}
+
+.avatar {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mx, auto);
+  @include size(rem(96px));
+
+  flex: none;
+  border: 0;
+  border-radius: 0;
+  max-width: rem(96px);
+}
+
+.image {
+  @include size(auto, 24px);
+
+  display: block;
+}
+
+.icon {
+  @include make-spacer(mr, 2);
+  @include font-size(24px);
+
+  color: var(--white);
+
+  &.dota {
+    color: var(--google);
+  }
+}
+
+.isTournamentArchived {
+
+  .avatar {
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+  }
+}

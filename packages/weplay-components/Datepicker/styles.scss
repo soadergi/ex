@@ -1,0 +1,288 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+:global {
+  @import './react-datepicker';
+
+  .react-datepicker-popper {
+    z-index: 12;
+  }
+
+  .react-datepicker-wrapper {
+    width: 100%;
+  }
+
+  .react-datepicker {
+    @include font-size(12px, 16px);
+
+    border: 0;
+    font-family: var(--wp-font-family);
+
+    &__input-container {
+      width: 100%;
+
+      &::after {
+        @include size(rem(7px));
+
+        display: block;
+        position: absolute;
+        right: rem(16px);
+        bottom: rem(16px);
+        border-width: rem(6px) rem(5px) 0 rem(5px);
+        border-style: solid;
+        border-color: var(--grey-500) transparent transparent transparent;
+        content: '';
+      }
+
+      input {
+        @include make-spacer(pl, 2);
+        @include make-spacer(pr, 5);
+        @include font-size(14px, 24px);
+        @include size(100%, rem(40px));
+
+        position: relative;
+        border: rem(1px) solid var(--grey-300);
+        border-radius: rem(4px);
+        background-color: var(--white);
+        cursor: pointer;
+        text-align: left;
+        color: var(--grey-500);
+      }
+    }
+
+    &__month-container {
+      @include box-shadow;
+
+      position: relative;
+      border: rem(1px) solid var(--grey-300);
+      border-radius: rem(8px);
+
+      &::before {
+        @include size(0.375rem);
+
+        display: block;
+        position: absolute;
+        top: -0.24rem;
+        left: 1rem;
+        transform: rotate(-45deg);
+        border-top: rem(1px) solid var(--grey-300);
+        border-right: rem(1px) solid var(--grey-300);
+        background-color: var(--white);
+        content: '';
+      }
+    }
+
+    &__month-dropdown-container,
+    &__year-dropdown-container {
+      @include make-spacer(m, 0);
+
+      width: rem(116px);
+    }
+
+    &__month-dropdown-container {
+      @include make-spacer(mr, 1);
+    }
+
+    &__current-month {
+      @include font-size(14px, 24px);
+      @include make-spacer(mb, 1);
+
+      font-weight: 400;
+    }
+
+    &__day-names {
+      @include font-size(12px, 16px);
+      @include flex(space-around, center, row, wrap);
+
+      text-transform: uppercase;
+      color: var(--royal-blue);
+    }
+
+    &__day-name {
+      @include make-spacer(m, 0);
+
+      line-height: 1.4;
+    }
+
+    &__month-select,
+    &__year-select {
+      @include make-spacer(pl, 2);
+      @include make-spacer(pr, 5);
+      @include font-size(12px, 16px);
+
+      position: relative;
+      border: rem(1px) solid var(--grey-300);
+      border-radius: rem(8px);
+      background-color: var(--white);
+      cursor: pointer;
+      width: 100%;
+      height: rem(32px);
+      text-align: left;
+      color: var(--royal-blue);
+    }
+
+    &__triangle {
+      display: none;
+    }
+
+    &__navigation {
+      @include transition(#{opacity});
+      @include size(rem(32px), rem(24px));
+
+      top: rem(16px);
+      border: 0;
+      border-radius: rem(8px);
+
+      &:hover {
+        background-color: var(--grey-500-alpha-008);
+      }
+
+      &--previous {
+
+        &::before {
+          @include make-spacer(mx, auto);
+          @include size(rem(16px), rem(1px));
+
+          display: block;
+          position: absolute;
+          top: rem(12px);
+          right: 0;
+          left: 0;
+          background-color: var(--grey-500);
+          content: '';
+        }
+
+        &::after {
+          @include size(rem(7px));
+
+          display: block;
+          position: absolute;
+          top: rem(9px);
+          left: rem(8px);
+          transform: rotateZ(45deg);
+          border-bottom: rem(1px) solid var(--grey-500);
+          border-left: rem(1px) solid var(--grey-500);
+          content: '';
+        }
+      }
+
+      &--next {
+
+        &::before {
+          @include make-spacer(mx, auto);
+          @include size(rem(16px), rem(1px));
+
+          display: block;
+          position: absolute;
+          top: rem(12px);
+          right: 0;
+          left: 0;
+          background-color: var(--grey-500);
+          content: '';
+        }
+
+        &::after {
+          @include size(rem(7px));
+
+          display: block;
+          position: absolute;
+          top: rem(9px);
+          right: rem(8px);
+          transform: rotateZ(-135deg);
+          border-bottom: rem(1px) solid var(--grey-500);
+          border-left: rem(1px) solid var(--grey-500);
+          content: '';
+        }
+      }
+    }
+
+    &__header {
+      @include make-spacer(px, 2);
+      @include make-spacer(pt, 2);
+      @include make-spacer(pb, 1);
+
+      border-bottom-color: var(--grey-300);
+      background-color: var(--white);
+
+      &__dropdown {
+        @include make-spacer(mb, 1);
+      }
+    }
+
+    &__month {
+      @include make-spacer(m, 0);
+      @include make-spacer(px, 2);
+      @include make-spacer(pt, 1);
+      @include make-spacer(pb, 2);
+    }
+
+    &__week {
+      @include make-spacer(mb, 1);
+      @include flex(space-around, center, row, wrap);
+
+      &:last-child {
+        @include make-spacer(mb, 0);
+      }
+    }
+
+    &__day {
+      @include transition(#{opacity});
+      @include make-spacer(m, 0);
+
+      width: rem(24px);
+      line-height: rem(24px);
+      color: var(--grey-500);
+
+      &--selected,
+      &--keyboard-selected {
+        @include box-shadow;
+
+        border-radius: rem(8px);
+        background-color: var(--blue);
+        color: var(--white);
+        font-weight: 500;
+
+        &:hover {
+          background-color: var(--blue-hover);
+        }
+      }
+
+      &--outside-month {
+        visibility: hidden;
+      }
+
+      &:hover {
+        border-radius: rem(8px);
+        background-color: var(--grey-500-alpha-008);
+      }
+
+      &--today {
+        color: var(--black);
+        font-weight: 500;
+      }
+    }
+  }
+
+  .react-datepicker-popper[data-placement^='top'] {
+
+    .react-datepicker {
+
+      &__month-container {
+
+        &::before {
+          @include size(0.375rem);
+
+          display: block;
+          position: absolute;
+          top: auto;
+          bottom: -0.24rem;
+          left: 1rem;
+          transform: rotate(135deg);
+          border-top: rem(1px) solid var(--grey-300);
+          border-right: rem(1px) solid var(--grey-300);
+          background-color: var(--white);
+          content: '';
+        }
+      }
+    }
+  }
+}

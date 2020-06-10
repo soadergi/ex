@@ -1,0 +1,101 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex;
+
+  &:not( :last-child ) {
+    @include make-spacer(mb, 3);
+    @include make-spacer(mb, 0, sm);
+  }
+
+  &:first-child {
+    @include make-spacer(mb, 4, sm);
+    @include make-spacer(mb, 0, lg);
+  }
+
+  @include media-breakpoint-only(xs) {
+    flex-direction: column;
+  }
+
+  @include media-breakpoint-only(sm) {
+
+    &:first-child {
+      width: 100%;
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+
+    &:first-child {
+      width: 100%;
+    }
+  }
+}
+
+.image {
+  @include make-spacer(mx, auto);
+  @include make-spacer(mr, 2, sm);
+  @include make-spacer(ml, 0, sm);
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 0, sm);
+  @include make-spacer(p, 1);
+
+  border: 1px solid var(--dark-grey);
+  border-radius: 50%;
+  background-color: var(--royal-blue);
+}
+
+.wrapContent {
+  @include flex($direction: column);
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, 0);
+    @include make-spacer(mr, 3, sm);
+    @include make-spacer(mt, 1);
+    @include make-spacer(mt, 0, sm);
+    @include make-spacer(mb, 3);
+    @include make-spacer(mb, 0, sm);
+  }
+
+  @include media-breakpoint-only(xs) {
+    text-align: center;
+  }
+}
+
+.headerText,
+.nickname,
+.prize {
+  @include make-spacer(mb, 1);
+}
+
+.headerText {
+  @include font-size(12px, 18px);
+
+  color: var(--grey-500);
+}
+
+.nickname {
+  @include make-spacer(mx, auto);
+  @include make-spacer(mx, 0, sm);
+  @include font-size(18px, 26px);
+
+  max-width: rem(200px);
+  word-break: break-word;
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(20px, 28px);
+  }
+
+  @include media-breakpoint-only(sm) {
+    max-width: rem(152px);
+  }
+}
+
+.prize {
+  @include font-size(16px, 24px);
+
+  color: var(--warning);
+}

@@ -1,0 +1,21 @@
+$avatar-size: (
+  xs: rem(80px),
+  sm: rem(128px),
+);
+
+$score-block-width: rem(400px);
+$grid-gap: rem(24px);
+
+@mixin avatar-flex-size($property) {
+  @include size($property);
+
+  flex: 0 0 $property;
+  border-radius: $property;
+  max-width: $property;
+}
+
+@mixin score-box-table {
+  display: grid;
+  grid-template-columns: rem(240px) repeat(5, rem(40px));
+  grid-column-gap: rem(24px);
+}

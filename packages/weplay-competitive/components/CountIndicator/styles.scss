@@ -1,0 +1,7 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.indicator {
+  @include font-size(12px, 16px);
+
+  color: var(--grey-500);
+}

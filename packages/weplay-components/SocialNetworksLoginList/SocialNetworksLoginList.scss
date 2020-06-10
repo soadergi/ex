@@ -1,0 +1,17 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include reset-list;
+}
+
+.item {
+  @include make-spacer(mr, 2);
+  @include make-spacer(mb, 2);
+
+  display: inline-block;
+  vertical-align: middle;
+
+  &:last-child {
+    @include make-spacer(mr, 0);
+  }
+}

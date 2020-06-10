@@ -1,0 +1,33 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.list {
+  @include reset-list;
+  @include flex;
+
+  white-space: nowrap;
+
+  &.isCentered {
+    @include media-breakpoint-up(sm) {
+      justify-content: center;
+    }
+  }
+
+  &.hasSeparator {
+    $one-pixel: rem(1px);
+
+    position: relative;
+
+    &::after {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      background-color: var(--grey-200);
+      width: 100%;
+      height: $one-pixel;
+      content: '';
+    }
+  }
+}

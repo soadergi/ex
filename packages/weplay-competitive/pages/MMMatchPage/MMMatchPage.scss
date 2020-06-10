@@ -1,0 +1,70 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'variables';
+
+.page {
+  @include make-spacer(pb, 4);
+  @include make-spacer(pb, 12, md);
+}
+
+.tabsList {
+  @include make-spacer(my, 3);
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}
+
+.tab {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+
+  &.isActive {
+    display: block;
+  }
+}
+
+.firstTab {
+  grid-column: 1;
+}
+
+.secondTab {
+  grid-column: 2;
+
+  @include media-breakpoint-up(md) {
+    grid-column: 3;
+  }
+}
+
+.empty {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mt, 0, sm);
+}
+
+.grid {
+  @include make-spacer(pt, 3, sm);
+
+  @include media-breakpoint-up(sm) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 1.5rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr $score-block-width 1fr;
+  }
+
+  &.isFullWidthLayout {
+    @include make-spacer(pt, 3);
+
+    grid-template-columns: 1fr;
+    grid-row-gap: 0;
+
+    .information {
+      grid-column: 1;
+    }
+  }
+}

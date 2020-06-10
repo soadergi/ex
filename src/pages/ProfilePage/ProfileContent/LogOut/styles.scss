@@ -1,0 +1,41 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+@mixin button() {
+  @extend %buttonReset;
+
+  @include transition(color);
+
+  color: var(--royal-blue);
+}
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1.5rem;
+  max-width: rem(632px);
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+
+  color: var(--royal-blue);
+}
+
+.logOut {
+  @include button;
+  @include font-size(14px, 16px);
+
+  font-weight: 500;
+}
+
+.wrapper {
+  @include flex(flex-start, center);
+}
+
+.delete {
+  @include button;
+  @include font-size(14px, 16px);
+
+  color: var(--error);
+  font-weight: 500;
+}

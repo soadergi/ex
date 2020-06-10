@@ -1,0 +1,63 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pb, 2, sm);
+}
+
+.title {
+  @include font-size(28px, 32px);
+  @include make-spacer(mb, 1);
+
+  text-align: center;
+  font-weight: 700;
+}
+
+.section {
+  @include flex(center, center, column);
+  @include make-spacer(mb, 3);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(center, center, row);
+  }
+}
+
+.icon {
+  @include size(24px);
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 0, sm);
+  @include make-spacer(mr, 1, sm);
+}
+
+.text {
+  @include font-size(18px, 24px);
+
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(18px, 32px);
+  }
+}
+
+.checkboxText {
+  @include font-size(12px, 16px);
+
+  color: var(--grey-500);
+}
+
+.buttonBlock {
+  @include make-spacer(mt, 3);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 1rem;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.button {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+}
+

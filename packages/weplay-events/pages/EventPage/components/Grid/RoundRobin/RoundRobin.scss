@@ -1,0 +1,81 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(pb, 5);
+
+  position: relative;
+}
+
+.leftSide,
+.rightSide {
+  @include flex($align-items: center, $wrap: wrap, $display: inline-flex);
+  @include size(100%, auto);
+}
+
+.leftSide {
+  @include media-breakpoint-up(md) {
+    @include size(60%, auto);
+  }
+}
+
+.rightSide {
+  @include make-spacer(mt, 3);
+  @include make-spacer(mt, 0, md);
+
+  @include media-breakpoint-up(md) {
+    @include size(40%, auto);
+
+    justify-content: flex-end;
+  }
+}
+
+.button {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, sm);
+  @include size(100%, auto);
+
+  @include media-breakpoint-up(sm) {
+    @include size(auto);
+  }
+}
+
+.square {
+  @include make-spacer(mr, 1);
+  @include make-spacer(ml, 3);
+  @include size(rem(24px));
+
+  border: 1px solid var(--grey-200);
+
+  &:first-of-type {
+    @include make-spacer(ml, 0);
+    @include make-spacer(ml, 3, sm);
+  }
+}
+
+.wins {
+  background-color: var(--success-alpha-008);
+}
+
+.loses {
+  background-color: var(--error-alpha-008);
+}
+
+.playoffs {
+  background-color: var(--blue-alpha-008);
+}
+
+.description {
+  @include font-size(12px, 20px);
+
+  color: var(--grey-400);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.text {
+  @include make-spacer(mr, 2);
+  @include font-size(14px, 22px);
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-normal);
+}

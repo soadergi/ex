@@ -1,0 +1,102 @@
+// ------------------------------------
+//   #C-SOCIAL-LINKS-ITEM
+// ------------------------------------
+
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+@mixin iconSize($size, $color) { //stylelint-disable-line
+
+  .icon {
+    color: ($color);
+  }
+}
+
+$names: (
+  facebook: (
+    color: var(--facebook)
+  ),
+  vk: (
+    color: var(--vk)
+  ),
+  twitter: (
+    color: var(--twitter)
+  ),
+  instagram: (
+    color: var(--instagram)
+  ),
+  telegramMedia: (
+    color: var(--telegram)
+  ),
+  zenMedia: (
+    color: var(--youtube)
+  ),
+  youtube: (
+    color: var(--youtube)
+  ),
+  twitch: (
+    color: var(--twitch)
+  ),
+  discord: (
+    color: var(--discord)
+  ),
+  steam: (
+    color: var(--steam)
+  )
+);
+
+.title {
+  @include font-size(20px, 24px);
+  @include make-spacer(mb, 1);
+
+  display: block;
+  color: var(--royal-blue);
+  font-weight: 700;
+}
+
+.text {
+  @include make-spacer(ml, 1);
+  @include make-spacer(mb, 0);
+}
+
+.subTitle {
+  @include font-size(12px, 16px);
+
+  display: block;
+  color: var(--grey-500);
+}
+
+.link {
+  display: inline-flex;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.light {
+
+    .title {
+      color: var(--white);
+    }
+  }
+
+  &.greyBackground {
+    //new design/view for component
+    @include make-spacer(py, 4);
+    @include make-spacer(px, 3);
+  }
+
+  @each $name, $value in $names {
+
+    &.#{$name} {
+      @include iconSize(map-get($value, font), map-get($value, color));
+    }
+  }
+}
+
+.linkIcon {
+  @include make-spacer(ml, 2);
+
+  color: var(--blue);
+}

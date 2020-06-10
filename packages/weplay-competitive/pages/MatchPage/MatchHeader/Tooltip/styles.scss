@@ -1,0 +1,26 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(center, center, $wrap: wrap);
+
+  background-color: var(--royal-blue-alpha-08);
+  width: 100%;
+}
+
+.icon {
+  @include size(rem(20px));
+  @include make-spacer(mr, 1);
+
+  fill: var(--blue);
+}
+
+.link {
+  @include flex(center, center);
+  @include make-spacer(p, 1);
+
+  color: var(--blue);
+}
+
+.text {
+  @include font-size(12px, 20px);
+}

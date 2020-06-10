@@ -1,0 +1,24 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.root {
+  position: relative;
+}
+
+.upper {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.lower {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.rootNode {
+  position: absolute;
+  align-items: center;
+  height: 100%;
+}

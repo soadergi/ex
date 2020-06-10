@@ -1,0 +1,66 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.twitch {
+  color: var(--twitch);
+}
+
+.reddit {
+  color: var(--reddit);
+}
+
+.twitter {
+  color: var(--twitter);
+}
+
+.block {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 3, sm);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, md);
+  @include size(100%, rem(326px));
+
+  border: 1px solid var(--grey-200);
+  overflow: hidden;
+  text-align: center;
+
+  @include media-breakpoint-only(md) {
+    @include size(rem(460px), rem(326px));
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include size(rem(384px), rem(350px));
+  }
+}
+
+.title {
+  @include font-size(16px, 20px);
+  @include make-spacer(my, 3);
+
+  font-weight: 700;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(24px, 30px);
+  }
+}
+
+.text {
+  @include font-size(12px, 18px);
+
+  white-space: pre-wrap;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.icon {
+  color: var(--blue);
+}
+
+:global {
+
+  .socialSlider {
+    height: rem(210px);
+  }
+}

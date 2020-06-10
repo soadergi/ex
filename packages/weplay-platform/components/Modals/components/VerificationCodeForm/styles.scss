@@ -1,0 +1,31 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.input {
+  @include input;
+  @include make-spacer(px, 0);
+  @include make-spacer(mx, 1);
+
+  width: rem(40px);
+  text-align: center;
+}
+
+.password {
+
+  &Body {
+    @include flex(center, center);
+    @include make-spacer(mb, 2);
+
+  }
+
+  &Message {
+    @include make-spacer(mb, 2);
+    @include font-size(12px, 16px);
+
+    min-height: 2rem;
+    text-align: center;
+  }
+
+  &Link {
+    font-weight: 500;
+  }
+}

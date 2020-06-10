@@ -1,0 +1,80 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.registrationBlock {
+  @include make-spacer(mt, 3);
+  @include make-spacer(mt, 0, sm);
+
+  position: relative;
+  width: 100%;
+}
+
+.button {
+  min-width: rem(240px);
+  line-height: 2.86;
+
+  @include media-breakpoint-up(sm) {
+    line-height: 2.68;
+  }
+
+  @extend %button;
+  @extend %buttonCta;
+  @extend %buttonPromoSmall;
+}
+
+.success {
+  @include flex(center, center);
+
+  &Text {
+    @include make-spacer(mb, 0);
+    @include font-size(14px, 24px);
+
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  &Icon {
+    @include flex(center, center);
+    @include size(24px);
+    @include make-spacer(mr, 2);
+
+    position: relative;
+    border: 1px solid var(--blue);
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 1px;
+
+    &::before {
+      @include size(rem(22px));
+
+      display: block;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      border-radius: 50%;
+      background-color: transparent;
+      content: '';
+    }
+  }
+}
+
+.icon {
+  position: relative;
+  z-index: 2;
+  width: rem(8px);
+  color: var(--blue);
+}
+
+.discordLink {
+  @include make-spacer(mt, 2);
+
+  min-width: rem(208px);
+
+  @extend %button;
+}
+
+.discordIcon {
+  @include make-spacer(mr, 1);
+
+  color: var(--white);
+  font-size: 1rem;
+}

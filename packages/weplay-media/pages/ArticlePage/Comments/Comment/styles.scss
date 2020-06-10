@@ -1,0 +1,127 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  width: 100%;
+}
+
+.inside {
+  @include make-spacer(pl, 3);
+  @include make-spacer(pl, 7, sm);
+
+  border-left: 1px solid var(--grey-300);
+}
+
+.placeholder {
+  @include flex;
+
+  width: 100%;
+}
+
+.placeholderAvatar {
+  @include make-spacer(mr, 2);
+  @include size(rem(40px));
+
+  display: none;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--grey-200);
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+}
+
+.placeholderContent {
+  @include make-spacer(px, 1);
+  @include flex(center, center);
+
+  border-radius: rem(32px);
+  background-color: var(--grey-100);
+  width: 100%;
+  min-height: rem(40px);
+}
+
+.placeholderMessage {
+  @include make-spacer(py, 2);
+  @include make-spacer(py, 1, sm);
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 0);
+  @include word-break;
+
+  text-align: center;
+  white-space: pre-wrap;
+  color: var(--grey-500);
+}
+
+.info {
+  @include flex;
+  @include make-spacer(mb, 3);
+}
+
+.content {
+  @include make-spacer(pl, 7);
+
+  width: 100%;
+}
+
+.name {
+  @include make-spacer(mb, half);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.date {
+  @include make-spacer(mb, half);
+  @include font-size(12px);
+
+  color: var(--grey-500);
+}
+
+.time {
+  @include make-spacer(mr, 2);
+}
+
+.text {
+  @include make-spacer(mb, 1);
+  @include word-break;
+
+  white-space: pre-wrap;
+}
+
+.controls {
+  @include flex(space-between, center);
+
+  margin-bottom: 1.75rem;
+  padding-left: rem(56px);
+
+  @include media-breakpoint-down(xs) {
+    padding-left: 0;
+  }
+}
+
+.controlsBlock {
+  @include flex(space-between);
+}
+
+.controlsButton {
+  @include make-spacer(mr, 2);
+  @include transition(color);
+
+  font-size: rem(14px);
+  font-weight: 500;
+
+  &:last-child {
+    @include make-spacer(mr, 0);
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.comments {
+  @include flex;
+}

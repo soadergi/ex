@@ -1,0 +1,38 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.list {
+  @include reset-list;
+}
+
+.member {
+  @include font-size(14px, 24px);
+
+  position: relative;
+  min-height: rem(24px);
+  text-align: left;
+  color: var(--grey-500);
+
+  &::before {
+    @include make-spacer(pr, 1);
+
+    content: '-';
+  }
+
+  &:not( :last-child ) {
+    @include make-spacer(mb, 1);
+  }
+
+  &.dire {
+
+    &::before {
+      content: none;
+    }
+  }
+
+  &.votingMVP {
+
+    &::before {
+      content: none;
+    }
+  }
+}

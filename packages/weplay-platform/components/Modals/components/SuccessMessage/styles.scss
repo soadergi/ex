@@ -1,0 +1,6 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.information {
+  @include make-spacer(mb, 3);
+  @include font-size(16px, 32px);
+}

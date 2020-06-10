@@ -1,0 +1,43 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(py, 6);
+  @include make-spacer(py, 8, sm);
+
+  background-color: var(--grey-100);
+
+  &.columnist {
+    background-color: var(--royal-blue);
+    color: var(--white);
+
+    .subscribeBlock {
+      border-color: var(--dark-grey);
+    }
+  }
+}
+
+.grid {
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: rem(635px) 1fr;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: rem(788px) 1fr;
+  }
+}
+
+.subscribeBlock {
+  @include make-spacer(pt, 3);
+
+  border-top: 1px solid var(--grey-200);
+
+  @include media-breakpoint-up(md) {
+    @include make-spacer(pl, 2);
+    @include make-spacer(pt, 0);
+
+    border-top: 0;
+    border-left: 1px solid var(--grey-200);
+  }
+}

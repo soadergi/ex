@@ -1,0 +1,51 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.text {
+  @include font-size(12px, 12px);
+  @include transition(color);
+
+  display: none;
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    display: inline;
+  }
+}
+
+.icon {
+  @include make-spacer(mr, 1, sm);
+  @include transition(color);
+
+  flex: 0 0 rem(24px);
+  max-width: rem(24px);
+
+  &.discord {
+    color: var(--discord);
+  }
+
+  &.spectate {
+    color: var(--blue);
+  }
+}
+
+.link {
+  @include make-spacer(py, 1);
+  @include make-spacer(py, 0, sm);
+  @include flex(center, center);
+  @include transition(#{color});
+
+  &:hover {
+    text-decoration: none;
+
+    .icon {
+
+      &.discord {
+        color: var(--discord-hover);
+      }
+    }
+
+    .text {
+      color: var(--blue);
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.title {
+  @include font-size(20px, 28px);
+  @include make-spacer(mb, 3);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(24px, 32px);
+  }
+}
+
+.pick {
+  @include font-size(18px, 26px);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, sm);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(20px, 28px);
+  }
+}
+
+.list {
+  @include make-spacer(mb, 4);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: rem(24px);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

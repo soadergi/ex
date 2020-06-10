@@ -1,0 +1,140 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+// ------------------------------------
+//   #C-VIDEO
+// ------------------------------------
+
+.block {
+  position: relative;
+}
+
+.negativeOffsetTop {
+  margin-top: rem(-16px);
+
+  @include media-breakpoint-up(sm) {
+    margin-top: rem(-48px);
+  }
+}
+
+.articlePlayer {
+
+  .wrapper {
+    border: 0;
+  }
+
+  .controls {
+    display: none;
+  }
+}
+
+.frame {
+  @include aspect-ratio;
+
+  position: relative;
+  z-index: 90;
+}
+
+.chat {
+  position: relative;
+  z-index: 1;
+  height: rem(480px);
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    @include size(19.5rem, auto);
+  }
+}
+
+.withChat {
+  @include flex(flex-start, stretch, column);
+
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid var(--grey-300);
+
+  .container {
+    @include media-breakpoint-up(md) {
+      width: calc(100% - 19.5rem);
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    @include flex(flex-start, stretch, row);
+  }
+}
+
+.controls {
+  @include transition(#{transform, opacity});
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  z-index: 102;
+  box-shadow: 0 0 20px 1px var(--black);
+  background-color: var(--black-alpha-048);
+  height: 1.75rem;
+}
+
+.controlsButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: 0;
+  background-color: transparent;
+  font-size: 1rem;
+  fill: var(--white);
+}
+
+.wrapper {
+  @include transition(transform);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid var(--grey-300);
+  overflow: hidden;
+}
+
+.isSticky {
+  @include size(rem(376px), rem(213px));
+
+  position: fixed;
+  top: inherit;
+  right: 2rem;
+  bottom: 2rem;
+  left: inherit;
+  z-index: 101;
+  box-shadow: 1px 1px 8px var(--black-alpha-024);
+  max-width: 100%;
+
+  &:hover {
+
+    .controls {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.icon {
+  color: var(--white);
+}
+
+.iframe {
+  @include size(100%);
+}
+
+.audio {
+
+  .frame {
+    @include size(100%, rem(300px));
+
+    padding-top: 0;
+  }
+}

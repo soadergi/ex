@@ -1,0 +1,46 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 2);
+
+  border-radius: rem(4px);
+
+  &.white {
+    background-color: var(--white-alpha-024);
+    color: var(--white);
+
+    .link {
+      color: var(--white);
+    }
+
+    .icon {
+      color: var(--white);
+    }
+  }
+}
+
+.link {
+  @include font-size(16px, 24px);
+
+  color: var(--blue);
+}
+
+.eventIcon {
+  @include make-spacer(mr, 1);
+}
+
+.latestNews {
+  @include flex(flex-start, center);
+  @include make-spacer(mt, 2);
+}
+
+.icon {
+  @include transition(color);
+  @include make-spacer(mr, 1);
+
+  color: var(--blue);
+
+  &:hover {
+    color: var(--white-alpha-064);
+  }
+}

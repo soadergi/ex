@@ -1,0 +1,29 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  height: rem(48px);
+
+  @include media-breakpoint-up(sm) {
+    height: rem(72px);
+  }
+}
+
+.eventLogo {
+  @include make-spacer(mr, 3);
+  @include make-spacer(mr, 6, sm);
+
+  height: rem(44px);
+
+  @include media-breakpoint-up(sm) {
+    height: rem(72px);
+  }
+}
+
+.logo {
+  height: rem(40px);
+
+  @include media-breakpoint-up(sm) {
+    height: rem(60px);
+  }
+}
+

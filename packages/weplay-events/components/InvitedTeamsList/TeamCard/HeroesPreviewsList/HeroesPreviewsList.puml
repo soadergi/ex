@@ -1,0 +1,7 @@
+@startuml
+
+object HeroesPreviewsList {
+ previews: arrayOf(shape({})).isRequired,
+}
+
+@enduml

@@ -1,0 +1,28 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.button {
+  --button-max-width: 192px;
+
+  @extend %button;
+
+  @include font-size(12px, 30px);
+
+  width: 100%;
+  min-width: 0;
+  max-width: rem(var(--button-max-width));
+}
+
+.countdown {
+  @include make-spacer(ml, half);
+}
+
+.countdownItem {
+  position: relative;
+
+  &:not( :last-child ) {
+
+    &::after {
+      content: ':';
+    }
+  }
+}

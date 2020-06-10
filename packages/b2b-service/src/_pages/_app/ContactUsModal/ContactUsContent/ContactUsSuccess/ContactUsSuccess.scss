@@ -1,0 +1,39 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 3, md);
+  @include make-spacer(mx, auto);
+
+  border: 1px solid var(--grey-200);
+  border-radius: rem(6px);
+  background-color: var(--white);
+  max-width: rem(576px);
+
+  &.borderLess {
+    border: 0;
+  }
+}
+
+.title {
+  @include font-size(32px, 40px);
+  @include make-spacer(mb, 2);
+
+  text-align: center;
+}
+
+.text {
+  @include make-spacer(mb, 6);
+
+  text-align: center;
+  color: var(--grey-500);
+}
+
+.button {
+  @extend %button;
+
+  @include size(100%, auto);
+  @include make-spacer(py, half);
+  @include font-size(14px, 24px);
+}

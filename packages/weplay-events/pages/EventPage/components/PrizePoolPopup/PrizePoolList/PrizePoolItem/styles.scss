@@ -1,0 +1,72 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.winner {
+  @include flex(space-between, center);
+  @include make-spacer(py, 2);
+  @include make-spacer(py, 3, sm);
+
+  display: grid;
+  position: relative;
+  grid-template-columns: auto;
+  grid-row-gap: rem(16px);
+  width: 100%;
+
+  &:not( :last-child ) {
+    border-bottom: 1px solid var(--grey-200);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: rem(120px) 1fr rem(165px);
+    grid-row-gap: 0;
+  }
+}
+
+.label {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 0);
+
+  text-align: left;
+  color: var(--royal-blue);
+}
+
+.sumWrapper {
+  text-align: left;
+
+  @include media-breakpoint-up(md) {
+    @include flex(flex-end, center);
+
+    text-align: right;
+  }
+}
+
+.sum {
+  @include font-size(16px, 24px);
+
+  text-align: right;
+  color: var(--royal-blue);
+}
+
+.prize {
+  @include flex(flex-start, center, row, wrap);
+
+  .sumWrapper {
+    @include make-spacer(mt, 1);
+
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  @include media-breakpoint-up(md) {
+    @include flex(flex-start, center, row, nowrap);
+
+    .sumWrapper {
+      display: none;
+    }
+  }
+}
+
+.icon {
+  color: var(--blue);
+}

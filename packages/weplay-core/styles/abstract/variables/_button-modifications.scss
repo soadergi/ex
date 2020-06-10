@@ -1,0 +1,157 @@
+$button-sizes: (
+  (size: sm, spacer: 1, height: 32px)
+  (size: md, spacer: 2, height: 40px)
+  (size: lg, spacer: 3, height: 48px)
+);
+
+$button-primaries: (
+  (
+    type: basic,
+    bg: var(--blue),
+    color: var(--royal-blue),
+    hoverBg: var(--blue-hover)
+  ),
+  (
+    type: danger,
+    bg: var(--error),
+    color: var(--white),
+    hoverBg: var(--error-hover)
+  ),
+  (
+    type: success,
+    bg: var(--success),
+    color: var(--royal-blue),
+    hoverBg: var(--success-hover)
+  ),
+  (
+    type: cta,
+    bg: var(--magenta),
+    color: var(--white),
+    hoverBg: var(--magenta-hover)
+  ),
+  (
+    type: twitch,
+    bg: var(--twitch),
+    color: var(--white),
+    hoverBg: var(--twitch-hover)
+  ),
+  (
+    type: discord,
+    bg: var(--discord),
+    color: var(--white),
+    hoverBg: var(--discord-hover)
+  ),
+  (
+    type: facebook,
+    bg: var(--facebook),
+    color: var(--white),
+    hoverBg: var(--facebook-hover)
+  ),
+  (
+    type: telegram,
+    bg: var(--telegram),
+    color: var(--white),
+    hoverBg: var(--telegram-hover)
+  ),
+  (
+    type: twitter,
+    bg: var(--twitter),
+    color: var(--white),
+    hoverBg: var(--twitter-hover)
+  ),
+  (
+    type: steam,
+    bg: var(--steam),
+    color: var(--white),
+    hoverBg: var(--steam-hover)
+  ),
+  (
+    type: youtube,
+    bg: var(--youtube),
+    color: var(--white),
+    hoverBg: var(--youtube-hover)
+  ),
+  (
+    type: vk,
+    bg: var(--vk),
+    color: var(--white),
+    hoverBg: var(--vk-hover)
+  ),
+  (
+    type: linkedin,
+    bg: var(--linkedin),
+    color: var(--white),
+    hoverBg: var(--linkedin-hover)
+  ),
+  (
+    type: google,
+    bg: var(--google),
+    color: var(--white),
+    hoverBg: var(--google-hover)
+  ),
+  (
+    type: gray,
+    bg: var(--grey-400),
+    color: var(--white),
+    hoverBg: var(--grey-400)
+  ),
+);
+
+$button-secondaries: (
+  (
+    type: basic,
+    border: var(--blue),
+    color: var(--blue),
+    hoverBorder: var(--blue-hover),
+    hoverBg: var(--blue-hover),
+    hoverColor: var(--white)
+  ),
+  (
+    type: danger,
+    border: var(--error),
+    color: var(--error),
+    hoverBorder: var(--error-hover),
+    hoverBg: var(--error-hover),
+    hoverColor: var(--white)
+  ),
+  (
+    type: success,
+    border: var(--success),
+    color: var(--success),
+    hoverBorder: var(--success-hover),
+    hoverBg: var(--success-hover),
+    hoverColor: var(--white)
+  ),
+  (
+    type: cta,
+    border: var(--magenta),
+    color: var(--magenta),
+    hoverBorder: var(--magenta-hover),
+    hoverBg: var(--magenta-hover),
+    hoverColor: var(--white)
+  ),
+  (
+    type: black,
+    border: var(--royal-blue),
+    color: var(--royal-blue),
+    hoverBorder: var(--royal-blue),
+    hoverBg: var(--royal-blue),
+    hoverColor: var(--white)
+  ),
+  (
+    type: white,
+    border: var(--white),
+    color: var(--white),
+    hoverBorder: var(--white),
+    hoverBg: var(--white),
+    hoverColor: var(--royal-blue)
+  ),
+  (
+    type: gray,
+    border: var(--grey-400),
+    color: var(--grey-400),
+    hoverBorder: var(--grey-400),
+    hoverBg: var(--grey-400),
+    hoverColor: var(--white)
+  ),
+);

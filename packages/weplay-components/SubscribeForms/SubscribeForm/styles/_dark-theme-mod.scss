@@ -1,0 +1,8 @@
+// Delete box-shadow styles
+
+@mixin dark-theme-mod {
+
+  &.shadowNone {
+    box-shadow: none;
+  }
+}

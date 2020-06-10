@@ -1,0 +1,57 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.text {
+  @include font-size(12px, 18px);
+
+  position: relative;
+  height: rem(104px);
+  overflow: hidden;
+  color: var(--grey-500);
+
+  &::after {
+    @include size(100%, 0);
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 0 rem(32px) rem(32px) var(--white);
+    content: '';
+  }
+}
+
+.icon {
+  @include make-spacer(ml, 1);
+  @include transition(transform);
+
+  color: var(--blue);
+}
+
+.trigger {
+  @include font-size(16px);
+
+  font-weight: 400;
+
+  &:hover {
+    background-color: transparent;
+    color: var(--blue);
+  }
+}
+
+.block {
+
+  &.isOpened {
+
+    .icon {
+      transform: rotateZ(180deg);
+    }
+
+    .text {
+      height: auto;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

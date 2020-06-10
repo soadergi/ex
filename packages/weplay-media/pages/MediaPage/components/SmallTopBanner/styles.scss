@@ -1,0 +1,113 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$default-background: './img/small-banner-top-bg.png';
+
+.banner {
+  @include flex(center, stretch, column);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(py, 2);
+
+  position: relative;
+  background-color: var(--royal-blue);
+  background-image: url($default-background);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+
+  &.isLite {
+
+    &::before {
+      @include size(100%);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background-color: var(--black-alpha-032);
+      background-image: none;
+      content: '';
+    }
+
+    .text {
+      color: var(--royal-blue);
+    }
+  }
+}
+
+.content {
+  @include flex(flex-start, flex-start, column);
+  @include make-spacer(py, 0);
+
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center, row);
+  }
+}
+
+.container {
+  @include flex(flex-start, flex-start, column);
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: rem(1072px);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center, row);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(848px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1120px);
+  }
+}
+
+.text {
+  @include make-spacer(mb, 0); /* stylelint-disable-line no-descending-specificity */
+
+  text-align: left;
+  line-height: 1.33;
+  color: var(--white);
+  font-size: rem(12px);
+
+  @include media-breakpoint-up(sm) {
+    line-height: 1.5;
+    font-size: rem(16px);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(640px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(832px);
+    line-height: 1.44;
+    font-size: rem(18px);
+  }
+}
+
+.button {
+  @include make-spacer(ml, 0);
+  @include make-spacer(mt, 1);
+  @include make-spacer(mt, 0, sm);
+  @include make-spacer(ml, 1, sm);
+
+  flex-basis: auto;
+  flex-shrink: 0;
+
+  @extend %button;
+  @extend %buttonPromoSmall;
+  @extend %buttonCta;
+}

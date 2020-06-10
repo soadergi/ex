@@ -1,0 +1,52 @@
+@import 'weplay-core/styles/_initialization.scss';
+// TODO: find better way - this is copy paster from Playoff/_config
+
+// $tm - tournament module
+
+$one-pixel: rem(1px);
+$playoff-padding-right: rem(8px);
+
+// Match
+
+$match-height: rem(112px);
+$match-padding-x: rem(16px);
+$match-meta-height: rem(24px);
+$match-separator-width: 100%;
+
+$tm-match-height: rem(144px);
+$tm-match-padding-x: rem(8px);
+
+// =========================================
+
+// Game
+
+$game-width: rem(256px);
+$game-padding-y: rem(32px);
+$game-height: $match-height + $game-padding-y * 2;
+
+$tm-game-padding-y: rem(16px);
+$tm-game-height: $tm-match-height + $tm-game-padding-y * 2;
+$tm-game-width: rem(256px);
+
+// =========================================
+
+// Relations
+
+$relations-width: rem(48px);
+$relations-match-height: $match-height / 4;
+$relations-from-game-to-winner-height: $match-height / 2;
+$relations-margin-top-negative: -$game-padding-y * 2.5;
+
+$tm-relations-width: rem(32px);
+
+// =========================================
+
+// Round
+
+$round-width: $game-width + $relations-width;
+$round-shift-y-lvl-one: $game-padding-y * 2.53; //> > > need make a better solution < < <
+$round-shift-y-lvl-two: $game-padding-y * 5;
+
+$tm-round-width: $tm-game-width + $tm-relations-width;
+
+// =========================================

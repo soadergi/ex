@@ -1,0 +1,130 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import '../variables';
+
+$discord-height: rem(40px);
+$offset: rem(16px);
+
+.block {
+  @include flex($direction: column);
+
+  position: relative;
+  z-index: 0;
+  background-color: var(--royal-blue);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: map-get($avatar-size, xs) auto map-get($avatar-size, xs);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-rows: auto map-get($avatar-size, sm) + $offset;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr $score-block-width 1fr;
+    grid-column-gap: $grid-gap;
+  }
+}
+
+.breadcrumbs {
+  @include flex($direction: column);
+  @include make-spacer(py, 3);
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.breadcrumbsLabel {
+  @include make-spacer(mx, auto);
+  @include make-spacer(ml, 0, sm);
+
+  position: relative;
+  bottom: rem(2px);
+}
+
+.discord {
+  @include flex(center, center);
+
+  grid-row: 1;
+}
+
+.discord,
+.button {
+  grid-column: 1 / 4;
+}
+
+.button {
+  grid-row: 4;
+  text-align: center;
+}
+
+.stats {
+  $offset: 2;
+
+  grid-row: 2;
+  grid-column: 2/3;
+  padding-top: $discord-height * 2;
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    padding-top: $discord-height * 2 + $offset;
+  }
+}
+
+.statsLink {
+  @include font-size(12px);
+}
+
+.score {
+  @include flex(center, center, column);
+
+  grid-row: 2;
+  grid-column: 2/3;
+  height: map-get($avatar-size, xs);
+
+  @include media-breakpoint-up(sm) {
+    height: map-get($avatar-size, sm);
+  }
+}
+
+.links {
+  @include flex;
+}
+
+.lobbyLink {
+
+  + .lobbyLink {
+
+    &::before {
+      @include size(rem(1px), rem(24px));
+      @include make-spacer(mx, 1);
+      @include make-spacer(mx, 2, sm);
+
+      display: inline-block;
+      opacity: 0.16;
+      background-color: var(--white);
+      vertical-align: middle;
+      content: '';
+    }
+  }
+}
+
+.user {
+  @include make-spacer(mb, 3);
+
+  @include media-breakpoint-up(sm) {
+    grid-row: 2;
+  }
+}
+
+.copylink {
+  @include make-spacer(mt, 2);
+  @include size(100%, rem(16px));
+}

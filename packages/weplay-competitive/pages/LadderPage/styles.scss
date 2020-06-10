@@ -1,0 +1,137 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.page {
+  @include make-spacer(pb, 4);
+  @include flex($direction: column);
+}
+
+.title {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 2);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.wrapper {
+  @include media-breakpoint-up(md) {
+    @include flex(space-between, center);
+  }
+}
+
+.link {
+  @include transition(color);
+  @include make-spacer(p, 0);
+  @include make-spacer(mt, 2);
+  @include make-spacer(mt, 0, sm);
+  @include flex(flex-start, center);
+
+  border: 0;
+  background-color: transparent;
+  color: var(--blue);
+
+  &:hover {
+    color: var(--blue-hover);
+
+    .linkIcon {
+      color: var(--blue-hover);
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    grid-row: 1;
+    justify-content: center;
+  }
+}
+
+.header {
+  @include make-spacer(mb, 4);
+
+  @include media-breakpoint-up(sm) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-column-gap: rem(16px);
+  }
+}
+
+.hero {
+  @include make-spacer(pb, 0);
+
+  position: relative;
+  background-color: var(--royal-blue);
+  background-size: cover;
+  min-height: auto;
+  overflow: hidden;
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    min-height: rem(720px);
+  }
+
+  @include media-breakpoint-up(md) {
+    background-color: var(--white);
+    background-image: url('https://static-prod.weplay.tv/2020-03-16/b653dce9b44ab828ca7ad3a408b609e2.0A1425-232E40-16233C.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: rem(660px);
+  }
+}
+
+.indicator {
+  @include make-spacer(pb, 2);
+  @include make-spacer(pl, 2);
+  @include make-spacer(pl, 0, sm);
+
+  position: relative;
+  background-color: var(--royal-blue);
+  color: var(--grey-300);
+
+  @include media-breakpoint-up(sm) {
+    background-color: transparent;
+  }
+}
+
+.wrap {
+  @include make-spacer(mx, 0);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+
+  width: 100%;
+  max-width: none;
+  min-height: auto;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: rem(-348px);
+    min-height: rem(348px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include make-spacer(mx, auto);
+
+    max-width: var(--wp-tournament-width);
+  }
+}
+
+.emptyLadder {
+  @include make-spacer(py, 4);
+  @include make-spacer(py, 10, sm);
+  @include make-spacer(px, 2);
+
+  background-color: var(--royal-blue);
+  text-align: left;
+
+  @include media-breakpoint-up(sm) {
+    text-align: center;
+  }
+}
+
+.titleText {
+  @include font-size(18px, 26px);
+
+  position: relative;
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(md) {
+    @include font-size(24px, 32px);
+  }
+}

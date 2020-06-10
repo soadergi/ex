@@ -1,0 +1,27 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mt, 2);
+}
+
+.button {
+  @extend %buttonReset;
+
+  @include transition(color);
+  @include flex(space-between, center);
+  @include font-size(16px, 24px);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--blue);
+
+    .icon {
+      color: var(--blue);
+    }
+  }
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+}
+

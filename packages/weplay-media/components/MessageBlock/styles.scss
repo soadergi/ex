@@ -1,0 +1,285 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.c-alert {
+  position: relative;
+  width: 100%;
+
+  &__container {
+    @include make-spacer(py, 3);
+    @include make-spacer(pl, 3);
+    @include make-spacer(pr, 4);
+    @include make-spacer(pr, 3, sm);
+    @include make-spacer(mb, 3, sm);
+    @include make-spacer(mb, 4, md);
+
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: rem(8px);
+    background-color: var(--blue);
+    width: 100%;
+    overflow: hidden;
+
+    &::before {
+      @include size(rem(384px), rem(96px));
+
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -80px;
+      background-image: url('./img/alert-bg.svg');
+      background-position: top right;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+
+      @include media-breakpoint-up(sm) {
+        right: 0;
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      border-radius: 0;
+    }
+
+    @include media-breakpoint-up(sm) {
+      @include flex(space-between, center);
+    }
+  }
+
+  &__text {
+    @include make-spacer(mb, 0);
+    @include font-size(12px, 24px);
+
+    display: block;
+    position: relative;
+    color: var(--white);
+
+
+    @include media-breakpoint-up(sm) {
+      max-width: 64%;
+      font-size: rem(10px);
+    }
+  }
+
+  &__close {
+    @include flex(center, center);
+    @include size(16px);
+    @include make-spacer(p, 0);
+    @include transition(transform);
+
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    transform-origin: 50% 50%;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    fill: var(--white);
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+
+    @include media-breakpoint-up(sm) {
+      right: 1.5rem;
+    }
+  }
+
+  &__btn {
+    @include make-spacer(mt, 1);
+    @include make-spacer(mt, 0, sm);
+
+    position: relative;
+
+    @include media-breakpoint-up(sm) {
+      margin-left: 30%;
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+    color: var(--blue);
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &--service {
+    @include transition(transform);
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    z-index: 100;
+    background-color: var(--white-alpha-08);
+    width: auto;
+
+    .c-alert {
+
+      &__container {
+        @include make-spacer(mb, 0);
+        @include make-spacer(px, 3);
+        @include make-spacer(pl, 5, sm);
+        @include make-spacer(pr, 6, sm);
+        @include make-spacer(px, 0, md);
+
+        position: static;
+        background-color: transparent;
+        max-width: 67rem;
+
+        &::before {
+          content: none;
+        }
+
+        @include media-breakpoint-up(md) {
+          max-width: 53rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+          max-width: 70rem;
+        }
+      }
+
+      &__text {
+        max-width: 75%;
+        color: var(--grey-500);
+
+        @include media-breakpoint-up(sm) {
+          max-width: 100%;
+        }
+      }
+
+      &__close {
+        top: 1rem;
+        right: 1rem;
+        fill: var(--grey-500);
+
+        @include media-breakpoint-up(sm) {
+          top: 1.5rem;
+          right: 1.5rem;
+        }
+      }
+    }
+
+    &.is-shown {
+      transform: translateY(0);
+    }
+
+    @include media-breakpoint-up(md) {
+      right: var(--wp-live-chat-width);
+      left: var(--wp-sidebar-width);
+      margin-right: 8px;
+    }
+  }
+
+  &--top {
+    @include make-spacer(mb, 0);
+    @include make-spacer(mb, 2, sm);
+    @include make-spacer(mb, 4, md);
+
+    .c-alert {
+
+      &__container {
+        @include make-spacer(mb, 0);
+      }
+    }
+  }
+
+  &--gray {
+    @include make-spacer(mt, 2);
+    @include make-spacer(ml, 0);
+
+    flex-basis: auto;
+
+    &:first-child {
+      @include make-spacer(ml, 0);
+      @include make-spacer(mt, 0);
+    }
+
+    .c-alert {
+
+      &__icon-block {
+        @include make-spacer(mr, 2);
+        @include make-spacer(mr, 4, sm);
+
+        display: block;
+        flex-basis: auto;
+        flex-shrink: 0;
+      }
+
+      &__container {
+        @include flex(flex-start, flex-start, nowrap);
+        @include make-spacer(px, 2);
+        @include make-spacer(py, 2);
+
+        border-radius: 8px;
+        box-shadow: 0 4px 4px var(--black-alpha-008);
+        background-color: var(--grey-100);
+
+        &::before {
+          display: none;
+          top: auto;
+          bottom: 0;
+          background-image: url('./img/alert-bg-gray.svg');
+        }
+
+        @include media-breakpoint-up(sm) {
+          @include flex(flex-start, center, nowrap);
+          @include make-spacer(py, 3);
+          @include make-spacer(px, 3);
+          @include make-spacer(mb, 0);
+        }
+
+        @include media-breakpoint-up(md) {
+          @include make-spacer(py, 4);
+          @include make-spacer(px, 4);
+          @include make-spacer(mb, 0);
+
+          &::before { // stylelint-disable-line
+            display: block;
+          }
+        }
+      }
+
+      &__text {
+        @include make-spacer(mb, 0);
+
+        display: block;
+        position: relative;
+        max-width: 100%;
+        line-height: 1.5;
+        color: var(--royal-blue);
+        font-size: 1rem;
+
+        @include media-breakpoint-up(sm) {
+          line-height: 1.33;
+          font-size: rem(18px);
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-spacer(mt, 0);
+      @include make-spacer(ml, 4);
+
+      flex-basis: 33.3%;
+      flex-grow: 1;
+    }
+  }
+}
+
+.c-alert-block {
+  @include flex(flex-start, flex-start, column);
+
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    @include flex(flex-start, flex-start, row);
+  }
+}

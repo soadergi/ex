@@ -1,0 +1,10 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.wrapper {
+  display: grid;
+  grid-row-gap: 1rem;
+}
+
+.button {
+  @include make-spacer(mt, 2);
+}

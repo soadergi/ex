@@ -1,0 +1,72 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mt, 4);
+  @include make-spacer(p, 0);
+
+  position: relative;
+  max-height: rem(800px);
+  overflow: hidden;
+
+  &::after {
+    @include size(100%, rem(80px));
+    @include gradient-y(rgba(255,255,255,0), #{var(--white)});
+
+    display: block;
+    position: absolute;
+    bottom: rem(-16px);
+    z-index: 0;
+    content: '';
+  }
+
+  &.isOpened {
+    @include size(auto);
+
+    max-height: initial;
+    overflow: visible;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  &.isEmpty {
+    @include size(auto);
+  }
+}
+
+.image {
+  @include make-spacer(mx, auto);
+  @include make-spacer(mt, 0);
+  @include make-spacer(mt, 8, md);
+  @include font-size(80px);
+
+  display: block;
+  color: var(--blue);
+}
+
+.title {
+  @include make-spacer(mt, 3);
+  @include make-spacer(mb, 0);
+  @include make-spacer(mb, 8, md);
+  @include font-size(16px, 24px);
+
+  text-align: center;
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.button {
+  width: 100%;
+
+  &:nth-child( 2 ) {
+    @include make-spacer(mt, 2);
+    @include make-spacer(mt, 0, sm);
+    @include make-spacer(ml, 0);
+    @include make-spacer(ml, 2, sm);
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}

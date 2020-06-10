@@ -1,0 +1,15 @@
+@startuml
+
+!include ../HeroesPreviewsList/HeroesPreviewsList.puml
+!include ../../../../../../components/SocialLinks/SocialLinks.puml
+
+object TeamMember {
+ player: shape({}).isRequired,
+ playerSocials: arrayOf(PropTypes.string).isRequired,
+ heroesPreviewsList: arrayOf(PropTypes.shape({})),
+}
+
+TeamMember --|> HeroesPreviewsList
+TeamMember --|> SocialLinks
+
+@enduml

@@ -1,0 +1,98 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.list {
+  @include reset-list;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: rem(24px);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.item {
+  @include make-spacer(mr, 2);
+
+  line-height: 1;
+
+  &:last-child {
+    @include make-spacer(mr, 0);
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-right: rem(12px);
+  }
+}
+
+.block {
+
+  &.shareSocials {
+
+    .list {
+      grid-template-columns: repeat(auto-fill, minmax(rem(24px), 1fr));
+      column-gap: 1.5rem;
+    }
+  }
+
+  &.videos {
+
+    .list {
+      @include media-breakpoint-up(sm) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 3rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 3rem;
+      }
+    }
+  }
+
+  &.talentSocials {
+
+    .item {
+      @include make-spacer(m, 0);
+    }
+
+    .list {
+      @include flex(space-between, center);
+    }
+  }
+
+  &.greyBackground {
+    //new design/view for component
+    border: 1px solid var(--grey-200);
+
+    .list {
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+
+      @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .item {
+      @include make-spacer(mr, 0);
+
+      background-color: var(--grey-100);
+
+      &:not( :last-child ) {
+        border-right: 0;
+        border-bottom: 1px solid var(--grey-200);
+      }
+
+      @include media-breakpoint-up(md) {
+
+        &:not( :last-child ) {
+          border-right: 1px solid var(--grey-200);
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}

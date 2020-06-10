@@ -1,0 +1,50 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(py, 3);
+
+  position: relative;
+  bottom: rem(48px);
+  left: 0;
+  z-index: 2;
+  background-color: var(--royal-blue);
+  width: 100%;
+  color: var(--white);
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.wrap {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: rem(20px);
+
+  @include media-breakpoint-up(md) {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.title {
+  @include font-size(24px, 30px);
+
+  font-weight: 700;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.text {
+  @include font-size(12px, 18px);
+  @include make-spacer(mb, 0);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}

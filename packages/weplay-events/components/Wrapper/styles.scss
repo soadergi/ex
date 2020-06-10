@@ -1,0 +1,11 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex($align-items: stretch, $direction: column);
+
+  width: 100%;
+
+  &.hasDisableFlexbox {
+    display: block;
+  }
+}

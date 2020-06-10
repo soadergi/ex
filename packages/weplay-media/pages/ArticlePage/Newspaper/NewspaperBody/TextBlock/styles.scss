@@ -1,0 +1,176 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto; /* stylelint-disable-line */
+  -moz-hyphens: auto; /* stylelint-disable-line */
+  hyphens: auto;
+
+  p:not( [class] ) {
+    @include font-size(18px, 32px);
+    @include make-spacer(my, 3);
+
+    font-weight: 400;
+
+    &:first-child {
+      @include make-spacer(mt, 0);
+    }
+  }
+
+  h2 {
+    @include font-size(20px, 24px);
+    @include make-spacer(mt, 4);
+    @include make-spacer(mb, 2);
+
+    font-weight: 700;
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(32px, 40px);
+    }
+  }
+
+  ol {
+    @include reset-list();
+    @include make-spacer(my, 3);
+
+    > li {
+      @include font-size(18px, 32px);
+      @include make-spacer(pl, 3);
+      @include make-spacer(mb, 2);
+
+      position: relative;
+      counter-increment: myCount;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        white-space: nowrap;
+        color: var(--blue);
+        font-weight: var(--wp-font-weight-regular);
+        content: counter(myCount) '.';
+
+        @include media-breakpoint-down(xs) { /* stylelint-disable-line */
+          left: rem(5px);
+        }
+      }
+
+      &:last-child {
+        @include make-spacer(mb, 0);
+      }
+    }
+  }
+
+  ul {
+    @include reset-list();
+    @include make-spacer(my, 2);
+
+    li {
+      @include font-size(18px, 32px);
+      @include make-spacer(pl, 3);
+      @include make-spacer(mb, 2);
+
+      position: relative;
+      font-weight: 400;
+
+      &::before {
+        @include size(rem(6px));
+
+        position: absolute;
+        top: 50%;
+        left: rem(8px);
+        transform: translateY(-50%);
+        border-radius: 50%;
+        background-color: var(--blue);
+        content: '';
+      }
+
+      &:last-child {
+        @include make-spacer(mb, 0);
+      }
+    }
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  //INFO: !!! This styles are using just to prevent behavior of the `iframe`s
+  // which are placed inside migrated news articles from old DB !!!
+
+  > iframe,
+  > p iframe,
+  > *:not( [class] ) iframe {
+    display: block !important; /* stylelint-disable-line declaration-no-important */
+    width: 100% !important; /* stylelint-disable-line declaration-no-important */
+    height: auto;
+    min-height: rem(208px) !important; /* stylelint-disable-line declaration-no-important */
+
+    @include media-breakpoint-up(sm) {
+      min-height: rem(320px) !important; /* stylelint-disable-line declaration-no-important */
+    }
+
+    @include media-breakpoint-up(lg) {
+      min-height: rem(416px) !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+
+  :global {
+
+    .c-blockquote {
+      @include make-spacer(my, 6);
+      @include make-spacer(my, 7, sm);
+      @include make-spacer(py, 5);
+      @include make-spacer(py, 6, sm);
+      @include font-size(20px, 32px);
+
+      position: relative;
+      border-top: 1px solid var(--grey-200);
+      border-bottom: 1px solid var(--grey-200);
+      text-align: center;
+      color: var(--blue);
+
+      &::before {
+        @include absolute-center;
+        @include size(rem(56px), rem(64px));
+        @include font-size(64px);
+
+        display: block;
+        top: 0;
+        background-color: #fff;
+        text-align: center;
+        content: '\AB';
+      }
+
+      &::after {
+        @include absolute-center;
+        @include size(rem(56px), rem(64px));
+        @include font-size(64px);
+
+        display: block;
+        top: auto;
+        bottom: rem(-64px);
+        background-color: #fff;
+        text-align: center;
+        content: '\BB';
+      }
+
+      &.c-accent-blockquote {
+        color: var(--magenta);
+      }
+
+      @include media-breakpoint-up(sm) {
+        @include font-size(22px, 34px);
+      }
+    }
+  }
+}

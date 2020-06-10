@@ -1,0 +1,41 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include size(100%, var(--wp-mobile-tournament-info-height));
+  @include flex(center, center);
+  @include make-spacer(px, 2);
+
+  position: relative;
+  z-index: 3;
+  background-color: var(--blue);
+  overflow: hidden;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.isLive {
+    background-color: var(--magenta);
+  }
+}
+
+.title {
+  @include make-spacer(mb, 0);
+  @include font-size(12px);
+
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--white);
+
+  span {
+    @include make-spacer(mr, 1);
+
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+

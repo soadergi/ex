@@ -1,0 +1,183 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.matchesWrap {
+  @include size(100%);
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(324px, 1fr));
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(3, minmax(476px, 1fr));
+  }
+}
+
+.matches {
+  display: grid;
+  position: relative;
+  background-color: var(--grey-500-alpha-008);
+  overflow: hidden;
+  color: var(--white);
+
+  &:not( :last-child ) {
+    border-right: 8px solid var(--royal-blue);
+  }
+}
+
+.header {
+  @include make-spacer(py, 1);
+  @include make-spacer(px, 2);
+  @include size(100%);
+  @include flex(space-between, center, $wrap: wrap);
+
+  z-index: 1;
+  border-bottom: 1px solid var(--dark-grey);
+
+  @include media-breakpoint-up(md) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+.text {
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 16px);
+
+  z-index: 1;
+}
+
+.mainText {
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 16px);
+
+  font-weight: 700;
+
+  @include media-breakpoint-down(sm) {
+    @include make-spacer(mb, 1);
+
+    order: -1;
+    width: 100%;
+  }
+}
+
+.iconDiagram {
+  color: var(--blue);
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+}
+
+.iconBlue {
+  color: var(--blue);
+}
+
+.content {
+  @include make-spacer(p, 2);
+
+  z-index: 1;
+  min-width: rem(316px);
+
+  @include media-breakpoint-up(md) {
+    border-right: 1px solid var(--dark-grey);
+  }
+}
+
+.button {
+  @include make-spacer(py, 1);
+  @include make-spacer(px, 2);
+  @include font-size(12px, 24px);
+  @include flex(center, center);
+
+  border: 1px solid var(--dark-grey);
+  border-radius: rem(24px);
+  width: 100%;
+  font-weight: 500;
+
+  @include media-breakpoint-up(md) {
+    width: auto;
+  }
+}
+
+.buttonIcn {
+  @include make-spacer(p, 0);
+
+  border: 0;
+  background-color: transparent;
+}
+
+.buy {
+  @extend %button;
+  @extend %buttonCta;
+  @extend %buttonPromoMedium;
+
+  border: 0;
+  color: var(--white);
+}
+
+.highligths {
+  background-color: transparent;
+  color: var(--blue);
+}
+
+.watch {
+  border-color: var(--magenta);
+  background-color: var(--magenta);
+  color: var(--white);
+}
+
+.reminder {
+  background-color: transparent;
+  color: var(--blue);
+
+  &.isSetReminder {
+    color: var(--grey-300);
+  }
+}
+
+.disabled {
+  @include make-spacer(py, 0);
+
+  border: 0;
+  background-color: transparent;
+  color: var(--grey-500);
+}
+
+.wrapButton {
+  @include flex(center, center);
+  @include make-spacer(px, 2);
+  @include make-spacer(pb, 2);
+  @include make-spacer(p, 0, md);
+
+  z-index: 1;
+}
+
+.wrapStatus {
+  @include flex($align-items: center);
+}
+
+.notification {
+  @include make-spacer(mr, half);
+}
+
+.isGrandFinal {
+
+  .iconCup {
+    @include font-size(224px);
+
+    position: absolute;
+    top: rem(24px);
+    left: rem(-24px);
+    z-index: 0;
+    color: var(--royal-blue);
+
+    @include media-breakpoint-up(md) {
+      top: rem(-8px);
+    }
+  }
+
+  &.matches {
+    border: 1px solid var(--blue);
+    background-color: var(--royal-blue);
+  }
+}

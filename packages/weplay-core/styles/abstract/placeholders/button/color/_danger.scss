@@ -1,0 +1,13 @@
+@mixin danger {
+
+  &Danger {
+    border-color: var(--error);
+    background-color: var(--white);
+    color: var(--error);
+
+    &:hover {
+      border-color: var(--error);
+      background-color: var(--error);
+    }
+  }
+}

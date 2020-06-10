@@ -1,0 +1,256 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(pt, 5);
+
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.image {
+  @include make-spacer(mr, 2);
+  @include make-spacer(pr, 2);
+
+  border-right: 1px solid var(--white-alpha-024);
+  height: 100%;
+  max-height: rem(38px);
+}
+
+.shareBlockContent {
+  @include make-spacer(mb, 3);
+
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+
+  @include media-breakpoint-up(sm) {
+    @include flex($direction: row);
+  }
+}
+
+.shareBlockText {
+  line-height: 24px;
+  color: #fff;
+  font-family: Rubik;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.share {
+  @include make-spacer(mt, 0);
+
+  display: grid;
+  grid-template-columns: repeat(5, rem(48px));
+  grid-gap: rem(11px);
+  justify-content: start;
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(ml, 2);
+
+    grid-gap: rem(16px);
+    justify-content: flex-start;
+  }
+}
+
+.content {
+  @include flex();
+  @include make-spacer(pb, 8);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  text-align: left;
+}
+
+.main {
+  @include media-breakpoint-up(sm) {
+    width: 50%;
+  }
+}
+
+.poster {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+    position: relative;
+    width: 50%;
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.footer {
+  @include make-spacer(pt, 8);
+
+  background-color: $royal-blue;
+  overflow: hidden;
+}
+
+.title {
+  @include make-spacer(mb, 3);
+  @include font-size(24px, 32px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.description {
+  @include make-spacer(mb, 3);
+  @include font-size(16px, 24px);
+
+  color: var(--grey-300);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.link {
+  @include font-size(14px, 22px);
+
+  color: var(--blue);
+  font-weight: var(--wp-font-weight-normal);
+
+  &:first-of-type {
+    @include make-spacer(mr, 3);
+  }
+}
+
+.text {
+  @include make-spacer(mb, 1);
+  @include font-size(16px, 24px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.wideLine {
+  @include make-spacer(mt, 8);
+  @include make-spacer(mx, auto);
+  @include make-spacer(p, 2);
+  @include size(100%, auto);
+  @include font-size(14px, 22px);
+
+  position: relative;
+  background-color: var(--white-alpha-008);
+  text-align: center;
+  color: var(--white);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.email {
+  @include make-spacer(ml, 1);
+
+  color: var(--blue);
+}
+
+
+
+.anchor {
+  @include flex(center,flex-end);
+
+  position: relative;
+}
+
+.button {
+  @include reset-button;
+  @include flex(center, center, column);
+
+  font-weight: var(--wp-font-weight-normal);
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.textAnchor {
+  color: var(--blue);
+}
+
+.legal {
+  @include make-spacer(mb, 3);
+
+  position: relative;
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(mb, 0);
+
+    top: rem(24px);
+    z-index: 1;
+    width: rem(300px);
+    text-align: left;
+  }
+}
+
+.download {
+  @include make-spacer(mb, 2);
+
+  width: 100%;
+  max-width: rem(486px);
+}
+
+.anim {
+  @include make-spacer(mb, 4);
+
+  max-width: 100%;
+  animation-name: bounceIn;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.animationWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: rem(220px);
+  text-align: center;
+}
+
+.wesave {
+  max-width: 100%;
+}
+
+@keyframes bounceIn {
+
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.1);
+  }
+
+  45% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  55% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.03);
+  }
+
+  65% {
+    transform: scale(1);
+  }
+}

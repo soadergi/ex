@@ -1,0 +1,64 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(py, 3);
+  @include make-spacer(py, 8, sm);
+  @include make-spacer(pb, 12, md);
+  @include make-spacer(mx, auto);
+
+  max-width: rem(288px);
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    max-width: rem(576px);
+  }
+}
+
+.title {
+  @include font-size(32px, 40px);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, sm);
+
+  color: var(--royal-blue);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(48px, 60px);
+  }
+}
+
+.btn {
+  @include default;
+
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+
+  &Discord {
+    border-color: var(--discord);
+    background-color: var(--discord);
+
+    &:hover {
+      border-color: var(--discord-hover);
+      background-color: var(--discord-hover);
+    }
+  }
+}
+
+.link {
+  @include flex(center, center, $display: inline-flex);
+  @include font-size(14px, 14px);
+
+  color: var(--discord);
+  font-weight: var(--wp-font-weight-regular);
+
+  &:hover {
+    color: var(--discord-hover);
+  }
+}
+
+.premium {
+  display: inline-block;
+  vertical-align: middle;
+}

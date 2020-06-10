@@ -1,0 +1,178 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(pt, 6);
+  @include make-spacer(pt, 8, sm);
+}
+
+.tabs {
+  @include make-spacer(mb, 4);
+
+  position: relative;
+  height: rem(32px);
+
+  &::after {
+    @include size(100%, rem(1px));
+
+    position: absolute;
+    bottom: 0;
+    background-color: var(--white-alpha-024);
+    content: '';
+  }
+}
+
+.tab {
+  @include make-spacer(mr, 3);
+
+  &:hover {
+    text-decoration: none;
+
+    .tabTitle {
+      color: var(--blue);
+
+      &::after {
+        background-color: var(--blue);
+      }
+    }
+  }
+}
+
+.isActive {
+
+  .tabTitle {
+    color: var(--blue);
+
+    &::after {
+      background-color: var(--blue);
+    }
+  }
+}
+
+.tabTitle {
+  @include font-size(14px, 32px);
+  @include transition(color);
+
+  display: inline-block;
+  position: relative;
+  color: var(--white);
+  font-weight: 500;
+
+  &::after {
+    @include transition(background-color);
+    @include size(100%, rem(2px));
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: transparent;
+    content: '';
+  }
+}
+
+.news {
+  @include make-spacer(pb, 8);
+  @include make-spacer(pb, 12, sm);
+
+  color: var(--white);
+}
+
+.background {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--royal-blue);
+}
+
+.wrap {
+  position: relative;
+
+  &::after {
+    @include size(100%);
+    @include gradient-y(#{var(--royal-blue-alpha-048)}, #{var(--royal-blue)});
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    content: '';
+  }
+}
+
+.bgImage {
+  @include size(100%, auto);
+
+  object-position: top;
+}
+
+.subscriptionBlock {
+  border-top: 1px solid var(--dark-grey);
+  border-bottom: 1px solid var(--dark-grey);
+  background-color: var(--royal-blue);
+}
+
+.subscription {
+  color: var(--white);
+
+  @include media-breakpoint-up(md) {
+    @include flex(space-between, center);
+  }
+}
+
+.mobileTitle {
+  @include font-size(24px, 32px);
+  @include make-spacer(mt, 3);
+
+  text-align: center;
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.form {
+  @include make-spacer(mt, 3);
+  @include make-spacer(mt, 6, sm);
+  @include make-spacer(mt, 0, md);
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 2, md);
+  @include make-spacer(mr, 12, lg);
+
+  text-align: center;
+  color: var(--white);
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+  }
+}
+
+.forma {
+  @include make-spacer(px, 0);
+}
+
+.image {
+  @include size(100%, auto);
+  @include make-spacer(mx, auto);
+  @include make-spacer(mx, 0, md);
+  @include make-spacer(mt, 3);
+  @include make-spacer(mt, 5, md);
+  @include make-spacer(mt, 1, lg);
+
+  display: block;
+
+
+  @include media-breakpoint-up(sm) {
+    @include size(auto, rem(256px));
+  }
+
+  @include media-breakpoint-up(md) {
+    @include size(auto, rem(280px));
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include size(auto, rem(320px));
+  }
+}

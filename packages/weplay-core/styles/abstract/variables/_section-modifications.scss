@@ -1,0 +1,32 @@
+$backgrounds: (
+  (
+    type: gray,
+    bg: var(--grey-100),
+  ),
+  (
+    type: royal,
+    bg: var(--royal-blue),
+  ),
+);
+
+$paddings-y: (
+  (
+    size: none,
+    spacer: 0,
+  ),
+  (
+    size: sm,
+    spacer: 6,
+  ),
+);
+
+$border-colors: (
+  (
+    type: light,
+    color: var(--grey-500-alpha-024),
+  ),
+  (
+    type: dark,
+    color: var(--grey-200),
+  ),
+);

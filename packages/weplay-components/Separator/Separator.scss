@@ -1,0 +1,21 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  background-color: var(--grey-200);
+  width: 100%;
+  height: 1px;
+
+  &.dark {
+    background-color: var(--grey-500-alpha-024);
+  }
+
+  &.large {
+    @include make-spacer(my, 6);
+    @include make-spacer(my, 8, md);
+  }
+
+  &.middle {
+    @include make-spacer(my, 6);
+  }
+}

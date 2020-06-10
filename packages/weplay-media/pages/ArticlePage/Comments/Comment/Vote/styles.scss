@@ -1,0 +1,69 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex($align-items: center);
+}
+
+.body {
+  @include make-spacer(px, 1);
+  @include make-spacer(mx, half);
+  @include font-size(12px, 16px);
+
+  border-radius: rem(12px);
+  background-color: var(--grey-500-alpha-024);
+  min-width: rem(32px);
+  text-align: center;
+  color: var(--white);
+  font-weight: 700;
+
+  &.positive {
+    background-color: var(--blue-alpha-024);
+    color: var(--blue);
+  }
+
+  &.negative {
+    background-color: var(--magenta-alpha-024);
+    color: var(--magenta);
+  }
+}
+
+.button {
+  @include make-spacer(p, half);
+  @include font-size(8px);
+  @include transition(color);
+
+  border: 0;
+  background-color: transparent;
+  color: var(--grey-500);
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &.buttonDown {
+
+    &:hover {
+
+      .icon {
+        color: var(--magenta);
+      }
+    }
+  }
+
+  &.buttonUp {
+    transform: rotateZ(-180deg);
+
+    &:hover {
+
+      .icon {
+        color: var(--blue);
+      }
+    }
+  }
+}
+
+.icon {
+  @include transition(color);
+}
+

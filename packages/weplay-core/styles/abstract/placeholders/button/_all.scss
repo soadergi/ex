@@ -1,0 +1,59 @@
+@import 'default';
+@import 'border/border-blue';
+@import 'border/border-white';
+@import 'border/border-less';
+@import 'border/border-magenta';
+@import 'size/promo-medium';
+@import 'size/promo-small';
+@import 'color/success';
+@import 'color/cta';
+@import 'color/danger';
+@import 'color/white';
+@import 'color/pink';
+@import 'color/premium';
+@import 'link/link';
+@import 'link/reset';
+@import 'file';
+
+// ------------------------------------
+//   #C-BUTTON
+// ------------------------------------
+
+%button {
+  @include default;
+
+  //reset / button
+  @include link;
+  @include reset;
+
+  // Border buttons
+  @include border-blue;
+  @include border-white;
+  @include border-less;
+  @include border-magenta;
+
+  // White button
+  @include white;
+
+  // File button
+  @include file;
+
+  // Success buttons
+  @include success;
+
+  // call to action buttons
+  @include cta;
+
+  // Danger button
+  @include danger;
+
+  // Button Promo
+  @include promo-medium;
+  @include promo-small;
+
+  // Accent
+  @include pink;
+
+  // Premium
+  @include premium;
+}

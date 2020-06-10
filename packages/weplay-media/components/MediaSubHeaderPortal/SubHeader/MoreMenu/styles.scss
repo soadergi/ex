@@ -1,0 +1,48 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @extend %buttonReset;
+
+  @include flex(center, center);
+  @include font-size(12px, 18px);
+  @include make-spacer(ml, 2);
+  @include make-spacer(px, 1);
+
+  position: relative;
+  height: 100%;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--royal-blue);
+
+  &:hover {
+
+    &::after {
+      @include size(100%, rem(4px));
+
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: var(--grey-400);
+      content: '';
+    }
+  }
+}
+
+.arrow {
+  @include font-size(12px);
+}
+
+.icon {
+  @include make-spacer(ml, half);
+
+  transform-origin: center;
+  color: var(--royal-blue);
+
+  &.isArrowUp {
+
+    .arrow {
+      transform: rotate(180deg);
+    }
+  }
+}

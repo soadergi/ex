@@ -1,0 +1,80 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(py, 3);
+  @include make-spacer(px, 2);
+  @include make-spacer(mb, 3);
+
+  border: 1px dashed var(--grey-300);
+  border-radius: 0.5rem;
+
+  @include media-breakpoint-up(sm) {
+    @include flex(center, center, column);
+
+    min-height: rem(192px);
+  }
+
+  &.popup {
+    @include make-spacer(py, 8);
+    @include make-spacer(mb, 0);
+
+    border: 0;
+
+    .image {
+      @include make-spacer(mb, 3);
+
+      @include media-breakpoint-up(sm) {
+        max-width: rem(128px);
+      }
+    }
+
+    .title {
+      @include make-spacer(mb, 2);
+      @include font-size(20px, 24px);
+
+      text-align: center;
+    }
+  }
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.image {
+  @include make-spacer(mb, 2);
+
+  max-width: rem(96px);
+  height: auto;
+
+  @include media-breakpoint-up(sm) {
+    max-width: 100%;
+  }
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include font-size(22px, 32px);
+
+  font-weight: 500;
+
+  @include media-breakpoint-up(md) {
+    @include font-size(28px, 32px);
+  }
+}
+
+.message {
+  @include font-size(18px, 32px);
+  @include make-spacer(mb, 1);
+  @include make-spacer(mx, auto);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    max-width: rem(569px);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: none;
+  }
+}

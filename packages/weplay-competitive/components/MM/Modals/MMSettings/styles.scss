@@ -1,0 +1,98 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.content {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 6, sm);
+
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+}
+
+.title {
+  @include make-spacer(mt, 6);
+  @include make-spacer(mb, 2);
+  @include font-size(24px, 32px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.subTitle {
+  @include make-spacer(pb, 2);
+  @include make-spacer(pt, 1);
+  @include font-size(14px, 22px);
+
+  color: var(--warning);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.icon {
+  @include make-spacer(pr, 1);
+}
+
+.settingTitle {
+  @include make-spacer(mb, 1);
+  @include font-size(14px, 22px);
+
+  color: var(--grey-300);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.settingGroup {
+  @include make-spacer(mb, 1);
+
+  min-height: rem(104px);
+}
+
+.settingList {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: rem(16px);
+
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.half {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.settingEmpty {
+  @include flex(center, center);
+  @include make-spacer(p, 1);
+  @include font-size(12px, 18px);
+
+  grid-column-start: 1;
+  grid-column-end: 3;
+  border: 2px solid var(--white-alpha-008);
+  border-radius: rem(4px);
+  background-color: #111e38;
+  min-height: rem(88px);
+  text-align: center;
+  color: var(--grey-500);
+}
+
+.main {
+  @include make-spacer(mr, 2);
+
+  @include media-breakpoint-down(sm) {
+    @include make-spacer(mr, 0);
+    @include make-spacer(mb, 2);
+
+    width: 100%;
+  }
+}
+
+.extra {
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.footer {
+  @include make-spacer(mt, 4);
+}

@@ -1,0 +1,56 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.topScreen {
+  @include flex(flex-start, stretch, column);
+  @include make-spacer(pb, 0);
+  @include make-spacer(pt, 7);
+
+  position: relative;
+  background-color: var(--grey-300);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 6.5rem;
+  width: 100%;
+  min-height: calc(100vh / 3);
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: calc(6.5rem + var(--wp-header-height));
+  }
+}
+
+.content {
+  @include flex(space-between, stretch, column);
+
+  position: relative;
+  flex: 1 0 auto;
+  z-index: $z-2;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    align-items: center;
+  }
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+
+  position: relative;
+  z-index: 3;
+  color: var(--white);
+}
+
+.button {
+  @extend %button;
+  @extend %buttonCta;
+  @extend %buttonPromoMedium;
+
+  @include make-spacer(mt, 6);
+
+  text-transform: uppercase;
+}

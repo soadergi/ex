@@ -1,0 +1,56 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+// opportunity
+
+.block {
+  @include media-breakpoint-up(lg) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: rem(48px);
+  }
+}
+
+.title {
+  @include font-size(48px, 56px);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 6, lg);
+
+  text-align: center;
+}
+
+.image {
+  @include size(100%, auto);
+}
+
+.imageProposal {
+  @include absolute-center();
+
+  z-index: -1;
+  height: 100%;
+}
+
+.text {
+  @include make-spacer(mb, 0, lg);
+
+  align-self: center;
+  white-space: pre-wrap;
+  color: var(--grey-500);
+}
+
+.sliderText {
+  align-self: center;
+  white-space: pre-wrap;
+  color: var(--grey-500);
+}
+
+.proposal {
+  position: relative;
+}
+
+.sectionGrey {
+  @include make-spacer(py, 11);
+  @include make-spacer(px, 2);
+
+  background-color: var(--grey-100);
+}

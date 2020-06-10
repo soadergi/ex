@@ -1,0 +1,161 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+@mixin textColor($color, $bgColor, $dotColor, $activeColor) { //stylelint-disable-line
+
+  .number {
+    color: ($color);
+  }
+
+  .date {
+    color: ($color);
+  }
+
+  .contentTitle {
+    color: ($color);
+  }
+
+  .progressLine {
+    background-color: ($bgColor);
+
+    &::before {
+      background-color: ($dotColor);
+    }
+
+    &::after {
+      background-color: ($activeColor);
+    }
+  }
+}
+
+$status: (
+  finished: (
+    color: var(--grey-500),
+    bgColor: var(--blue),
+    dotColor: var(--blue)
+  ),
+  ongoing: (
+    color: var(--blue),
+    bgColor: var(--grey-300),
+    dotColor: var(--blue),
+    activeColor: var(--blue-alpha-016)
+  ),
+  upcoming: (
+    color: var(--black),
+    bgColor: transparent,
+    dotColor: var(--grey-300)
+  )
+);
+
+.block {
+  min-width: rem(252px);
+  max-width: 50%;
+
+  @include media-breakpoint-up(md) {
+    min-width: rem(288px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-width: rem(368px);
+  }
+}
+
+@each $time, $value in $status {
+
+  &.#{$time} {
+    @include textColor(map-get($value, color), map-get($value, bgColor), map-get($value, dotColor), map-get($value, activeColor));
+  }
+}
+
+.date {
+  @include make-spacer(mb, 1);
+  @include font-size(32px, 40px);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(48px, 56px);
+  }
+}
+
+.monthYear {
+  @include font-size(16px, 24px);
+}
+
+.contentTitle {
+  @include make-spacer(mb, 1);
+  @include font-size(16px, 24px);
+
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.description {
+  @include make-spacer(mb, 7);
+  @include make-spacer(mr, 3);
+  @include make-spacer(mr, 6, sm);
+  @include font-size(16px, 24px);
+
+  color: var(--grey-400);
+}
+
+.ongoing,
+.finished {
+
+  &.isLastColumn {
+    background-color: transparent;
+  }
+}
+
+.ongoing {
+
+  .monthYear {
+    color: var(--blue);
+  }
+}
+
+.upcoming {
+
+  &:not( :last-child ) {
+
+    .progressLine {
+      background-color: var(--grey-300);
+    }
+  }
+}
+
+.progressLine {
+  @include make-spacer(my, 5);
+  @include size(100%, rem(2px));
+
+  position: relative;
+
+  &::before {
+    @include size(rem(8px), rem(8px));
+    @include absolute-center();
+
+    display: block;
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    content: '';
+  }
+
+  &::after {
+    @include size(rem(24px), rem(24px));
+    @include absolute-center();
+
+    display: block;
+    left: 0;
+    border-radius: 50%;
+    content: '';
+  }
+}
+
+.link {
+  @extend %button;
+
+  @include make-spacer(mb, 2);
+  @include font-size(14px, 40px);
+
+  font-weight: var(--wp-font-weight-regular);
+}

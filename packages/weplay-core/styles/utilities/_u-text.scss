@@ -1,0 +1,32 @@
+.u-text-center {
+  text-align: center !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.u-text-left {
+  text-align: left !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.u-text-right {
+  text-align: right !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.u-text-medium {
+  font-weight: 500 !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.u-text-normal {
+  font-weight: 400 !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.u-text-small {
+  line-height: 1.13;
+  font-size: #{$wp-fs-base} * 0.75 !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.u-text-bold {
+  font-weight: 700 !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.u-text-uppercase {
+  text-transform: uppercase !important; /* stylelint-disable-line declaration-no-important */
+}

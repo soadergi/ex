@@ -1,0 +1,36 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  --header-mobile-height: #{rem(40px)};
+
+  @include flex(center, center, column);
+  @include make-spacer(px, 1);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: rem(560px);
+  min-height: calc(100vh - var(--wp-header-height) - var(--header-mobile-height));
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    min-height: calc(100vh - var(--wp-header-height));
+  }
+
+  @include media-breakpoint-up(md) {
+    background-size: rem(1088px);
+  }
+}
+
+.title {
+  @include make-spacer(mb, 3);
+  @include font-size(32px, 40px);
+
+  font-weight: 700;
+}
+
+.subTitle {
+  @include make-spacer(mb, 3);
+  @include font-size(16px, 24px);
+
+  color: var(--grey-500);
+}

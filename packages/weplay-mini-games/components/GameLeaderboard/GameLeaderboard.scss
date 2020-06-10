@@ -1,0 +1,35 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: relative;
+  border-radius: rem(4px);
+  background-color: var(--white-alpha-008);
+
+  &.darkBlue {
+    box-shadow: 0 0 rem(16px) #7289da;
+    background-color: var(--royal-blue);
+    color: var(--white);
+  }
+}
+
+.row {
+  @include font-size(16px, 24px);
+  @include make-spacer(px, 1);
+
+  display: grid;
+  grid-template-columns: rem(64px) 1fr auto;
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.value {
+  @include make-spacer(py, 2);
+  @include make-spacer(px, 1);
+
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.button {
+  @include make-spacer(mt, 3);
+  @include make-spacer(mb, 3);
+}

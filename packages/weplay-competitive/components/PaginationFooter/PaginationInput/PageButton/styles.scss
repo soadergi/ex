@@ -1,0 +1,29 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.item {
+  @include make-spacer(p, 1);
+  @include make-spacer(px, 2, sm);
+  @include transition(#{background-color, color});
+
+  display: block;
+  border: 0;
+  background-color: transparent;
+  min-width: rem(40px);
+  height: rem(40px);
+  text-align: center;
+  color: var(--royal-blue);
+
+  &:hover {
+    background-color: var(--grey-200);
+  }
+}
+
+.active {
+  background-color: var(--blue);
+  color: var(--white);
+  pointer-events: none;
+
+  &:hover {
+    background-color: var(--blue);
+  }
+}

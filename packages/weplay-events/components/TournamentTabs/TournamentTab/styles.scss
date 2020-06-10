@@ -1,0 +1,336 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$tab-colors: (
+  strength: #ef4840,
+  agility: #699f55,
+  intelligence: #3d86ec,
+  radiant: #2fb860,
+  dire: #bf0710,
+  madMoon: #2fb860
+);
+
+.tab {
+  @include make-spacer(py, 1);
+  @include make-spacer(px, 0, sm);
+  @include make-spacer(py, 1, sm);
+  @include make-spacer(py, 2, md);
+  @include make-spacer(py, 3, lg);
+
+  display: block;
+  flex: 1;
+  border: 0;
+  box-shadow: none;
+  background-color: transparent;
+  text-align: center;
+
+  &::before {
+    @include transition();
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: rem(-1px);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    box-shadow: 2px 2px 31px var(--royal-blue-alpha-016);
+    background-color: var(--white-alpha-08);
+    width: calc(100% + 2px);
+    height: 100%;
+  }
+
+  &::after {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 0;
+    background-color: var(--white-alpha-08);
+    width: 1px;
+
+    @include media-breakpoint-up(sm) {
+      height: rem(40px);
+    }
+
+    @include media-breakpoint-up(md) {
+      height: rem(60px);
+    }
+  }
+
+  &::before,
+  &::after {
+    @include media-breakpoint-up(sm) {
+      display: block;
+      position: absolute;
+      content: '';
+    }
+  }
+
+  &:first-child {
+
+    &::before {
+      @include media-breakpoint-up(sm) {
+        border-top-left-radius: rem(40px);
+        border-bottom-left-radius: rem(40px);
+      }
+
+      @include media-breakpoint-up(md) {
+        border-top-left-radius: rem(42px);
+        border-bottom-left-radius: rem(42px);
+      }
+
+      @include media-breakpoint-up(lg) {
+        border-top-left-radius: rem(54px);
+        border-bottom-left-radius: rem(54px);
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      border-top-left-radius: rem(40px);
+      border-bottom-left-radius: rem(40px);
+    }
+  }
+
+  &:last-child {
+
+    &::before {
+      @include media-breakpoint-up(sm) {
+        border-top-right-radius: rem(40px);
+        border-bottom-right-radius: rem(40px);
+      }
+
+      @include media-breakpoint-up(md) {
+        border-top-right-radius: rem(42px);
+        border-bottom-right-radius: rem(42px);
+      }
+
+      @include media-breakpoint-up(lg) {
+        border-top-right-radius: rem(54px);
+        border-bottom-right-radius: rem(54px);
+      }
+    }
+
+    &::after {
+      content: none;
+    }
+
+    @include media-breakpoint-down(xs) {
+      border-top-right-radius: rem(40px);
+      border-bottom-right-radius: rem(40px);
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    @include make-spacer(mx, auto);
+
+    max-width: rem(272px);
+
+    &.isActive {
+      box-shadow: 2px 2px 31px var(--royal-blue-alpha-016);
+      background-color: var(--white-alpha-08);
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    position: relative;
+    min-height: rem(56px);
+  }
+
+  @include media-breakpoint-up(md) {
+    min-height: rem(84px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-height: rem(108px);
+  }
+
+  &Content {
+    @include size(100%);
+    @include make-spacer(px, 2, sm);
+    @include make-spacer(px, 3, md);
+    @include flex(center, stretch, column);
+
+    @include media-breakpoint-up(sm) {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &Title {
+    @include make-spacer(mb, 0);
+    @include make-spacer(mb, 1, sm);
+    @include font-size(10px, 16px);
+    @include transition();
+
+    color: var(--white);
+    font-weight: 700;
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(16px, 16px);
+    }
+
+    @include media-breakpoint-up(md) {
+      @include font-size(24px, 32px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include font-size(28px, 32px);
+    }
+  }
+
+  &Description {
+    @include make-spacer(mb, 0);
+    @include font-size(10px, 16px);
+
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--white);
+
+    @include media-breakpoint-down(xs) {
+      @include transition(#{opacity, visibility});
+
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 50%;
+      transform: translateX(-50%);
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(12px, 12px);
+    }
+
+    @include media-breakpoint-up(md) {
+      @include font-size(14px, 16px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include font-size(16px, 16px);
+    }
+  }
+
+  &Prize {
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  &.tabStage1 {
+
+    &:hover {
+
+      .tabTitle {
+        color: map-get($tab-colors, strength);
+      }
+    }
+  }
+
+  &.tabStage2 {
+
+    &:hover {
+
+      .tabTitle {
+        color: map-get($tab-colors, agility);
+      }
+    }
+  }
+
+  &.tabStage3 {
+
+    &:hover {
+
+      .tabTitle {
+        color: map-get($tab-colors, intelligence);
+      }
+    }
+  }
+
+  &.tabStage7 {
+
+    &:hover {
+
+      .tabTitle {
+        color: map-get($tab-colors, radiant);
+      }
+    }
+  }
+
+  &.tabStage8 {
+
+    &:hover {
+
+      .tabTitle {
+        color: map-get($tab-colors, dire);
+      }
+    }
+  }
+
+  &.tabStage9 {
+
+    &:hover {
+      text-decoration: none;
+
+      .tabTitle {
+        color: map-get($tab-colors, madMoon);
+      }
+    }
+  }
+
+  &.isActive {
+
+    &::before {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .tabDescription {
+      visibility: visible;
+      opacity: 1;
+
+      @include media-breakpoint-up(sm) {
+        color: var(--royal-blue);
+      }
+    }
+
+    &.tabStage1 {
+
+      .tabTitle {
+        color: map-get($tab-colors, strength);
+      }
+    }
+
+    &.tabStage2 {
+
+      .tabTitle {
+        color: map-get($tab-colors, agility);
+      }
+    }
+
+    &.tabStage3 {
+
+      .tabTitle {
+        color: map-get($tab-colors, intelligence);
+      }
+    }
+
+    &.tabStage7 {
+
+      .tabTitle {
+        color: map-get($tab-colors, radiant);
+      }
+    }
+
+    &.tabStage8 {
+
+      .tabTitle {
+        color: map-get($tab-colors, dire);
+      }
+    }
+
+    &.tabStage9 {
+
+      .tabTitle {
+        color: map-get($tab-colors, madMoon);
+      }
+    }
+  }
+}

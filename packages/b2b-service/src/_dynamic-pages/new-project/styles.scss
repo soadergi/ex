@@ -1,0 +1,127 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.projectPage {
+  @include flex(space-between, center, column-reverse);
+
+  h3 {
+    @include font-size(48px, 60px);
+  }
+
+  img {
+    @include make-spacer(mt, 6);
+    @include make-spacer(mt, 0, md);
+
+    @include media-breakpoint-up(md) {
+      max-width: rem(448px);
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row-reverse;
+  }
+}
+
+.partners {
+
+  h2 {
+    @include size(100%);
+    @include font-size(48px, 60px);
+
+    text-align: center;
+  }
+
+  ul {
+    display: block;
+    border-top: 1px solid var(--grey-200);
+    overflow: hidden;
+
+    li {
+      @include size(100%);
+
+      border: 1px solid var(--grey-200);
+      border-top: 0;
+      border-radius: 0;
+      background-color: var(--white);
+    }
+  }
+
+
+  @include media-breakpoint-up(sm) {
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0;
+
+      li {
+
+        &:nth-of-type( even ) {
+          border-left: 0;
+        }
+
+        &:nth-of-type( odd ) {
+          border-left: 1px solid var(--grey-200);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+
+    ul {
+      grid-template-columns: repeat(6, 1fr);
+      border-top: 0;
+
+      li {
+        border-top: 1px solid var(--grey-200);
+        border-left: 0;
+        height: rem(210px);
+
+        &:nth-of-type( odd ) {
+          border-left: 0;
+        }
+
+        &:nth-of-type( 6n+1 ) {
+          border-left: 1px solid var(--grey-200);
+        }
+      }
+    }
+  }
+}
+
+.heroWrap {
+  position: relative;
+}
+
+.text {
+  @include make-spacer(mb, 5);
+  @include make-spacer(mb, 6, sm);
+
+  white-space: pre-wrap;
+  color: var(--grey-500);
+
+  @include media-breakpoint-only(md) {
+    max-width: 45%;
+  }
+}
+
+//NewspapersBlock
+
+.buttonWrap {
+  @include make-spacer(mt, 10);
+  @include flex(center);
+}
+
+.button {
+  @extend %button;
+
+  @include make-spacer(py, half);
+  @include font-size(14px, 28px);
+}
+
+.sectionGrey {
+  @include make-spacer(px, 2);
+
+  background-color: var(--grey-100);
+}

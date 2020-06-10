@@ -1,0 +1,14 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.grid {
+  display: grid;
+  grid-row-gap: rem(32px);
+
+  @include media-breakpoint-up(sm) {
+    grid-column-gap: rem(24px);
+  }
+}
+
+.showMore {
+  @include make-spacer(mt, 3);
+}

@@ -1,0 +1,25 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.link {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, sm);
+  @include gradient-x(#{var(--blue-active)}, #{var(--blue)});
+
+  display: inline-block;
+  -webkit-background-clip: text; /* stylelint-disable-line */
+  text-transform: uppercase;
+  font-weight: 700;
+  -webkit-text-fill-color: transparent;
+
+  &::after {
+    @include make-spacer(pl, half);
+
+    content: '>';
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(20px, 24px);
+  }
+}

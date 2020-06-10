@@ -1,0 +1,61 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pt, 6);
+  @include make-spacer(pt, 0, sm);
+}
+
+.btnWrap {
+  @include flex($direction: column);
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+  }
+}
+
+.button {
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 1, sm);
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 0, sm);
+  @include make-spacer(px, 2);
+  @include flex(center, center);
+  @include font-size(12px);
+
+  border: 0;
+  border-radius: 2.5rem;
+  width: 100%;
+  max-width: 100%;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: rem(32px);
+  white-space: nowrap;
+  color: var(--white);
+  font-weight: 700;
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+
+  &.telegram {
+    background-color: var(--telegram);
+
+    &:hover {
+      background-color: var(--telegram-hover);
+      text-decoration: none;
+    }
+  }
+
+  &.discord {
+    background-color: var(--discord);
+
+    &:hover {
+      background-color: var(--discord-hover);
+      text-decoration: none;
+    }
+  }
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+}

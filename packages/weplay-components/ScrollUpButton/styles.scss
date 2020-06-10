@@ -1,0 +1,24 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.button {
+  @include flex(center, center);
+  @include size(rem(40px));
+  @include make-spacer(p, 0);
+  @include transition(opacity);
+
+  opacity: 0.16;
+  z-index: 102;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: var(--blue);
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.icon {
+  fill: var(--white);
+  transform: rotateZ(180deg);
+  width: 1.2rem;
+}

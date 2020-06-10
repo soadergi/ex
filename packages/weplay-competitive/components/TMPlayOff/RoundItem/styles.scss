@@ -1,0 +1,43 @@
+@import '../config';
+
+// Game
+
+.game {
+  position: relative;
+  z-index: 1;
+  padding: $game-padding-y 0;
+  width: 100%;
+  height: $tm-game-height;
+}
+
+// Round Item
+
+.roundItem {
+  display: grid;
+  position: relative;
+  grid-template-columns: $tm-min-game-width $tm-min-relations-width;
+  align-items: center;
+  align-self: stretch;
+  z-index: 1;
+  width: 100%;
+
+  .game {
+    height: $tm-game-height;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr $tm-min-relations-width;
+  }
+
+  &.isThirdPlaceMatchExist {
+    margin-top: $tm-game-height;
+
+    &.isCollapsed {
+      @include make-spacer(mt, 0);
+    }
+  }
+
+  &.isCollapsed {
+    align-items: flex-start;
+  }
+}

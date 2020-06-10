@@ -1,0 +1,98 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.page {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+  @include make-spacer(mx, auto);
+
+  width: 100%;
+  max-width: rem(1080px);
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(848px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1392px);
+  }
+}
+
+.wrapper {
+  @include flex($align-items: stretch, $direction: column);
+  @include make-spacer(py, 2);
+  @include make-spacer(py, 4, md);
+
+  width: 100%;
+}
+
+.mainTitle {
+  @include font-size(28px, 32px);
+  @include make-spacer(mt, 2);
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 6, md);
+
+  color: var(--royal-blue);
+  font-weight: 600;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.tabs {
+  @include flex(center, stretch);
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 6, md);
+  @include make-spacer(mb, 7, lg);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: rem(16px);
+  box-shadow: inset 1px 1px 8px var(--black-alpha-008);
+  background: var(--grey-100);
+
+  @include media-breakpoint-up(sm) {
+    border-radius: rem(40px);
+    background-color: var(--grey-200);
+  }
+
+  @include media-breakpoint-up(md) {
+    border-radius: rem(56px);
+  }
+}
+
+.bannerWrapper {
+  @include media-breakpoint-up(sm) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
+
+.wrapCandidates {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  justify-content: center;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr;
+  }
+}
+

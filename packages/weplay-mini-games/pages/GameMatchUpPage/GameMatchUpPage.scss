@@ -1,0 +1,87 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: relative;
+  background-color: var(--royal-blue);
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.background {
+  height: rem(1640px);
+
+  &::after {
+    @include size(100%, 15%);
+    @include gradient-y(transparent, #{var(--royal-blue)});
+
+    position: absolute;
+    bottom: 0;
+    content: '';
+  }
+}
+
+.header {
+  @include make-spacer(pt, 2);
+  @include make-spacer(pt, 5, sm);
+  @include flex(center, center);
+
+  position: relative;
+  text-align: center;
+}
+
+.chain {
+  @include size(auto, rem(18px));
+
+  @include media-breakpoint-up(sm) {
+    height: rem(24px);
+  }
+}
+
+.logo {
+  @include size(auto, rem(65px));
+  @include make-spacer(mx, 1);
+  @include make-spacer(mx, 5, sm);
+}
+
+.content {
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 0, sm);
+  @include make-spacer(pt, 5);
+  @include make-spacer(mx, auto);
+
+  max-width: rem(504px);
+}
+
+.wrapper {
+  @include make-spacer(mb, 2);
+}
+
+.banner {
+  @include make-spacer(mb, 3);
+  @include make-spacer(pb, 3, sm);
+
+  position: relative;
+  border-radius: 0;
+  border-color: var(--white-alpha-008);
+  background-color: var(--royal-blue-alpha-08);
+  padding-bottom: rem(160px);
+}
+
+.image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  @include media-breakpoint-up(sm) {
+    right: rem(16px);
+  }
+}
+
+.event {
+  @include size(rem(109px), auto);
+}
+
+.tournament {
+  @include size(rem(160px), auto);
+}

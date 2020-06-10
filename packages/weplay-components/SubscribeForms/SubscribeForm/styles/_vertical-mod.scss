@@ -1,0 +1,52 @@
+// This modifier uses on the `Article Page`
+
+@mixin vertical-mod {
+
+  &.vertical {
+    @include make-spacer(px, 2);
+    @include make-spacer(py, 5);
+
+    display: block;
+
+    &::after {
+      content: none;
+    }
+
+    &::before {
+      bottom: rem(-36px);
+    }
+
+    // Content Block
+
+    .contentBlock {
+      @include make-spacer(pr, 0);
+    }
+
+    .description {
+      @include make-spacer(mb, 3);
+    }
+
+    // Form
+
+    .form {
+      display: block;
+    }
+
+    // Submit Block
+
+    .submitBlock {
+      @include make-spacer(ml, 0);
+    }
+
+    .checkbox {
+      @include make-spacer(mb, 3);
+    }
+
+    &.hasSuccess {
+
+      .form {
+        @include flex;
+      }
+    }
+  }
+}

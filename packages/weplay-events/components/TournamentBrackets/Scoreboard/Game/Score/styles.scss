@@ -1,0 +1,40 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.divider {
+  @include font-size(10px, 16px);
+
+  position: relative;
+  height: 100%;
+
+  &Text {
+    @include make-spacer(mb, 0);
+
+    text-transform: uppercase;
+    color: var(--grey-500-alpha-064);
+
+    @include media-breakpoint-up(sm) {
+      font-size: rem(14px);
+    }
+  }
+
+  &.hasScore {
+    align-items: flex-start;
+  }
+}
+
+.scores {
+  @include font-size(18px, 16px);
+
+  height: rem(40px);
+}
+
+.divider,
+.scores {
+  @include flex(center, center);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    height: 100%;
+  }
+}

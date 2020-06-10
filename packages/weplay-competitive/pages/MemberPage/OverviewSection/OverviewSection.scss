@@ -1,0 +1,7 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.stats {
+  @include media-breakpoint-up(md) {
+    order: -1;
+  }
+}

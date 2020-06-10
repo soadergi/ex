@@ -1,0 +1,36 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mb, 8);
+
+  background-color: var(--white);
+
+  &.isFullScreen {
+    @include size(100%);
+    @include make-spacer(mb, 0);
+
+    overflow-x: hidden;
+
+    .header {
+      top: 0;
+    }
+  }
+}
+
+.header {
+  position: sticky;
+  top: var(--wp-sticky-section-height);
+  z-index: 2;
+  background-color: var(--white);
+}
+
+.controls {
+  background-color: var(--grey-100);
+  overflow: hidden;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

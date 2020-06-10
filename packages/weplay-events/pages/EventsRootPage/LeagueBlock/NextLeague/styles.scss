@@ -1,0 +1,45 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(pb, 6);
+  @include make-spacer(pb, 8, sm);
+  @include make-spacer(pb, 0, md);
+}
+
+.buttonTeaser {
+  @include reset-button;
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 4, sm);
+  @include make-spacer(mr, 0, md);
+
+  display: block;
+  position: relative;
+  border-radius: rem(4px);
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    width: 100%;
+  }
+}
+
+.subWrap {
+  @include make-spacer(mb, 6);
+}
+
+.buttonIconBlock {
+  @include absolute-center;
+  @include size(rem(56px));
+
+  border-radius: 50%;
+  background-color: var(--white);
+  color: #000;
+}
+
+.buttonIcon {
+  @include absolute-center;
+}
+
+.prevLeagueLogo {
+  @include size(100%, auto);
+}

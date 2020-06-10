@@ -1,0 +1,46 @@
+//
+// Smoothing font display
+//
+
+@mixin smooth-font {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin reset-button {
+  margin: 0;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+}
+
+@mixin font-size($size: 16px, $height: $size) {
+  line-height: $height / $size;
+  font-size: rem($size);
+}
+
+@mixin box-shadow($shadow: 1px 1px 8px var(--black-alpha-024)) {
+  box-shadow: $shadow;
+}
+
+@mixin absolute-center($args...) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) $args;
+}
+
+@mixin aspect-ratio ($ratio: 56.25%) {
+  display: block;
+  padding-top: $ratio;
+  width: 100%;
+  height: 0;
+}

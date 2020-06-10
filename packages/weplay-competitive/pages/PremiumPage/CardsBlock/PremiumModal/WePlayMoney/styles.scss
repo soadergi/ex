@@ -1,0 +1,41 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.balance {
+  @include make-spacer(pb, 1);
+
+  overflow: hidden;
+}
+
+.table {
+  @include flex(space-between, center, $wrap: wrap);
+  @include make-spacer(mb, 1);
+}
+
+.textBold {
+  font-weight: 500;
+}
+
+.count {
+  @include make-spacer(mb, 2);
+  @include flex(space-between, center, $wrap: wrap);
+
+  border-bottom: rem(1px) solid var(--grey-200);
+}
+
+.errors {
+  min-height: rem(16px);
+}
+
+.button {
+  @include make-spacer(mb, 2);
+
+  width: 100%;
+}
+
+.countText {
+  @include font-size(20px);
+  @include make-spacer(py, 3);
+
+  display: block;
+  font-weight: var(--wp-font-weight-bold);
+}

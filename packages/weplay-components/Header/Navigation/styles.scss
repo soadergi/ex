@@ -1,0 +1,9 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.list {
+  @include reset-list;
+  @include flex;
+
+  width: 100%;
+}

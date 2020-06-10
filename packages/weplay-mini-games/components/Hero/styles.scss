@@ -1,0 +1,67 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.hero {
+  @include make-spacer(py, 2);
+  @include make-spacer(py, 4, md);
+  @include flex(center, center);
+
+  position: relative;
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--grey-300);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: rem(200px);
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    content: '';
+  }
+
+  @include media-breakpoint-up(md) {
+    min-height: rem(256px);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.body {
+  @include media-breakpoint-up(sm) {
+    text-align: center;
+  }
+}
+
+.breadcrumbs {
+  @include make-spacer(pb, 3);
+  @include make-spacer(pb, 4, sm);
+  @include make-spacer(pb, 1, md);
+}
+
+.title {
+  @include font-size(28px, 32px);
+  @include make-spacer(mb, 1);
+
+  color: var(--white);
+  font-weight: 700;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(44px, 56px);
+  }
+}
+
+.container {
+  @include make-spacer(px, 1);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+}

@@ -1,0 +1,100 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(center, center, column);
+  @include make-spacer(mx, auto);
+  @include make-spacer(py, 6);
+  @include transition(opacity);
+
+  position: relative;
+  flex: 1 0 auto;
+  z-index: 2;
+  max-width: rem(576px);
+  min-height: rem(448px);
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    min-height: auto;
+  }
+
+  &.animation {
+    animation-name: zoom;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+
+    .button {
+      pointer-events: none;
+    }
+  }
+}
+
+.link {
+  @include make-spacer(mb, 3);
+  @include transition(color);
+
+  color: var(--white);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--blue);
+  }
+}
+
+.arrow {
+  @include make-spacer(ml, 1);
+}
+
+@keyframes zoom {
+
+  0% {
+    opacity: 1;
+  }
+
+  10% {
+    transform: scale3d(0.3, 0.3, 0.3);
+    opacity: 0;
+  }
+
+  85% {
+    transform: scale3d(0.3, 0.3, 0.3);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.title {
+  @include font-size(24px, 32px);
+  @include make-spacer(mb, 3);
+
+  font-weight: 700;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.description {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 3);
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+}
+
+.shareBlock {
+  @include make-spacer(mt, 3);
+  @include make-spacer(mt, 6, sm);
+}
+
+.share {
+  @include make-spacer(mt, 2);
+
+  justify-content: center;
+}
+
+

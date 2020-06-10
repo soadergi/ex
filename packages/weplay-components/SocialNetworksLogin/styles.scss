@@ -1,0 +1,55 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.icon {
+  color: var(--white);
+}
+
+.link {
+  @include flex(center, center);
+  @include transition(#{background-color, opacity});
+
+  border-radius: 50%;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+
+  &.google {
+    background-color: var(--google);
+
+    &:hover {
+      background-color: var(--google-hover);
+    }
+  }
+
+  &.facebook {
+    background-color: var(--facebook);
+
+    &:hover {
+      background-color: var(--facebook-hover);
+    }
+  }
+
+  &.vk {
+    background-color: var(--vk);
+
+    &:hover {
+      background-color: var(--vk-hover);
+    }
+  }
+
+  &.discord {
+    background-color: var(--discord);
+
+    &:hover {
+      background-color: var(--discord-hover);
+    }
+  }
+
+  &.twitch {
+    background-color: var(--twitter);
+
+    &:hover {
+      background-color: var(--twitter-hover);
+    }
+  }
+}

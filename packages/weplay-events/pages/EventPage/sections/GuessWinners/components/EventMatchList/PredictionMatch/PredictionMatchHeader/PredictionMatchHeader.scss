@@ -1,0 +1,68 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include size(100%, auto);
+  @include font-size(12px, 18px);
+
+  position: relative;
+  grid-column: 1/5;
+
+  @include media-breakpoint-up(sm) {
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    column-gap: rem(16px);
+  }
+}
+
+.time {
+  @include make-spacer(mr, 2);
+  @include make-spacer(mr, 3, sm);
+
+  color: var(--grey-500);
+}
+
+.tag {
+  @include make-spacer(mr, 2);
+  @include make-spacer(mr, 3, sm);
+
+  color: var(--blue);
+}
+
+.live {
+  @include make-spacer(px, 1);
+  @include make-spacer(py, half);
+  @include make-spacer(mr, 2);
+  @include make-spacer(mr, 3, sm);
+  @include font-size(12px);
+
+  display: inline-grid;
+  align-items: center;
+  border-radius: rem(2px);
+  background-color: var(--magenta);
+  text-align: center;
+  color: var(--white);
+}
+
+.nameMatch {
+  @include make-spacer(mr, 2);
+  @include make-spacer(mr, 3, sm);
+
+  grid-column: 1/3;
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    grid-column: 1/2;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-column: auto;
+  }
+}
+
+.button {
+  @include font-size(12px);
+}
+

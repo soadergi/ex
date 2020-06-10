@@ -1,0 +1,17 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.button {
+  @include make-spacer(mx, auto);
+  @include font-size(14px, 44px);
+
+  display: block;
+  font-weight: var(--wp-font-weight-regular);
+
+  &.successButton {
+
+    .icon {
+      transform: rotate(90deg);
+    }
+  }
+}

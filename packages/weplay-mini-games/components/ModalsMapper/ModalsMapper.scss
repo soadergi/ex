@@ -1,0 +1,13 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  transform: scale(0.9);
+  opacity: 0;
+
+  &.visible {
+    transform: scale(1);
+    transition: 300ms 200ms ease-in;
+    opacity: 1;
+  }
+}
+

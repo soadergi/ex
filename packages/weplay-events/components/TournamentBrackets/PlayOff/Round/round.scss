@@ -1,0 +1,144 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+//@function pow($number, $exponent) {
+//  $value: 1;
+//
+//  @if $exponent > 0 {
+//    @for $i from 1 through $exponent {
+//      $value: $value * $number;
+//    }
+//  }
+//
+//  @else if $exponent < 0 {
+//    @for $i from 1 through -$exponent {
+//      $value: $value / $number;
+//    }
+//  }
+//
+//  @return $value;
+//}
+
+$connect-width: 1rem;
+$connect-width-md: 1rem;
+$connect-width-lg: 2rem;
+
+$connector-base-height: rem(152px);
+$matchup-height: rem(96px);
+$matchup-margin-bottom: rem(56px);
+
+.connector,
+.matchups {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.line,
+.merger {
+  box-sizing: border-box;
+  display: inline-block;
+  width: $connect-width;
+  vertical-align: top;
+
+  @include media-breakpoint-up(md) {
+    width: $connect-width-md;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: $connect-width-lg;
+  }
+}
+
+.line {
+  border-bottom: thin solid var(--grey-300);
+  height: $connector-base-height / 2;
+}
+
+.merger {
+  position: relative;
+  height: $connector-base-height;
+
+  &::before {
+    border-top-width: thin;
+    border-right-width: thin;
+  }
+
+  &::after {
+    border-right-width: thin;
+    border-bottom-width: thin;
+  }
+
+  &::before,
+  &::after {
+    display: block;
+    border: 0 solid;
+    border-color: var(--grey-300);
+    width: 100%;
+    height: 50%;
+    content: '';
+  }
+}
+
+.round {
+
+  // TODO: Loop creates rounds starting from 1/128
+
+  $round-class: round;
+
+  display: inline-block;
+  vertical-align: middle;
+
+  &.round-0 .winners {
+
+    &:not( :last-child ),
+    .matchup:not( :last-child ) {
+      margin-bottom: $matchup-margin-bottom;
+    }
+  }
+
+  &.offsetTop {
+    margin-bottom: rem(-48px);
+  }
+
+  @for $i from 1 through 8 {
+
+    &.round-#{$i} {
+
+      .winners {
+
+        &:not( :last-child ),
+        .matchup:not( :last-child ) {
+          // TODO: Not sure if this will work with more than 4 rounds. Needs testing
+          margin-bottom: (($matchup-margin-bottom * 2) + $matchup-height + ($matchup-height / 2 * ($i - 1))) * $i;
+        }
+
+        .connector {
+
+          // TODO: Same situation here. Not sure if it will work with more rounds
+
+          // stylelint-disable
+
+          .merger {
+            @if $i == 1 {
+              height: $connector-base-height * ($i + 1);
+            }
+
+            @else {
+              height: $connector-base-height * ($i * $i);
+            }
+          }
+
+          .line {
+            @if $i == 1 {
+              height: ($connector-base-height * ($i + 1)) / 2;
+            }
+
+            @else {
+              height: ($connector-base-height * ($i * $i)) / 2;
+            }
+          }
+          // stylelint-enable
+        }
+      }
+    }
+  }
+}

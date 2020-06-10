@@ -1,0 +1,149 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.heroSection {
+  @include make-spacer(mb, 3);
+  @include make-spacer(py, 17);
+  @include make-spacer(py, 6, sm);
+  @include make-spacer(py, 0, md);
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+
+  background-color: var(--royal-blue);
+}
+
+.heroWrap {
+  @include make-spacer(mx, auto);
+
+  background-color: var(--royal-blue);
+  width: 100%;
+  text-align: center;
+  color: var(--white);
+
+  @include media-breakpoint-up(md) {
+    @include flex(space-between, center, row-reverse);
+
+    max-width: rem(960px);
+    text-align: left;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1200px);
+  }
+}
+
+.grid {
+  @include make-spacer(mb, 8);
+  @include make-spacer(mb, 12, sm);
+
+  @include media-breakpoint-up(sm) {
+    display: grid;
+    grid-template-areas: 'tournament tournament'
+      'central central'
+      'loony tow'
+      'news news';
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: rem(24px);
+    grid-column-gap: rem(24px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-areas: 'loony central tournament'
+      'news central tow';
+    grid-template-columns: rem(240px) auto rem(320px);
+    grid-column-gap: rem(48px);
+  }
+}
+
+.tournamentBlock,
+.loonyBlock,
+.towBlock,
+.newsBlock,
+.centralBlock {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, sm);
+}
+
+.tournamentBlock {
+  display: inline-grid;
+  grid-area: tournament;
+}
+
+.loonyBlock {
+  grid-area: loony;
+}
+
+.towBlock {
+  grid-area: tow;
+}
+
+.newsBlock {
+  grid-area: news;
+}
+
+.centralBlock {
+  grid-area: central;
+
+  @include media-breakpoint-up(lg) {
+    grid-row: 1 / span 3;
+  }
+}
+
+.giveaway {
+  @include make-spacer(p, 3);
+
+  background-color: var(--grey-100);
+
+  iframe {
+    @include size(100%, rem(900px));
+  }
+}
+
+.button {
+  @include font-size(16px, 24px);
+
+  color: var(--blue);
+}
+
+.icon {
+  @include make-spacer(ml, 1);
+
+  transform: rotate(90deg);
+}
+
+.imgWrap {
+  @include make-spacer(pt, 0);
+  @include make-spacer(pt, 10, md);
+  @include make-spacer(pt, 4, lg);
+
+  position: relative;
+
+  &::after {
+    @include size(100%, 50%);
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: $z-1;
+    background-image: linear-gradient(180deg, transparent 50%, var(--royal-blue) 70%);
+    content: '';
+  }
+}
+
+.image {
+  @include make-spacer(mx, auto);
+
+  height: rem(274px);
+
+  @include media-breakpoint-up(lg) {
+    height: auto;
+  }
+}
+
+.link {
+  @include make-spacer(mt, 2);
+  @include make-spacer(ml, 3);
+
+  display: block;
+}

@@ -1,0 +1,98 @@
+@import 'weplay-core/styles/playoff-config';
+
+.label {
+  @include flex(center, center);
+  @include make-spacer(mb, 0);
+  @include font-size(16px, 32px);
+
+  background-color: var(--grey-200);
+  width: $game-width;
+  text-align: center;
+  color: var(--grey-500);
+
+  &.superFinal {
+    --start-color: var(--blue-active);
+    --end-color: #14cdff;
+
+    @include gradient-x(#{var(--start-color)}, #{var(--end-color)});
+
+    background-color: transparent;
+    color: var(--white);
+
+    .icon {
+      @include size(1.4rem);
+      @include make-spacer(mr, 1);
+    }
+  }
+
+  &.hasFinalRound {
+
+    .icon {
+      @include size(1.4rem);
+      @include make-spacer(mr, 1);
+    }
+  }
+
+  &.fullBracketSuperFinal {
+    --start-color: var(--grey-200);
+    --end-color: var(--grey-200);
+
+    color: var(--grey-500);
+  }
+
+  &.isTournamentModule {
+    width: $tm-game-width;
+  }
+}
+
+.labels {
+  display: grid;
+  position: relative;
+  grid-auto-columns: min-content;
+  grid-auto-flow: column;
+  grid-column-gap: $relations-width;
+  justify-items: stretch;
+  z-index: 2;
+
+  &.hasGrandFinal {
+    justify-content: end;
+  }
+
+  &.superFinal {
+    justify-content: start;
+  }
+
+  &.isReverted {
+    transform: scaleX(-1);
+
+    .label {
+      transform: scaleX(-1);
+    }
+  }
+
+  &.isTournamentModule {
+    grid-column-gap: $tm-relations-width;
+  }
+}
+
+.forgeOfMastersLan {
+
+  &.label {
+    justify-content: center;
+  }
+
+  &.labels {
+    justify-content: end;
+  }
+}
+
+.hasWideRound {
+
+  .label {
+    margin-right: rem(208px);
+  }
+
+  .forgeOfMastersLeagueSecondSeason {
+    @include size(auto);
+  }
+}

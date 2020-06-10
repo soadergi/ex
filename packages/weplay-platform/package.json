@@ -1,0 +1,30 @@
+{
+  "name": "weplay-platform",
+  "version": "6.0.5",
+  "author": "Weplay FE team",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "@loadable/component": "^5.10.2",
+    "classnames": "^2.2.5",
+    "formik": "^1.5.7",
+    "i18n-react": "^0.6.2",
+    "js-cookie": "^2.2.0",
+    "prop-types": "^15.6.1",
+    "query-string": "^6.2.0",
+    "ramda": "^0.26.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0",
+    "react-resize-detector": "^4.2.0",
+    "react-router-dom": "^5.1.2",
+    "recompose": "^0.30.0",
+    "redux-persist": "^5.10.0",
+    "reselect": "^4.0.0",
+    "weplay-components": "^17.2.0",
+    "weplay-core": "^18.2.0",
+    "weplay-platform": "^6.0.5",
+    "weplay-singleton": "^0.5.5",
+    "yup": "^0.26.6"
+  }
+}

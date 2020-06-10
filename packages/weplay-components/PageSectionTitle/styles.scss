@@ -1,0 +1,16 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mb, 0);
+  @include flex($align-items: center);
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+}
+
+.text {
+  @include font-size(32px, 40px);
+
+  font-weight: var(--wp-font-weight-bold);
+}

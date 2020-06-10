@@ -1,0 +1,303 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(flex-start, center, column);
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 5, md);
+  @include make-spacer(py, 3);
+  @include make-spacer(py, 4, sm);
+  @include make-spacer(py, 4, md);
+
+  flex-basis: auto;
+  flex-grow: 1;
+  border-radius: rem(8px);
+  background: radial-gradient(101.93px at 48.68% 19.39%, #00287c 0%, var(--royal-blue) 100%), var(--white);
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(flex-start, stretch, row);
+
+    background: radial-gradient(218.58px at 12.04% 50%, #00287c 0%, var(--royal-blue) 100%), var(--white);
+  }
+}
+
+.meta {
+  @include flex(center, center, column);
+  @include make-spacer(pb, 2);
+  @include make-spacer(pr, 2, sm);
+  @include make-spacer(pr, 4, md);
+  @include make-spacer(pb, 0, sm);
+
+  @include media-breakpoint-up(sm) {
+    @include flex;
+
+    min-width: rem(264px);
+  }
+
+  @include media-breakpoint-up(md) {
+    min-width: rem(368px);
+  }
+}
+
+.picture {
+  @include size(rem(96px));
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 2, sm);
+  @include make-spacer(mr, 3, md);
+
+  position: relative;
+  flex-basis: auto;
+  flex-shrink: 0;
+}
+
+.avatar {
+  @include size(100%);
+
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+.label {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 2;
+  margin-left: -40px;
+  border-radius: 32px;
+  background: var(--blue);
+  padding-top: 2px;
+  width: rem(80px);
+  text-align: center;
+  color: var(--white);
+  font-size: rem(10px);
+  font-weight: 500;
+}
+
+.info {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mt, 0, sm);
+
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    text-align: left;
+  }
+}
+
+.name {
+  @include make-spacer(mb, 0);
+  @include make-spacer(mb, 1, md);
+  @include font-size(14px, 24px);
+  @include word-break;
+
+  font-weight: 500;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(22px, 32px);
+  }
+}
+
+.description {
+  @include font-size(12px, 16px);
+
+  display: inline-block;
+
+  @include media-breakpoint-up(md) {
+    @include font-size(12px, 24px);
+  }
+}
+
+.text {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 1);
+
+  width: 100%;
+}
+
+.link {
+  @include font-size(12px, 16px);
+
+  color: var(--blue);
+}
+
+.content {
+  @include make-spacer(pt, 2);
+  @include make-spacer(pt, 0, sm);
+  @include make-spacer(pl, 2, sm);
+  @include make-spacer(pl, 4, md);
+
+  position: relative;
+  width: 100%;
+
+  &::before {
+    @include size(100%, rem(1px));
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--blue-alpha-064);
+    content: '';
+
+    @include media-breakpoint-up(sm) {
+      @include size(rem(1px), 100%);
+
+      top: 0;
+      left: 0;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include flex(center, flex-start, column);
+  }
+}
+
+.annotationBlock {
+  @include make-spacer(mt, 1);
+  @include make-spacer(pt, 1);
+
+  display: none;
+  border-top: 1px solid var(--grey-300);
+}
+
+.annotation {
+  @include font-size(10px, 16px);
+  @include make-spacer(mb, 0);
+
+  color: var(--royal-blue);
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(12px, 16px);
+  }
+}
+
+//
+// Columnist Card modifiers
+//
+
+.cardLight {
+  @include flex(flex-start, flex-start, column);
+  @include make-spacer(px, 1);
+  @include make-spacer(pr, 2, sm);
+  @include make-spacer(pl, 1, sm);
+  @include make-spacer(px, 3, lg);
+  @include make-spacer(py, 3, lg);
+  @include make-spacer(py, 2);
+
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1;
+  background: var(--white);
+  width: 100%;
+  color: var(--royal-blue);
+
+  .meta {
+    @include flex(flex-start, flex-start, row);
+    @include make-spacer(pr, 0);
+    @include make-spacer(pb, 0);
+
+    min-width: auto;
+
+    @include media-breakpoint-up(lg) {
+      @include flex(flex-start, center);
+    }
+  }
+
+  .info {
+    @include make-spacer(mt, 0);
+
+    text-align: left;
+  }
+
+  .picture {
+    @include make-spacer(mr, 1);
+    @include make-spacer(mr, 2, lg);
+  }
+
+  .name {
+    @include font-size(14px, 24px);
+    @include make-spacer(mb, 0);
+
+    @include media-breakpoint-up(lg) {
+      @include font-size(16px, 24px);
+    }
+  }
+
+  .description {
+    color: var(--grey-500);
+  }
+
+  .annotationBlock {
+    display: block;
+  }
+
+  .link {
+    @include font-size(10px, 16px);
+
+    @include media-breakpoint-up(lg) {
+      @include font-size(12px, 16px);
+    }
+  }
+
+  .content {
+    display: none;
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include flex;
+  }
+}
+
+.cardTight {
+  @include flex(flex-start, center, column);
+  @include make-spacer(px, 3);
+  @include make-spacer(py, 3);
+
+  .meta {
+    @include flex(flex-start, center, column);
+    @include make-spacer(pb, 2);
+    @include make-spacer(pr, 0);
+
+    min-width: auto;
+  }
+
+  .picture {
+    @include make-spacer(mr, 0);
+  }
+
+  .info {
+    @include make-spacer(mt, 1);
+
+    text-align: center;
+  }
+
+  .name {
+    @include font-size(14px, 24px);
+    @include make-spacer(mb, 0);
+  }
+
+  .description {
+    @include font-size(12px, 24px);
+  }
+
+  .content {
+    @include make-spacer(pt, 2);
+    @include make-spacer(pl, 0);
+
+    width: 100%;
+    text-align: left;
+
+    &::before {
+      @include size(100%, rem(1px));
+    }
+  }
+
+  .text {
+    @include make-spacer(mb, 2);
+  }
+}

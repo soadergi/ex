@@ -1,0 +1,34 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.content {
+  @include make-spacer(py, 6);
+
+  border-bottom: 1px solid var(--grey-200);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.grid {
+  max-width: rem(632px);
+
+  @include  media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1.5rem;
+  }
+}
+
+.subtitle {
+  @include make-spacer(mb, 3);
+  @include font-size(24px, 30px);
+
+  font-weight: 700;
+}
+
+.textInfo {
+  color: var(--grey-500);
+  font-size: rem(12px);
+}

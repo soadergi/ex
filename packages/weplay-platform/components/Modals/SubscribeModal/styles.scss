@@ -1,0 +1,28 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pb, 2, sm);
+}
+
+.title {
+  @include font-size(28px, 32px);
+  @include make-spacer(mb, 2);
+
+  text-align: center;
+  font-weight: 700;
+}
+
+.text {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 3);
+  @include make-spacer(px, 3);
+
+  text-align: center;
+  color: var(--grey-500);
+}
+
+.button {
+  @extend %button;
+
+  width: 100%;
+}

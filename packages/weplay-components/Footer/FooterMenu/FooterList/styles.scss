@@ -1,0 +1,23 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include reset-list;
+
+  li {
+    @include make-spacer(mb, 2);
+
+    &:last-child {
+      @include make-spacer(mb, 0);
+    }
+  }
+}
+
+.link {
+  @include font-size(12px, 16px);
+
+  color: var(--white);
+
+  &.highlight {
+    color: var(--magenta);
+  }
+}

@@ -1,0 +1,75 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+$author-avatar-size: rem(40px);
+
+@mixin avatar-size($size) {
+  @include size($size);
+
+  flex: 0 0 $size;
+  max-width: $size;
+}
+
+.block {
+  @include flex($display: inline-flex);
+
+  &.white {
+
+    .name {
+      @include media-breakpoint-up(md) {
+        color: var(--white);
+      }
+    }
+
+    .link {
+      @include media-breakpoint-up(md) {
+        color: var(--grey-300);
+      }
+    }
+  }
+}
+
+.textWrap {
+  @include flex(center, flex-start, column);
+}
+
+.avatar {
+  @include avatar-size($author-avatar-size);
+  @include make-spacer(mr, 1);
+}
+
+.name,
+.link {
+  @include flex($align-items: center);
+  @include font-size(12px);
+
+  max-width: 100%;
+  color: var(--grey-500);
+
+  span {
+    @include media-breakpoint-up(sm) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &:hover {
+    color: var(--blue);
+  }
+
+  @include media-breakpoint-up(sm) {
+    max-width: 19rem;
+    white-space: nowrap;
+  }
+}
+
+.link {
+  @include make-spacer(mt, 1);
+}
+
+.name {
+  text-transform: uppercase;
+  color: var(--royal-blue);
+  font-weight: 700;
+}
+

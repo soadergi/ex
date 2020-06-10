@@ -1,0 +1,91 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  display: block;
+  background-position-y: top;
+  background-position-x: right;
+  background-repeat: no-repeat;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: auto rem(720px) rem(240px) 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: auto rem(960px) rem(240px) auto;
+  }
+}
+
+.videoContainer {
+  @include make-spacer(pr, 2);
+  @include make-spacer(pr, 5, sm);
+  @include make-spacer(pr, 0, md);
+
+  display: block;
+
+  @include media-breakpoint-up(md) {
+    @include flex($align-items: flex-end, $direction: column);
+
+    grid-area: 1 / 1 / 2 / 3;
+  }
+}
+
+.videosListing {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(pl, 6, md);
+  @include make-spacer(pr, 0, md);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, md);
+
+  display: grid;
+
+  @include media-breakpoint-up(sm) {
+    overflow: hidden;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: table-cell;
+    grid-area: 1 / 3 / 2 / 4;
+  }
+
+  @include media-breakpoint-up(lg) {
+    overflow-x: hidden;
+  }
+}
+
+.wrap {
+  @include flex;
+
+  overflow-x: auto;
+
+  @include media-breakpoint-up(md) {
+    display: initial;
+  }
+}
+
+.wrapDescription {
+  @include make-spacer(pl, 2);
+  @include make-spacer(pl, 5, sm);
+  @include make-spacer(pl, 4, md);
+  @include make-spacer(pl, 0, lg);
+
+  width: 100%;
+  max-width: rem(960px);
+}
+
+.link {
+  display: inline-block;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.icon {
+  @include make-spacer(ml, half);
+
+  vertical-align: middle;
+  color: var(--blue);
+}

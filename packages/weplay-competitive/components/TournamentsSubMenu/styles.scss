@@ -1,0 +1,176 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(px, 2, md);
+
+  display: block;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    @include flex;
+
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.08);
+    background-color: var(--white);
+    height: var(--wp-submenu-height);
+    white-space: nowrap;
+  }
+}
+
+.list {
+  @include reset-list;
+
+  @include media-breakpoint-up(md) {
+    @include flex($align-items: center, $display: inline-flex);
+
+    height: 100%;
+    vertical-align: middle;
+
+    &.right {
+      @include make-spacer(ml, auto, md);
+    }
+  }
+}
+
+.item {
+  @include flex($align-items: center);
+  @include font-size(18px);
+
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    @include make-spacer(pr, 1);
+
+    width: auto;
+    height: 100%;
+
+    &:last-child {
+      @include make-spacer(pr, 0);
+    }
+
+    &.itemDivider {
+      @include make-spacer(pr, 3);
+      @include make-spacer(mr, 2);
+
+      border-right: 1px solid #e1e6f0;
+    }
+  }
+}
+
+.link {
+  @include transition(color);
+  @include make-spacer(pl, 4);
+  @include make-spacer(pr, 1);
+  @include make-spacer(py, 1);
+  @include make-spacer(py, 0, md);
+  @include make-spacer(px, 1, md);
+  @include font-size(12px, 18px);
+
+  display: block;
+  position: relative;
+  width: 100%;
+  text-transform: uppercase;
+  color: var(--grey-300);
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(14px, 22px);
+    @include flex(center, center);
+
+    height: 100%;
+    text-transform: none;
+    color: var(--royal-blue);
+    font-weight: var(--wp-font-weight-regular);
+
+    &:hover {
+      color: var(--blue);
+    }
+  }
+
+  &.isActive {
+    @include make-spacer(pb, 1);
+    @include make-spacer(pb, 0, md);
+
+    background-color: var(--grey-500-alpha-024);
+    color: var(--white);
+    font-weight: var(--wp-font-weight-bold);
+
+    @include media-breakpoint-up(md) {
+      background-color: transparent;
+      color: var(--blue);
+      font-weight: var(--wp-font-weight-regular);
+    }
+  }
+
+  &.isPremium {
+    color: var(--premium);
+
+    &:hover {
+      color: var(--premium-hover);
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-spacer(px, 1);
+
+      border-radius: rem(4px);
+      background: linear-gradient(180deg, #f8c257 0%, #cb9b3d 100%);
+      height: rem(32px);
+      color: var(--white);
+
+      &:hover {
+        background: linear-gradient(0deg, #f8c257 0%, #cb9b3d 100%);
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.linkPlay {
+  color: var(--success);
+
+  @include media-breakpoint-up(md) {
+    color: var(--royal-blue);
+  }
+}
+
+.icon {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    @include flex($display: inline-flex);
+    @include make-spacer(mr, 1);
+  }
+
+  &.iconSolo {
+    @include media-breakpoint-up(md) {
+      @include make-spacer(mr, 0);
+    }
+  }
+
+  &.premiumIcon {
+    color: var(--white);
+  }
+
+  &.iconPlay {
+    @include size(2rem);
+
+    @include media-breakpoint-only(md) {
+      @include make-spacer(mr, 0);
+    }
+  }
+}
+
+.linkText {
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.linkTextPlay {
+  @include media-breakpoint-only(md) {
+    display: none;
+  }
+}

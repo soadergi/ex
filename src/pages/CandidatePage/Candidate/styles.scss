@@ -1,0 +1,255 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.candidate {
+  --aside-size: 128px;
+
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 3, sm);
+  @include make-spacer(px, 6, md);
+
+  display: block;
+  position: relative;
+  grid-template-columns: rem(var(--aside-size)) 1fr;
+  width: 100%;
+
+  @include media-breakpoint-only(md) {
+    --aside-size: 112px;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+  }
+}
+
+.aside {
+  @include make-spacer(pt, 3);
+  @include make-spacer(pt, 0, md);
+  @include make-spacer(pb, 2);
+  @include make-spacer(pb, 0, sm);
+
+  display: block;
+  flex: 0 0 auto;
+
+  @include media-breakpoint-down(xs) {
+    @include flex(flex-start, center, column);
+  }
+
+  @include media-breakpoint-only(sm) {
+    display: none;
+  }
+}
+
+.container {
+  @include flex(flex-start, stretch, column);
+  @include size(100%);
+
+  position: relative;
+}
+
+.content {
+  @include make-spacer(px, 4, md);
+  @include make-spacer(pb, 5);
+
+  width: 100%;
+
+  &Header {
+    @include make-spacer(pb, 3);
+    @include make-spacer(pt, 4);
+    @include make-spacer(pr, 9);
+
+    display: none;
+
+    @include media-breakpoint-only(sm) {
+      @include flex();
+    }
+  }
+}
+
+.wrapper {
+  height: 100%;
+
+  @include media-breakpoint-up(md) {
+    height: 24.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 27.5rem;
+  }
+}
+
+.userWrapper {
+  width: 100%;
+}
+
+.avatar {
+  --avatar-size: 128px;
+
+  @include size(rem(var(--avatar-size)));
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+  @include make-spacer(mb, 2, md);
+  @include box-shadow(1px 1px 8px var(--black-alpha-024));
+
+  flex: 0 0 rem(var(--avatar-size));
+  border-radius: 50%;
+  max-width: rem(var(--avatar-size));
+
+  @include media-breakpoint-only(md) {
+    --avatar-size: 112px;
+  }
+}
+
+.votes {
+  @include font-size(10px, 10px);
+  @include make-spacer(mb, 0);
+
+  text-align: center;
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(md) {
+    @include font-size(12px, 12px);
+  }
+}
+
+.name {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, md);
+  @include font-size(22px, 32px);
+
+  width: 100%;
+  font-weight: 700;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+
+  @include media-breakpoint-up(md) {
+    width: auto;
+  }
+}
+
+.header {
+  @include flex(center, flex-start, column);
+  @include make-spacer(px, 4, md);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, md);
+
+  @include media-breakpoint-only(sm) {
+    display: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    @include flex(space-between, center, row, wrap);
+  }
+}
+
+.tabs {
+  @include flex();
+  @include make-spacer(mr, 3, md);
+  @include make-spacer(mb, 3, md);
+
+  border-radius: 2.5rem;
+  box-shadow: inset 1px 1px 8px var(--black-alpha-008);
+  background: var(--grey-100);
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: auto;
+  }
+}
+
+.headerTabs {
+  display: none;
+
+  @include media-breakpoint-only(sm) {
+    @include flex;
+    @include make-spacer(mb, 3);
+  }
+}
+
+.info {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 2);
+
+  text-align: center;
+  color: var(--grey-500);
+  font-weight: 500;
+
+  @include media-breakpoint-only(sm) {
+    text-align: left;
+  }
+}
+
+.share {
+  @include flex(flex-start, flex-start);
+  @include make-spacer(mt, 3);
+
+  width: 100%;
+}
+
+.shareIcon {
+  @include size(rem(32px));
+  @include flex(center, center);
+  @include make-spacer(mr, 1);
+
+  flex: 0 0 rem(32px);
+  border-radius: 50%;
+  background: linear-gradient(261deg, #0bccee 0%, #0074d8 100%), var(--blue);
+}
+
+.icon {
+  fill: var(--white);
+  font-size: 1rem;
+}
+
+.shareText {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 0);
+  @include make-spacer(pt, half);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.close {
+  @include size(rem(16px));
+  @include make-spacer(p, 0);
+  @include font-size(16px, 16px);
+
+  position: absolute;
+  top: rem(24px);
+  right: rem(24px);
+  border: 0;
+  box-shadow: none;
+  background-color: transparent;
+
+  &:hover {
+
+    .closeIcon {
+      color: var(--blue);
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(24px));
+    @include font-size(24px, 24px);
+
+    top: rem(40px);
+  }
+
+  @include media-breakpoint-up(md) {
+    top: rem(8px);
+    right: rem(48px);
+  }
+
+  &Icon {
+    color: var(--grey-300);
+  }
+}
+
+.button {
+  @include make-spacer(mb, 1);
+}

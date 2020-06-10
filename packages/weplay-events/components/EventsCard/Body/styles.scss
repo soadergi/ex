@@ -1,0 +1,57 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  display: block;
+  min-height: rem(272px);
+
+  @include media-breakpoint-up(sm) {
+    min-height: rem(264px);
+  }
+}
+
+.description {
+  @include make-spacer(mx, auto);
+  @include make-spacer(mt, 2);
+  @include font-size(14px, 20px);
+
+  max-width: rem(272px);
+  text-align: center;
+}
+
+.wrapButton {
+  @include make-spacer(py, 2);
+  @include make-spacer(mx, auto);
+  @include flex(center, center);
+
+  border-bottom: 1px solid var(--white-alpha-008);
+
+  &.notBordered {
+    border-bottom: 0;
+  }
+}
+
+.button {
+  @extend %buttonReset;
+}
+
+.text {
+  @include font-size(12px, 18px);
+
+  border-bottom: 1px dashed var(--blue);
+  color: var(--blue);
+}
+
+.icon {
+  @include transition(#{fill, transform});
+
+  transform: rotate(0);
+  color: var(--blue);
+}
+
+.isExpanded {
+
+  .icon {
+    transform: rotate(180deg);
+  }
+}

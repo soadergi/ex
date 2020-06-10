@@ -1,0 +1,14 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mb, 3);
+  @include font-size(24px, 32px);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.button {
+  text-transform: capitalize;
+  color: var(--royal-blue);
+}

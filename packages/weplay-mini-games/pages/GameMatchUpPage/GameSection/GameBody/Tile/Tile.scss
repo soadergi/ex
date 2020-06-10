@@ -1,0 +1,64 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mr, 1);
+
+  flex-grow: 1;
+  perspective: 1000px;
+  cursor: pointer;
+  min-width: 54px;
+  min-height: 54px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    min-width: 112px;
+    min-height: 112px;
+  }
+}
+
+.inner {
+  @include size(100%);
+
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 500ms;
+  border: 2px solid #c6973a;
+  border-radius: 4px;
+}
+
+.opened .inner {
+  transform: rotateY(180deg);
+}
+
+.front {
+  @include size(100%);
+
+  backface-visibility: hidden;
+  background-color: #010e28;
+}
+
+.cover {
+  @include size(100%);
+}
+
+.back {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background-color: #010e28;
+}
+
+.image {
+  @include absolute-center;
+  @include size(auto);
+
+  max-width: 75%;
+  max-height: 75%;
+}

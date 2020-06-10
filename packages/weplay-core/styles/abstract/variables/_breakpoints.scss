@@ -1,0 +1,13 @@
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+// xsm = 48rem (l-tile--top)
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 40em,
+  md: 75em,
+  lg: 105em
+) !default;

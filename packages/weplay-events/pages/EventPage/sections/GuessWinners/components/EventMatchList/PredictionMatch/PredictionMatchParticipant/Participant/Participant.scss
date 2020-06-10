@@ -1,0 +1,73 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex(flex-start, center);
+
+  position: relative;
+}
+
+.avatar {
+  @include make-spacer(mx, 2);
+}
+
+.figure {
+  overflow: visible;
+}
+
+.wrap {
+  @include flex($direction: column);
+
+  min-width: rem(72px);
+
+  @include media-breakpoint-up(sm) {
+    min-width: rem(160px);
+  }
+
+  @include media-breakpoint-up(md) {
+    min-width: rem(168px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-width: rem(285px);
+  }
+}
+
+.name {
+  @include font-size(16px, 24px);
+  @include transition(color);
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.winnerIcon {
+  @include make-spacer(mx, 0);
+  @include make-spacer(mx, 1, sm);
+  @include font-size(20px);
+
+  color: var(--warning);
+}
+
+.empty {
+  display: inline;
+
+  @include media-breakpoint-up(sm) {
+    @include size(20px);
+  }
+}
+
+.country {
+  @include font-size(12px, 18px);
+
+  color: var(--grey-400);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.image {
+  @include make-spacer(mr, 1);
+
+  border-radius: rem(2px);
+  max-width: rem(16px);
+}
+

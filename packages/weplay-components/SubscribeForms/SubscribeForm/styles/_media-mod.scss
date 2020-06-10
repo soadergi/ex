@@ -1,0 +1,36 @@
+// This modifier uses on
+// `Media Page`, `Special Tag Page`, `Unusual Tag Page`, `Tag Page`, `Author Page`, `Columnists Page`, `Columnist Page`
+
+@mixin media-mod {
+
+  &.media {
+    @include make-spacer(px, 4, sm);
+    @include make-spacer(px, 8, md);
+
+    height: 100%;
+
+    .contentBlock {
+      @include make-spacer(mb, 3);
+      @include make-spacer(mb, 0, lg);
+    }
+
+    .form {
+      @include media-breakpoint-up(sm) {
+        flex-direction: column;
+      }
+
+      @include media-breakpoint-up(md) {
+        flex-direction: row;
+      }
+    }
+
+    .submitBlock {
+      @include make-spacer(ml, 0);
+      @include make-spacer(ml, 2, md);
+    }
+
+    @include media-breakpoint-down(md) {
+      @include flex(center, flex-start, column);
+    }
+  }
+}

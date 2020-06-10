@@ -1,0 +1,42 @@
+@import 'weplay-core/styles/_initialization';
+@import 'weplay-core/styles/v-2-0/_init';
+
+.block {
+  @include make-spacer(mx, auto);
+  @include make-spacer(p, 1);
+  @include make-spacer(p, 0, md);
+  @include font-size(14px, 40px);
+
+  border-top: 1px solid var(--grey-200-alpha-024);
+  max-width: rem(224px);
+
+  @include media-breakpoint-up(sm) {
+    max-width: rem(208px);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(176px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(192px);
+  }
+
+  &.mainFomLeague {
+    @include make-spacer(pt, 0);
+    @include make-spacer(pb, 2);
+    @include make-spacer(px, 0);
+    @include make-spacer(px, 6, md);
+
+    border: 0;
+    max-width: rem(240px);
+
+    @include media-breakpoint-up(md) {
+      max-width: 100%;
+    }
+  }
+}
+
+.list {
+  @include flex(space-around, center);
+}

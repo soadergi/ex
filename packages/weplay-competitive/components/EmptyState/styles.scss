@@ -1,0 +1,52 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.avatar {
+  @include make-spacer(mb, 1);
+}
+
+.header {
+  @include flex(center, center, column);
+}
+
+.text {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 2);
+}
+
+.empty {
+  @include flex(center, center, column);
+  @include make-spacer(p, 2);
+
+  border: 1px solid var(--grey-300);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px var(--royal-blue-alpha-016);
+  background-color: var(--white);
+  text-align: center;
+
+  &.horizontal {
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+
+      .avatar {
+        @include make-spacer(mb, 0);
+        @include make-spacer(mr, 1);
+      }
+
+      .header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .text {
+        @include make-spacer(mr, 2);
+        @include make-spacer(mb, 0);
+
+        font-weight: 700;
+      }
+    }
+  }
+}
+

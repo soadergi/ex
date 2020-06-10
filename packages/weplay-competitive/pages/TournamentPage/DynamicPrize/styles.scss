@@ -1,0 +1,15 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.scale {
+  @include make-spacer(mb, 6);
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.tip {
+  @include make-spacer(mb, 3);
+
+  color: var(--grey-500);
+}

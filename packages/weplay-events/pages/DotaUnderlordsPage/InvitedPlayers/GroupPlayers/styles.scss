@@ -1,0 +1,28 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+
+  &:first-child {
+    @include make-spacer(pb, 6);
+  }
+}
+
+.grid {
+  @include make-spacer(mx, auto);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  grid-gap: rem(16px);
+
+  @include media-breakpoint-up(sm) {
+    grid-gap: rem(24px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(4, minmax(256px, 1fr));
+  }
+}
+
+.gridItem {
+  position: relative;
+}

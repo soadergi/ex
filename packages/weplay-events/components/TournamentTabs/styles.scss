@@ -1,0 +1,22 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.tournamentTabs {
+  @include make-spacer(mt, 5);
+  @include make-spacer(mb, 4);
+  @include make-spacer(my, 0, sm);
+  @include flex(center, stretch, row, wrap);
+
+  position: relative;
+  border-radius: rem(28px);
+  box-shadow: inset 1px 1px 8px var(--black-alpha-024);
+  background: var(--grey-200-alpha-024);
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    border-radius: rem(42px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    border-radius: rem(54px);
+  }
+}

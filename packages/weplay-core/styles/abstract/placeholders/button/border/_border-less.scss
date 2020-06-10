@@ -1,0 +1,14 @@
+@mixin border-less {
+
+  &BorderLess {
+    border-color: transparent;
+    background-color: transparent;
+    color: var(--grey-500);
+
+    &:hover {
+      border-color: transparent;
+      background-color: transparent;
+      color: var(--blue);
+    }
+  }
+}

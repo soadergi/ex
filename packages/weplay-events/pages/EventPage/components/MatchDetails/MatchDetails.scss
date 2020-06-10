@@ -1,0 +1,7 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.modalContent {
+  // TODO: @Anton should refactor BaseModal to render content without top padding
+  margin-top: -48px;
+}

@@ -1,0 +1,10 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.subTitle {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 2);
+
+  color: var(--grey-500);
+  font-weight: 400;
+}

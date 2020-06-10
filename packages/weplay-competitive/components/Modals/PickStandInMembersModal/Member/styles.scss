@@ -1,0 +1,23 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.item {
+  @include flex(flex-start, center);
+  @include make-spacer(mb, 3);
+}
+
+.avatar {
+  @include make-spacer(mr, 2);
+
+  border: 1px solid var(--grey-300);
+  border-radius: 50%;
+}
+
+.name {
+  @include font-size(16px, 24px);
+
+  display: block;
+  word-break: break-word;
+  word-wrap: break-word;
+  color: var(--royal-blue);
+  font-weight: 700;
+}

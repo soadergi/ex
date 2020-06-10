@@ -1,0 +1,48 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include size(100%, auto);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center, row);
+  }
+}
+
+.wrapButtons {
+  @include make-spacer(mt, 3);
+  @include make-spacer(mt, 0, sm);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center, row);
+    @include size(auto, rem(88px));
+  }
+}
+
+.buttonExport {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 3, sm);
+
+  width: 100%;
+}
+
+.buttonScan {
+  width: 100%;
+}
+
+.link {
+  @include flex($align-items: center);
+
+  cursor: pointer;
+  color: var(--blue);
+}
+
+.qrModal {
+  @include make-spacer(mt, 7);
+  @include make-spacer(mt, 9, sm);
+
+  border-radius: 0 0 rem(8px) rem(8px);
+  overflow: hidden;
+}

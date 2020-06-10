@@ -1,0 +1,125 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: relative;
+  padding-left: rem(12px);
+  height: rem(96px);
+  overflow: hidden;
+
+  &::before {
+    @include size(100%, rem(1px));
+
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: var(--grey-200);
+    content: '';
+  }
+}
+
+.list {
+  @include reset-list;
+  @include flex(space-between, center);
+
+  height: 100%;
+
+  &::after {
+    content: '';
+  }
+}
+
+.icon {
+  color: var(--blue);
+}
+
+.data {
+  @include flex(center, center);
+  @include font-size(16px, 24px);
+
+  position: absolute;
+  left: 0;
+  transform: translateX(-50%);
+  color: var(--grey-500);
+}
+
+.money {
+  top: 0;
+  height: rem(40px);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.minPosition {
+  @include make-spacer(mt, 2);
+
+  top: 50%;
+  height: rem(24px);
+}
+
+.progress {
+  @include size(100%, rem(1px));
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-color: var(--blue);
+}
+
+.total {
+  @include flex(center, center);
+  @include size(rem(24px));
+  @include font-size(8px, 25px);
+
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: 50%;
+  background-color: var(--blue);
+  text-align: center;
+  color: var(--white);
+}
+
+.notification {
+  @include absolute-center;
+
+  left: 0;
+}
+
+.item {
+  position: relative;
+  flex: 1;
+  height: 100%;
+
+  &:last-child {
+
+    .money {
+      @include font-size(32px);
+
+      color: var(--royal-blue);
+    }
+
+    .minPosition {
+
+      &::after {
+        content: '+';
+      }
+    }
+  }
+
+  &.isActive {
+
+    .money,
+    .minPosition {
+      color: var(--blue);
+    }
+  }
+
+  &.isCurrent {
+
+    .money {
+      @include font-size(32px);
+    }
+  }
+}

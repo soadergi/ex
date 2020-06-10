@@ -1,0 +1,68 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex;
+
+  &.white {
+
+    .navLink {
+      color: var(--white);
+
+      &:hover {
+        text-decoration: none;
+        color: var(--blue);
+
+        &::after {
+          background-color: var(--blue);
+        }
+      }
+
+      &.isActive {
+        color: var(--blue);
+
+        &::after {
+          background-color: var(--blue);
+        }
+      }
+    }
+  }
+}
+
+.navLink {
+  @include font-size(16px);
+  @include make-spacer(mr, 3);
+  @include make-spacer(pb, 1);
+  @include transition(color);
+
+  position: relative;
+  color: var(--white-alpha-064);
+  font-weight: var(--wp-font-weight-regular);
+
+  &::after {
+    @include size(100%, rem(2px));
+    @include transition(background-color);
+
+    position: absolute;
+    bottom: rem(-3px);
+    left: 0;
+    background-color: transparent;
+    content: '';
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: var(--white);
+
+    &::after {
+      background-color: var(--white);
+    }
+  }
+
+  &.isActive {
+    color: var(--white);
+
+    &::after {
+      background-color: var(--white);
+    }
+  }
+}

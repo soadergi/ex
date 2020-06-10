@@ -1,0 +1,21 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.root {
+  @include make-spacer(mb, 7);
+  @include size(100%, rem(4px));
+
+  position: relative;
+  background-color: var(--white-alpha-008);
+  overflow: hidden;
+
+}
+
+.progressLine {
+  @include size(0, 100%);
+
+  display: block;
+  position: absolute;
+  left: 0;
+  background-color: var(--blue);
+}

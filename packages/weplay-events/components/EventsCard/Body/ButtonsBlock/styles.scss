@@ -1,0 +1,111 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex(center, flex-start, column);
+  @include make-spacer(mt, 2);
+  @include make-spacer(mt, 3, sm);
+
+  width: 100%;
+
+  @include media-breakpoint-only(xs) {
+    min-height: rem(86px);
+  }
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.discordLink {
+  @extend %buttonPink;
+
+  @include make-spacer(py, half);
+  @include flex(center, center);
+  @include font-size(14px, 28px);
+  @include transition(background-color);
+
+  border-radius: rem(24px);
+  width: 100%;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, 0);
+    @include make-spacer(mr, 2, sm);
+    @include make-spacer(mb, 2);
+    @include make-spacer(mb, 0, sm);
+  }
+}
+
+.icon {
+  @include font-size(16px);
+}
+
+.button {
+  @extend %button;
+
+  @include make-spacer(py, half);
+  @include font-size(14px, 24px);
+
+  width: 100%;
+  font-weight: 500;
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, 0);
+    @include make-spacer(mr, 2, sm);
+    @include make-spacer(mb, 2);
+    @include make-spacer(mb, 0, sm);
+  }
+}
+
+.wrapButton {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+
+  width: 100%;
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, 0);
+    @include make-spacer(mr, 2, sm);
+  }
+}
+
+.detailsButton {
+  @extend %buttonPromoMedium;
+
+  @include flex($align-items: center);
+
+  width: 100%;
+}
+
+.leagueDetailsButton {
+  @extend %buttonBorderBlue;
+
+  @include flex($align-items: center);
+
+  border-width: 1px;
+}
+
+.buyTicketButton {
+  @extend %buttonPink;
+
+  @include flex($align-items: center);
+}
+
+.successButton {
+  @extend %buttonSuccess;
+
+  @include flex($align-items: center);
+
+  border-width: 1px;
+  border-color: var(--success);
+  background-color: transparent;
+  color: var(--success);
+}
+
+.reminderButton {
+  width: 100%;
+}

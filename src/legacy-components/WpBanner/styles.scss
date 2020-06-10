@@ -1,0 +1,57 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(space-between, center);
+  @include make-spacer(px, 2);
+
+  border-bottom: 1px solid var(--dark-grey);
+  background-color: var(--royal-blue);
+  width: 100%;
+  min-height: rem(56px);
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    justify-content: center;
+  }
+}
+
+.image {
+  height: rem(16px);
+
+  &:first-child {
+    @include make-spacer(pr, 1);
+    @include make-spacer(mr, 1);
+    @include make-spacer(mr, 2, sm);
+    @include make-spacer(pr, 2, sm);
+
+    border-right: 1px solid var(--dark-grey);
+    height: rem(20px);
+  }
+
+  @include media-breakpoint-up(sm) {
+    height: auto;
+
+    &:first-child {
+      height: auto;
+    }
+  }
+}
+
+.message {
+  @include make-spacer(mx, 3);
+  @include make-spacer(my, 0);
+  @include font-size(16px, 24px);
+
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+}
+
+.link {
+  @extend %button;
+  @extend %buttonBorderBlue;
+
+  @include font-size(14px, 28px);
+}

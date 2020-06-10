@@ -1,0 +1,5 @@
+export const MEMBER_STATUSES = {
+  ACTIVE: 'ACTIVE',
+  BANNED: 'BANNED',
+  DELETED: 'DELETED',
+}

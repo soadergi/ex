@@ -1,0 +1,19 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  border-bottom: rem(2px) solid var(--blue);
+
+  &.isDefault th {
+    @include font-size(16px, 24px);
+    @include make-spacer(p, 2);
+
+    text-align: right;
+    color: var(--royal-blue);
+    font-weight: var(--wp-font-weight-bold);
+
+    &:first-child {
+      width: 9rem;
+      text-align: left;
+    }
+  }
+}

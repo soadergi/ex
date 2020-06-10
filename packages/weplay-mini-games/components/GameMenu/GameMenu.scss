@@ -1,0 +1,6 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.navLink {
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 0, sm);
+}

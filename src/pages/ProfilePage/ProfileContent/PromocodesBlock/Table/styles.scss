@@ -1,0 +1,51 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.tableWrap {
+  @include make-spacer(pt, 0);
+  @include make-spacer(my, 3);
+  @include make-spacer(mx, 0, sm);
+
+  font-weight: 500;
+
+  @include media-breakpoint-down(xs) {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+.table {
+  width: auto;
+
+  @include media-breakpoint-down(xs) {
+    width: 100%;
+  }
+}
+
+.td {
+  min-width: 170px;
+  white-space: normal;
+  color: var(--white);
+
+  &:last-child {
+    font-weight: 400;
+  }
+
+  @include media-breakpoint-down(xs) {
+    @include make-spacer(px, 1);
+
+    min-width: inherit;
+    white-space: nowrap;
+  }
+}
+
+.tr {
+
+  &:first-child {
+
+    .td {
+      @include make-spacer(pt, 0);
+
+      font-weight: 400;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex($align-items: center, $direction: column);
+  @include make-spacer(pb, 2);
+  @include make-spacer(pb, 0, md);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, md);
+
+  border-bottom: 1px solid var(--grey-300);
+
+  @include media-breakpoint-up(md) {
+    @include flex($direction: row);
+
+    border-bottom: 0;
+  }
+}
+
+.wrapInfo {
+  @include flex($align-items: center, $direction: column);
+
+  @include media-breakpoint-up(md) {
+    @include flex($align-items: flex-start);
+  }
+}
+
+.avatar {
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 2, md);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, md);
+
+  position: relative;
+  border-radius: 50%;
+  padding: 2px;
+  overflow: hidden;
+
+  &::before {
+    @include size(100%);
+    @include gradient-x(#{var(--blue-active)}, #{var(--error)});
+
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    content: '';
+  }
+}
+
+.nickName {
+  @include font-size(16px);
+  @include make-spacer(mb, 1);
+
+  color: var(--royal-blue);
+  font-weight: 600;
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(20px, 24px);
+  }
+}
+
+.name {
+  @include font-size(12px);
+  @include make-spacer(mb, 1);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(20px, 24px);
+  }
+}

@@ -1,0 +1,119 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  display: none;
+  position: fixed;
+  right: rem(8px);
+  bottom: rem(8px);
+  z-index: 200;
+  margin-bottom: var(--wp-cookie-policy-height);
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(440px), rem(140px));
+
+    bottom: rem(16px);
+    left: rem(24px);
+  }
+
+  &.isVisible {
+    display: block;
+  }
+}
+
+.detailsButton {
+  @include reset-button;
+  @include size(rem(80px), rem(100px));
+
+  position: absolute;
+  right: rem(8px);
+  bottom: 0;
+  transform: scaleX(-1);
+
+  @include media-breakpoint-up(sm) {
+    @include reset-button;
+    @include size(rem(112px), rem(136px));
+
+    left: 0;
+    transform: scaleX(1);
+
+    &::after {
+      @include size(rem(112px));
+      @include transition;
+
+      position: absolute;
+      bottom: rem(-3px);
+      left: 0;
+      border-radius: 50%;
+      content: '';
+    }
+
+    &:hover {
+
+      &::after {
+        @include box-shadow(1px 1px 16px var(--black-alpha-032));
+      }
+    }
+  }
+}
+
+.popupWrap {
+  @include size(100%);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: var(--black-alpha-032);
+
+  @include media-breakpoint-up(sm) {
+    position: absolute;
+    background-color: transparent;
+  }
+}
+
+.buttonClose {
+  @include reset-button;
+
+  position: absolute;
+  top: rem(16px);
+  right: rem(16px);
+  z-index: 3;
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    @include box-shadow;
+    @include flex (center, center);
+    @include size(rem(24px));
+
+    top: rem(8px);
+    left: rem(-126px);
+    border-radius: 50%;
+    background-color: var(--white);
+
+    &:hover {
+      @include box-shadow(1px 1px 16px var(--black-alpha-032));
+    }
+  }
+}
+
+.popup {
+  @include box-shadow;
+  @include make-spacer(p, 2);
+  @include font-size(16px, 24px);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: rem(8px);
+  background-color: var(--grey-100);
+  width: 100%;
+  max-width: rem(304px);
+
+  @include media-breakpoint-up(sm) {
+    top: auto;
+    bottom: 0;
+    left: rem(128px);
+    transform: translate(0);
+  }
+}

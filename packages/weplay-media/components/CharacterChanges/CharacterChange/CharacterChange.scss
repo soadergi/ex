@@ -1,0 +1,96 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 3, sm);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, sm);
+  @include flex($direction: column);
+
+  border: 1px solid var(--white-alpha-024);
+  color: var(--white);
+}
+
+.head {
+  @include flex(space-between, center);
+}
+
+.title {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 1);
+
+  font-weight: var(--wp-font-weight-regular);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(20px);
+  }
+}
+
+.date {
+  @include font-size(12px, 18px);
+  @include make-spacer(m, 0);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.button {
+  @include reset-button;
+  @include font-size(12px, 18px);
+  @include make-spacer(p, 2);
+
+  color: var(--grey-500);
+}
+
+.name {
+  @include make-spacer(mt, 3);
+
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.list {
+  @include reset-list;
+}
+
+.item {
+  @include make-spacer(pl, 3);
+  @include make-spacer(mb, 1);
+  @include font-size(12px, 22px);
+
+  position: relative;
+
+  &::before {
+    @include size(rem(8px));
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: var(--blue);
+    content: '';
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.icon {
+  @include make-spacer(ml, 1);
+  @include transition(transform);
+
+  color: var(--white);
+
+  &.expanded {
+    transform: rotate(180deg);
+  }
+}
+
+.body {
+  flex: 1 0 auto;
+}

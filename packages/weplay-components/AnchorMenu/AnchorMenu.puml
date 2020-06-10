@@ -1,0 +1,17 @@
+@startuml
+
+!include Anchor/Anchor.puml
+
+object AnchorMenu {
+  anchors: arrayOf(shape({
+    id: string,
+    link: string,
+    text: string,
+  })).isRequired,
+  modifiers: arrayOf(string),
+  className: string,
+}
+
+AnchorMenu --|> Anchor
+
+@enduml

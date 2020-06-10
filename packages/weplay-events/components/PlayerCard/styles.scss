@@ -1,0 +1,34 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex($direction: column);
+  @include size(100%, auto);
+
+  border: rem(1px) solid var(--grey-300);
+  border-radius: rem(8px);
+  box-shadow: 1px 1px 8px var(--royal-blue-alpha-016);
+  background-color: var(--royal-blue);
+  overflow: hidden;
+  color: var(--white);
+
+  &.isExpanded {
+    height: 100%;
+  }
+}
+
+.header {
+  @include make-spacer(p, 3);
+  @include flex(space-between, center);
+
+  position: relative;
+  flex: none;
+}
+
+.info {
+  position: relative;
+}
+
+.body {
+  @include make-spacer(px, 3);
+  @include make-spacer(pb, 3);
+}

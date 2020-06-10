@@ -1,0 +1,99 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(space-between, center);
+}
+
+.name {
+  @include font-size(16px, 24px);
+
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.input {
+  position: absolute;
+  z-index: 0;
+  border: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+
+  &:checked ~ .iconWrap {
+
+    .checked {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .unchecked {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+
+  position: relative;
+  z-index: 1;
+
+  &.fb {
+    color: var(--facebook);
+  }
+
+  &.tw {
+    color: var(--twitter);
+  }
+
+  &.vk {
+    color: var(--vk);
+  }
+
+  &.twitch {
+    color: var(--twitch);
+  }
+
+  &.g {
+    color: var(--google);
+  }
+
+  &.fi {
+    color: var(--faceit);
+  }
+
+  &.di {
+    color: var(--discord);
+  }
+}
+
+.label {
+  @include make-spacer(px, 2);
+  @include flex(center, center, $display: inline-flex);
+  @include transition(#{color, background-color});
+
+  position: relative;
+  border: 1px solid var(--blue);
+  border-radius: rem(4px);
+  background-color: transparent;
+  cursor: pointer;
+  height: rem(40px);
+  overflow: hidden;
+  color: var(--blue);
+
+  &:hover {
+    background-color: var(--blue);
+    color: var(--white);
+  }
+
+  &.isActive {
+    border-color: var(--error);
+    background-color: transparent;
+    color: var(--error);
+
+    &:hover {
+      background-color: var(--error);
+      color: var(--white);
+    }
+  }
+}

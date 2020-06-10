@@ -1,0 +1,66 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include size(100%);
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: rem(240px) 1fr;
+  }
+}
+
+.listContainer {
+  scrollbar-color: var(--blue) var(--grey-100);
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    border-radius: 2px;
+    height: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 2px;
+    background-color: var(--grey-100);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: var(--blue);
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+.list {
+  @include reset-list;
+
+  position: relative;
+}
+
+.listItem {
+  @include make-spacer(pr, 2);
+
+  position: relative;
+  cursor: pointer;
+  min-width: rem(96px);
+
+  &:not( :last-child ) {
+    @include make-spacer(mb, 3);
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 100%;
+    min-width: 0;
+  }
+}

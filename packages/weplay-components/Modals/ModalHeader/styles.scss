@@ -1,0 +1,20 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.title {
+  @include make-spacer(my, 0);
+  @include font-size(24px, 32px);
+
+  font-weight: 700;
+}
+
+.subTitle {
+  @include make-spacer(mb, 0);
+  @include make-spacer(mt, 2);
+  @include font-size(16px, 24px);
+
+  color: var(--grey-500);
+}
+
+.header {
+  @include make-spacer(mb, 4);
+}

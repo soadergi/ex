@@ -1,0 +1,13 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(px, 2);
+  @include font-size(10px, 16px);
+
+  display: inline-block;
+  border-radius: 32px;
+  background: var(--magenta);
+  white-space: nowrap;
+  color: var(--white);
+  font-weight: 500;
+}

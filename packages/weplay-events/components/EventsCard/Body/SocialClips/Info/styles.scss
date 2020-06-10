@@ -1,0 +1,38 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(ml, 4);
+  @include flex($align-items: center);
+}
+
+.link {
+  @include font-size(12px, 18px);
+
+  color: var(--blue);
+}
+
+.columns {
+  @include make-spacer(mb, 3);
+  @include font-size(12px, 18px);
+
+  display: grid;
+  grid-template-columns: rem(48px) auto;
+  grid-gap: rem(4px);
+  color: var(--white);
+}
+
+.title {
+  @include make-spacer(mt, 2);
+  @include make-spacer(mb, half);
+  @include font-size(12px, 18px);
+
+  color: var(--white);
+  font-weight: 500;
+}
+
+.description {
+  @include font-size(12px, 18px);
+
+  color: var(--white);
+}

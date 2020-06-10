@@ -1,0 +1,58 @@
+@import '../helpers/all';
+
+//
+// Font size
+//
+$fs-base: 16px;
+$wp-fs-base: rem(16px) !default;
+$wp-fs-p: rem(16px);
+$wp-fs-h1: rem(50px);
+$wp-fs-h2: rem(44px);
+$wp-fs-h3: rem(32px);
+$wp-fs-h4: rem(28px);
+$wp-fs-h5: rem(16px);
+$wp-fs-h6: rem(14px);
+$wp-fs-small: rem(10px);
+
+//
+// Headings
+//
+
+$headings-class-names: (
+  '.c-h1': (
+    null: ($wp-fs-h1, 700, 1.2),
+    sm: ($wp-fs-h1, 700, 1.2),
+    md: ($wp-fs-h1, 700, 1.2),
+    lg: ($wp-fs-h1, 700, 1.2)
+  ),
+  '.c-h2': (
+    null: (1.75rem, 700, 1.28),
+    sm: ($wp-fs-h2, 700, 1.28),
+    md: ($wp-fs-h2, 700, 1.28),
+    lg: ($wp-fs-h2, 700, 1.28)
+  ),
+  '.c-h3': (
+    null: (1rem, 700, 1.25),
+    sm: ($wp-fs-h3, 700, 1.25),
+    md: ($wp-fs-h3, 700, 1.25),
+    lg: ($wp-fs-h3, 700, 1.25)
+  ),
+  '.c-h4': (
+    null: ($wp-fs-h4, 700, 1.15),
+    sm: ($wp-fs-h4, 700, 1.15),
+    md: ($wp-fs-h4, 700, 1.15),
+    lg: ($wp-fs-h4, 700, 1.15)
+  ),
+  '.c-h5': (
+    null: ($wp-fs-h5, 700, 1.5),
+    sm: ($wp-fs-h5, 700, 1.5),
+    md: ($wp-fs-h5, 700, 1.5),
+    lg: ($wp-fs-h5, 700, 1.5)
+  ),
+  '.c-h6': (
+    null: ($wp-fs-h6, 700, 1.72),
+    sm: ($wp-fs-h6, 700, 1.72),
+    md: ($wp-fs-h6, 700, 1.72),
+    lg: ($wp-fs-h6, 700, 1.72)
+  )
+);

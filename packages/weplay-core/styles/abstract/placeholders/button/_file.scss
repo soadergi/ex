@@ -1,0 +1,9 @@
+@mixin file {
+
+  &File {
+
+    input[type='file'] { /* stylelint-disable-line selector-no-qualifying-type */
+      display: none;
+    }
+  }
+}

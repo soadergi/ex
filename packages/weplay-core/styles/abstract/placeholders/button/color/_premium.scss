@@ -1,0 +1,14 @@
+@mixin premium {
+
+  &Premium {
+    position: relative;
+    z-index: 3;
+    border: 0;
+    background-color: var(--premium);
+    min-height: rem(40px);
+
+    &:hover {
+      background-color: var(--premium-hover);
+    }
+  }
+}

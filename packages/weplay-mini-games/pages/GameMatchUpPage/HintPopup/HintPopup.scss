@@ -1,0 +1,9 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 1);
+  @include font-size(12px, 18px);
+
+  background: var(--royal-blue);
+  width: rem(288px);
+}

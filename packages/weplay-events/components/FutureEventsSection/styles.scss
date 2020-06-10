@@ -1,0 +1,23 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mx, auto);
+}
+
+.wrap {
+  @include make-spacer(mx, auto);
+  @include make-spacer(ml, auto, lg);
+  @include make-spacer(pl, 2);
+  @include make-spacer(pl, 5, sm);
+  @include make-spacer(pb, 2);
+  @include flex($align-items: flex-start);
+
+  @include media-breakpoint-up(md) {
+    padding-left: calc((100% - 60rem) / 2);
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: calc((100% - 75rem) / 2);
+  }
+}

@@ -1,0 +1,117 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.sectionHeader {
+  @include flex(flex-start, baseline, column, wrap);
+  @include make-spacer(pb, 4);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, baseline, row, wrap);
+  }
+
+  &Title {
+    @include flex(flex-start, center, row, wrap);
+    @include make-spacer(mb, 0);
+    @include make-spacer(mr, 2);
+    @include font-size(32px, 40px);
+
+    flex: 1 1 auto;
+  }
+
+  &Links {
+    @include make-spacer(mt, 3);
+    @include make-spacer(mt, 0, sm);
+    @include flex(space-between, baseline);
+
+    @include media-breakpoint-up(md) {
+      justify-content: flex-end;
+    }
+  }
+
+  &Link {
+    @include font-size(16px, 16px);
+
+    color: var(--blue);
+    font-weight: 500;
+
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
+  }
+
+  &SponsorLink {
+    @include make-spacer(ml, 1, sm);
+    @include make-spacer(ml, 2, md);
+
+    background-color: transparent;
+    width: 100%;
+    max-width: rem(128px);
+
+    @include media-breakpoint-up(sm) {
+      width: rem(96px);
+    }
+  }
+
+  &.alignCenter {
+    @include make-spacer(pb, 6, lg);
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    .sectionHeaderTitle {
+      @include make-spacer(mr, 0);
+      @include make-spacer(mb, 2);
+      @include make-spacer(mb, 3, lg);
+
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .sectionHeaderLinks {
+      @include make-spacer(mt, 0);
+    }
+
+    .sectionHeaderLink {
+      display: block;
+    }
+  }
+
+  &.hotMediaAlignTitle {
+    @include flex(flex-start);
+
+    .sectionHeaderTitle {
+      flex: none;
+    }
+  }
+}
+
+.hasLinkArrow {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  .sectionHeaderTitle {
+    @include make-spacer(mb, 0);
+    @include make-spacer(mr, 3);
+    @include flex(flex-start, center, row, wrap);
+    @include font-size(20px, 28px);
+
+    flex: none;
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(24px, 32px);
+    }
+  }
+
+  .sectionHeaderLinks {
+    @include make-spacer(mt, 0);
+    @include flex(space-between, center);
+  }
+}
+
+.icon {
+  @include make-spacer(ml, 0);
+  @include make-spacer(ml, 1, sm);
+
+  color: var(--blue);
+}

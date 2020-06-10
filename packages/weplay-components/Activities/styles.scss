@@ -1,0 +1,14 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.activities {
+  @include transition(#{transform, opacity});
+  @include flex(flex-start, center, row, wrap);
+  @include reset-list;
+
+  &.white {
+
+    .item {
+      color: var(--white);
+    }
+  }
+}

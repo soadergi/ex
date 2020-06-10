@@ -1,0 +1,120 @@
+@import '../config';
+
+$score-width: rem(32px);
+$invited-team-connector-width: rem(12px);
+
+.block {
+  @include make-spacer(px, 0);
+  @include make-spacer(ml, 0);
+  @include make-spacer(ml, 1, md);
+  @include flex(space-between, center);
+
+  position: relative;
+  color: var(--grey-300);
+
+  &::before {
+    @include gradient-x(#{var(--blue-active)}, #{var(--blue)});
+    @include size(100%);
+    @include transition(opacity);
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    content: '';
+  }
+}
+
+.user {
+  @include flex(flex-start, center);
+
+  position: relative;
+  flex: 1 1 50%;
+}
+
+.name {
+  @include word-break;
+  @include font-size(12px, 16px);
+  @include transition(color);
+
+  flex: 0 0 6.5rem;
+  max-width: 6.5rem;
+  max-height: rem(30px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  color: var(--grey-300);
+
+  &.isActive {
+    color: var(--grey-500);
+  }
+}
+
+.wrapHyphenCoefficient {
+  @include flex(center, center);
+  @include font-size(12px);
+  @include size(rem(46px), rem(20px));
+
+  border-radius: rem(2px);
+  background-color: var(--grey-200);
+  color: var(--royal-blue);
+
+  .hyphenCoefficient {
+    --color: var(--blue-active);
+
+    color: var(--color);
+
+    &.esBet {
+      --color: #9f1b40;
+    }
+
+    &.egb {
+      --color: #fc0;
+    }
+
+    &.lootBet {
+      --color: #018b59;
+    }
+  }
+}
+
+.winnerIcon {
+  @include font-size(20px);
+
+  color: var(--warning);
+}
+
+// TODO: Use this when disqualified field on backend will be implemented
+//.disqualifiedIcon {
+//  @include font-size(20px);
+//
+//  color: var(--error);
+//}
+
+.coefficient {
+  text-decoration: none;
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-normal);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.score {
+  @include font-size(14px, 20px);
+  @include flex(flex-end, center);
+  @include transition(color);
+
+  position: relative;
+  flex: 0 1 $score-width;
+  min-width: $score-width;
+  height: 100%;
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-regular);
+
+  &.isDisqualified {
+    color: var(--error);
+  }
+}

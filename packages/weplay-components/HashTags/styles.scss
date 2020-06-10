@@ -1,0 +1,23 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(flex-start, center, row, wrap);
+}
+
+.hashTag {
+  @include make-spacer(mr, 2);
+  @include make-spacer(mb, 1);
+  @include font-size(12px, 18px);
+
+  text-transform: uppercase;
+
+  &::before {
+    content: '#';
+  }
+
+  &:last-child {
+    @include make-spacer(mr, 0);
+  }
+}
+
+

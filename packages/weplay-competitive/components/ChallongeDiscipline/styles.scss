@@ -1,0 +1,32 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.background {
+  z-index: 0;
+
+  @include media-breakpoint-up(md) {
+    object-fit: contain;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+  }
+}
+
+.hero {
+  @include make-spacer(pt, 3);
+
+  position: relative;
+  background-color: var(--royal-blue);
+  color: var(--white);
+}
+
+.wrapper {
+  position: relative;
+}
+
+.reverseContent {
+  @include flex($direction: column);
+}
+
+.seo {
+  order: 3;
+}

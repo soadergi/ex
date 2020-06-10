@@ -1,0 +1,329 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.winner {
+  --winner-avatar-width: #{rem(48px)};
+
+  @include flex(center, center, column);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+
+  @include media-breakpoint-up(sm) {
+    --winner-avatar-width: #{rem(64px)};
+  }
+}
+
+.descriptionBlock {
+  @include flex(center, flex-start, column);
+}
+
+.label {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 0);
+  @include flex(flex-start, center, row);
+
+  text-align: left;
+  color: var(--white);
+}
+
+.container {
+  @include flex(center, flex-start, column);
+
+  position: relative;
+  min-width: rem(208px);
+}
+
+.imageWrap {
+  @include size(var(--winner-avatar-width));
+  @include make-spacer(mr, 2);
+
+  position: relative;
+  border-radius: 50%;
+  padding: 2px;
+  overflow: hidden;
+
+  &::before {
+    --start-color: var(--blue);
+    --end-color: var(--blue-active);
+
+    @include size(100%);
+    @include gradient-x(#{var(--start-color)}, #{var(--end-color)});
+
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    border-radius: 50%;
+    content: '';
+  }
+}
+
+.figure {
+  @include flex(center, center);
+  @include make-spacer(mb, 0);
+  @include size(100%);
+
+  position: relative;
+  z-index: 2;
+  border-radius: 50%;
+  background-color: var(--black);
+  overflow: hidden;
+}
+
+.picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.name {
+  @include make-spacer(mb, 0);
+  @include font-size(16px, 24px);
+
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  border-radius: 20px;
+  text-align: center;
+  color: var(--white);
+  font-weight: 500;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(22px, 32px);
+  }
+}
+
+.plus {
+  @include make-spacer(px, 1);
+
+  display: inline-block;
+}
+
+.icon {
+  @include font-size(22px, 14px);
+
+  display: inline-block;
+  color: var(--white);
+}
+
+.winnerContainer {
+  @include flex(flex-start, center);
+  @include make-spacer(px, 2);
+  @include make-spacer(pb, 2);
+
+  position: relative;
+}
+
+.frame {
+  position: absolute;
+  top: rem(-8px);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  height: rem(59px);
+
+  @include media-breakpoint-up(sm) {
+    top: 0;
+    height: rem(69px);
+  }
+}
+
+.buttonContainer {
+  width: 100%;
+}
+
+.showButton {
+  @include font-size(12px, 16px);
+  @include make-spacer(pt, 1);
+  @include make-spacer(px, 0);
+
+  position: relative;
+  z-index: 10;
+  border: 0;
+  box-shadow: none;
+  background-color: transparent;
+  text-align: left;
+  color: var(--blue);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.dire {
+
+  &.winnerContainer {
+    width: auto;
+
+    &:nth-child( odd ) {
+      @include flex(flex-start);
+
+      width: auto;
+
+      .descriptionBlock {
+        min-width: auto;
+
+        @include media-breakpoint-up(sm) {
+          min-width: rem(150px);
+        }
+
+        @include media-breakpoint-up(md) {
+          min-width: auto;
+        }
+      }
+
+      @include media-breakpoint-up(sm) {
+        @include flex(flex-end);
+
+        width: 50%;
+      }
+
+      @include media-breakpoint-up(md) {
+        @include flex(flex-start);
+
+        width: auto;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      width: 50%;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: auto;
+    }
+  }
+}
+
+.votingMVP {
+
+  .imageWrap {
+
+    &::before {
+      --start-color: var(--blue-active);
+      --end-color: var(--error);
+    }
+  }
+
+  &.winnerContainer {
+    @include make-spacer(mt, 0);
+    @include make-spacer(mt, 8, sm);
+  }
+}
+
+.radiant {
+
+  .imageWrap {
+
+    &::before {
+      --start-color: var(--blue);
+      --end-color: var(--success);
+    }
+  }
+}
+
+.forgeOfMastersLan {
+
+  .imageWrap {
+    @include make-spacer(mr, 4);
+
+    &::before {
+      --start-color: var(--blue-active);
+      --end-color: var(--blue);
+    }
+  }
+}
+
+.forgeOfMastersLeagueSecondSeason {
+
+  .icon {
+    @include make-spacer(ml, 0);
+    @include make-spacer(ml, 1, md);
+    @include font-size(16px, 10px);
+  }
+
+  .imageWrap {
+    --winner-avatar-width: #{rem(48px)};
+
+    @include make-spacer(mr, 1);
+    @include make-spacer(mr, 2, md);
+
+    &::before {
+      --start-color: var(--blue-active);
+      --end-color: var(--blue);
+    }
+
+    @include media-breakpoint-up(md) {
+      --winner-avatar-width: #{rem(64px)};
+    }
+  }
+
+  .label {
+    @include font-size(10px, 16px);
+
+    @include media-breakpoint-up(md) {
+      @include font-size(12px, 16px);
+    }
+  }
+
+  .plus {
+    display: none;
+  }
+
+  .name {
+    @include font-size(16px, 20px);
+
+    max-width: rem(104px);
+    text-align: left;
+
+    @include media-breakpoint-up(md) {
+      @include font-size(20px, 32px);
+
+      max-width: 100%;
+    }
+  }
+
+  &.winnerContainer {
+    @include make-spacer(px, 0);
+    @include make-spacer(pr, 2, sm);
+
+    align-items: flex-start;
+
+    &:first-child {
+      @include make-spacer(px, 0);
+      @include make-spacer(px, 2, sm);
+    }
+
+    @include media-breakpoint-up(md) {
+      @include flex(flex-start, center);
+    }
+  }
+}
+
+.forgeOfMastersLanSecondSeason {
+
+  .frame {
+    top: auto;
+    bottom: rem(12px);
+    left: rem(12px);
+    height: rem(72px);
+
+    @include media-breakpoint-up(sm) {
+      height: rem(96px);
+    }
+  }
+
+  .imageWrap {
+    @include make-spacer(mr, 1);
+    @include make-spacer(mr, 2, sm);
+
+    &::before {
+      --start-color: var(--blue);
+      --end-color: var(--blue);
+    }
+  }
+}

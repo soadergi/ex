@@ -1,0 +1,5 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.item {
+  @include make-spacer(p, 2);
+}

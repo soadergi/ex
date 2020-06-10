@@ -1,0 +1,157 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mb, 3);
+
+  width: 100%;
+}
+
+.container {
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+  @include make-spacer(mx, auto);
+
+  width: 100%;
+  max-width: rem(1080px);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1392px);
+  }
+}
+
+.searchField {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+
+  position: relative;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: rem(272px);
+  }
+
+  @include media-breakpoint-up(md) {
+    width: rem(352px);
+  }
+}
+
+.input {
+  @include input;
+  @include make-spacer(pr, 4);
+}
+
+.inputBtn {
+  @include reset-button;
+  @include flex(center, center);
+  @include size(rem(20px));
+  @include font-size(16px);
+
+  position: absolute;
+  top: rem(10px);
+  right: rem(10px);
+  cursor: pointer;
+
+  &.isEmpty {
+    @include font-size(20px);
+
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.icon {
+  color: var(--grey-500);
+}
+
+.rightColumn {
+  @include flex(flex-start, stretch, column);
+
+  @include media-breakpoint-up(md) {
+    @include flex(flex-end, center, row);
+  }
+}
+
+.teamsFilter {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, md);
+  @include make-spacer(mr, 2, md);
+}
+
+.sortGroup {
+  @include flex(flex-start, center);
+}
+
+.sorting {
+  @include make-spacer(mr, 2);
+
+  flex: 1 0 auto;
+}
+
+.arrow {
+  @include absolute-center;
+  @include size(rem(8px), rem(16px));
+
+  display: block;
+
+  &::after {
+    @include absolute-center;
+    @include size(rem(1px), rem(16px));
+
+    background-color: var(--grey-500);
+  }
+
+  &::before {
+    @include size(0.4rem);
+
+    position: absolute;
+    bottom: 0;
+    left: rem(1px);
+    transform: rotateZ(-135deg);
+    border-top: 1px solid var(--grey-500);
+    border-left: 1px solid var(--grey-500);
+  }
+
+  &::after,
+  &::before {
+    content: '';
+  }
+}
+
+.sortBtn {
+  @include size(rem(40px));
+  @include make-spacer(p, 0);
+
+  position: relative;
+  border: 1px solid var(--grey-300);
+  border-radius: rem(8px);
+  background-color: transparent;
+
+  &.isActive {
+    border-color: var(--blue);
+    background-color: var(--blue);
+
+    .arrow {
+      transform: rotateZ(-180deg);
+      transform-origin: 31% 31%;
+
+      &::after {
+        background-color: var(--white);
+      }
+
+      &::before {
+        border-color: var(--white);
+      }
+    }
+  }
+}
+
+.bannerMessage {
+  @include font-size(18px, 32px);
+
+  color: var(--grey-500);
+}

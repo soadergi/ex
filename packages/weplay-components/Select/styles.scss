@@ -1,0 +1,249 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  position: relative;
+
+  &.isRight {
+
+    .container {
+      right: 0;
+      left: auto;
+    }
+  }
+
+  &.dropdown {
+    height: 100%;
+
+    .wrapper {
+      @include make-spacer(p, 0);
+
+      border: 0;
+    }
+
+    .trigger {
+      @include make-spacer(px, 2);
+      @include make-spacer(px, 3, lg);
+      @include size(100%);
+
+      border: 0;
+      background-color: transparent;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .icon {
+      @include make-spacer(my, auto);
+
+      position: absolute;
+      top: 0;
+      right: rem(16px);
+      bottom: 0;
+      color: var(--white);
+
+      @include media-breakpoint-up(lg) {
+        right: rem(24px);
+      }
+    }
+
+    .container {
+      @include box-shadow(1px 1px 4px var(--black-alpha-016));
+      @include make-spacer(py, 1);
+
+      top: rem(48px);
+      left: 0;
+      border-radius: rem(2px);
+      background: var(--grey-100);
+      min-width: auto;
+      text-transform: uppercase;
+
+      @include media-breakpoint-up(lg) {
+        left: rem(8px);
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  &.responsiveLanguage {
+
+    .container {
+      top: auto;
+    }
+  }
+
+  &.up {
+
+    .trigger {
+      @include make-spacer(pr, 3);
+    }
+
+    .icon {
+      right: 0;
+    }
+
+    .container {
+      top: auto;
+      bottom: rem(32px);
+    }
+  }
+
+  &.blue {
+
+    .icon {
+      color: var(--blue);
+    }
+
+    .trigger {
+      color: var(--blue);
+    }
+  }
+
+  &.gray {
+
+    .icon {
+      color: var(--white);
+    }
+
+    .trigger {
+      border-color: var(--grey-500);
+      background-color: var(--grey-500);
+      color: var(--white);
+
+      &.open {
+        border-color: var(--white);
+
+        .icon {
+          color: var(--white);
+        }
+      }
+    }
+
+    .container {
+      background-color: var(--grey-500);
+    }
+  }
+}
+
+.label {
+  @include size(16px, 24px);
+
+  color: var(--royal-blue);
+
+  &.isRequired {
+
+    &::after {
+      color: var(--error);
+      content: '*';
+    }
+  }
+}
+
+.icon {
+  @include flex(center, center);
+
+  position: absolute;
+  top: 0;
+  right: rem(16px);
+  height: 100%;
+  color: var(--grey-500);
+}
+
+.button {
+  @include flex(center, center);
+  @include size(100%, 16px);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 0;
+  background: transparent;
+
+  .icon {
+    position: static;
+    transform: none;
+    color: var(--grey-300);
+  }
+
+  &.top {
+    top: 0;
+    transform: rotate(180deg);
+  }
+}
+
+.trigger {
+  @include make-spacer(pl, 2);
+  @include make-spacer(pr, 5);
+  @include font-size(14px, 24px);
+  @include size(100%, rem(40px));
+  @include transition(border-color);
+
+  position: relative;
+  border: 1px solid var(--grey-300);
+  border-radius: rem(4px);
+  background-color: var(--white);
+  cursor: pointer;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--grey-500);
+
+  &:hover {
+    border-color: var(--blue);
+  }
+
+  &.open {
+    border-color: var(--blue);
+
+    .icon {
+      transform: rotate(180deg);
+      color: var(--blue);
+    }
+  }
+}
+
+.container {
+  @include box-shadow;
+  @include transition(#{opacity, visibility, transform}, 0.16s);
+  @include make-spacer(mt, 1);
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateY(8px);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 11;
+  border-radius: rem(4px);
+  background: var(--white);
+  width: auto;
+  min-width: 100%;
+  overflow: hidden;
+
+  &.isOpen {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  @include make-spacer(py, 1);
+
+  border: 1px solid var(--grey-300);
+  border-radius: rem(4px);
+}
+
+.list {
+  @include reset-list;
+}
+
+.isDisabled {
+  border-color: var(--grey-200);
+  background-color: var(--grey-100);
+  cursor: no-drop;
+  pointer-events: none;
+}

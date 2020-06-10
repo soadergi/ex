@@ -1,0 +1,11 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.bracket {
+
+  // for box-shadow borders
+  padding: rem(24px) rem(1px) rem(48px);
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  font-size: 0;
+}

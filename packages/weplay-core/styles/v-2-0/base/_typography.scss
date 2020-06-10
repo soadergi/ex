@@ -1,0 +1,26 @@
+//
+// Paragraph
+//
+
+p {
+  // TODO: Commented to avoid old styles impact
+  // Uncomment when new base styles will be implemented
+  //@include make-spacer(my, 3);
+
+  line-height: $wp-lh-base;
+  font-size: $wp-fs-base;
+}
+
+//
+// Headings
+//
+
+@for $i from 1 through 6 {
+
+  #{h}#{$i} {
+    margin: 0;
+  }
+}
+
+@include make-all-type($headings-styles);
+@include make-all-type($headings-class-names);

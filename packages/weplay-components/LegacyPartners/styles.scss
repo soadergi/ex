@@ -1,0 +1,45 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mb, 3);
+  @include flex(flex-start, flex-start, column, wrap);
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+}
+
+.title {
+  @include make-spacer(mb, 3);
+  @include font-size(32px, 40px);
+
+  display: inline-block;
+  width: 100%;
+  color: var(--royal-blue);
+
+  @include media-breakpoint-up(lg) {
+    width: rem(288px);
+  }
+}
+
+.list {
+  @include reset-list;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

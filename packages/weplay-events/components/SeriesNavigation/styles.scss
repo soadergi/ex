@@ -1,0 +1,84 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  position: relative;
+  border-top: 1px solid var(--white-alpha-024);
+  border-bottom: 1px solid var(--white-alpha-024);
+  background-color: var(--royal-blue);
+
+  .slider {
+    @include media-breakpoint-only(xs) {
+      @include flex;
+    }
+
+    @include media-breakpoint-only(sm) {
+      @include flex;
+    }
+  }
+}
+
+.tournamentLink {
+  @include make-spacer(p, 3);
+
+  display: flex;
+  position: relative;
+  z-index: 1;
+  border-right: 1px solid var(--white-alpha-024);
+  border-left: 1px solid var(--white-alpha-024);
+  height: rem(96px);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.image {
+  @include make-spacer(mr, 2);
+  @include size(rem(48px));
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include font-size(16px, 24px);
+
+  color: var(--grey-200);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.dateTime {
+  @include flex;
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 18px);
+
+  color: var(--grey-400);
+}
+
+.prize {
+  @include make-spacer(ml, half);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.isActive {
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--blue);
+    height: rem(4px);
+    content: '';
+  }
+
+  .title {
+    color: var(--blue);
+  }
+}
+
+.slick-prev,
+.slick-next {
+  border: 0;
+  background-color: transparent;
+}

@@ -1,0 +1,28 @@
+@mixin tournament-module {
+
+  &.tournamentModule {
+    display: none;
+
+    .container {
+      --max-width: 'none';
+
+      @include media-breakpoint-up(md) {
+        --max-width: 68rem;
+      }
+    }
+
+    .link {
+      font-weight: 700;
+    }
+
+    @include media-breakpoint-up(sm) {
+      display: block;
+      position: sticky;
+      top: var(--wp-sticky-section-height);
+      z-index: 93;
+      border-bottom: 1px solid var(--grey-300);
+      background-color: var(--white);
+      height: var(--wp-anchor-menu-height);
+    }
+  }
+}

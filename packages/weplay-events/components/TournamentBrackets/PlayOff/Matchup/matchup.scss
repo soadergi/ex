@@ -1,0 +1,143 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$connect-width: 1rem;
+$connect-width-md: 1rem;
+$connect-width-lg: 2rem;
+$matchup-height: rem(96px);
+$matchup-margin-bottom: rem(56px);
+
+.matchup {
+  @include flex(flex-start, center);
+
+  margin-bottom: $matchup-margin-bottom;
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+}
+
+// TODO: Remove styles `sponsor` after moving to component
+
+.sponsor {
+  @include transition(#{transform, opacity});
+
+  position: absolute;
+  top: 50%;
+  right: rem(44px);
+  transform: translateY(-50%) scale(0.7);
+  opacity: 0;
+  z-index: 2;
+  background-color: var(--white);
+  padding: 0 4px;
+  width: rem(40px);
+}
+
+.notification {
+  position: absolute;
+  top: 50%;
+  left: rem(10px);
+  transform: translateY(-50%) scale(0.7);
+  z-index: 2;
+
+  @include media-breakpoint-up(md) {
+    right: rem(-8px);
+    left: inherit;
+  }
+}
+
+.sponsorLogo {
+  @include transition(#{transform, opacity});
+
+  position: absolute;
+  top: 50%;
+  right: rem(44px);
+  transform: translateY(-50%) scale(0.7);
+  opacity: 0;
+  z-index: 2;
+}
+
+.participants {
+  @include make-spacer(px, 2);
+
+  position: relative;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 1px var(--grey-300);
+  background-color: var(--white);
+
+  &:hover {
+
+    .sponsorLogo {
+      transform: translateY(-50%) scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.meta {
+  @include flex(space-between, center);
+  @include make-spacer(pb, half);
+
+  position: absolute;
+  top: rem(-24px);
+  left: 0;
+  width: 100%;
+  height: rem(24px);
+}
+
+.matchTitle {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 0);
+
+  color: var(--grey-500);
+}
+
+.connector {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.line,
+.merger {
+  box-sizing: border-box;
+  display: inline-block;
+  width: $connect-width;
+  vertical-align: top;
+
+  @include media-breakpoint-up(md) {
+    width: $connect-width-md;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: $connect-width-lg;
+  }
+}
+
+.line {
+  border-bottom: thin solid var(--grey-300);
+  height: rem(48px) / 2;
+}
+
+.merger {
+  position: relative;
+  height: rem(48px);
+
+  &::before {
+    border-top-width: thin;
+    border-right-width: thin;
+  }
+
+  &::after {
+    border-right-width: thin;
+    border-bottom-width: thin;
+  }
+
+  &::before,
+  &::after {
+    display: block;
+    border: 0 solid;
+    border-color: var(--grey-300);
+    width: 100%;
+    height: 50%;
+    content: '';
+  }
+}

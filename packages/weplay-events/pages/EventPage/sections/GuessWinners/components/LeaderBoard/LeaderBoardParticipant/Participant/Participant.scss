@@ -1,0 +1,53 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex(flex-start, center);
+
+  position: relative;
+}
+
+.avatar {
+  @include make-spacer(mx, 2);
+}
+
+.figure {
+  overflow: visible;
+}
+
+.wrap {
+  @include flex($direction: column);
+}
+
+.name {
+  @include make-spacer(mb, 0);
+  @include make-spacer(mb, half, sm);
+  @include font-size(16px, 24px);
+  @include transition(color);
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.fullName {
+  @include font-size(12px, 18px);
+  @include transition(color);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.label {
+  @include make-spacer(px, 1);
+  @include make-spacer(py, half);
+  @include make-spacer(ml, 1);
+  @include font-size(12px);
+
+  display: inline;
+  align-items: center;
+  border-radius: rem(2px);
+  background-color: var(--blue-alpha-024);
+  text-align: center;
+  color: var(--blue);
+  font-weight: var(--wp-font-weight-normal);
+}

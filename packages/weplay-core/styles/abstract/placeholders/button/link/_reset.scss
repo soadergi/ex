@@ -1,0 +1,6 @@
+@mixin reset {
+
+  &Reset {
+    @include reset-button;
+  }
+}

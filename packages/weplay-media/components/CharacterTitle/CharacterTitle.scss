@@ -1,0 +1,35 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.title {
+  @include font-size(24px, 32px);
+  @include make-spacer(mt, 5);
+  @include make-spacer(mt, 6, sm);
+  @include make-spacer(mb, 3);
+
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.text {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 4, sm);
+
+  color: var(--white);
+
+  @include media-breakpoint-up(md) {
+    width: rem(448px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: rem(576px);
+  }
+
+  &.full {
+    width: 100%;
+  }
+}

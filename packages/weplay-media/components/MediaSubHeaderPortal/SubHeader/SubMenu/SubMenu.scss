@@ -1,0 +1,83 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include reset-list;
+  @include flex(flex-start, center);
+
+  position: relative;
+  height: 100%;
+}
+
+.link {
+  @include font-size(12px, 18px);
+  @include flex(flex-start, center);
+  @include make-spacer(px, 1);
+
+  position: relative;
+  height: 100%;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--royal-blue);
+
+  &::after {
+    @include size(100%, rem(4px));
+    @include transition(opacity);
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background-color: var(--grey-400);
+    content: '';
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &.gray {
+    color: var(--grey-500);
+  }
+
+  &.highlighted {
+    font-weight: 700;
+  }
+
+  &.isActive {
+
+    &::before {
+      @include size(100%, rem(4px));
+
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background-color: var(--blue);
+      content: '';
+    }
+  }
+}
+
+.listItem {
+  @include make-spacer(pr, 2);
+
+  height: 100%;
+
+  &:last-child {
+    @include make-spacer(pr, 0);
+  }
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+}
+
+.label {
+  @include make-spacer(ml, 1);
+}

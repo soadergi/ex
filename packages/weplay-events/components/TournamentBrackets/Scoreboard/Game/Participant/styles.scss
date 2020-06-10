@@ -1,0 +1,82 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.user {
+  @include flex(center, center, column);
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    &.leftSideText {
+      flex-direction: row-reverse;
+
+      .user {
+
+        &Avatar {
+          @include make-spacer(ml, 1, sm);
+          @include make-spacer(ml, 2, lg);
+          @include make-spacer(mr, 0);
+        }
+
+        &Name {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  &Name {
+    @include font-size(12px, 16px);
+
+    display: block;
+    min-width: rem(80px);
+    word-break: break-word;
+    word-wrap: break-word;
+    color: var(--grey-300);
+    font-weight: 500;
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(14px, 24px);
+
+      text-align: left;
+    }
+
+    &.isActive {
+      color: var(--royal-blue);
+    }
+  }
+
+  &Avatar {
+    @include make-spacer(mb, 2);
+    @include make-spacer(mb, 0, sm);
+    @include make-spacer(mr, 1, sm);
+    @include make-spacer(mr, 2, lg);
+
+    position: relative;
+
+    &.hasCoefficient {
+      @include make-spacer(mb, 2);
+      @include make-spacer(mb, 0, sm);
+    }
+  }
+}
+
+.notification {
+  @include make-spacer(mr, 0);
+
+  position: absolute;
+  top: 0;
+  right: rem(-4px);
+  z-index: 2;
+
+  @include media-breakpoint-up(sm) {
+    right: rem(-2px);
+  }
+
+  @include media-breakpoint-up(md) {
+    right: 0;
+  }
+}

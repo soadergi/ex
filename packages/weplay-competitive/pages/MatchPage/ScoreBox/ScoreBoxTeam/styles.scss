@@ -1,0 +1,17 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.collapsible {
+  @include make-spacer(pb, 3);
+
+  overflow: hidden;
+}
+
+.trigger {
+  cursor: pointer;
+}
+
+.wrapper {
+  @include make-spacer(mb, 3);
+
+  border-bottom: rem(1px) solid var(--grey-200);
+}

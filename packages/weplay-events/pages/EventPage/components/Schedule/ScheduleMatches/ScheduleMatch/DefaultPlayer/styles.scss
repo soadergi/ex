@@ -1,0 +1,38 @@
+@import 'weplay-core/styles/playoff-config.scss';
+
+.block {
+  @include flex(flex-start, center);
+
+  position: relative;
+  flex: 1 1 50%;
+}
+
+.name {
+  @include font-size(14px, 22px);
+  @include transition(color);
+
+  max-width: rem(140px);
+  max-height: rem(30px);
+  overflow: hidden;
+  color: var(--royal-blue);
+}
+
+.hasCoefficient {
+
+  .name {
+    max-width: rem(96px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.userAvatar {
+  @include flex(flex-start, center);
+}
+
+.avatar {
+  @include make-spacer(mr, 1);
+
+  border-radius: 50%;
+}
+

@@ -1,0 +1,51 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 3, sm);
+
+  border-top: 1px solid var(--white-alpha-024);
+  border-right: 1px solid var(--white-alpha-024);
+  border-left: 1px solid var(--white-alpha-024);
+  color: var(--white);
+
+  &:last-child {
+    border-bottom: 1px solid var(--white-alpha-024);
+  }
+}
+
+.title {
+  @include font-size(18px, 26px);
+  @include make-spacer(mb, 3);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(20px, 28px);
+  }
+}
+
+.items {
+  @include flex(space-between, center);
+
+  @include media-breakpoint-up(sm) {
+    justify-content: flex-start;
+  }
+}
+
+.item {
+  @include font-size(12px, 18px);
+  @include make-spacer(mr, 0);
+  @include make-spacer(mr, 3, sm);
+
+  width: rem(110px);
+  text-align: center;
+}
+
+.image {
+  @include size(rem(48px));
+  @include make-spacer(mb, 1);
+
+  border-radius: 50%;
+}

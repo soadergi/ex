@@ -1,0 +1,4 @@
+export const REWARD_TYPES = {
+  TOTAL: 'TOTAL',
+  DISTRIBUTED: 'DISTRIBUTED',
+}

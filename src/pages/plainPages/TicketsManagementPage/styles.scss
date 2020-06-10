@@ -1,0 +1,10 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.section {
+  background-color: var(--royal-blue);
+}
+
+.userList {
+  @include make-spacer(mt, 2);
+}

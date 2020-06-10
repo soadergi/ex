@@ -1,0 +1,24 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.item {
+  @include size(rem(128px), rem(80px));
+
+  border-radius: rem(8px);
+  background-color: var(--grey-100);
+
+  @include media-breakpoint-up(md) {
+    @include size(rem(160px), rem(104px));
+  }
+}
+
+.link {
+  @include make-spacer(p, 2);
+  @include flex(center, center, row, wrap);
+  @include size(100%);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

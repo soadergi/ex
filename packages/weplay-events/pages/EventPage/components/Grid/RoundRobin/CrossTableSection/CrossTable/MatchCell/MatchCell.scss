@@ -1,0 +1,49 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.cell {
+  @include make-spacer(m, 0);
+  @include flex(center, center);
+  @include font-size(16px, 24px);
+
+  border-top: 1px solid var(--grey-200);
+  border-right: 1px solid var(--grey-200);
+  background-color: var(--white);
+  width: 100%;
+  min-width: rem(80px);
+  min-height: rem(56px);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.score {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--blue-active);
+  }
+}
+
+.isEmpty {
+  background-color: var(--grey-100);
+}
+
+.isWinner {
+  background-color: var(--success-alpha-008);
+
+  &.isNotHover {
+    opacity: 0.03;
+  }
+}
+
+.isLoser {
+  background-color: var(--error-alpha-008);
+
+  &.isNotHover {
+    opacity: 0.03;
+  }
+}
+
+.isHidden {
+  opacity: 0.08;
+}

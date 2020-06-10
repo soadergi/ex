@@ -1,0 +1,55 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mx, auto);
+
+  z-index: 1;
+  width: 100%;
+}
+
+.container {
+  @include flex(center, center, column);
+
+  position: relative;
+  flex: 1 0 auto;
+  z-index: 3;
+}
+
+.sticker {
+  @include size(rem(104px));
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 4, md);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.title {
+  @include font-size(28px, 40px);
+
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(44px, 56px);
+  }
+}
+
+.text {
+  @include make-spacer(mb, 0);
+  @include font-size(14px, 24px);
+
+  max-width: rem(736px);
+
+  @include media-breakpoint-up(sm) {
+    text-align: center;
+  }
+}

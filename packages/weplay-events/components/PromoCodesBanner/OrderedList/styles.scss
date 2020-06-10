@@ -1,0 +1,116 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.item {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 5, sm);
+  @include make-spacer(mb, 0, md);
+  @include make-spacer(pl, 2);
+  @include font-size(16px, 32px);
+
+  position: relative;
+  text-align: left;
+  color: var(--white);
+  counter-increment: myCount;
+
+  &::before {
+    @include font-size(48px, 56px);
+
+    position: absolute;
+    top: rem(-12px);
+    left: 0;
+    z-index: 0;
+    white-space: nowrap;
+    color: var(--blue);
+    font-weight: 700;
+    content: counter(myCount);
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(60px, 56px);
+    }
+
+    @include media-breakpoint-up(md) {
+      @include font-size(32px, 32px);
+
+      top: rem(-6px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include font-size(46px, 56px);
+
+      top: rem(-16px);
+    }
+  }
+
+  &:last-child {
+    @include make-spacer(mr, 0, md);
+    @include make-spacer(mb, 0);
+
+    @include media-breakpoint-only(sm) {
+      @include make-spacer(mb, 5);
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+
+    max-width: rem(160px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(14px, 24px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.text {
+  position: relative;
+  z-index: 2;
+}
+
+.block {
+  @include reset-list;
+  @include flex(center, center, column);
+  @include make-spacer(mx, auto);
+  @include make-spacer(mx, 0, md);
+  @include make-spacer(mb, 7);
+  @include make-spacer(mb, 0, sm);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, flex-start, row);
+
+    max-width: rem(560px);
+  }
+
+  &.winterMadness {
+
+    .item {
+
+      &::before {
+        color: var(--blue);
+      }
+    }
+  }
+
+  &.lockAndLoad {
+
+    .item {
+
+      &::before {
+        color: var(--blue);
+      }
+    }
+  }
+
+  &.agility {
+
+    .item {
+
+      &::before {
+        color: #57bd19;
+      }
+    }
+  }
+}

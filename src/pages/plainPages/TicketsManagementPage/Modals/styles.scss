@@ -1,0 +1,22 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(pt, 3);
+  @include make-spacer(pt, 7, sm);
+}
+
+.title {
+  @include make-spacer(mb, 3);
+  @include font-size(24px, 32px);
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.text {
+  @include make-spacer(mb, 3);
+  @include font-size(16px, 24px);
+
+  color: var(--grey-500);
+}

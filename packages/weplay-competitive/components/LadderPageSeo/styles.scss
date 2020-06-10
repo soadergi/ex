@@ -1,0 +1,8 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.seo {
+  @include make-spacer(mb, 10);
+  @include make-spacer(mt, 5);
+
+  order: 3;
+}

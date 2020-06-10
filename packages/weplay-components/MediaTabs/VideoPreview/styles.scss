@@ -1,0 +1,85 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mb, 0);
+  @include make-spacer(mb, 3, md);
+  @include make-spacer(mr, 2);
+  @include make-spacer(mr, 0, md);
+
+  flex-shrink: 0;
+  cursor: pointer;
+  width: rem(172px);
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    width: rem(192px);
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+
+    &:last-child {
+      display: block;
+    }
+  }
+
+  &.isActive {
+
+    .figure {
+
+      &::after {
+        @include size(100%);
+
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 4px solid var(--blue);
+        content: '';
+      }
+    }
+  }
+}
+
+.figure {
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+}
+
+.videoInfo {
+  @include font-size(12px, 24px);
+  @include make-spacer(px, 1);
+
+  position: absolute;
+  bottom: rem(8px);
+  left: rem(8px);
+  border-radius: rem(2px);
+  background-color: var(--black-alpha-08);
+  color: var(--white);
+}
+
+.title {
+  @include font-size(16px, 24px);
+
+  max-height: rem(48px);
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 20px);
+
+    max-height: rem(40px);
+  }
+}

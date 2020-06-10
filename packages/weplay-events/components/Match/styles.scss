@@ -1,0 +1,102 @@
+@import 'config';
+
+.sponsorLogo {
+  position: absolute;
+  top: 50%;
+  right: rem(72px);
+  transform: translate(50%, -50%);
+  z-index: 2;
+  max-height: rem(18px);
+}
+
+.match {
+  @include size(rem(268px), rem(112px));
+
+  position: relative;
+  box-shadow: 0 0 0 $one-pixel var(--grey-200);
+  background-color: var(--white);
+
+  &::after {
+    @include size($match-separator-width, $one-pixel);
+
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -$one-pixel;
+    background-color: var(--grey-200);
+    content: '';
+  }
+
+  .detailsButton {
+    @include make-spacer(px, 0);
+    @include font-size(14px, 22px);
+
+    position: relative;
+    border: 0;
+    background-color: transparent;
+    color: var(--blue);
+  }
+}
+
+.meta {
+  @include size(100%, $match-meta-height);
+  @include flex(space-between, center);
+  @include make-spacer(pb, 1);
+
+  position: absolute;
+  top: -$match-meta-height;
+  left: 0;
+}
+
+.wrapStream {
+  @include flex(space-between, center);
+}
+
+.notification {
+  @include make-spacer(mr, 2);
+  @include size(rem(40px), rem(20px));
+  @include flex(center, center);
+
+  border-radius: rem(2px);
+  background-color: var(--magenta);
+}
+
+.text {
+  @include font-size(12px);
+
+  text-transform: capitalize;
+  color: var(--white);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.link {
+  @include font-size(12px, 16px);
+
+  color: var(--blue);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.liveButton {
+  @include make-spacer(p, 0);
+  @include font-size(14px, 22px);
+
+  border: 0;
+  background-color: transparent;
+  text-transform: capitalize;
+  color: var(--magenta);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.matchTitle {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 0);
+
+  color: var(--grey-500);
+}
+
+.linkText {
+  cursor: pointer;
+}

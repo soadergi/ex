@@ -1,0 +1,160 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.banner {
+  position: relative;
+  background-color: var(--royal-blue);
+  width: 100%;
+  overflow: hidden;
+
+  &.direPage {
+    background-color: transparent;
+
+    .container {
+      @include make-spacer(px, 0);
+      @include make-spacer(px, 0, sm);
+
+      background-color: var(--royal-blue);
+      max-width: rem(1000px);
+      overflow: hidden;
+
+      @include media-breakpoint-up(md) {
+        max-width: rem(1080px);
+      }
+
+      @include media-breakpoint-up(lg) {
+        max-width: rem(1392px);
+      }
+    }
+
+    .content {
+      @include make-spacer(pl, 3);
+      @include make-spacer(pl, 5, sm);
+      @include make-spacer(pl, 4, md);
+
+      &::before {
+        @include gradient-x(#{var(--royal-blue)}, transparent);
+
+        display: block;
+        position: absolute;
+        top: rem(-99.2px);
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: rem(100px);
+        content: '';
+      }
+
+      @include media-breakpoint-up(sm) {
+
+        &::before {
+          content: none;
+        }
+      }
+    }
+
+    .title {
+      @include font-size(32px, 40px);
+
+      @include media-breakpoint-up(md) {
+        @include font-size(40px, 64px);
+      }
+    }
+
+    .image {
+      height: rem(300px);
+    }
+  }
+}
+
+.container {
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  width: 100%;
+  max-width: rem(1080px);
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1392px);
+  }
+}
+
+.content {
+  @include make-spacer(px, 2);
+  @include make-spacer(py, 3);
+  @include make-spacer(pt, 6, sm);
+  @include make-spacer(pb, 8, sm);
+
+  position: relative;
+  z-index: 2;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    @include size(50%, 100%);
+  }
+}
+
+.title {
+  @include make-spacer(mb, 2);
+  @include font-size(40px, 64px);
+
+  color: var(--white);
+}
+
+.titleWePlay {
+  color: var(--blue);
+}
+
+.text {
+  @include make-spacer(mb, 4);
+  @include font-size(20px, 24px);
+
+  color: var(--white);
+}
+
+.link {
+  @extend %button;
+  @extend %buttonCta;
+  @extend %buttonPromoMedium;
+
+  @include make-spacer(px, 3);
+  @include make-spacer(py, 2);
+  @include font-size(16px, 24px);
+
+  display: inline-block;
+  border-radius: 32px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 700;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: rem(300px);
+
+  @include media-breakpoint-up(sm) {
+    @include size(50%, 100%);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.image {
+  @include absolute-center();
+
+  display: block;
+  width: auto;
+  min-height: 100%;
+}

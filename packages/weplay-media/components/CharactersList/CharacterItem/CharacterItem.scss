@@ -1,0 +1,49 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.item {
+  @include font-size(14px, 22px);
+
+  position: relative;
+  border: 1px solid var(--white-alpha-024);
+  padding-top: 64%;
+  color: var(--white);
+  font-weight: var(--wp-font-weight-regular);
+
+  &::after {
+    @include size(100%);
+    @include gradient-y(transparent, #{var(--royal-blue-alpha-048)}, 0%, 100%);
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+  }
+
+  &:hover {
+    color: var(--blue);
+
+    &::after {
+      @include gradient-y(#{var(--royal-blue-alpha-048)}, #{var(--royal-blue-alpha-08)});
+    }
+  }
+}
+
+.image {
+  @include absolute-center;
+  @include size(100%);
+
+  object-fit: cover;
+}
+
+.text {
+  @include make-spacer(px, 1);
+
+  position: absolute;
+  bottom: rem(8px);
+  left: 0;
+  z-index: $z-1;
+  width: 100%;
+  text-align: center;
+}

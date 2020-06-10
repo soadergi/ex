@@ -1,0 +1,264 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.collapse {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 2, sm);
+  @include make-spacer(mb, 0, sm);
+}
+
+.arrow {
+  @include transition(transform);
+
+  transform: rotateZ(-90deg);
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}
+
+.title {
+  @include flex(space-between, center);
+  @include font-size(14px, 32px);
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 2, sm);
+
+  position: relative;
+  color: var(--grey-500);
+
+  &::after {
+    @include transition(opacity);
+
+    position: absolute;
+    bottom: rem(-8px);
+    left: 0;
+    border-bottom: 1px solid var(--grey-300);
+    width: 100%;
+    height: 0;
+    content: '';
+
+    @include media-breakpoint-up(sm) {
+      content: none;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+    font-size: rem(18px);
+    pointer-events: none;
+  }
+
+  &.isOpen {
+
+    &::after {
+      opacity: 0;
+    }
+
+    .arrow {
+      transform: rotateZ(0);
+    }
+  }
+}
+
+.cell {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 3, lg);
+  @include make-spacer(py, 2);
+
+  &:not( :first-child ) {
+    text-align: center;
+  }
+
+  &.points,
+  &.score {
+    @include make-spacer(pl, 0);
+    @include make-spacer(pl, 3, lg);
+
+    min-width: rem(88px);
+    text-align: right;
+  }
+}
+
+.wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.tHead {
+  @include make-spacer(pb, 2);
+
+  .cell {
+    @include make-spacer(pt, 0);
+
+    &:first-child {
+      @include make-spacer(pl, 0);
+
+      color: var(--grey-500);
+    }
+  }
+
+  &Title {
+    @include font-size(14px, 32px);
+    @include make-spacer(mb, 1);
+    @include make-spacer(mb, 2, sm);
+
+    display: none;
+    color: var(--grey-500);
+    font-weight: 400;
+
+    @include media-breakpoint-up(sm) {
+      display: inline;
+      font-size: rem(18px);
+    }
+  }
+
+  &Subtitle {
+    @include font-size(12px, 32px);
+
+    display: block;
+    text-align: center;
+    color: var(--grey-500);
+    font-weight: 400;
+
+    &.mobileSubtitle {
+      text-align: left;
+
+      @include media-breakpoint-up(sm) {
+        display: none;
+      }
+    }
+  }
+}
+
+.tBody {
+
+  .cell { // stylelint-disable-line no-descending-specificity
+    border-bottom: 1px solid var(--grey-300);
+
+    &:first-child {
+      border-left: 1px solid var(--grey-300);
+    }
+
+    &:last-child {
+      border-right: 1px solid var(--grey-300);
+    }
+  }
+
+  tr {
+
+    &:last-child {
+
+      .cell {
+
+        &:first-child {
+          border-bottom-left-radius: 0.5rem;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 0.5rem;
+        }
+      }
+    }
+
+    &:first-child {
+
+      .cell { // stylelint-disable-line no-descending-specificity
+        border-top: 1px solid var(--grey-300);
+
+        &:first-child {
+          border-top-left-radius: 0.5rem;
+        }
+
+        &:last-child {
+          border-top-right-radius: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.group {
+  min-width: rem(456px);
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+.forgeOfMastersGroup {
+
+  .title {
+    display: none;
+  }
+
+  .group {
+
+    .cell {
+
+      &:not( :first-child ) { // stylelint-disable-line no-descending-specificity
+        @include make-spacer(px, 2);
+        @include make-spacer(px, 3, lg);
+
+        text-align: right;
+      }
+
+      &:last-child { // stylelint-disable-line no-descending-specificity
+        @include make-spacer(pr, 4);
+        @include make-spacer(pr, 6, lg);
+      }
+    }
+
+    .tHeadTitle {
+      display: none;
+    }
+
+    .tHeadSubtitle {
+      width: rem(40px);
+      text-align: right;
+
+      &.mobileSubtitle {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      min-width: rem(560px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      min-width: rem(704px);
+    }
+  }
+}
+
+.dotaUnderlords {
+  @include make-spacer(mx, auto);
+
+  .wrapper {
+    overflow: visible;
+  }
+
+  &.collapse {
+    @include flex($wrap: wrap);
+
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  &.title {
+    display: none;
+  }
+}
+
+.forgeOfMastersLeagueSecondSeason {
+
+  .cell {
+
+    &.points,
+    &.score {
+      @include make-spacer(pl, 0);
+
+      min-width: rem(48px);
+    }
+  }
+}

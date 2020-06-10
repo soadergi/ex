@@ -1,0 +1,25 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 0);
+
+  display: inline-block;
+  border: 0;
+  background: transparent;
+
+  &.searchInput {
+    @include size(1.5rem, 100%);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.icon {
+  @include transition(color);
+
+  &:hover {
+    color: var(--error);
+  }
+}

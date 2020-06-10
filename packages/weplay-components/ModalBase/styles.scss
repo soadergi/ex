@@ -1,0 +1,137 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.dialog {
+  @include transition(#{transform, opacity}, 0.2s);
+  @include flex(flex-start, center);
+
+  transform: translateY(2rem);
+  opacity: 0;
+  margin: 1.75rem auto;
+  max-width: 100%;
+  min-height: calc(100% - (1.75rem * 2));
+
+  @include media-breakpoint-down(xs) {
+    margin: 0.5rem auto;
+  }
+}
+
+.content {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 6, sm);
+  @include flex($align-items: stretch, $direction: column);
+
+  position: relative;
+  margin: auto;
+  background-color: var(--white);
+  width: rem(464px);
+  max-width: 95%;
+}
+
+.block {
+  @include make-spacer(pr, 6, md);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 200;
+  background-color: var(--black-alpha-048);
+  width: calc(100% + 3rem);
+  overflow-y: scroll;
+
+  &.paddingLess,
+  &.onboardingWpPoints {
+
+    .content {
+      @include make-spacer(p, 0);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+  &.closeBtnPositionSm {
+
+    .close {
+      @include make-spacer(pr, 2);
+      @include make-spacer(pr, 6, sm);
+      @include make-spacer(pt, 2);
+      @include make-spacer(pt, 6, sm);
+    }
+  }
+
+  &.widthAuto {
+
+    .content {
+      @include media-breakpoint-up(sm) {
+        width: auto;
+      }
+    }
+  }
+
+  &.isShown {
+    @include transition(#{opacity, visibility}, 0.32s);
+
+    visibility: visible;
+    opacity: 1;
+
+    .dialog {
+      transform: translateY(0);
+      transition-delay: 200ms;
+      opacity: 1;
+    }
+  }
+
+  &.MMModal {
+
+    .content {
+      @include make-spacer(p, 0);
+
+      border: 1px solid var(--white-alpha-024);
+      background-color: var(--royal-blue);
+      color: var(--white);
+    }
+
+    .close {
+      position: absolute;
+      top: rem(16px);
+      right: rem(16px);
+
+      @include media-breakpoint-up(sm) {
+        top: rem(48px);
+        right: rem(48px);
+      }
+    }
+  }
+
+  &.md {
+
+    .content {
+      width: rem(560px);
+    }
+  }
+
+  &.lg {
+
+    .content {
+      width: rem(680px);
+    }
+  }
+}
+
+.close {
+  @include reset-button;
+  @include make-spacer(mb, 2);
+
+  cursor: pointer;
+  text-align: right;
+  color: var(--grey-500);
+
+  &:hover {
+    color: var(--blue);
+  }
+}

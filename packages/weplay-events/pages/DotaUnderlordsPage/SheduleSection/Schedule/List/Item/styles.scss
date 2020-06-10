@@ -1,0 +1,20 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex($align-items: center);
+  @include make-spacer(px, 2);
+
+  color: var(--white);
+}
+
+.itemCount {
+  @include font-size(12px, 16px);
+  @include make-spacer(mr, 5);
+
+  width: rem(24px);
+  text-align: center;
+}
+
+.time {
+  @include font-size(14px, 48px);
+}

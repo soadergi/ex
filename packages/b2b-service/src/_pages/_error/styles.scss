@@ -1,0 +1,73 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  --wp-footer: #{rem(188px)};
+
+  @include flex(center, center);
+
+  min-height: calc(100vh - (var(--wp-main-header-height) + var(--wp-footer)));
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    --wp-footer: #{rem(172px)};
+  }
+
+  @include media-breakpoint-up(md) {
+    --wp-footer: #{rem(130px)};
+  }
+
+  @include media-breakpoint-up(lg) {
+    --wp-footer: #{rem(88px)};
+  }
+}
+
+.content {
+  @include flex(flex-start, $display: inline-flex);
+  @include make-spacer(my, 5);
+}
+
+.image {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, md);
+
+  width: rem(438px);
+  max-width: 100%;
+
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
+}
+
+.section {
+  position: relative;
+  left: rem(-110px);
+  margin-top: rem(188px);
+  margin-right: rem(-110px);
+  max-width: rem(220px);
+  text-align: left;
+
+  @include media-breakpoint-down(xs) {
+    @include make-spacer(mt, 0);
+    @include make-spacer(mr, 0);
+
+    position: relative;
+    left: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.title {
+  @include font-size(44px, 56px);
+  @include make-spacer(m, 0);
+
+  font-weight: 700;
+}
+
+.subtitle {
+  @include make-spacer(m, 0);
+  @include font-size(18px, 32px);
+
+  font-weight: 500;
+}

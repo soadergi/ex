@@ -1,0 +1,19 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(space-between, flex-start, column);
+
+  height: 100%;
+}
+
+.top {
+  @include make-spacer(pb, 8);
+
+  flex-grow: 1;
+  width: 100%;
+}
+
+.sticky {
+  position: sticky;
+  top: calc(var(--wp-sticky-section-height) + 2rem);
+}

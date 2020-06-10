@@ -1,0 +1,152 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: rem(542px);
+  }
+}
+
+.logo {
+  @include size(rem(40px));
+  @include make-spacer(mr, 1);
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(72px));
+  }
+}
+
+.title {
+  @include font-size(32px, 40px);
+  @include make-spacer(mb, 0);
+
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(48px, 56px);
+  }
+}
+
+.wrapper {
+  @include flex(flex-start, center);
+}
+
+.text {
+  @include font-size(14px, 22px);
+  @include make-spacer(mt, 2);
+  @include make-spacer(mt, 3, sm);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.background {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--royal-blue);
+}
+
+.image {
+  object-position: top;
+}
+
+.tabs {
+  @include make-spacer(mt, 5);
+  @include make-spacer(mt, 6, sm);
+
+  position: relative;
+
+  &::after {
+    @include size(100%, rem(1px));
+
+    display: block;
+    position: absolute;
+    bottom: rem(10px);
+    left: 0;
+    background-color: var(--white-alpha-024);
+    content: '';
+  }
+}
+
+.inputWrap {
+  @include make-spacer(mt, 6);
+
+  @include media-breakpoint-up(md) {
+    @include flex(space-between, center);
+  }
+}
+
+.searchWrap {
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    width: rem(288px);
+  }
+}
+
+.filters {
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between);
+  }
+
+  @include media-breakpoint-up(md) {
+    justify-content: flex-start;
+  }
+}
+
+.dropdown {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, md);
+
+  width: 100%;
+
+  &:first-of-type {
+    @include make-spacer(mr, 0);
+    @include make-spacer(mr, 3, sm);
+    @include make-spacer(mb, 2);
+    @include make-spacer(mb, 0, sm);
+  }
+
+  @include media-breakpoint-up(md) {
+    width: rem(146px);
+  }
+}
+
+.search {
+  @include make-spacer(px, 2);
+  @include make-spacer(py, 1);
+  @include font-size(14px, 22px);
+
+  border: 1px solid var(--grey-500);
+  border-radius: rem(4px);
+  background-color: var(--grey-500);
+  width: 100%;
+  color: var(--grey-300);
+
+  &::placeholder {
+    color: var(--grey-300);
+  }
+}
+
+.button {
+  @include reset-button;
+  @include make-spacer(p, 1);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-right-radius: rem(4px);
+  border-bottom-right-radius: rem(4px);
+  background-color: var(--grey-500);
+  line-height: 0;
+  color: var(--grey-300);
+}

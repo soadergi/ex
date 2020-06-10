@@ -1,0 +1,36 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mx, auto);
+  @include flex(center, center);
+  @include size(100%, auto);
+}
+
+.icon {
+  animation: pulse 3s infinite cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  color: var(--blue);
+}
+
+.title {
+  @include make-spacer(mb, 0);
+  @include make-spacer(ml, 1);
+  @include font-size(12px, 18px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+@keyframes pulse {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(rem(-16px));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

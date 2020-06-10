@@ -1,0 +1,9 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(flex-start, center);
+}
+
+.counter {
+  @include make-spacer(mr, 1);
+}

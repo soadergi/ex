@@ -1,0 +1,63 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(py, 2);
+
+  border: 1px solid var(--grey-300);
+  border-radius: 0.5rem;
+  background-color: var(--white);
+}
+
+.title {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 2);
+  @include make-spacer(px, 2);
+
+  font-weight: 500;
+}
+
+.list {
+  @include reset-list;
+}
+
+.link {
+  @include font-size(12px, 16px);
+
+  display: block;
+  color: var(--royal-blue);
+
+  &::before {
+    @include size(rem(4px), 100%);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: var(--blue);
+  }
+}
+
+.item {
+  @include make-spacer(px, 2);
+
+  position: relative;
+
+  + .item {
+    @include make-spacer(mt, 2);
+  }
+
+  &.isActive {
+
+    .link {
+      color: var(--blue);
+
+      &::before {
+        background-color: var(--blue);
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+export const STATUS_CODES = {
+  SUCCESS: 200,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+}

@@ -1,0 +1,49 @@
+{
+  "name": "weplay-node-registration",
+  "version": "1.0.14",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "watch": "tsc -w src/**  --outDir dist",
+    "test": "node --inspect node_modules/.bin/jest --watch",
+    "pretest": "npm run build",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "axios": "^0.19.0"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix --ext .js,.jsx,.ts,.tsx",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@typescript-eslint/eslint-plugin": "^2.15.0",
+    "@typescript-eslint/parser": "^2.15.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-typescript": "^6.3.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "prettier-eslint": "^9.0.1",
+    "prettier-eslint-cli": "^5.0.0",
+    "typescript": "^3.7.4"
+  }
+}

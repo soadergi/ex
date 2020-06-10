@@ -1,0 +1,32 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.button {
+  @include make-spacer(mx, 1);
+  @include make-spacer(mb, 2);
+
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}
+
+.link {
+
+  &:hover {
+    background-color: transparent;
+    text-decoration: underline;
+    color: var(--white);
+  }
+}
+
+.buttonsWrapper {
+  @include flex(center, $wrap: wrap);
+}
+
+.linkWrapper {
+  @include make-spacer(mb, 3);
+
+  order: 1;
+  width: 100%;
+}

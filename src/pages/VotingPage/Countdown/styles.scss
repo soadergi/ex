@@ -1,0 +1,11 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.countdown {
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  @include flex(center, stretch);
+  @include make-spacer(mx, auto);
+}

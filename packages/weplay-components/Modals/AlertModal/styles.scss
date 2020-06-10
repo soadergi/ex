@@ -1,0 +1,25 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.left,
+.right {
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}
+
+.preview {
+  @include make-spacer(mx, auto);
+  @include make-spacer(mb, 3);
+}
+
+.left {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+  @include make-spacer(mr, 2, sm);
+}
+
+.center {
+  text-align: center;
+}

@@ -1,0 +1,77 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 2);
+  @include font-size(14px, 22px);
+
+  border: 1px solid var(--white-alpha-024);
+  background-color: var(--royal-blue);
+  width: rem(355px);
+  color: var(--white);
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include font-size(16px, 24px);
+
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.cost {
+
+  .icon {
+    color: var(--gold);
+  }
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+}
+
+.bonuses {
+  @include make-spacer(mb, 1);
+
+  color: var(--grey-500);
+
+  &.green {
+    color: var(--success);
+  }
+
+  &.red {
+    color: var(--magenta);
+  }
+}
+
+.reload {
+  @include flex;
+  @include make-spacer(mb, 1);
+}
+
+.mana {
+  @include make-spacer(mr, 2);
+
+  .icon {
+    color: var(--blue);
+  }
+}
+
+.time {
+
+  .icon {
+    color: var(--grey-500);
+  }
+}
+
+.list {
+  @include reset-list;
+}
+
+.properties {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: rem(8px);
+}
+
+.label {
+  color: var(--grey-500);
+}

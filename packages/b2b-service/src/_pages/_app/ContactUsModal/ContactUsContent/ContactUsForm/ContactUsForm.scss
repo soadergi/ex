@@ -1,0 +1,87 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 3, md);
+  @include make-spacer(mx, auto);
+
+  border: 1px solid var(--grey-200);
+  border-radius: rem(6px);
+  background-color: var(--white);
+  max-width: rem(576px);
+}
+
+.isInModal {
+  @include make-spacer(p, 0);
+
+  border: 0;
+
+  .title {
+    @include make-spacer(mb, 2);
+  }
+}
+
+.infoWrap {
+  display: block;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(24px);
+  }
+}
+
+.title {
+  @include font-size(24px, 30px);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 6, md);
+
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.button {
+  @include make-spacer(mt, 3);
+
+  width: 100%;
+}
+
+.socialWrap {
+  @include make-spacer(mt, 3);
+
+  text-align: center;
+}
+
+.socials {
+  @include make-spacer(mx, auto);
+
+  display: block;
+
+  li {
+    display: inline-block;
+
+    &:last-child {
+      @include make-spacer(mr, 0);
+    }
+  }
+
+  a {
+
+    span {
+      @include font-size(24px);
+    }
+  }
+}
+
+.text {
+  @include font-size(12px);
+}
+
+.link {
+  @include font-size(12px);
+  @include make-spacer(mx, 1);
+}

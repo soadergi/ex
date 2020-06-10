@@ -1,0 +1,27 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.item {
+  @include make-spacer(mb, 3);
+}
+
+.link {
+  @include flex();
+  @include transition(color);
+
+  color: var(--grey-500);
+
+  &:hover {
+    color: var(--blue);
+  }
+}
+
+.preview {
+  @include make-spacer(mr, 2);
+
+  overflow: hidden;
+}
+
+.text {
+  @include font-size(14px, 22px);
+  @include size(100%, auto);
+}

@@ -1,0 +1,18 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include reset-list;
+  @include make-spacer(pb, 3);
+  @include make-spacer(mb, 3);
+  @include flex(flex-start, center);
+
+  border-bottom: 1px solid var(--grey-200);
+}
+
+.item {
+  @include make-spacer(mr, 3);
+
+  &:last-child {
+    @include make-spacer(mr, 0);
+  }
+}

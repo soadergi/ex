@@ -1,0 +1,24 @@
+@startuml
+
+!include ../../Participant/Participant.puml
+!include TeamMembersPreviewsList/TeamMembersPreviewsList.puml
+!include TeamCardToggle/TeamCardToggle.puml
+!include TeamMembers/TeamMembers.puml
+!include TeamMember/TeamMember.puml
+
+object TeamCard {
+ team: shape().isRequired,
+ isExpanded: bool.isRequired,
+ toggleExpanded: func.isRequired,
+ isTeamCardToggleVisible: bool.isRequired,
+ isTeamCardToggleVisibleInParticipant: bool.isRequired,
+}
+
+TeamCard --|> Participant
+TeamCard --|> TeamMembersPreviewsList
+TeamCard --|> TeamCardToggle
+TeamCard --|> TeamMembers
+TeamMembers --|> Participant
+TeamMembers --|> TeamMember
+
+@enduml

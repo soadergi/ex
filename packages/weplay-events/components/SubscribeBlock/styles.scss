@@ -1,0 +1,61 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  color: var(--white);
+
+  &.next {
+
+    .title {
+      @include font-size(24px, 32px);
+
+      @include media-breakpoint-up(lg) {
+        @include font-size(32px, 40px);
+      }
+    }
+
+    .text {
+      @include font-size(14px, 24px);
+
+      @include media-breakpoint-up(sm) {
+        @include font-size(16px, 24px);
+      }
+    }
+
+    .title,
+    .text {
+      @include make-spacer(mb, 2);
+    }
+  }
+}
+
+.title {
+  @include font-size(24px, 32px);
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 4, md);
+
+  @include media-breakpoint-up(md) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.titleColor {
+  color: var(--blue);
+}
+
+.text {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 4, md);
+}
+
+.button {
+  @extend %button;
+  @extend %buttonBorderBlue;
+
+  @include font-size(16px, 44px);
+  @include make-spacer(px, 4);
+
+  color: var(--blue);
+  font-weight: 700;
+}

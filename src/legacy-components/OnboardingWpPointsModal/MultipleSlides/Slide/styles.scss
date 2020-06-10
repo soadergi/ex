@@ -1,0 +1,67 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(flex-start, $direction: column);
+
+  position: relative;
+  overflow: hidden;
+
+  &.isActive {
+
+    .imageWrap {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .wrap {
+      opacity: 1;
+    }
+  }
+}
+
+.imageWrap {
+  @include size(auto, rem(220px));
+  @include make-spacer(mb, 3);
+  @include transition(#{transform, opacity}, 300ms);
+
+  transform: translateY(56px);
+  transform-origin: center;
+  transition-delay: 100ms;
+  opacity: 0;
+}
+
+.image {
+  @include make-spacer(mx, auto);
+
+  height: 100%;
+}
+
+.wrap {
+  @include transition(#{transform, opacity}, 300ms);
+
+  position: relative;
+  transition-delay: 180ms;
+  opacity: 0;
+  text-align: center;
+}
+
+.tag {
+  @include make-spacer(mb, 2);
+
+  height: rem(28px);
+}
+
+.title {
+  @include make-spacer(mb, 3);
+  @include font-size(32px, 40px);
+
+  font-weight: 700;
+}
+
+.logoTitle {
+  color: var(--blue);
+}
+
+.text {
+  @include font-size(16px, 24px);
+}

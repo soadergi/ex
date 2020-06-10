@@ -1,0 +1,25 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.banner {
+  @include flex(center,flex-end);
+
+  @include media-breakpoint-up(sm) {
+    height: rem(392px);
+  }
+}
+
+.button {
+  @include reset-button;
+  @include flex(center, center, column);
+
+  color: var(--blue);
+  font-weight: var(--wp-font-weight-normal);
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.text {
+  @include make-spacer(mb, 1);
+}

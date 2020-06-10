@@ -1,0 +1,44 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include size(rem(256px), (calc(100vh - var(--wp-sticky-head-height))));
+  @include transition(#{transform, opacity}, 240ms);
+  @include make-spacer(pt, 5);
+
+  position: fixed;
+  top: var(--wp-sticky-head-height);
+  left: 0;
+  transform: translateX(-100%);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+  background-color: var(--royal-blue);
+  overflow-y: auto;
+  color: var(--white);
+}
+
+.isOpened {
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.extraPaddingTop {
+  @include media-breakpoint-down(sm) {
+    @include make-spacer(pt, 6);
+  }
+}
+
+.list {
+  @include reset-list;
+  @include make-spacer(pb, 1);
+
+  border-bottom: 1px solid var(--dark-grey);
+}
+
+.section {
+  @include make-spacer(p, 1);
+
+  border-bottom: 1px solid var(--dark-grey);
+}
+

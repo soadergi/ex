@@ -1,0 +1,102 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mb, 3);
+
+  border-bottom: 1px solid var(--grey-200);
+
+  &:last-child {
+    @include make-spacer(mb, 0);
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between);
+  }
+
+  @include media-breakpoint-up(sm) {
+    border-bottom: 0;
+  }
+}
+
+.name {
+  @extend %buttonReset;
+
+  @include flex(space-between);
+  @include font-size(16px, 24px);
+
+  width: 100%;
+  text-align: left;
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(mr, 3);
+
+    cursor: default;
+  }
+
+  &.isOpen {
+
+    .icon {
+      transform: rotate(180deg);
+      color: var(--blue);
+    }
+  }
+}
+
+.icon {
+  @include flex(center, center);
+  @include make-spacer(ml, 1);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}
+
+.settings {
+  @include make-spacer(py, 3);
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(py, 0);
+
+    display: grid;
+    grid-template-columns: rem(175px) rem(153px);
+    grid-column-gap: rem(24px);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: rem(125px) rem(249px);
+  }
+}
+
+.checkboxList {
+  @include flex(space-between, center);
+
+  grid-area: 1 / 2 / 1 / 2;
+}
+
+.checkbox {
+  @include make-spacer(mr, 0);
+}
+
+.notAvailable {
+  @include font-size(16px, 24px);
+
+  color: var(--grey-500);
+}
+
+.iconList {
+  @include make-spacer(mt, 3);
+  @include make-spacer(mb, 2);
+
+  display: flex;
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}
+
+.input {
+  @include input;
+}

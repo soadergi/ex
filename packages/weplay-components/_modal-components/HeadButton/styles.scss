@@ -1,0 +1,10 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @extend %buttonLink;
+
+  @include font-size(18px, 32px);
+  @include make-spacer(ml, 2);
+
+  font-weight: 400;
+}

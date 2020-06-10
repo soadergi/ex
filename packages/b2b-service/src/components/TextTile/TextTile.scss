@@ -1,0 +1,49 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.item {
+  @include transition(box-shadow);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, sm);
+
+  border: 1px solid var(--grey-200);
+
+  &:hover {
+    box-shadow: 0 rem(4px) rem(20px) var(--blue-alpha-016);
+  }
+}
+
+.link {
+  @include make-spacer(p, 3);
+  @include transition(color);
+
+  display: block;
+  height: 100%;
+  word-break: break-word;
+  color: var(--wp-c-dark-blue);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--blue);
+  }
+}
+
+.disabled {
+  pointer-events: none;
+
+  span {
+    display: none;
+  }
+}
+
+.title {
+  @include font-size(24px, 30px);
+
+  font-weight: 700;
+}
+
+.description {
+  @include font-size(16px, 24px);
+
+  color: var(--grey-500);
+}

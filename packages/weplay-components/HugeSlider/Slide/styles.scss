@@ -1,0 +1,127 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+// ====================================
+// New Styles
+// ====================================
+
+// Non-compiled files
+
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+// /====================================
+
+.block {
+  @include flex(flex-start, flex-end);
+
+  position: relative;
+  padding-bottom: rem(200px);
+  width: 100%;
+  height: var(--slide-height);
+  min-height: rem(352px);
+  overflow: hidden;
+
+  &::after {
+    @include size(100%, 50%);
+    @include gradient-y(transparent, #{var(--royal-blue)}, 0%, 64%);
+
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding-bottom: rem(190px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: rem(256px);
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-bottom: rem(224px);
+  }
+
+  &.isActive {
+
+    .image {
+      animation: scale var(--slide-animation-duration) linear;
+    }
+
+    .header {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.image {
+  @include absolute-center(scale(1));
+  @include size(100%);
+
+  transform-origin: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  @include make-spacer(mb, 0);
+  @include make-spacer(px, 2);
+  @include make-spacer(pr, 0, sm);
+  @include make-spacer(pl, 5, sm);
+  @include make-spacer(pl, 8, lg);
+  @include transition(#{transform, opacity}, 400ms);
+
+  transform: translateY(32px);
+  transition-delay: 250ms;
+  opacity: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+.title {
+  @include font-size(24px, 32px);
+  @include make-spacer(mb, 2);
+
+  display: block;
+  position: relative;
+  color: var(--white);
+  font-weight: 700;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(48px, 60px);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(616px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(720px);
+  }
+}
+
+@keyframes scale {
+
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.isDotsDisabled {
+
+  &.block {
+    @include make-spacer(pb, 6);
+  }
+}

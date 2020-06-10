@@ -1,0 +1,39 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.inviteLink {
+  @include font-size(14px, 22px);
+  @include make-spacer(px, 2);
+  @include make-spacer(py, 1);
+  @include make-spacer(mb, 3);
+
+  border: 1px solid var(--grey-300);
+  border-radius: rem(4px);
+  word-break: break-all;
+  color: var(--grey-400);
+}
+
+.btn {
+  width: 100%;
+  color: var(--black);
+  font-weight: var(--wp-font-weight-regular);
+
+  &:hover {
+    color: var(--black);
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}
+
+.info {
+  @include font-size(12px, 18px);
+  @include make-spacer(mb, 0);
+
+  color: var(--grey-500);
+}

@@ -1,0 +1,60 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.button {
+  @include make-spacer(pb, 1);
+  @include make-spacer(px, 0);
+  @include make-spacer(pt, 0);
+  @include font-size(16px, 24px);
+  @include transition(color);
+
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  white-space: nowrap;
+  color: var(--grey-500);
+  font-weight: 500;
+
+  &::after {
+    @include transition(background-color);
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: transparent;
+    width: 100%;
+    height: rem(2px);
+    content: '';
+  }
+
+  &.isActive {
+    cursor: default;
+    color: var(--royal-blue);
+    pointer-events: none;
+
+    &::after {
+      background-color: var(--blue);
+    }
+  }
+
+  &.white {
+    color: var(--white);
+
+    &.isActive,
+    &:hover {
+      color: var(--blue);
+
+      &::after {
+        background-color: var(--blue);
+      }
+    }
+  }
+}
+
+.item {
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, 3);
+  }
+}

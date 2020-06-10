@@ -1,0 +1,283 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.logo {
+  @include aspect-ratio;
+
+  position: relative;
+  border-radius: rem(4px);
+  background-color: var(--royal-blue);
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    height: rem(72px);
+  }
+}
+
+.link {
+  @include word-break;
+  @include font-size(12px, 16px);
+}
+
+.special {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include font-size(16px, 24px);
+  @include word-break;
+
+  color: var(--royal-blue);
+  font-weight: 700;
+}
+
+.subTitle {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 1);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.region {
+  @include flex($align-items: center);
+  @include make-spacer(mb, 1);
+}
+
+.regionIcon {
+  color: var(--blue);
+}
+
+.regionText {
+  @include font-size(14px, 22px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.header {
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    grid-column: 1 / 3;
+  }
+}
+
+.headerWrapper {
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: rem(128px) rem(200px);
+    grid-column-gap: rem(24px);
+  }
+}
+
+.footer {
+  @include media-breakpoint-down(sm) {
+    grid-column: 1 / 3;
+  }
+}
+
+.icon {
+  @include flex($display: inline-flex);
+  @include size(rem(16px));
+  @include make-spacer(mr, 1);
+
+  vertical-align: middle;
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(md) {
+    @include size(rem(24px));
+  }
+
+  &.isBlue {
+    color: var(--blue);
+  }
+
+  &.premium {
+    color: var(--premium);
+  }
+}
+
+.column {
+  @include make-spacer(px, 2);
+  @include make-spacer(pt, 0);
+  @include make-spacer(py, 3, md);
+  @include make-spacer(pb, 2);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, md);
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
+
+  &.half {
+    @include media-breakpoint-down(sm) {
+      border-bottom: rem(1px) solid var(--grey-200);
+
+      &:nth-child( even ) {
+        @include make-spacer(ml, 2);
+        @include make-spacer(pl, 0);
+        @include make-spacer(pr, 1);
+      }
+
+      &:nth-child( odd ) {
+        @include make-spacer(mr, 2);
+        @include make-spacer(pl, 1);
+        @include make-spacer(pr, 0);
+      }
+    }
+  }
+
+  &.header {
+    @include make-spacer(pl, 0, sm);
+
+    @include media-breakpoint-down(sm) {
+      @include make-spacer(p, 0);
+      @include make-spacer(mb, 0);
+    }
+
+    @include media-breakpoint-up(md) {
+      width: rem(352px);
+    }
+  }
+
+  &.footer {
+    @include media-breakpoint-down(sm) {
+      @include make-spacer(mb, 0);
+    }
+  }
+}
+
+.headerText {
+  @include make-spacer(m, 2);
+  @include make-spacer(m, 0, md);
+  @include make-spacer(pb, 2);
+  @include make-spacer(pb, 0, md);
+
+  @include media-breakpoint-down(sm) {
+    border-bottom: rem(1px) solid var(--grey-200);
+  }
+}
+
+.columnTitle {
+  @include make-spacer(mb, 1);
+  @include font-size(12px, 16px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.subText,
+.subTextDate {
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 16px);
+
+  color: var(--grey-500);
+}
+
+.subTextDate {
+  @include make-spacer(pl, 2);
+}
+
+.status {
+  @include flex($align-items:center);
+  @include font-size(14px);
+  @include make-spacer(mb, 1);
+
+  font-weight: 500;
+}
+
+.featuredItem {
+  @include make-spacer(p, 0);
+  @include make-spacer(mt, 2);
+}
+
+.block {
+  border: 0;
+  background-color: var(--white);
+
+  @include media-breakpoint-down(sm) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: rem(1px) solid var(--grey-300);
+    border-radius: rem(8px);
+    box-shadow: 0 1px 3px var(--royal-blue-alpha-016);
+  }
+
+  @include media-breakpoint-up(sm) {
+    vertical-align: top;
+  }
+
+  // Modification
+
+  &.featured {
+    @include flex(space-between, $direction: column);
+
+    border: 0;
+    border-radius: rem(8px);
+    box-shadow: none;
+    background-color: var(--white-alpha-008);
+    background-position: calc(100% + 48px) calc(100% + 32px);
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    .logo {
+      @include aspect-ratio;
+
+      border-radius: rem(8px) rem(8px) 0 0;
+    }
+
+    .column {
+      @include make-spacer(px, 2);
+      @include make-spacer(pb, 2);
+      @include make-spacer(pt, 0);
+
+      display: grid;
+      position: relative;
+    }
+
+    .subTitle {
+      @include make-spacer(mb, 0);
+    }
+
+    .title,
+    .featuredItem {
+      color: var(--white);
+    }
+
+    .columnTitle {
+      @include flex($align-items: center);
+
+      font-weight: var(--wp-font-weight-normal);
+    }
+
+    .columnTitle,
+    .subText {
+      color: var(--grey-500);
+    }
+
+    .header {
+      @include make-spacer(p, 0);
+
+      width: auto;
+    }
+
+    .headerWrapper {
+      @include media-breakpoint-up(md) {
+        @include flex($direction: column);
+      }
+    }
+
+    .headerText {
+      @include make-spacer(p, 2);
+      @include make-spacer(m, 0);
+
+      border: 0;
+    }
+  }
+}

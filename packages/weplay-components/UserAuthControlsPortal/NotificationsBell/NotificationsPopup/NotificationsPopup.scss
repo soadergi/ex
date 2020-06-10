@@ -1,0 +1,45 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  --mobile-indent: 16px;
+
+  @include box-shadow;
+  @include size(auto, auto);
+  @include transition(#{opacity, visibility, transform}, 0.16s);
+
+  display: block;
+  position: fixed;
+  top: var(--mobile-indent);
+  right: var(--mobile-indent);
+  left: var(--mobile-indent);
+  transform: translateY(8px);
+  visibility: hidden;
+  opacity: 0;
+  z-index: $z-4;
+  border: 1px solid var(--grey-200);
+  border-radius: rem(8px);
+  background-color: var(--white);
+  padding-bottom: rem(3px);
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(mt, 1);
+
+    position: absolute;
+    top: 100%;
+    right: rem(40px);
+    left: auto;
+  }
+
+  &.isOpen {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.container {
+  @include media-breakpoint-up(sm) {
+    width: rem(440px);
+  }
+}

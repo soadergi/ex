@@ -1,0 +1,47 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.grid {
+  @include make-spacer(mx, auto);
+
+  @include media-breakpoint-up(sm) {
+    max-width: rem(792px);
+  }
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: rem(24px);
+    max-width: 100%;
+  }
+
+  &.forgeOfMastersGroup {
+    @include media-breakpoint-up(md) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &.forgeOfMastersLeagueSecondSeason {
+    grid-gap: rem(24px);
+  }
+}
+
+.note {
+  @include flex(flex-start, center);
+  @include make-spacer(mt, 2);
+  @include font-size(12px, 16px);
+
+  color: #9a969a;
+}
+
+.noteIcon {
+  @include make-spacer(mr, 1);
+  @include font-size(16px);
+
+  color: var(--grey-400);
+
+  &.invite {
+    @include font-size(24px);
+
+    color: var(--blue);
+  }
+}

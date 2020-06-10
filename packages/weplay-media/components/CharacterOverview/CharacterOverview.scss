@@ -1,0 +1,18 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(py, 6);
+
+  color: var(--white);
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: auto rem(448px);
+    grid-gap: rem(32px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: auto rem(466px);
+  }
+}

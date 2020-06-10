@@ -1,0 +1,26 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include font-size(20px, 28px);
+  @include flex(flex-start, center);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.image {
+  @include size(rem(48px));
+}
+
+.value {
+  @include font-size(16px, 24px);
+  @include make-spacer(mx, 1);
+
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.rise {
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-normal);
+}

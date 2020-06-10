@@ -1,0 +1,13 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex;
+  @include make-spacer(pt, 4);
+}
+
+.list {
+  @include flex(flex-start, center, row, wrap);
+  @include make-spacer(m, 0);
+  @include make-spacer(p, 0);
+  @include reset-list;
+}

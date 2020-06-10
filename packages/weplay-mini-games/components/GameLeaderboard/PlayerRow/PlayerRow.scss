@@ -1,0 +1,45 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include font-size(16px, 24px);
+  @include make-spacer(px, 1);
+
+  display: grid;
+  grid-template-columns: rem(64px) 1fr auto;
+
+  &:first-child {
+    font-weight: 700;
+  }
+
+  &:last-child {
+    border-radius: 0 0 rem(4px) rem(4px);
+  }
+
+  &:nth-child( even ) {
+    background: var(--blue-alpha-008);
+  }
+
+  &.accent {
+    background-color: #1e4992;
+  }
+
+  &.darkBlue {
+    background: var(--grey-500-alpha-064);
+
+    &:nth-child( even ) {
+      background: var(--royal-blue-alpha-08);
+    }
+
+    &.accent {
+      background: var(--blue-alpha-064);
+    }
+  }
+}
+
+.value {
+  @include make-spacer(py, 2);
+  @include make-spacer(px, 1);
+
+  word-break: break-word;
+  word-wrap: break-word;
+}

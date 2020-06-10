@@ -1,0 +1,30 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include font-size(12px, 16px);
+
+  display: block;
+  color: var(--grey-500);
+
+  &.isWarning {
+    color: var(--warning);
+  }
+
+  &.isError {
+    color: var(--error);
+  }
+
+  &.hasIcon {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: rem(8px);
+  }
+}
+
+.icon {
+  @include size(rem(20px));
+
+  position: relative;
+  top: rem(-4px);
+  fill: var(--warning);
+}

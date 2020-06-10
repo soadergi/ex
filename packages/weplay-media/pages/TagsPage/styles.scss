@@ -1,0 +1,25 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.title {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 5, sm);
+  @include make-spacer(pt, 1);
+  @include font-size(28px, 32px);
+
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(44px, 56px);
+  }
+}
+
+.content {
+  @include media-breakpoint-up(sm) {
+    column-count: 3;
+  }
+
+  @include media-breakpoint-up(md) {
+    column-count: 6;
+  }
+}

@@ -1,0 +1,31 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mt, 4);
+  @include make-spacer(mb, 8);
+  @include flex(center);
+}
+
+.name {
+  @include make-spacer(mr, 4);
+
+  text-align: left;
+}
+
+.pass {
+  text-align: left;
+}
+
+.title {
+  @include font-size(12px, 20px);
+  @include make-spacer(mb, 0);
+
+  color: var(--grey-300);
+}
+
+.data {
+  @include font-size(14px, 22px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-regular);
+}

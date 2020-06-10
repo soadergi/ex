@@ -1,0 +1,156 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+// stylelint-disable
+
+.slider {
+
+  :global {
+
+    .slick-dots {
+      @include reset-list();
+      @include make-spacer(mt, 2);
+
+      height: 0.25rem;
+      text-align: center;
+
+      li {
+        @include make-spacer(mx, half);
+
+        display: none;
+        vertical-align: top;
+        line-height: 0;
+      }
+
+      &__button {
+        @include size(0.5rem, 0.25rem);
+        @include make-spacer(p, 0);
+        @include transition(width);
+
+        position: relative;
+        border: 0;
+        border-radius: 0.25rem;
+        background-color: var(--grey-300);
+        overflow: hidden;
+        vertical-align: top;
+        line-height: 0;
+        color: transparent;
+        font-size: 0;
+      }
+    }
+  }
+
+  &Media {
+    background-color: var(--grey-100);
+
+    :global {
+
+      .slick-dots {
+
+        &__progress {
+          display: block;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: -100%;
+          background-color: var(--blue);
+          width: 100%;
+        }
+      }
+    }
+
+    .slider {
+
+      &Wrapper {
+        @include make-spacer(py, 3);
+        @include make-spacer(pt, 5, md);
+        @include make-spacer(pb, 3, md);
+
+        width: 100%;
+
+        :global {
+
+          .slick-dots {
+            margin-left: -0.5rem;
+            width: 100vw;
+
+            @include media-breakpoint-up(sm) {
+              margin-left: -1.5rem;
+            }
+
+            @include media-breakpoint-up(md) {
+              margin-left: 0;
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      &Container {
+        @include make-spacer(px, 1);
+        @include make-spacer(px, 3, sm);
+
+        overflow: hidden;
+
+        @include media-breakpoint-up(md) {
+          @include make-spacer(px, 0);
+
+          max-width: 55rem;
+          overflow: visible;
+        }
+
+        @include media-breakpoint-up(lg) {
+          max-width: 72rem;
+        }
+      }
+    }
+
+    :global {
+
+      .slick-active {
+
+        .slick-dots {
+
+          &__button {
+            background-color: var(--grey-300);
+            width: rem(208px);
+          }
+
+          &__progress {
+            animation: 4s slide ease-in;
+            animation-fill-mode: forwards;
+          }
+        }
+      }
+
+      .slick-slider {
+
+        .slick-active {
+          display: inline-block;
+        }
+
+        &:hover {
+
+          .slick-active {
+
+            .slick-dots__progress {
+              animation: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// stylelint-enable
+
+@keyframes slide {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}

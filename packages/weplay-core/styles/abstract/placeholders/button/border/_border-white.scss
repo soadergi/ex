@@ -1,0 +1,21 @@
+@mixin border-white {
+
+  &BorderWhite {
+    border-color: var(--white);
+    background-color: transparent;
+    color: var(--white);
+
+    .icon {
+      fill: var(--white);
+    }
+
+    &:hover {
+      border-color: var(--blue);
+      background-color: var(--blue);
+
+      .icon {
+        fill: var(--white);
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.wrapContent {
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: rem(24px);
+  }
+}
+
+.imageWrap {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, sm);
+  @include make-spacer(mb, 0, md);
+
+  display: block;
+  position: relative;
+  padding-top: 100%;
+  height: 0;
+  overflow: hidden;
+  color: var(--white);
+
+  &::after {
+    @include absolute-center;
+    @include transition(opacity);
+    @include size(100%);
+
+    opacity: 0;
+    background-color: var(--royal-blue-alpha-08);
+    content: '';
+  }
+
+  &:hover {
+
+    &::after {
+      opacity: 1;
+    }
+
+    .infoWrap {
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    &::after {
+      opacity: 1;
+    }
+
+    .infoWrap {
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+  }
+}
+
+.infoWrap {
+  @include make-spacer(px, 3);
+  @include transition(#{transform, opacity});
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-20%);
+  opacity: 0;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  @include font-size(24px, 30px);
+  @include make-spacer(mb, 2);
+}
+
+.text {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 0);
+}
+
+.image {
+  @include absolute-center;
+  @include size(100%);
+
+  object-fit: cover;
+}

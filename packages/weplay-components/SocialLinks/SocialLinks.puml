@@ -1,0 +1,17 @@
+@startuml
+
+!include SocialLink/SocialLink.puml
+
+object SocialLinks {
+ links: arrayOf(shape({
+   id: number.isRequired,
+   path: string.isRequired,
+   icon: string.isRequired,
+ })).isRequired,
+ modifiers: arrayOf(string).isRequired,
+ className: string,
+}
+
+SocialLinks --|> SocialLink
+
+@enduml

@@ -1,0 +1,169 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.arrow {
+  position: absolute;
+  fill: var(--blue);
+  width: rem(16px);
+  height: rem(8px);
+}
+
+.tooltip {
+  --tooltip-width: #{rem(290px)};
+  --arrow-size: #{rem(8px)};
+
+  @include box-shadow();
+  @include make-spacer(p, 2);
+  @include transition(#{transform, opacity});
+
+  position: absolute;
+  transform: translateY(1rem);
+  opacity: 0;
+  z-index: 10; // TODO: @Anton, please think about z-index layers composition
+  border-radius: rem(4px);
+  background-color: var(--blue);
+  min-width: var(--tooltip-width);
+  max-width: var(--tooltip-width);
+  height: auto;
+  white-space: normal;
+  color: var(--white);
+
+  &.isActive {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  // NEW STYLES
+
+  &.bottomStart {
+    top: calc(100% + var(--arrow-size));
+    left: 0;
+
+    .arrow {
+      top: calc(0% - var(--arrow-size));
+      right: auto;
+      bottom: auto;
+      left: rem(16px);
+    }
+  }
+
+  &.bottomCenter {
+    top: calc(100% + var(--arrow-size));
+    right: calc(50% - var(--tooltip-width) / 2);
+
+    .arrow {
+      top: calc(0% - var(--arrow-size));
+      right: calc(50% - var(--arrow-size));
+      bottom: auto;
+      left: auto;
+    }
+  }
+
+  &.bottomEnd {
+    top: calc(100% + var(--arrow-size));
+    right: 0;
+
+    .arrow {
+      top: calc(0% - var(--arrow-size));
+      right: rem(16px);
+      bottom: auto;
+      left: auto;
+    }
+  }
+
+  &.topStart {
+    bottom: calc(100% + var(--arrow-size));
+    left: 0;
+
+    .arrow {
+      top: auto;
+      right: auto;
+      bottom: calc(0% - var(--arrow-size));
+      left: rem(16px);
+      transform: rotateZ(180deg);
+    }
+  }
+
+  &.topEnd {
+    right: 0;
+    bottom: calc(100% + var(--arrow-size));
+
+    .arrow {
+      top: auto;
+      right: rem(16px);
+      bottom: calc(0% - var(--arrow-size));
+      left: auto;
+      transform: rotateZ(180deg);
+    }
+  }
+
+  &.leftTop {
+    top: 0;
+    right: calc(100% + var(--arrow-size));
+
+    .arrow {
+      top: rem(16px);
+      right: calc(0% - var(--arrow-size) - var(--arrow-size) / 2);
+      bottom: auto;
+      left: auto;
+      transform: rotateZ(90deg);
+    }
+  }
+
+  &.rightTop {
+    top: 0;
+    left: calc(100% + var(--arrow-size));
+
+    .arrow {
+      top: rem(16px);
+      right: auto;
+      bottom: auto;
+      left: calc(0% - var(--arrow-size) - var(--arrow-size) / 2);
+      transform: rotateZ(-90deg);
+    }
+  }
+}
+
+.title {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 1);
+
+  font-weight: 500;
+}
+
+.text {
+  @include font-size(14px, 22px);
+  @include make-spacer(m, 0);
+  @include make-spacer(mb, 2);
+
+  a {
+    @include font-size(14px, 22px);
+
+    text-decoration: underline;
+    color: var(--white);
+    font-weight: 700;
+  }
+}
+
+.button {
+  @include font-size(14px, 22px);
+
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.footer {
+  @include flex(space-between, center, row);
+
+  &.oneBtn {
+    @include flex(flex-start, center, row);
+  }
+}
+
+.link {
+  @include font-size(10px, 16px);
+  @include make-spacer(pl, 1);
+
+  text-decoration: underline;
+  color: var(--white);
+  font-weight: 700;
+}

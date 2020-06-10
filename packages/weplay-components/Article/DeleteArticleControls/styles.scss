@@ -1,0 +1,49 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.edit {
+  @include flex(flex-end, flex-start);
+
+  min-height: rem(32px);
+}
+
+.confirm {
+  @include font-size(10px, 16px);
+  @include flex(space-between, flex-start, row, wrap);
+
+  width: auto;
+}
+
+.control {
+  @include make-spacer(py, half);
+
+  border: 0;
+  background: transparent;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--blue);
+  }
+}
+
+.save {
+  @include make-spacer(px, 1);
+
+  color: var(--blue);
+}
+
+.remove {
+  @include make-spacer(pr, 0);
+  @include make-spacer(pl, 1);
+
+  color: var(--grey-500);
+}
+
+.confirmMessage {
+  @include make-spacer(px, 1);
+  @include make-spacer(py, half);
+
+  display: block;
+  border-radius: 0.5rem;
+  background-color: var(--grey-100);
+  color: var(--royal-blue);
+}

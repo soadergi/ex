@@ -1,0 +1,6 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.button {
+  @include font-size(16px, 48px);
+  @include make-spacer(px, 3);
+}

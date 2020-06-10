@@ -1,0 +1,53 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import '../../../variables';
+
+.block {
+  @include score-box-table;
+  @include make-spacer(pb, 3);
+}
+
+.cell {
+  @include flex(center, center);
+}
+
+.score {
+  @include font-size(32px, 24px);
+
+  font-weight: 700;
+}
+
+.user {
+  @include flex(flex-start, center);
+}
+
+.name {
+  @include word-break;
+  @include font-size(16px, 24px);
+
+  max-width: rem(144px);
+  white-space: normal;
+  font-weight: 700;
+}
+
+.wrapper {
+  @include make-spacer(ml, 1);
+
+  display: grid;
+  grid-template-columns: rem(48px) auto;
+  grid-column-gap: rem(8px);
+  align-items: center;
+}
+
+.iconWrapper {
+  flex: 0 0 rem(24px);
+}
+
+.icon {
+  @include transition(color);
+
+  color: var(--grey-500);
+
+  &.isOpen {
+    color: var(--blue);
+  }
+}

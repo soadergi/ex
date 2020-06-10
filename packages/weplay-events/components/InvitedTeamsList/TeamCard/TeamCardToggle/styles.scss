@@ -1,0 +1,75 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.icon {
+  @include make-spacer(ml, half);
+  @include transition(#{color, transform});
+
+  transform: rotate(0);
+  vertical-align: middle;
+  color: var(--grey-500);
+
+  &.isExpanded {
+    transform: rotate(180deg);
+  }
+}
+
+.block {
+  @include flex(flex-start, center);
+  @include make-spacer(p, 0);
+  @include make-spacer(ml, 2, md);
+  @include make-spacer(ml, 4, lg);
+  @include font-size(14px, 24px);
+  @include transition(color);
+
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  vertical-align: top;
+  text-align: right;
+  color: var(--blue);
+
+  .icon {
+    color: var(--blue);
+
+    @include media-breakpoint-up(md) {
+      color: var(--grey-500);
+    }
+  }
+
+  &:hover {
+    color: var(--blue);
+
+    .icon {
+      color: var(--blue);
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    max-width: rem(80px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(14px, 18px);
+
+    text-align: left;
+    color: var(--grey-500);
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(14px, 24px);
+
+    max-width: 100%;
+  }
+
+  &.isExpanded {
+    color: var(--grey-500);
+
+    .icon {
+      color: var(--grey-500);
+    }
+
+    @include media-breakpoint-only(md) {
+      max-width: 100%;
+    }
+  }
+}

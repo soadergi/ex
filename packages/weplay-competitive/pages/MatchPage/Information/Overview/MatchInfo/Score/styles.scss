@@ -1,0 +1,45 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$icon-offset: rem(-24px);
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+}
+
+.block {
+  @include font-size(24px, 32px);
+
+  grid-row: 1;
+  font-weight: 700;
+
+  &:first-child {
+    grid-column: 1;
+    text-align: right;
+
+    .icon {
+      left: $icon-offset;
+    }
+  }
+
+  &:last-child {
+    grid-column: 3;
+
+    .icon {
+      right: $icon-offset;
+    }
+  }
+}
+
+.scoreWrapper {
+  @include word-break(inline-block) {
+    position: relative;
+    vertical-align: middle;
+  }
+
+  &.activeRound {
+    color: var(--blue);
+  }
+}

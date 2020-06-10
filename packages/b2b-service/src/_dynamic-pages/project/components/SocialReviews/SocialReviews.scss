@@ -1,0 +1,17 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mt, 5);
+  @include make-spacer(mt, 6, sm);
+
+  @include media-breakpoint-only(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: rem(24px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include flex(space-between, $wrap: wrap);
+  }
+}

@@ -1,0 +1,70 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.item {
+  @include make-spacer(mr, 9);
+  @include make-spacer(pb, 6);
+
+  position: relative;
+}
+
+.button {
+  @include reset-button;
+
+  position: relative;
+  border: 1px solid var(--white-alpha-024);
+  border-radius: 50%;
+  overflow: hidden;
+
+  &::before {
+    @include absolute-center;
+    @include size(100%);
+    @include transition(background-color);
+
+    background-color: var(--royal-blue-alpha-048);
+    content: '';
+  }
+
+  &.active,
+  &:hover {
+    border-color: var(--magenta);
+
+    &::before {
+      background-color: transparent;
+    }
+  }
+}
+
+.image {
+  @include size(rem(80px));
+}
+
+.dot {
+  @include size(rem(24px));
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: var(--magenta-alpha-024);
+
+  &::before {
+    @include absolute-center;
+    @include size(rem(8px));
+
+    border-radius: 50%;
+    background-color: var(--magenta);
+    content: '';
+  }
+
+  &::after {
+    @include size(rem(1px), rem(33px));
+
+    position: absolute;
+    top: rem(-24px);
+    left: 50%;
+    background-color: var(--magenta);
+    content: '';
+  }
+}

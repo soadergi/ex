@@ -1,0 +1,16 @@
+@startuml
+
+!include ./ModalHeader/Header.puml
+
+title Modal base
+
+Object Modal {
+    isShown: false
+    closeModalHandler: () => {}
+    modifiers=['paddingLess']
+    children: node
+}
+
+Modal <|-- Header : "may not include Header"
+
+@enduml

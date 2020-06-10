@@ -1,0 +1,57 @@
+// This modifier uses on `Article Page` at the bottom of article content
+// in case when current article has similar articles at the right side of article
+
+@mixin content-mod {
+
+  &.content {
+    @include make-spacer(py, 5, sm);
+
+    &::after {
+      content: none;
+    }
+
+    &::before {
+      bottom: rem(-36px);
+    }
+
+    .form {
+      @include media-breakpoint-only(sm) {
+        margin: auto;
+        max-width: rem(400px);
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+
+    .submitBlock {
+      @include media-breakpoint-only(sm) {
+        text-align: center;
+      }
+    }
+
+    .contentBlock {
+      @include make-spacer(pr, 0);
+      @include make-spacer(mb, 3);
+
+      @include media-breakpoint-only(sm) {
+        @include make-spacer(mx, auto);
+
+        max-width: rem(400px);
+        text-align: center;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+
+    &.hasSuccess {
+
+      .submitBlock {
+        text-align: left;
+      }
+    }
+  }
+}

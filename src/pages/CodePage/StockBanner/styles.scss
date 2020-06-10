@@ -1,0 +1,89 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.section {
+  @include make-spacer(py, 13);
+  @include make-spacer(px, 3);
+  @include make-spacer(py, 16, lg);
+}
+
+.text {
+  @include font-size(28px, 40px);
+
+  display: inline-block;
+  margin: 0 auto;
+  max-width: rem(1120px);
+  font-weight: 700;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(40px, 48px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(56px, 56px);
+
+    display: block;
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(80px, 96px);
+  }
+}
+
+.colorGray {
+  color: var(--grey-300);
+}
+
+.textBlock {
+  @include make-spacer(mb, 4);
+  @include make-spacer(mx, 2);
+}
+
+.title {
+  @include font-size(40px, 56px);
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 0, sm);
+
+  font-weight: 500;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(56px, 64px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(80px, 96px);
+  }
+}
+
+.subTitle {
+  @include make-spacer(mb, 0);
+  @include font-size(14px, 24px);
+
+  color: var(--grey-500);
+}
+
+.description {
+  @include make-spacer(mb, 1);
+  @include font-size(22px, 32px);
+
+  font-weight: 500;
+}
+
+.img {
+  display: block;
+  position: relative;
+  left: -20%;
+  width: 140%;
+  height: auto;
+
+  @include media-breakpoint-up(sm) {
+    left: 0;
+    width: 100%;
+  }
+}

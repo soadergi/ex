@@ -1,0 +1,45 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(px, 3);
+  @include make-spacer(py, 6);
+
+  border-radius: rem(8px);
+  background-color: var(--royal-blue);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+}
+
+.header {
+  @include flex(center);
+  @include make-spacer(mb, 3);
+
+  height: rem(40px);
+}
+
+.logoWrap {
+  @include make-spacer(pr, 2);
+  @include make-spacer(mr, 2);
+
+  position: relative;
+
+  &::after {
+    @include size(rem(1px), rem(40px));
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--white-alpha-024);
+    content: '';
+  }
+}
+
+.logo {
+  @include make-spacer(py, half);
+}
+
+.points {
+  @include make-spacer(py, 1);
+}

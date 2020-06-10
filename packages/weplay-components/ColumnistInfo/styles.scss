@@ -1,0 +1,39 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex(flex-start, center);
+}
+
+.avatar {
+  @include size(rem(32px));
+
+  flex-basis: auto;
+  flex-shrink: 0;
+}
+
+.link {
+  @include font-size(12px, 18px);
+
+  display: block;
+  width: 100%;
+  color: var(--royal-blue);
+  font-weight: 700;
+}
+
+.position {
+  @include make-spacer(ml, half);
+
+  color: var(--grey-500);
+  font-weight: 400;
+
+  &::before {
+    @include size(3px);
+    @include make-spacer(mr, half);
+
+    display: inline-block;
+    border-radius: 50%;
+    background: var(--grey-500);
+    vertical-align: middle;
+    content: '';
+  }
+}

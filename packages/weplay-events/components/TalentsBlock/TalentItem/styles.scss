@@ -1,0 +1,244 @@
+@import 'weplay-core/styles/_initialization';
+@import 'weplay-core/styles/v-2-0/_init';
+
+.block {
+  text-align: center;
+
+  &.isActive {
+
+    .textWrap {
+      transition-delay: 280ms;
+      transition-duration: 300ms;
+      opacity: 1;
+    }
+  }
+}
+
+.dota {
+  border-color: var(--magenta);
+
+  .avatarBorder {
+    border-color: var(--magenta);
+  }
+
+  .iconWrap {
+    background-color: var(--magenta);
+  }
+}
+
+.avatarBorder {
+  @include size(rem(152px));
+  @include make-spacer(mb, 3);
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+}
+
+.avatar {
+  @include absolute-center;
+}
+
+.iconWrap {
+  @include size(rem(36px));
+
+  position: absolute;
+  right: 0;
+  bottom: rem(8px);
+  border-radius: 50%;
+  background-color: var(--blue);
+}
+
+.textWrap {
+  @include transition(#{transform, opacity}, 0ms);
+
+  opacity: 0;
+
+  @include media-breakpoint-up(md) {
+    opacity: 1;
+  }
+}
+
+.wrapEvents {
+  @include flex(center);
+
+  @include media-breakpoint-up(sm) {
+    display: inline-block;
+  }
+}
+
+.wrapEvent {
+  @include make-spacer(mb, 2);
+
+  display: block;
+
+  @include media-breakpoint-up(sm) {
+    @include flex;
+  }
+}
+
+.icon {
+  @include absolute-center;
+}
+
+.eventIcon {
+  @include make-spacer(mr, 1);
+}
+
+.nickName {
+  @include make-spacer(m, 0);
+
+  font-weight: 500;
+}
+
+.name {
+  @include make-spacer(mb, 4);
+
+  font-weight: 500;
+}
+
+.position {
+  @include make-spacer(mb, 5);
+  @include font-size(12px, 18px);
+
+  display: block;
+  color: var(--grey-500);
+}
+
+.eventName {
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 18px);
+
+  display: none;
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+}
+
+.socialsWrap {
+  position: relative;
+
+  &:hover {
+
+    .social {
+
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    .links {
+      display: block;
+    }
+  }
+}
+
+.links {
+  @include flex(space-around, center);
+  @include box-shadow(1px 1px 8px var(--black-alpha-024));
+  @include make-spacer(p, 1);
+
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: rem(-40px);
+  left: 0;
+  border-radius: rem(4px);
+  background-color: var(--royal-blue);
+  color: var(--white);
+}
+
+.social {
+  @include make-spacer(mb, 0);
+  @include make-spacer(mx, auto);
+
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  color: var(--blue);
+  font-weight: 500;
+
+  &::after {
+    @include transition(#{transform, opacity}, 0.2s);
+    @include size(auto, 1px);
+    @include make-spacer(mx, auto);
+
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    border-bottom: 1px dashed;
+    content: '';
+  }
+}
+
+.buttonClose {
+  @include reset-button;
+
+  position: absolute;
+  top: rem(16px);
+  right: rem(16px);
+  color: var(--grey-500);
+}
+
+.socialModal {
+  @include make-spacer(pt, 4);
+  @include font-size(24px, 32px);
+
+  color: var(--white);
+  font-weight: 700;
+}
+
+.linksModal {
+  display: block;
+  color: var(--blue);
+}
+
+.mainFomLeague {
+  @include make-spacer(mb, 6);
+  @include make-spacer(mb, 0, md);
+
+  border-right: 0;
+  border-bottom: 1px solid var(--grey-200);
+  width: 100%;
+
+  .nickName,
+  .name {
+    @include font-size(20px, 24px);
+  }
+
+  .nickName {
+    color: var(--royal-blue);
+  }
+
+  .name {
+    @include make-spacer(mb, 2);
+
+    color: var(--grey-500);
+  }
+
+  .avatarBorder {
+    border: 0;
+  }
+
+  .textWrap {
+    opacity: inherit;
+  }
+
+  @include media-breakpoint-up(sm) {
+    max-width: rem(416px);
+  }
+
+  @include media-breakpoint-up(md) {
+    border-bottom: 0;
+
+    &:not( :last-child ) {
+      border-right: 1px solid var(--grey-200);
+    }
+  }
+}

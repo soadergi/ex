@@ -1,0 +1,58 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+@mixin container {
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 4, md);
+  @include make-spacer(mx, auto);
+
+  width: 100%;
+}
+
+.fluid {
+  @include container;
+  @include make-spacer(px, 4, md);
+
+  max-width: none;
+  max-width: rem(1072px);
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(848px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1120px);
+  }
+}
+
+.wide {
+  @include container;
+
+  max-width: rem(1080px);
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(848px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1392px);
+  }
+}
+
+.bracketsWrap {
+  --height-gap: #{rem(96px)};
+
+  @include flex(flex-start, stretch);
+  @include make-spacer(pb, 5);
+
+  width: 100%;
+  height: auto;
+  min-height: rem(496px);
+  max-height: calc(100vh - (var(--wp-header-height) + var(--height-gap)));
+  overflow: auto;
+}
+
+.videowrapper {
+  position: relative;
+  z-index: 10;
+}

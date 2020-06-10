@@ -1,0 +1,140 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include size(2.5rem);
+
+  position: relative;
+  flex: 0 0 2.5rem;
+  max-width: 2.5rem;
+
+  // Modifications
+
+  &.extra-sm {
+    @include size(rem(16px));
+
+    flex: 0 0 rem(80px);
+    max-width: rem(16px);
+  }
+
+  &.extra-xl {
+    @include size(rem(128px));
+
+    flex: 0 0 rem(128px);
+    max-width: rem(128px);
+  }
+
+  &.square {
+
+    .image {
+      border-radius: rem(4px);
+    }
+  }
+
+  &.lg {
+    @include size(rem(88px));
+
+    flex: 0 0 rem(88px);
+    max-width: rem(88px);
+
+    @include media-breakpoint-down(md) {
+      @include size(rem(64px));
+
+      flex: 0 0 rem(64px);
+      max-width: rem(64px);
+    }
+  }
+
+  &.sm {
+    @include box-shadow(0 4px 4px var(--blue-alpha-032));
+
+    border-radius: 50%;
+    width: rem(40px);
+
+    @include media-breakpoint-up(sm) {
+      @include size(3rem);
+
+      flex: 0 0 3rem;
+      max-width: 3rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include size(4rem);
+
+      flex: 0 0 4rem;
+      max-width: 4rem;
+    }
+  }
+
+  &.width {
+
+    &-136 {
+      @include size(rem(136px));
+
+      flex: 0 0 rem(136px);
+      max-width: rem(136px);
+    }
+  }
+}
+
+.image {
+  @include size(100%);
+  @include flex(center, center);
+  @include make-spacer(mb, 0);
+
+  position: relative;
+  z-index: 0;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.placeholder {
+  @include size(100%);
+  @include flex(center, center);
+  @include make-spacer(p, 1);
+
+  background-color: var(--blue);
+}
+
+.dark-blue-bg {
+
+  .image {
+    background-color: var(--royal-blue);
+  }
+}
+
+// Block Modifiers
+
+.placeholderDark {
+
+  .placeholder {
+    background-color: var(--royal-blue);
+  }
+}
+
+.isFluid {
+  @include size(100%);
+
+  flex-basis: auto;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.hasDarkBackground {
+
+  .image {
+    background-color: var(--royal-blue);
+  }
+}
+
+.isDisableBorder {
+
+  .image {
+    border: 0;
+    border-radius: 0;
+  }
+}

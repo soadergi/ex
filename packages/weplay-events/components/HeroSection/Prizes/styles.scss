@@ -1,0 +1,12 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.prize {
+
+  &List {
+    @include reset-list;
+    @include make-spacer(pb, 3);
+    @include flex(center, center, row, wrap);
+
+    color: var(--white);
+  }
+}

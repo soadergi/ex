@@ -1,0 +1,10 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.secondaryDiscord {
+  border-color: var(--discord);
+  color: var(--discord);
+
+  &:hover {
+    color: var(--discord-hover);
+  }
+}

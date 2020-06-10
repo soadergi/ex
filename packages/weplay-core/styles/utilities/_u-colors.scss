@@ -1,0 +1,20 @@
+// Mark text elem in main accent color
+
+.u-color {
+
+  &-error {
+    color: var(--error) !important; /* stylelint-disable-line declaration-no-important */
+  }
+
+  &-white {
+    color: var(--white) !important; /* stylelint-disable-line declaration-no-important */
+  }
+
+  &-success {
+    color: var(--success) !important; /* stylelint-disable-line declaration-no-important */
+  }
+
+  &-blue {
+    color: var(--blue) !important; /* stylelint-disable-line declaration-no-important */
+  }
+}

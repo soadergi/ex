@@ -1,0 +1,82 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$message-min-height: rem(192px);
+$image-max-width: rem(96px);
+$text-max-width: rem(520px);
+
+.message {
+  @include make-spacer(py, 3);
+  @include make-spacer(px, 2);
+
+  border: 1px dashed var(--grey-300);
+  border-radius: 0.5rem;
+
+  @include media-breakpoint-up(sm) {
+    @include flex(center, center, column);
+
+    min-height: $message-min-height;
+  }
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.image {
+  @include make-spacer(mb, 2);
+
+  max-width: $image-max-width;
+  height: auto;
+
+  @include media-breakpoint-up(sm) {
+    max-width: 100%;
+  }
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include font-size(22px, 32px);
+
+  font-weight: 500;
+
+  @include media-breakpoint-up(md) {
+    @include font-size(28px, 32px);
+  }
+}
+
+.text {
+  @include make-spacer(px, 3, sm);
+  @include make-spacer(mb, 3);
+  @include font-size(16px, 24px);
+
+  max-width: $text-max-width;
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    @include make-spacer(mx, auto, sm);
+    @include font-size(18px, 32px);
+
+    text-align: center;
+  }
+}
+
+.bannerButton {
+  @include make-spacer(mx, auto);
+  @include make-spacer(mb, 1);
+
+  display: block;
+
+  @extend %button;
+}
+
+.bannerButtonReg {
+  @include make-spacer(px, 0);
+  @include make-spacer(mx, auto);
+
+  display: block;
+  border: 0;
+  background-color: transparent;
+  color: var(--blue);
+  font-size: rem(12px);
+  font-weight: 500;
+}

@@ -1,0 +1,186 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  border: 0;
+  background-color: var(--white);
+
+  @include media-breakpoint-down(sm) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: rem(1px) solid var(--grey-300);
+    border-radius: rem(8px);
+    box-shadow: 0 1px 3px var(--royal-blue-alpha-016);
+  }
+
+  @include media-breakpoint-up(sm) {
+    vertical-align: top;
+  }
+}
+
+.column {
+  @include make-spacer(px, 2);
+  @include make-spacer(pt, 0);
+  @include make-spacer(py, 3, md);
+  @include make-spacer(pb, 2);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, md);
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
+
+  &.half {
+    @include media-breakpoint-down(sm) {
+
+      &:nth-child( even ) {
+        @include make-spacer(ml, 2);
+        @include make-spacer(pl, 0);
+        @include make-spacer(pr, 1);
+      }
+
+      &:nth-child( odd ) {
+        @include make-spacer(mr, 2);
+        @include make-spacer(pl, 1);
+        @include make-spacer(pr, 0);
+      }
+    }
+  }
+
+  &.header {
+    @include make-spacer(pl, 0, sm);
+
+    @include media-breakpoint-down(sm) {
+      @include make-spacer(p, 0);
+      @include make-spacer(mb, 0);
+    }
+
+    @include media-breakpoint-up(md) {
+      width: rem(352px);
+    }
+  }
+
+  &.member {
+    @include make-spacer(mx, 2);
+    @include make-spacer(px, 0);
+    @include make-spacer(px, 2, md);
+  }
+}
+
+.logo {
+  @include aspect-ratio;
+
+  position: relative;
+  border-radius: rem(4px);
+  background-color: var(--royal-blue);
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    height: rem(72px);
+  }
+}
+
+.icon {
+  @include font-size(20px);
+
+  position: absolute;
+  top: rem(16px);
+  left: rem(16px);
+  color: var(--blue);
+
+  @include media-breakpoint-up(md) {
+    top: rem(8px);
+    left: rem(8px);
+  }
+}
+
+.link {
+  @include word-break;
+  @include font-size(12px, 16px);
+}
+
+.common {
+  @include media-breakpoint-down(sm) {
+    grid-column: 1 / 3;
+  }
+}
+
+.headerWrapper {
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: rem(128px) rem(200px);
+    grid-column-gap: rem(24px);
+  }
+}
+
+.hasBorder {
+  @include media-breakpoint-down(sm) {
+    border-bottom: rem(1px) solid var(--grey-200);
+  }
+}
+
+.title {
+  @include make-spacer(mb, 1);
+  @include font-size(16px, 24px);
+  @include word-break;
+
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.subTitle {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 1);
+
+  font-weight: var(--wp-font-weight-regular);
+
+  @include media-breakpoint-up(md) {
+    @include font-size(14px);
+  }
+}
+
+.marker {
+  color: var(--grey-500);
+}
+
+.headerText {
+  @include make-spacer(m, 2);
+  @include make-spacer(m, 0, md);
+  @include make-spacer(pb, 2);
+  @include make-spacer(pb, 0, md);
+
+  @include media-breakpoint-down(sm) {
+    border-bottom: rem(1px) solid var(--grey-200);
+  }
+}
+
+.columnTitle {
+  @include make-spacer(mb, 1);
+  @include font-size(12px, 16px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.subText,
+.subTextDate {
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 16px);
+
+  color: var(--grey-500);
+}
+
+.subTextDate {
+  @include make-spacer(pl, 2);
+}
+
+.status {
+  @include flex($align-items:center);
+  @include font-size(14px);
+  @include make-spacer(mb, 1);
+
+  font-weight: var(--wp-font-weight-regular);
+}

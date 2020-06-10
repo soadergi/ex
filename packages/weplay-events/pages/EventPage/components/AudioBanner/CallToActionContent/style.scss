@@ -1,0 +1,30 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  width: 100%;
+}
+
+.wrapContent {
+  display: grid;
+}
+
+.title {
+  @include make-spacer(mb, 3);
+  @include font-size(24px, 32px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.text {
+  @include make-spacer(mb, 6);
+  @include font-size(16px, 24px);
+
+  color: var(--white-alpha-08);
+}
+
+.button {
+  width: rem(232px);
+  font-weight: var(--wp-font-weight-regular);
+}

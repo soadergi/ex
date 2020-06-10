@@ -1,0 +1,27 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  --font-size: 24px;
+
+  @include flex(center, center, $display: inline-flex);
+  @include font-size(var(--font-size));
+
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.small {
+  --font-size: 20px;
+}
+
+.large {
+  --font-size: 32px;
+}
+
+.svg {
+  @include size(1em);
+
+  display: inline-block;
+  user-select: none;
+  fill: currentColor;
+}

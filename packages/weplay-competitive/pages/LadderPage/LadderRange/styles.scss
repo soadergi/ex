@@ -1,0 +1,42 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.container {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 0, sm);
+}
+
+.subTitle {
+  @include make-spacer(mr, 3);
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 1, sm);
+
+  display: inline-block;
+  vertical-align: top;
+}
+
+.status {
+  @include make-spacer(ml, 0);
+  @include make-spacer(ml, 2, md);
+  @include make-spacer(mt, 1);
+  @include make-spacer(mt, 0, md);
+}
+
+.info {
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 6, sm);
+  @include make-spacer(mt, 0);
+  @include make-spacer(mt, 2, sm);
+  @include flex($direction: column);
+  @include font-size(14px, 22px);
+
+  color: var(--grey-300);
+
+  .status {
+    width: max-content;
+  }
+
+  @include media-breakpoint-up(md) {
+    @include flex($direction: row);
+    @include font-size(16px, 24px);
+  }
+}

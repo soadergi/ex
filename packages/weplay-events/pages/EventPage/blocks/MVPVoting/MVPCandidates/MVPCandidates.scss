@@ -1,0 +1,57 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mx, auto);
+  @include make-spacer(py, 7);
+
+  position: relative;
+  border-top: 1px solid var(--grey-200);
+}
+
+.header {
+  @include flex($direction: column);
+  @include font-size(20px, 28px);
+  @include make-spacer(mb, 4);
+
+  color: var(--royal-blue);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(24px, 32px);
+
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.title {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, sm);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.text {
+  @include make-spacer(mb, 0);
+  @include flex($align-items: center);
+  @include font-size(16px, 24px);
+
+  color: var(--success);
+  font-weight: var(--wp-font-weight-normal);
+}
+
+.wrapCandidates {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(rem(240px), 1fr));
+  grid-template-columns: auto;
+  row-gap: rem(46px);
+  column-gap: rem(40px);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(auto-fill, minmax(rem(160px), 1fr));
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(auto-fill, minmax(rem(202px), 1fr));
+  }
+}

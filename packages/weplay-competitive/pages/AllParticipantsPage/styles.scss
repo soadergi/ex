@@ -1,0 +1,12 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.grid {
+  @include make-spacer(mb, 4);
+
+  display: grid;
+  grid-row-gap: rem(8px);
+}
+
+.counter {
+  @include make-spacer(mb, 2);
+}

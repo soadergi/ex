@@ -1,0 +1,99 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  --error-color: #fdecee;
+  --warning-color: #fff7ed;
+  --success-color: #eefbf2;
+
+  @include make-spacer(py, 2);
+  @include make-spacer(px, 6);
+
+  position: relative;
+  border: 1px solid var(--dark-grey);
+  border-radius: rem(8px);
+  background-color: var(--royal-blue);
+  color: var(--grey-500);
+
+  &:not( .error ):not( .warning ):not( .success ) {
+
+    .text {
+      color: var(--white);
+    }
+  }
+
+  &.error {
+    border-color: var(--error);
+    background-color: var(--error-color);
+    color: var(--error);
+  }
+
+  &.warning {
+    border-color: var(--warning);
+    background-color: var(--warning-color);
+    color: var(--warning);
+  }
+
+  &.success {
+    border-color: var(--success);
+    background-color: var(--success-color);
+    color: var(--success);
+  }
+
+}
+
+.icon {
+  position: absolute;
+  top: rem(16px);
+  left: rem(16px);
+}
+
+.text {
+  @include font-size(12px, 18px);
+  @include make-spacer(mb, 0);
+  @include make-spacer(mb, 2, sm);
+
+  position: relative;
+  max-width: rem(400px);
+  color: var(--royal-blue);
+  font-weight: 400;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(14px, 21px);
+  }
+}
+
+.infoWrap {
+  @include flex($display: column);
+  @include make-spacer(mt, 1);
+  @include font-size(12px, 18px);
+
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between);
+  }
+}
+
+.date {
+  @include reset-list;
+  @include make-spacer(mt, 1);
+  @include make-spacer(mt, 0, sm);
+
+  li {
+    display: inline-block;
+
+    &:last-child {
+      @include make-spacer(ml, half);
+      @include make-spacer(pl, 1);
+
+      position: relative;
+
+      &::before {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        content: '\2022';
+      }
+    }
+  }
+}

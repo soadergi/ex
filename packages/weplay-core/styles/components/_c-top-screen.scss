@@ -1,0 +1,662 @@
+// stylelint-disable
+
+.c-top-screen {
+  @include flex(flex-start, stretch, column);
+  @include make-spacer(pb, 7);
+  @include make-spacer(pt, 7);
+
+  position: relative;
+  box-shadow: 0 0 8px 4px var(--black-alpha-024);
+  background-color: var(--grey-300);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: calc(100vh / 3);
+  overflow: hidden;
+
+  &__sticker-block {
+    @include size(rem(104px));
+    @include make-spacer(mb, 2);
+    @include make-spacer(mb, 4, md);
+    @include make-spacer(mx, auto);
+
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+  }
+
+  &--search-tags {
+    position: relative;
+    z-index: 1;
+    min-height: rem(360px);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      background-color: rgba(0, 0, 0, 0.25);
+      content: '';
+    }
+
+    .c-top-screen {
+
+      &__container {
+        justify-content: center;
+      }
+
+      &__text {
+        max-width: 32rem;
+      }
+    }
+
+    .c-search-results {
+      @include make-spacer(mb, 0);
+
+      &__wrapper {
+        @include make-spacer(mb, 2);
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      min-height: rem(500px);
+    }
+  }
+
+  &--code-page {
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &--special-project {
+    min-height: rem(360px);
+
+    &::before {
+      @include size(100%);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: rgba(0, 0, 0, 0.24);
+      content: '';
+    }
+
+    .c-top-screen {
+
+      &__container {
+        justify-content: center;
+      }
+
+      &__text {
+        max-width: rem(736px);
+        text-align: left;
+
+        @include media-breakpoint-up(sm) {
+          text-align: center;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      min-height: rem(500px);
+    }
+
+    &_color {
+      background-color: var(--royal-blue);
+
+      &::before {
+        display: none;
+      }
+
+      .c-top-screen__sticker-block {
+        display: block;
+      }
+    }
+  }
+
+  //for voting-page styles
+
+  &--voting-stage-2 {
+    border-bottom: 30px solid var(--black);
+    background-attachment: scroll;
+    background-position: left 9%;
+
+    &::before {
+      left: -55px;
+      background-position: left bottom;
+
+      @include media-breakpoint-up(sm) {
+        left: -90px;
+      }
+
+      @include media-breakpoint-up(md) {
+        left: -122px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        left: -158px;
+      }
+    }
+
+    &::after {
+      right: -55px;
+      transform: scaleX(-1);
+      background-position: right bottom;
+
+      @include media-breakpoint-up(sm) {
+        right: -90px;
+      }
+
+      @include media-breakpoint-up(md) {
+        right: -122px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        right: -158px;
+      }
+    }
+
+    &::after,
+    &::before {
+      top: auto;
+      bottom: -10px;
+      width: rem(208px);
+      height: rem(99px);
+
+      @include media-breakpoint-up(sm) {
+        bottom: -16px;
+        width: rem(328px);
+        height: rem(155px);
+      }
+
+      @include media-breakpoint-up(md) {
+        bottom: -26px;
+        width: rem(448px);
+        height: rem(212px);
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: rem(560px);
+        height: rem(266px);
+      }
+    }
+
+    .c-top-screen {
+
+      &__lead,
+      &__subtitle,
+      &__text {
+        color: var(--white);
+      }
+
+      &__title {
+        @include font-size(24px, 32px);
+
+        @include media-breakpoint-up(sm) {
+          @include font-size(32px, 40px);
+        }
+
+        @include media-breakpoint-up(md) {
+          @include font-size(40px, 56px);
+        }
+      }
+
+      &__description {
+        @include font-size(24px, 32px);
+
+        display: block;
+        color: var(--warning);
+
+        @include media-breakpoint-up(sm) {
+          @include font-size(32px, 40px);
+        }
+
+        @include media-breakpoint-up(md) {
+          @include font-size(40px, 56px);
+        }
+      }
+
+      &__lead {
+        @include make-spacer(mb, 2);
+        @include make-spacer(mb, 3, sm);
+        @include make-spacer(mb, 2);
+        @include font-size(12px, 16px);
+
+        max-width: 40rem;
+
+        @include media-breakpoint-up(sm) {
+          @include font-size(16px, 24px);
+        }
+
+        @include media-breakpoint-up(md) {
+          @include font-size(16px, 32px);
+        }
+      }
+
+      &__text {
+        @include font-size(10px, 16px);
+
+        a {
+          color: var(--warning);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: calc(var(--wp-header-height) + 2rem);
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__content {
+    @include flex(space-between, stretch, column);
+
+    position: relative;
+    flex: 1 0 auto;
+    z-index: 2;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      align-items: center;
+    }
+  }
+
+  &__title {
+    @include make-spacer(mb, 2);
+
+    display: block;
+    line-height: 1.14;
+    color: var(--white);
+    font-size: rem(28px);
+    font-weight: 700;
+
+    @include media-breakpoint-up(md) {
+      line-height: 1.27;
+      font-size: rem(32px);
+    }
+
+    @include media-breakpoint-up(md) {
+      line-height: 1.27;
+      font-size: rem(44px);
+    }
+  }
+
+  &__description {
+    @include font-size(40px, 56px);
+
+    display: block;
+    color: var(--magenta);
+  }
+
+  &__text {
+    @include make-spacer(mb, 0);
+
+    text-align: left;
+    line-height: 1.72;
+    color: var(--white);
+    font-size: rem(14px);
+
+    @include media-breakpoint-up(sm) {
+      text-align: center;
+    }
+  }
+
+  &__container {
+    @include flex(flex-start, center, column);
+
+    position: relative;
+    flex: 1 0 auto;
+    z-index: 3;
+
+    @include media-breakpoint-down(xs) {
+      @include flex(flex-start, flex-start, column);
+    }
+  }
+
+  &--reshuffle {
+    @include make-spacer(pb, 1);
+
+    position: relative;
+    box-shadow: none;
+
+    &::before {
+      @include absolute-center();
+      @include size(rem(242px));
+
+      display: block;
+      opacity: 0.08;
+      z-index: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+
+      @include media-breakpoint-up(sm) {
+        @include size(rem(485px));
+      }
+
+      @include media-breakpoint-up(md) {
+        @include size(rem(640px));
+      }
+    }
+
+    .c-top-screen {
+
+      &__text {
+        max-width: 17rem;
+        line-height: 1.33;
+        color: var(--royal-blue);
+        font-size: rem(12px);
+
+        @include media-breakpoint-up(sm) {
+          max-width: 27rem;
+          line-height: 1.72;
+          font-size: rem(14px);
+        }
+
+        @include media-breakpoint-up(md) {
+          line-height: 1.5;
+          font-size: rem(16px);
+        }
+
+        &--lg {
+          line-height: 1.33;
+          color: var(--grey-500);
+          font-size: rem(18px);
+          font-weight: 500;
+
+          @include media-breakpoint-up(sm) {
+            line-height: 1.45;
+            font-size: rem(22px);
+          }
+
+          @include media-breakpoint-up(md) {
+            line-height: 1.14;
+            font-size: rem(28px);
+          }
+        }
+
+        &--label {
+          color: var(--grey-500);
+        }
+      }
+
+      &__date {
+        color: var(--grey-500);
+      }
+    }
+
+    .c-reshuffle-logo {
+      @include flex(center, center, column);
+      @include make-spacer(mb, 2);
+      @include make-spacer(mb, 3, md);
+
+      &__icon {
+        @include size(40px);
+        @include make-spacer(mb, 1);
+        @include make-spacer(mb, 2, sm);
+
+        @include media-breakpoint-up(sm) {
+          @include size(64px);
+        }
+
+        @include media-breakpoint-up(md) {
+          @include size(88px);
+        }
+      }
+
+      &__text {
+        max-width: rem(192px);
+
+        @include media-breakpoint-up(sm) {
+          max-width: rem(320px);
+        }
+
+        @include media-breakpoint-up(md) {
+          max-width: rem(400px);
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-top: calc(var(--wp-header-height) + 3.5rem);
+    }
+  }
+
+  &--code {
+    @include make-spacer(pb, 0);
+
+    position: relative;
+    box-shadow: none;
+    background-position: left;
+    padding-top: 6.5rem;
+
+    @include media-breakpoint-up(md) {
+      padding-top: calc(6.5rem + var(--wp-header-height));
+    }
+  }
+
+  &--voting {
+    position: relative;
+    box-shadow: none;
+    background-color: var(--white);
+    overflow: hidden;
+    text-align: center;
+
+    &::before {
+      top: -80px;
+      left: -80px;
+      background-position: left top;
+      height: rem(280px);
+
+      @include media-breakpoint-up(sm) {
+        top: -48px;
+        left: -64px;
+        height: rem(350px);
+      }
+
+      @include media-breakpoint-up(md) {
+        left: -108px;
+        height: 100%;
+      }
+
+      @include media-breakpoint-up(lg) {
+        left: 0;
+      }
+    }
+
+    &::after {
+      right: -112px;
+      bottom: 0;
+      background-position: right bottom;
+      height: rem(260px);
+
+      @include media-breakpoint-up(sm) {
+        right: -88px;
+        height: rem(330px);
+      }
+
+      @include media-breakpoint-up(md) {
+        right: -180px;
+        height: 100%;
+      }
+
+      @include media-breakpoint-up(lg) {
+        right: 0;
+      }
+    }
+
+    &::before,
+    &::after {
+      display: block;
+      position: absolute;
+      z-index: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: rem(522px);
+      content: '';
+    }
+
+    .c-top-screen {
+
+      &__content {
+        @include make-spacer(pt, 3);
+        @include make-spacer(pt, 4, sm);
+        @include make-spacer(pt, 5, md);
+      }
+
+      &__title {
+        @include font-size(28px, 40px);
+
+        color: var(--royal-blue);
+
+        @include media-breakpoint-up(sm) {
+          @include font-size(32px, 40px);
+        }
+
+        @include media-breakpoint-up(md) {
+          @include font-size(40px, 56px);
+        }
+      }
+
+      &__subtitle {
+        @include make-spacer(mb, 0);
+        @include font-size(14px, 16px);
+
+        text-align: center;
+        color: var(--royal-blue);
+        font-weight: 500;
+      }
+
+      &__lead {
+        @include make-spacer(mb, 2);
+        @include font-size(14px, 20px);
+
+        max-width: rem(480px);
+        color: var(--grey-500);
+
+        @include media-breakpoint-up(sm) {
+          @include font-size(16px, 24px);
+        }
+
+        @include media-breakpoint-up(md) {
+          @include font-size(18px, 24px);
+        }
+      }
+
+      &__text {
+        @include make-spacer(mb, 0);
+        @include font-size(14px, 16px);
+
+        text-align: center;
+        color: var(--grey-500);
+      }
+
+      &__btn {
+        @include make-spacer(px, 2);
+        @include make-spacer(py, 0);
+        @include box-shadow(1px 1px 16px var(--black-alpha-032));
+        @include font-size(16px, 56px);
+        @include transition(#{background-color, border-color, color, fill, box-shadow});
+
+        border: 0;
+        border-radius: 2px;
+        background-color: var(--magenta);
+        color: var(--white);
+        font-weight: 500;
+
+        &:hover {
+          @include box-shadow(1px 1px 32px var(--black-alpha-032));
+
+          background-color: var(--magenta-hover);
+        }
+
+        @include media-breakpoint-up(sm) {
+          @include font-size(22px, 56px);
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      min-height: rem(560px);
+    }
+  }
+}
+
+.c-top-screen {
+
+  &--special-project,
+  &--search-tags {
+    @include make-spacer(py, 4);
+  }
+}
+
+// stylelint-enable
+
+//
+// Reshuffle Data
+//
+
+.c-reshuffle-data {
+  @include flex(space-between, center);
+
+  position: relative;
+
+  @include media-breakpoint-up(sm) {
+    @include flex(center, center);
+  }
+
+  &__icon {
+    @include flex(center, center);
+    @include size(80px);
+    @include make-spacer(ml, 1, md);
+
+    display: block;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include media-breakpoint-down(xs) {
+      right: -0.5rem;
+    }
+
+    &-default {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__column {
+    @include flex(flex-start, flex-start, column);
+
+    @include media-breakpoint-up(sm) {
+      @include flex(flex-start, baseline);
+    }
+  }
+
+  &__winner {
+    @include flex(center, center);
+    @include size(48px);
+
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,85 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.icon {
+  @include make-spacer(ml, half);
+  @include transition(color);
+
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--grey-500);
+}
+
+.text {
+  @include make-spacer(p, 0);
+  @include font-size(12px, 16px);
+  @include transition(color);
+
+  display: inline-block;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  vertical-align: top;
+  color: var(--blue);
+
+  .icon {
+    fill: var(--blue);
+  }
+}
+
+.options {
+  @include reset-list;
+  @include make-spacer(px, 3);
+  @include make-spacer(py, 2);
+  @include transition(#{visibility, opacity, transform});
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(16px);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 9;
+  border-radius: 8px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+  background-color: var(--white);
+  overflow: hidden;
+
+  &.isVisible {
+    transform: translateY(rem(32px));
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.alignCenterX {
+    left: 50%;
+    transform: translate(-50%, rem(32px));
+    width: 100%;
+  }
+}
+
+.voteMVP {
+
+  .icon {
+    fill: var(--grey-500);
+  }
+
+  &.options {
+    right: 0;
+    left: 50%;
+    transform: translate(-50%, rem(32px));
+    width: rem(240px);
+
+    @include media-breakpoint-up(md) {
+      right: 0;
+      left: auto;
+      transform: translateY(rem(32px));
+      width: rem(240px);
+    }
+  }
+
+  &.text {
+    @include flex($align-items: center);
+
+    color: var(--grey-500);
+  }
+}

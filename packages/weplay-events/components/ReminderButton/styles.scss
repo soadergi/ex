@@ -1,0 +1,39 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.discordIcon {
+  @include font-size(16px);
+}
+
+.button {
+  @extend %button;
+
+  @include make-spacer(py, half);
+  @include font-size(14px, 24px);
+
+  font-weight: 500;
+
+  &:not( :last-of-type ) {
+    @include make-spacer(mr, 0);
+    @include make-spacer(mr, 2, sm);
+    @include make-spacer(mb, 2);
+    @include make-spacer(mb, 0, sm);
+  }
+
+  &.successButton {
+    @extend %buttonSuccess;
+
+    @include flex($align-items: center);
+
+    border-width: 1px;
+    border-color: var(--success);
+    background-color: transparent;
+    color: var(--success);
+
+    &:hover {
+      border-color: var(--royal-blue);
+      background-color: var(--success);
+      color: var(--white);
+    }
+  }
+}

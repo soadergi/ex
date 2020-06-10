@@ -1,0 +1,29 @@
+@import '../config';
+
+$score-width: rem(48px);
+$invited-team-connector-width: rem(12px);
+
+.user {
+  display: grid;
+  grid-template-columns: rem(24px) 1fr;
+  grid-column-gap: rem(8px);
+  align-items: center;
+
+  &.isCurrentUser {
+
+    .name {
+      color: var(--white);
+    }
+  }
+}
+
+.name {
+  @include font-size(12px, 16px);
+
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--royal-blue);
+}
+

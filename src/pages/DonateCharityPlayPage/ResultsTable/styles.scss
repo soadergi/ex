@@ -1,0 +1,69 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.heroSection {
+  @include make-spacer(mb, 3);
+  @include make-spacer(py, 17);
+  @include make-spacer(py, 6, sm);
+  @include make-spacer(py, 0, md);
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 0, md);
+
+  background-color: var(--royal-blue);
+}
+
+.ladderTable {
+  width: 100%;
+}
+
+.wrapper {
+  @include make-spacer(mb, 2);
+}
+
+
+.item {
+  @include make-spacer(pb, 2);
+  @include make-spacer(px, 2);
+
+  color: var(--white);
+
+  &:first-child {
+    @include make-spacer(pl, 0);
+    @include make-spacer(pr, 1);
+
+    text-align: right;
+  }
+}
+
+.body {
+  display: table-row-group;
+}
+
+.emptyTable {
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
+.container {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 0, sm);
+}
+
+.title {
+  @include make-spacer(mb, 2);
+  @include font-size(24px, 32px);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.indicator {
+  @include make-spacer(mb, 2);
+  @include font-size(12px, 18px);
+
+  color: var(--grey-500);
+  font-weight: var(--wp-font-weight-normal);
+}

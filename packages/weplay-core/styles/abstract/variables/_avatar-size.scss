@@ -1,0 +1,11 @@
+$avatars: (
+  (size: 24, icon-size: 16, icon-x: -2, icon-y: -6),
+  (size: 32, icon-size: 16, icon-x: -2, icon-y: -4),
+  (size: 40, icon-size: 20, icon-x: -2, icon-y: -4),
+  (size: 48, icon-size: 20, icon-x: -2, icon-y: -4),
+  (size: 64, icon-size: 20, icon-x: -2, icon-y: 2),
+  (size: 96, icon-size: 32, icon-x: -2, icon-y: -4),
+  (size: 128, icon-size: 32, icon-x: -2, icon-y: 8),
+);
+
+$rem-base: $fs-base / 1px;

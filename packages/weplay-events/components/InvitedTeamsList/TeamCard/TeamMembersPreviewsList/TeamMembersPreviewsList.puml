@@ -1,0 +1,8 @@
+@startuml
+
+object TeamMembersPreviewsList {
+ players: arrayOf(PropTypes.shape({})).isRequired,
+ isHidden: isHidden: PropTypes.bool,
+}
+
+@enduml

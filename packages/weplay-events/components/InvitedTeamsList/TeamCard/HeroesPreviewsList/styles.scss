@@ -1,0 +1,14 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include reset-list;
+  @include flex($align-items: center);
+}
+
+.item {
+  width: rem(24px);
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, half);
+  }
+}

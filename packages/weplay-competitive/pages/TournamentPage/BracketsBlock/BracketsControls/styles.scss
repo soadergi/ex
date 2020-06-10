@@ -1,0 +1,24 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(pt, 3);
+  @include make-spacer(mb, 3, md);
+
+  @include media-breakpoint-up(md) {
+    @include flex(space-between, center);
+  }
+}
+
+.title {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, md);
+  @include font-size(32px, 40px);
+
+  font-weight: 700;
+}
+
+.wrapper {
+  @include media-breakpoint-up(md) {
+    @include flex;
+  }
+}

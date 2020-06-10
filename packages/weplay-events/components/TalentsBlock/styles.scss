@@ -1,0 +1,88 @@
+@import 'weplay-core/styles/_initialization';
+@import 'weplay-core/styles/v-2-0/_init';
+
+.block {
+  position: relative;
+  background-color: var(--royal-blue);
+  overflow: hidden;
+  color: var(--white);
+}
+
+.wrap {
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    max-width: rem(960px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: rem(1200px);
+  }
+}
+
+.backgroundUrl {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+}
+
+.title {
+  @include font-size(32px, 40px);
+
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    @include font-size(48px, 60px);
+  }
+}
+
+.description {
+  @include font-size(14px, 24px);
+  @include make-spacer(mx, auto);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 6, sm);
+  @include make-spacer(px, 4);
+  @include make-spacer(px, 0, md);
+
+  max-width: rem(464px);
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.wrapTalent {
+  @include flex(center, center, $direction: column);
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
+}
+
+.mainFomLeague {
+  background-color: transparent;
+
+  .wrap {
+    max-width: 100%;
+  }
+
+  .title {
+    @include font-size(32px, 40px);
+
+    color: var(--royal-blue);
+  }
+
+  .description {
+    @include font-size(16px, 24px);
+
+    max-width: rem(528px);
+    color: var(--grey-500);
+  }
+}

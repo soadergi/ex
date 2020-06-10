@@ -1,0 +1,29 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 2);
+
+  border-radius: rem(8px);
+  background-color: var(--blue-alpha-008);
+}
+
+.title {
+  @include font-size(24px);
+  @include make-spacer(mb, 2);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.icon {
+  position: relative;
+  bottom: rem(2px);
+  color: var(--blue);
+}
+
+.text {
+  @include make-spacer(ml, 1);
+}
+
+.copy {
+  @include flex($align-items: center);
+}

@@ -1,0 +1,51 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+// $tm - tournament module
+
+$one-pixel: rem(1px);
+$playoff-padding-right: rem(8px);
+
+// Match
+
+$match-height: rem(72px);
+$match-padding-x: rem(8px);
+$match-meta-height: rem(24px);
+$match-separator-width: 100%;
+
+$tm-match-height: rem(72px);
+$tm-match-padding-x: rem(8px);
+
+// =========================================
+
+// Game
+
+$game-width: rem(208px);
+$game-padding-y: rem(8px);
+$game-height: $match-height + $game-padding-y * 2;
+
+$tm-game-padding-y: rem(8px);
+$tm-game-height: $tm-match-height + $tm-game-padding-y * 2;
+$tm-game-width: 80%;
+$tm-min-game-width: rem(188px);
+$tm-max-game-width: rem(320px);
+
+// =========================================
+
+// Relations
+
+$relations-width: rem(16px);
+$relations-match-height: $match-height / 4;
+$relations-from-game-to-winner-height: $match-height / 2;
+$relations-margin-top-negative: -$game-padding-y * 2.5;
+
+$tm-relations-width: 20%;
+$tm-min-relations-width: rem(40px);
+$tm-min-title-width: $tm-min-relations-width + $tm-min-game-width;
+
+// =========================================
+
+// Round
+
+$tm-round-width: $tm-game-width + $tm-relations-width;
+
+// =========================================

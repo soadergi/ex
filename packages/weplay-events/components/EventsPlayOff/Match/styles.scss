@@ -1,0 +1,162 @@
+@import '../config';
+
+.sponsorLogo {
+  position: absolute;
+  top: 50%;
+  right: 11%;
+  transform: translate(50%, -50%) scale(1);
+  z-index: 2;
+  background-color: var(--grey-100);
+  width: rem(40px);
+}
+
+.match {
+  @include size(100%);
+
+  position: relative;
+  border-radius: rem(8px);
+  box-shadow: 0 0 0 $one-pixel var(--grey-300);
+  background-color: var(--white);
+
+  &::after {
+    @include size($match-separator-width, $one-pixel);
+
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -$one-pixel;
+    background-color: var(--grey-300);
+    content: '';
+  }
+
+  &::before {
+    --blue: #14cdff;
+    --dark-blue: var(--blue-active);
+
+    position: absolute;
+    top: -$one-pixel * 2;
+    right: -$one-pixel * 2;
+    bottom: -$one-pixel * 2;
+    left: -$one-pixel * 2;
+    z-index: -1;
+    border-radius: rem(10px);
+    content: none;
+  }
+
+  .detailsButton {
+    @include font-size(10px, 12px);
+
+    position: relative;
+    border: 0;
+    background-color: transparent;
+    color: var(--blue);
+  }
+
+  &.superFinal {
+    box-shadow: none;
+
+    &::before {
+      @include gradient-y(#{var(--blue)}, #{var(--dark-blue)});
+
+      content: '';
+    }
+  }
+
+  &.hasFinalRound {
+    box-shadow: none;
+
+    &::before {
+      @include gradient-y(#{var(--blue)}, #{var(--dark-blue)});
+
+      content: '';
+    }
+  }
+
+  &.fullBracketSuperFinal {
+    color: var(--grey-500);
+  }
+
+  &.isGrandFinal {
+    box-shadow: none;
+
+    &::before {
+      @include gradient-x(#{var(--dark-blue)}, #{var(--blue)});
+
+      content: '';
+    }
+  }
+
+  &.isReverted {
+    transform: scaleX(-1);
+  }
+
+  &.isTournamentModule {
+
+    &::after {
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.meta {
+  @include size(100%, $match-meta-height);
+  @include flex(space-between, center);
+  @include make-spacer(pb, 1);
+
+  position: absolute;
+  top: -$match-meta-height;
+  left: 0;
+}
+
+.notification {
+  @include make-spacer(m, auto);
+
+  transform: scale(0.7);
+}
+
+.notificationText {
+  @include flex($direction: row-reverse);
+  @include font-size(12px, 16px);
+
+  align-items: center;
+  width: rem(24px);
+  text-transform: capitalize;
+  color: var(--magenta);
+  font-weight: 500;
+}
+
+.matchTitle {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 0);
+
+  color: var(--grey-500);
+}
+
+.link {
+  @include font-size(12px, 16px);
+
+  color: var(--blue);
+}
+
+
+.forgeOfMastersLeagueSecondSeason {
+
+  &.isFinalMatch {
+
+    &::after {
+      content: none;
+    }
+  }
+}
+
+
+.forgeOfMastersLanSecondSeason {
+
+  &.isFinalMatch {
+
+    &::after {
+      content: none;
+    }
+  }
+}

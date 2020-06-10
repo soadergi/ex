@@ -1,0 +1,105 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 3, sm);
+  @include make-spacer(py, 2);
+  @include flex(space-between);
+
+  position: relative;
+  border-bottom: 1px solid var(--grey-200);
+  background-color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+
+    &:last-child {
+      border-bottom: rem(16px) solid var(--grey-100);
+
+      &::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: var(--grey-200);
+        height: rem(1px);
+        content: '';
+      }
+    }
+  }
+}
+
+.leftPart,
+.rightPart {
+  @include flex($direction: column);
+}
+
+.rightPart {
+  align-items: flex-end;
+
+  .teamSide {
+    @include flex($direction: row-reverse);
+  }
+
+  .iconWinner {
+    @include make-spacer(mr, 1);
+  }
+}
+
+.teamSide {
+  @include flex;
+  @include make-spacer(mt, 2);
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 18px);
+
+  color: var(--grey-500);
+}
+
+.iconWinner {
+  @include make-spacer(ml, 1);
+
+  color: var(--warning);
+}
+
+.roundTime {
+  @include make-spacer(mb, 0);
+  @include font-size(16px, 24px);
+}
+
+.wrapImages {
+  @include make-spacer(mt, 1);
+  @include make-spacer(mb, 0);
+}
+
+.image {
+  @include size(rem(20px), rem(24px));
+
+  display: inline-block;
+
+  &:not( :last-child ) {
+    margin-right: rem(2px);
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(40px), rem(48px));
+  }
+}
+
+.link {
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, 1);
+  }
+
+  &.isDisabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    text-decoration: none;
+    color: currentColor;
+    pointer-events: none;
+  }
+}
+
+.iconLink {
+  color: var(--blue);
+}

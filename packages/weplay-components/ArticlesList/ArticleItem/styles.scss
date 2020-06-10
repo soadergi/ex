@@ -1,0 +1,45 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.itemTitle {
+  @include font-size(18px, 24px);
+  @include make-spacer(mb, 1);
+  @include transition(color);
+
+  display: block;
+  color: var(--royal-blue);
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--blue);
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(22px, 32px);
+  }
+}
+
+.item {
+  @include flex(space-between, flex-start, column);
+
+  border-bottom: 1px solid var(--grey-200);
+}
+
+.meta {
+  @include font-size(12px, 16px);
+  @include make-spacer(mb, 2);
+
+  color: var(--grey-500);
+}
+
+.metaItem {
+
+  &:not( :last-child ) {
+
+    &::after {
+      margin-right: 0.25rem;
+      margin-left: 0.25rem;
+      content: '|';
+    }
+  }
+}

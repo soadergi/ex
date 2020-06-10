@@ -1,0 +1,26 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.cell {
+  @include make-spacer(p, 4);
+
+  &:not( :first-child ) {
+    text-align: center;
+  }
+
+  &.points {
+    @include make-spacer(pl, 0);
+    @include make-spacer(pl, 3, lg);
+  }
+}
+
+.tHeadSubtitle {
+  @include font-size(12px, 32px);
+
+  text-align: left;
+  font-weight: 400;
+}
+
+.total {
+  text-align: center;
+  font-weight: 600;
+}

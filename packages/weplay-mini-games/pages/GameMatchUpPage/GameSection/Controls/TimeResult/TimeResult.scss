@@ -1,0 +1,19 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: relative;
+}
+
+.name {
+  @include font-size(12px, 12px);
+}
+
+.time {
+  @include font-size(20px, 28px);
+
+  font-weight: 700;
+}
+
+.highlighted {
+  color: var(--blue);
+}

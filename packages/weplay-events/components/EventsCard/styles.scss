@@ -1,0 +1,36 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(p, 2);
+  @include make-spacer(mr, 3);
+  @include flex(space-between, $direction: column);
+
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px 1px var(--grey-200-alpha-024);
+  width: rem(296px);
+  overflow: hidden;
+  color: var(--white);
+
+  @include media-breakpoint-up(sm) {
+    width: rem(384px);
+  }
+}
+
+.wrap {
+  display: block;
+}
+
+.image {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: rem(4px);
+}

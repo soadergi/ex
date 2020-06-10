@@ -1,0 +1,54 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mb, 5);
+  @include make-spacer(mb, 0, md);
+
+  overflow: hidden;
+  text-align: center;
+
+  &.team {
+    @include make-spacer(mb, 5);
+    @include make-spacer(mb, 0, sm);
+
+    .title {
+      font-weight: 500;
+    }
+  }
+}
+
+.title {
+  @include font-size(24px, 30px);
+  @include make-spacer(mb, 1);
+
+  font-weight: 700;
+}
+
+.text {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 3);
+
+  color: var(--grey-500);
+}
+
+.imageWrapper {
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.link {
+  @include font-size(18px, 28px);
+  @include flex(center, center);
+
+  text-transform: uppercase;
+  color: var(--blue);
+}

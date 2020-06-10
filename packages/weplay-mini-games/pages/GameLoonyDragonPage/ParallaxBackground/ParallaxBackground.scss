@@ -1,0 +1,26 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include size(104%);
+
+  position: fixed;
+  top: -2%;
+  right: 0;
+  bottom: 0;
+  left: -2%;
+}
+
+.parallaxHolder {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.imageContainer {
+  @include size(100%);
+
+  background-position: 50% 50%;
+  background-size: cover;
+}

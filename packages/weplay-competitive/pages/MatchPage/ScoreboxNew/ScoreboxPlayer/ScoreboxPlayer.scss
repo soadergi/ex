@@ -1,0 +1,88 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.game {
+  border: 1px solid var(--grey-200);
+  border-radius: rem(4px);
+}
+
+.gameHeader {
+  @include make-spacer(mx, 2);
+  @include make-spacer(mt, 2);
+  @include make-spacer(mb, 5);
+  @include flex(flex-start, center);
+}
+
+.gameTitle {
+  @include make-spacer(ml, 2);
+  @include make-spacer(mb, 0);
+  @include font-size(20px, 28px);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.body {
+
+  tr:nth-child( even ) {
+    background-color: var(--grey-100);
+  }
+}
+
+.cell {
+  @include font-size(16px, 24px);
+  @include make-spacer(py, 2);
+}
+
+.headerWrapper {
+  @include font-size(16px, 24px);
+  @include flex(flex-start, center);
+
+  .cell {
+    @include font-size(12px, 20px);
+    @include make-spacer(py, 1);
+  }
+}
+
+.gameTable {
+  @include make-spacer(mb, 3);
+}
+
+.icon {
+  @include size(15px);
+
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.item {
+  @include make-spacer(py, 0);
+}
+
+.right {
+  text-align: right;
+}
+
+.positive {
+  color: var(--success);
+}
+
+.negative {
+  color: var(--error);
+}
+
+.indicator {
+  @include size(40px, 4px);
+
+  background-color: var(--grey-300);
+
+  &.min {
+    background-color: var(--error);
+  }
+
+  &.middle {
+    background-color: var(--warning);
+  }
+
+  &.max {
+    background-color: var(--success);
+  }
+}

@@ -1,0 +1,125 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: rem(16px);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.image {
+  @include absolute-center;
+
+  display: block;
+  max-height: 100%;
+
+  &.isDisabled {
+    filter: grayscale(1);
+  }
+}
+
+.content {
+  @include transition('background-color');
+  @include size(100%);
+  @include make-spacer(p, 1);
+  @include flex(space-between, flex-start, column);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+
+.mapName {
+  @include font-size(12px, 18px);
+  @include make-spacer(mt, auto);
+  @include transition('opacity');
+
+  width: 100%;
+  text-align: center;
+  color: var(--white);
+}
+
+.moveState {
+  @include font-size(16px, 24px);
+  @include transition(#{transform, opacity});
+  @include absolute-center();
+
+  opacity: 0;
+  color: var(--white);
+  font-weight: var(--wp-font-weight-regular);
+
+  &.isSuccess {
+    color: var(--success);
+  }
+
+  &.isBan {
+    color: var(--error);
+  }
+}
+
+.link {
+  @include reset-button;
+  @include aspect-ratio;
+  @include transition(border-color);
+
+  position: relative;
+  border: rem(1px) solid transparent;
+  border-radius: rem(4px);
+  min-height: rem(80px);
+  overflow: hidden;
+  text-align: left;
+
+  &::after {
+    @include size(100%);
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: var(--royal-blue-alpha-048);
+    content: '';
+  }
+
+  &.isDisabled {
+    pointer-events: none;
+  }
+
+  &.isBanning {
+
+    &:hover {
+      border-color: #e30e2c;
+
+      .content {
+        background: linear-gradient(0deg, rgba(255, 0, 46, 0.32), rgba(255, 0, 46, 0.32));
+      }
+
+      .moveState {
+        opacity: 1;
+        color: var(--white);
+      }
+
+      .mapName {
+        opacity: 0.4;
+      }
+
+    }
+  }
+
+  &.isBanned {
+
+    .content {
+      background: linear-gradient(0deg, rgba(255, 0, 46, 0.32), rgba(255, 0, 46, 0.32));
+    }
+
+    .moveState {
+      opacity: 1;
+      color: var(--white);
+    }
+  }
+}

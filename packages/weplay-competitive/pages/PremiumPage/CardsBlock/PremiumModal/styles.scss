@@ -1,0 +1,18 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.tabs {
+  @include make-spacer(mb, 3);
+
+  display: grid;
+  position: relative;
+  border-bottom: rem(1px) solid var(--grey-300);
+  overflow-x: auto;
+}
+
+.tabsList {
+  overflow: visible;
+}
+
+.content {
+  width: 100%;
+}

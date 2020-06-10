@@ -1,0 +1,88 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.imageLink {
+  @include aspect-ratio;
+
+  display: block;
+  position: relative;
+  z-index: 3;
+  border-radius: rem(2px);
+  background-color: var(--grey-300);
+  overflow: hidden;
+}
+
+.figure {
+  @include make-spacer(mb, 1);
+
+  position: relative;
+}
+
+.image {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.contentLink {
+  @include font-size(16px, 24px);
+
+  color: var(--royal-blue);
+  font-weight: 500;
+}
+
+.title {
+  @include make-spacer(mb, 0);
+
+  white-space: normal;
+}
+
+.articleItem {
+  @include make-spacer(mb, 3);
+
+  &.white {
+
+    .title {
+      color: var(--white);
+    }
+  }
+
+  &.bordered {
+    @include make-spacer(pb, 3);
+
+    border-bottom: 1px solid var(--grey-300);
+  }
+}
+
+.activities {
+  @include font-size(12px, 18px);
+  @include flex(space-between, center);
+  @include make-spacer(pt, 1);
+
+  color: var(--grey-300);
+}
+
+.info {
+  @include flex(flex-start, center);
+}
+
+.counter {
+  @include make-spacer(ml, 2);
+
+  position: relative;
+
+  &::after {
+    @include size(3px);
+
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: rem(-10px);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: var(--grey-300);
+    content: '';
+  }
+}

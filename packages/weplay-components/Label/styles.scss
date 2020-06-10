@@ -1,0 +1,55 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$labels: (
+  'magenta': (
+    'color': var(--magenta),
+    'bg-color': var(--magenta-alpha-024)
+  ),
+  'warning': (
+    'color': var(--warning),
+    'bg-color': var(--warning-alpha-024)
+  ),
+  'success': (
+    'color': var(--success),
+    'bg-color': var(--success-alpha-024)
+  ),
+  'white': (
+    'color': var(--white),
+    'bg-color': var(--white-alpha-024)
+  ),
+  'blue': (
+    'color': var(--blue),
+    'bg-color': var(--blue-alpha-024)
+  ),
+  'brightBlue': (
+    'color': var(--white),
+    'bg-color': var(--blue)
+  ),
+  // TODO: @Kislyi add ban color plz
+);
+
+@mixin label-color( $prop, $color ) {
+
+  &.#{$prop} {
+    background-color: map-get($color, 'bg-color');
+    color: map-get($color, 'color');
+  }
+}
+
+.block {
+  @include flex(center, center, $display: inline-flex);
+  @include font-size(12px);
+  @include make-spacer(px, 1);
+
+  border-radius: rem(2px);
+  height: rem(24px);
+  text-transform: capitalize;
+
+  &:not( :last-child ) {
+    @include make-spacer(mr, 2);
+  }
+
+  @each $name, $color in $labels {
+    @include label-color($name, $color);
+  }
+}

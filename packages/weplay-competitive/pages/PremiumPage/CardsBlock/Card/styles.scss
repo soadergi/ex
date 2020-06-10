@@ -1,0 +1,82 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 3);
+  @include make-spacer(pt, 12);
+
+  position: relative;
+  border: 1px solid var(--grey-200);
+  border-radius: rem(8px);
+}
+
+.timeBlock {
+  position: absolute;
+  top: rem(24px);
+  left: 0;
+  width: 100%;
+}
+
+.time {
+  @include font-size(24px);
+  @include make-spacer(mb, 1);
+
+  text-align: center;
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.price {
+  @include font-size(48px);
+  @include flex(center, flex-start);
+  @include make-spacer(mb, 1);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.unit {
+  @include font-size(16px, 24px);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.wp {
+  order: 3;
+}
+
+.description {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 8);
+
+  display: block;
+  text-align: center;
+  color: var(--grey-500);
+}
+
+.economy {
+  @include font-size(12px, 18px);
+
+  display: block;
+  text-align: center;
+  color: var(--success);
+  font-weight: 500;
+}
+
+.label {
+  @include make-spacer(py, 1);
+
+  height: auto;
+  text-align: center;
+  text-transform: none;
+}
+
+.button {
+  width: 100%;
+}
+
+.note {
+  @include font-size(12px, 18px);
+  @include make-spacer(mt, 2);
+
+  display: block;
+  text-align: center;
+  color: var(--grey-500);
+}

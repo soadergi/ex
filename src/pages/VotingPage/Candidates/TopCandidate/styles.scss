@@ -1,0 +1,84 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.halfBlock {
+  @include flex(flex-start, flex-start, column);
+
+  width: 100%;
+
+  &:first-child {
+    @include make-spacer(mb, 4);
+    @include make-spacer(mb, 0, md);
+    @include make-spacer(mr, 0);
+    @include make-spacer(mr, 2, md);
+    @include make-spacer(mr, 4, lg);
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 50%;
+  }
+}
+
+.halfHeader {
+  @include make-spacer(mb, 3);
+  @include flex(flex-start, center, row);
+
+  position: relative;
+  width: 100%;
+}
+
+.icon {
+  color: var(--grey-500);
+}
+
+.title {
+  @include font-size(22px, 32px);
+  @include make-spacer(mb, 0);
+  @include make-spacer(mr, 2);
+
+  display: inline-block;
+
+  @include media-breakpoint-up(md) {
+    @include font-size(24px, 32px);
+  }
+}
+
+.alert {
+  @include transition();
+  @include font-size(14px, 18px);
+  @include make-spacer(mt, 2);
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 3, sm);
+
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+  border-radius: 8px;
+  box-shadow: 1px 1px 8px var(--black-alpha-024);
+  background: var(--white);
+  width: rem(248px);
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(18px, 24px);
+
+    transform: translateX(-50%);
+    width: rem(424px);
+  }
+}
+
+.iconBlock {
+  cursor: pointer;
+
+  &:hover {
+
+    + .alert {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

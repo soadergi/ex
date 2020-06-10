@@ -1,0 +1,29 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 1);
+  @include flex(space-between, center, column);
+
+  border-radius: rem(4px);
+  background-color: var(--white-alpha-024);
+  min-width: rem(110px);
+  min-height: rem(55px);
+  text-align: center;
+}
+
+.name {
+  @include font-size(12px, 12px);
+
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.score {
+  @include font-size(24px, 24px);
+
+  font-weight: 700;
+
+  &.small {
+    @include font-size(16px, 16px);
+  }
+}

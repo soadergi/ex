@@ -1,0 +1,84 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include font-size(12px, 18px);
+
+  background-color: var(--royal-blue);
+  color: #fff;
+}
+
+.wrap {
+  @include make-spacer(py, 3);
+  @include flex(flex-start, center, $direction: column);
+
+  min-height: rem(72px);
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: row;
+  }
+}
+
+.leftCol {
+  @include flex($direction: column);
+
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
+}
+
+.rightCol {
+  @include flex(space-between);
+
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    justify-content: flex-start;
+  }
+
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-end;
+    width: 20%;
+  }
+}
+
+.copyright {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, lg);
+  @include make-spacer(mr, 7);
+
+  display: inline-block;
+}
+
+.bottomMenu {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, md);
+
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  li {
+    @include make-spacer(mb, 0, sm);
+    @include make-spacer(mr, 3);
+  }
+}
+
+.socials {
+
+  a {
+
+    span {
+      @include font-size(24px);
+    }
+  }
+}
+
+.language {
+  max-width: rem(72px);
+
+  .ic-arrow {
+    right: 0;
+  }
+}

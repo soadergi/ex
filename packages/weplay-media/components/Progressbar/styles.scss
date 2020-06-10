@@ -1,0 +1,23 @@
+// ------------------------------------
+//   #C-PROGRESSBAR
+// ------------------------------------
+
+@import 'weplay-core/styles/_initialization.scss';
+
+.progressbar {
+  @include transition(#{transform, opacity});
+
+  opacity: 0;
+  background-color: var(--grey-300);
+  width: 100%;
+  height: 2px;
+
+  &Body {
+    background-color: var(--blue);
+    height: 100%;
+  }
+
+  &Open {
+    opacity: 1;
+  }
+}

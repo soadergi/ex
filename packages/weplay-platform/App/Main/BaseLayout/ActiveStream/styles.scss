@@ -1,0 +1,65 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include size(100%, auto);
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(320px), rem(176px));
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    border-top: 2px solid var(--magenta);
+  }
+
+  @include media-breakpoint-up(xl) {
+    @include size(rem(444px), rem(248px));
+  }
+
+  &.mediaPagePlayer {
+    @include size(100%, auto);
+
+    position: static;
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      z-index: 91;
+      width: rem(426px);
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: rem(716px);
+    }
+  }
+}
+
+.content {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 3, xl);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+}
+
+.title {
+  @include font-size(16px, 18px);
+
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(20px, 24px);
+  }
+
+  @include media-breakpoint-up(md ) {
+    @include font-size(24px, 30px);
+  }
+}
+
+.titleLink {
+  color: var(--white);
+}

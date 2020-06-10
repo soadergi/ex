@@ -1,0 +1,89 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex(space-between, center);
+
+  &:nth-of-type( 1 ) {
+    @include make-spacer(pb, 1);
+  }
+
+  &:nth-of-type( 2 ) {
+    @include make-spacer(pt, 1);
+  }
+}
+
+.isLose {
+  opacity: 0.5;
+}
+
+.userAvatar {
+  @include flex($align-items: center);
+}
+
+.avatar {
+  @include size(rem(24px));
+
+  max-width: rem(24px);
+}
+
+.name {
+  @include make-spacer(ml, 1);
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 14px);
+
+  max-width: rem(124px);
+}
+
+.stats {
+  @include flex($align-items: center);
+}
+
+.score {
+  @include make-spacer(ml, 2);
+  @include make-spacer(mb, 0);
+  @include font-size(16px, 20px);
+
+  font-weight: 700;
+}
+
+.wrapCoefficient {
+  @include font-size(12px, 16px);
+}
+
+.hyphenCoefficient {
+  color: var(--white);
+}
+
+.coefficient {
+  --color: var(--blue-active);
+
+  @include font-size(10px, 16px);
+  @include make-spacer(px, 1);
+
+  border: 1px solid var(--color);
+  border-radius: rem(24px);
+  text-decoration: none;
+  color: var(--color);
+
+  &.esBet {
+    --color: #9f1b40;
+  }
+
+  &.pariMatch {
+    --color: #fc0;
+  }
+
+  &.lootBet {
+    --color: #018b59;
+  }
+
+  &.onexBet {
+    --color: var(--twitter);
+  }
+}
+
+.image {
+  @include make-spacer(mr, 1);
+  @include size(rem(48px), rem(16px));
+}

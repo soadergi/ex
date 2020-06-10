@@ -1,0 +1,19 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.sectionGrey {
+  @include make-spacer(px, 2);
+
+  background-color: var(--grey-100);
+}
+
+.materials {
+  position: relative;
+}
+
+.backgroundUrl {
+  @include absolute-center;
+  @include size(rem(1280px), auto);
+
+  z-index: -1;
+}

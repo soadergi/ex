@@ -1,0 +1,40 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.content {
+  @include make-spacer(p, 2);
+  @include make-spacer(pt, 6);
+  @include make-spacer(p, 6, sm);
+
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+}
+
+.title {
+  @include make-spacer(mb, 2);
+  @include font-size(24px, 32px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.hero {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+    position: absolute;
+    right: rem(32px);
+    bottom: 0;
+    max-height: rem(338px);
+  }
+}
+
+.icon {
+  height: rem(56px);
+}
+
+.footer {
+  @include make-spacer(mt, 4);
+}

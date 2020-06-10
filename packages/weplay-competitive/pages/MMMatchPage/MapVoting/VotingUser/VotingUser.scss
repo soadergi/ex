@@ -1,0 +1,42 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  text-align: center;
+}
+
+.time {
+  @include size(rem(68px));
+
+  position: absolute;
+  top: rem(-2px);
+  left: rem(-2px);
+  transform: rotateZ(-90deg);
+
+  @include media-breakpoint-up(sm) {
+    @include size(rem(102px));
+
+    top: rem(-3px);
+    left: rem(-3px);
+  }
+}
+
+.name {
+  @include word-break;
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, half);
+
+  color: var(--white);
+  font-weight: 700;
+}
+
+.status {
+  display: block;
+}
+
+.wrapper {
+  @include make-spacer(mb, 1);
+
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}

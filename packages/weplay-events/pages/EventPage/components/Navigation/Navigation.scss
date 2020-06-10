@@ -1,0 +1,83 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  position: relative;
+}
+
+.content {
+  @include make-spacer(pb, 0);
+  @include make-spacer(pb, 1, sm);
+
+  position: relative;
+
+  @include media-breakpoint-up(sm) {
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: rem(-1px);
+      left: 0;
+      z-index: -1;
+      background-color: var(--grey-200);
+      height: rem(1px);
+      content: '';
+    }
+  }
+}
+
+.link {
+  @include font-size(16px);
+
+  position: relative;
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-regular);
+
+  &:not( :last-child ) {
+    @include make-spacer(pr, 3);
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-only(xs) {
+    @include make-spacer(pb, 1);
+
+    border-bottom: 1px solid var(--grey-200);
+  }
+
+  &.isDisable {
+    color: var(--grey-300);
+    pointer-events: none;
+  }
+}
+
+.label {
+  white-space: nowrap;
+}
+
+.isNew {
+  @include make-spacer(ml, 1);
+
+  text-transform: uppercase;
+}
+
+.active {
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: rem(7px);
+  color: var(--blue);
+
+  @include media-breakpoint-up(sm) {
+    padding-bottom: rem(10px);
+  }
+}
+
+.tooltip {
+  position: absolute;
+  top: rem(-192px);
+
+  @include media-breakpoint-up(sm) {
+    left: 0;
+  }
+}

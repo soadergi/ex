@@ -1,0 +1,39 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @extend %buttonReset;
+
+  @include size(100%);
+  @include flex(center, center);
+
+  border-left: 1px solid var(--grey-200);
+  background-color: var(--white);
+  width: rem(68px);
+
+  &.mobile {
+    @include make-spacer(px, 2);
+    @include size(100%, rem(32px));
+
+    box-shadow: 1px 1px 4px var(--black-alpha-008);
+
+    .search {
+      @include flex(space-between, center);
+
+      border-bottom: 1px solid var(--grey-200);
+      padding: 2px 0;
+      width: 100%;
+    }
+  }
+}
+
+.text {
+  @include font-size(12px, 16px);
+
+  color: var(--grey-300);
+}
+
+.icon {
+  color: var(--grey-400);
+}
+
+

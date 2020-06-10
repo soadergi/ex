@@ -1,0 +1,17 @@
+// ------------------------------------
+//   #DISABLE PROPERTIES ON TOUCH DEVICES
+// ------------------------------------
+
+.is-touch-device {
+
+  //
+  // Set height of `l-content` to 100% to make all page to be scrolled
+  //
+
+  .l-main {
+
+    .l-content {
+      height: 100%;
+    }
+  }
+}

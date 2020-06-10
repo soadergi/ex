@@ -1,0 +1,42 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.ladderTable {
+  position: relative;
+  width: 100%;
+}
+
+.wrapper {
+  @include make-spacer(mb, 2);
+}
+
+.header {
+  display: none;
+
+  tr {
+    border-bottom: 1px solid var(--blue);
+  }
+
+  @include media-breakpoint-up(sm) {
+    display: table-header-group;
+  }
+}
+
+.item {
+  @include make-spacer(pb, 2);
+  @include make-spacer(px, 2);
+
+  min-width: rem(112px);
+  color: var(--white);
+
+  &:first-child {
+    @include make-spacer(pl, 0);
+    @include make-spacer(pr, 2);
+
+    min-width: auto;
+    text-align: right;
+  }
+}
+
+.body {
+  display: table-row-group;
+}

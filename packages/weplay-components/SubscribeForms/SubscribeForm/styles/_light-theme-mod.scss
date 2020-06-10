@@ -1,0 +1,14 @@
+// Changes content color
+
+@mixin light-theme-mod {
+
+  &.lightTheme {
+
+    .title,
+    .description,
+    .successTitle,
+    .successDescription {
+      color: var(--royal-blue);
+    }
+  }
+}

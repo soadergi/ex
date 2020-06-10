@@ -1,0 +1,40 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(mb, 3);
+
+  border-bottom: 1px solid var(--grey-200);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.content {
+  @include flex(space-between, center);
+  @include make-spacer(mb, 3);
+}
+
+.heading {
+  @include flex($align-items: center);
+  @include make-spacer(mb, 0);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+  @include size(rem(24px));
+}
+
+.success {
+  @include font-size(16px, 24px);
+  @include make-spacer(mb, 0);
+
+  color: var(--success);
+}
+
+.error {
+  @include font-size(12px, 18px);
+  @include make-spacer(mb, 3);
+}

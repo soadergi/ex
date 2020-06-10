@@ -1,0 +1,9 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  max-width: rem(630px);
+}
+
+.content {
+  @include make-spacer(py, 6);
+}

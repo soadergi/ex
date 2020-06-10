@@ -1,0 +1,87 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.container {
+  @include make-spacer(py, 3);
+  @include make-spacer(px, 3);
+  @include make-spacer(pl, 5, sm);
+  @include make-spacer(pr, 6, sm);
+  @include make-spacer(px, 0, md);
+  @include make-spacer(mb, 0);
+  @include make-spacer(mx, auto);
+
+  position: static;
+  border-radius: 0;
+  background-color: transparent;
+  width: 100%;
+  max-width: 67rem;
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    @include flex(space-between, center);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: 53rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 70rem;
+  }
+}
+
+.cookiesPopup {
+  @include transition(transform);
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateY(500px);
+  z-index: 100;
+  background-color: var(--white-alpha-08);
+  width: auto;
+  height: 0;
+
+  &.isShown {
+    transform: translateY(0);
+    height: auto;
+  }
+}
+
+.text {
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 20px);
+
+  display: block;
+  position: relative;
+  max-width: 75%;
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(sm) {
+    max-width: 100%;
+  }
+}
+
+.close {
+  @include flex(center, center);
+  @include size(16px);
+  @include make-spacer(p, 0);
+
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  transform-origin: 50% 50%;
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include media-breakpoint-up(sm) {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  &Icon {
+    color: var(--grey-500);
+  }
+}

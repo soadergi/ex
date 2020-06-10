@@ -1,0 +1,49 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.tabs {
+  position: absolute;
+  top: rem(8px);
+  right: 0;
+  left: 0;
+  z-index: 1;
+  margin: auto;
+  background-color: transparent;
+
+  @include media-breakpoint-up(md) {
+    top: rem(24px);
+  }
+
+  @include media-breakpoint-up(md) {
+    top: rem(80px);
+  }
+}
+
+.wrap {
+  @include flex(center);
+
+  border-bottom: 1px solid var(--grey-500);
+  background-color: transparent;
+  width: 100%;
+}
+
+.forgeOfMastersLeagueSecondSeason {
+  @include media-breakpoint-up(sm) {
+    top: rem(24px);
+  }
+
+  @include media-breakpoint-up(md) {
+    top: rem(40px);
+  }
+}
+
+.forgeOfMastersLanSecondSeason {
+  top: rem(16px);
+
+  @include media-breakpoint-up(sm) {
+    top: rem(24px);
+  }
+
+  @include media-breakpoint-up(md) {
+    top: rem(40px);
+  }
+}

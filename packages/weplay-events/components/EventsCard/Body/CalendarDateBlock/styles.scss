@@ -1,0 +1,45 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(mt, 3);
+  @include make-spacer(pb, 1);
+
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: none;
+  grid-gap: rem(8px);
+  justify-items: center;
+  border-bottom: 1px solid var(--white-alpha-008);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-rows: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
+    justify-items: normal;
+  }
+}
+
+.text {
+  @include font-size(12px, 16px);
+
+  &.textRegulation {
+    color: var(--white);
+  }
+}
+
+.textLink {
+  font-weight: 500;
+}
+
+.date {
+  @include flex($align-items: center);
+}
+
+.addToCalendarLink {
+  @include flex(flex-end, flex-start);
+
+  &.regulationsLink {
+    @include flex(flex-end, flex-start);
+  }
+}

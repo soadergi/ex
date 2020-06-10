@@ -1,0 +1,50 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(py, 8);
+  @include make-spacer(py, 12, sm);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @each $background in $backgrounds {
+
+    &.#{map-get($background, type)} {
+      background-color: #{map-get($background, bg)};
+    }
+  }
+
+  &.sm {
+    @include make-spacer(py, 4);
+  }
+
+  &.none {
+    @include make-spacer(py, 6);
+  }
+
+  @each $padding-y in $paddings-y {
+
+    &.#{map-get($padding-y, size)} {
+      @include make-spacer(py, map-get($padding-y, spacer), sm);
+    }
+  }
+
+  &.top {
+    border-top: 1px solid;
+    border-color: transparent;
+  }
+
+  &.bottom {
+    border-bottom: 1px solid;
+    border-color: transparent;
+  }
+
+  @each $border-color in $border-colors {
+
+    &.#{map-get($border-color, type)} {
+      border-color: #{map-get($border-color, color)};
+    }
+  }
+}

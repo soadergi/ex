@@ -1,0 +1,37 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.wrapper {
+  @include make-spacer(px, 1);
+  @include flex(center, center);
+
+  border: 0;
+  border-radius: rem(24px);
+  background-color: var(--success);
+  width: 100%;
+  height: 1.5rem;
+
+  &.isDropped {
+    background-color: var(--magenta);
+  }
+
+  &.isDisabled {
+    background-color: var(--grey-500);
+    pointer-events: none;
+  }
+}
+
+.icon {
+  @include size(rem(20px));
+  @include make-spacer(mr, 1);
+  @include font-size(20px, 20px);
+
+  fill: var(--white);
+  flex: 0 0 rem(20px);
+  max-width: rem(20px);
+}
+
+.text {
+  @include font-size(12px, 12px);
+
+  color: var(--white);
+}

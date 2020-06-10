@@ -1,0 +1,60 @@
+@mixin default {
+  @include flex(center, center, $display: inline-flex);
+  @include make-spacer(px, 2);
+  @include make-spacer(py, 0);
+  @include transition(#{background-color, border-color, color});
+  @include font-size(14px, 36px);
+
+  align-content: center;
+  outline: none;
+  border: rem(2px) solid var(--blue);
+  border-radius: rem(4px);
+  background-color: var(--blue);
+  cursor: pointer;
+  max-width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--white);
+  font-weight: 700;
+
+  .icon {
+    @include make-spacer(mr, 1);
+
+    position: relative;
+    z-index: 1;
+    font-size: 1rem;
+  }
+
+  .text {
+    line-height: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:hover {
+    border-color: var(--blue-hover);
+    background-color: var(--blue-hover);
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  &:disabled {
+    border-color: var(--grey-300);
+    background: var(--grey-300);
+    cursor: no-drop;
+    color: var(--white);
+    pointer-events: none;
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+}

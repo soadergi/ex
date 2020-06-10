@@ -1,0 +1,24 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(p, 3);
+
+  position: relative;
+  border: 1px solid var(--white-alpha-024);
+  border-radius: rem(4px);
+  background-color: var(--royal-blue);
+}
+
+.title {
+  @include font-size(18px, 26px);
+  @include make-spacer(mb, 1);
+
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.text {
+  @include font-size(14px, 22px);
+
+  max-width: rem(305px);
+  color: var(--grey-300);
+}

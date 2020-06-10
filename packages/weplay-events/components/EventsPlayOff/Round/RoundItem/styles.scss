@@ -1,0 +1,89 @@
+@import '../../config';
+
+// Game
+
+.game {
+  position: relative;
+  padding: $game-padding-y 0;
+  width: 100%;
+  height: $game-height;
+}
+
+// Round Item
+
+.roundItem {
+  display: grid;
+  position: relative;
+  grid-template-columns: $game-width $relations-width;
+  align-items: center;
+  align-self: stretch;
+  z-index: 1;
+  width: 100%;
+
+  &.withoutConnector {
+    grid-template-columns: $game-width;
+  }
+
+  &.isGrandFinal {
+    grid-template-columns: $relations-width $game-width;
+
+    .game {
+      grid-column: 2 / 3;
+    }
+
+    .connector {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &.isTournamentModule {
+    grid-template-columns: $tm-game-width $tm-relations-width;
+
+    .game {
+      height: $tm-game-height;
+    }
+  }
+
+  &.isThirdPlaceMatch {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: $game-height;
+  }
+
+  &.hasWideRound {
+
+    &::before {
+      @include size(100%, rem(1px));
+
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 0;
+      margin-top: rem(rem(-1px));
+      background-color: var(--grey-300);
+      content: '';
+    }
+  }
+}
+
+.forgeOfMastersLeagueSecondSeason {
+
+  &.withoutConnector {
+
+    .game {
+      height: $game-height - 4rem;
+    }
+  }
+}
+
+.forgeOfMastersLanSecondSeason {
+
+  &.withoutConnector {
+
+    .game {
+      height: $game-height - 4rem;
+    }
+  }
+}

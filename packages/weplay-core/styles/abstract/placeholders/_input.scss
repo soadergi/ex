@@ -1,0 +1,67 @@
+/// Mixin for creating input styles
+/// @access public
+/// @author Anton Shulzhenko
+/// @param {String} $error-selector
+/// @param {String} $disabled-selector
+
+@mixin input(
+  $error-selector: '.hasError',
+  $disabled-selector: '.isDisabled',
+  $success-selector: '.hasSuccess'
+) {
+  @include make-spacer(px, 2);
+  @include make-spacer(py, 0);
+  @include font-size(16px, 38px);
+  @include transition(border-color);
+
+  display: block;
+  outline: none;
+  border: rem(1px) solid var(--grey-300);
+  border-radius: rem(4px);
+  background-color: var(--white);
+  width: 100%;
+  height: rem(40px);
+  text-align: left;
+  color: var(--royal-blue);
+  font-weight: 400;
+
+  &::placeholder {
+    @include transition(#{opacity, text-indent});
+
+    opacity: 1;
+    color: var(--grey-300);
+    font-size: rem(14px);
+  }
+
+  &:disabled,
+  &#{$disabled-selector} {
+    border-color: var(--grey-200);
+    background-color: var(--grey-100);
+    cursor: no-drop;
+  }
+
+  &#{$disabled-selector} {
+    pointer-events: none;
+  }
+
+  &#{$error-selector} {
+    border-color: var(--error);
+  }
+
+  &#{$success-selector} {
+    border-color: var(--success);
+  }
+
+  &:focus {
+    border-color: var(--grey-500);
+
+    &::placeholder {
+      opacity: 0;
+      text-indent: 8px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(14px, 38px);
+  }
+}

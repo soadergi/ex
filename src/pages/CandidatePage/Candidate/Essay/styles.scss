@@ -1,0 +1,71 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.scrollbar {
+  @include media-breakpoint-down(sm) {
+
+    > div {
+
+      // stylelint-disable
+
+      &:first-child {
+        position: relative !important;
+        margin: 0 !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+      }
+
+      &:nth-child( 2 ),
+      &:last-child {
+        display: none !important;
+      }
+      // stylelint-enable
+    }
+  }
+}
+
+.content {
+  @include make-spacer(px, 4, md);
+
+  width: 100%;
+}
+
+.text {
+  @include font-size(12px, 24px);
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 3, md);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 32px);
+  }
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+
+  @include media-breakpoint-up(md) {
+
+    &::after {
+      @include gradient-y(transparent, #{var(--white)});
+
+      bottom: 0;
+    }
+
+    &::before {
+      @include gradient-y(#{var(--white)}, transparent);
+
+      top: 0;
+      opacity: 0;
+    }
+
+    &::after,
+    &::before {
+      position: absolute;
+      right: rem(8px);
+      left: 0;
+      z-index: 1;
+      height: 3rem;
+      content: '';
+    }
+  }
+}

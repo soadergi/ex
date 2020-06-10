@@ -1,0 +1,90 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include make-spacer(px, 2);
+  @include make-spacer(py, 6);
+  @include flex(center, center, column);
+
+  position: relative;
+  width: 100%;
+
+  &.wide {
+    @include media-breakpoint-down(md) {
+      @include make-spacer(p, 5);
+
+      background-color: var(--royal-blue);
+
+      .bannerBg {
+        right: 0;
+        left: auto;
+        z-index: $z-1;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .tabletGrad {
+        @include size(20%, 100%);
+
+        position: absolute;
+        right: rem(96px);
+        z-index: $z-1;
+        background-image: linear-gradient(180deg, transparent 0, var(--royal-blue) 100%);
+      }
+
+      .content {
+        position: relative;
+        left: 0;
+        z-index: $z-2;
+        width: 100%;
+        text-align: left;
+      }
+
+      .logoBlock {
+        @include make-spacer(mx, 0);
+      }
+
+      .title {
+        text-align: left;
+      }
+
+      .button {
+        width: auto;
+      }
+    }
+  }
+}
+
+.content {
+  width: 100%;
+}
+
+.bannerBg {
+  background-color: var(--royal-blue);
+}
+
+.image {
+  @include make-spacer(mt, 6);
+  @include make-spacer(mb, 5);
+  @include make-spacer(mx, auto);
+}
+
+.logoBlock {
+  @include make-spacer(mx, auto);
+
+  width: rem(64px);
+}
+
+.title {
+  @include font-size(24px, 32px);
+  @include make-spacer(mt, 1);
+  @include make-spacer(mb, 3);
+
+  text-align: center;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.button {
+  width: 100%;
+}

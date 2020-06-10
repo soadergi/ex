@@ -1,0 +1,87 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  position: relative;
+  z-index: 2;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.content {
+  @include make-spacer(p, 3);
+  @include flex(space-between, center, column);
+
+  position: relative;
+  z-index: 1;
+  background-color: var(--royal-blue-alpha-08);
+  height: rem(136px);
+
+  &:hover {
+    text-decoration: none;
+
+    .link {
+      @include media-breakpoint-up(md) {
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+        text-decoration: none;
+      }
+    }
+
+    .logo {
+      transform: translateY(0);
+    }
+
+    .background {
+      @include media-breakpoint-up(md) {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.logo {
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  max-height: rem(55px);
+
+  @include media-breakpoint-up(md) {
+    @include transition(transform);
+
+    transform: translateY(rem(24px));
+  }
+}
+
+.link {
+  @include font-size(16px, 24px);
+
+  position: relative;
+  color: var(--blue);
+
+  @include media-breakpoint-up(md) {
+    @include transition(#{transform, opacity, visibility});
+
+    transform: translateY(-200%);
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.background {
+  @include transition(opacity);
+
+  @include media-breakpoint-up(md) {
+    opacity: 0;
+  }
+}
+
+.arrowIcon {
+  @include make-spacer(ml, 1);
+
+  color: var(--blue);
+}

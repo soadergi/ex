@@ -1,0 +1,5 @@
+export const GAME_MODE_TYPES = {
+  ONE_ON_ONE: 'ONE_ON_ONE',
+  TWO_ON_TWO: 'TWO_ON_TWO',
+  FIVE_ON_FIVE: 'FIVE_ON_FIVE',
+}

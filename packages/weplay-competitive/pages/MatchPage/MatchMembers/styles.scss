@@ -1,0 +1,15 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.wrapper {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, sm);
+
+  position: relative;
+}
+
+.item {
+
+  &:nth-child( even ) {
+    background-color: var(--grey-100);
+  }
+}

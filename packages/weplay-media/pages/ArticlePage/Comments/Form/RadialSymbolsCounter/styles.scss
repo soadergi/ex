@@ -1,0 +1,36 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.circle {
+  stroke: var(--blue);
+}
+
+.message {
+  @include make-spacer(ml, half);
+  @include font-size(10px, 12px);
+
+  color: var(--grey-500);
+}
+
+.block {
+  @include flex(center, center);
+
+  &.hasError {
+
+    .circle {
+      stroke: var(--magenta);
+    }
+
+    .message {
+      color: var(--magenta);
+    }
+  }
+}
+
+.item {
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.underlay {
+  stroke: var(--grey-300);
+}

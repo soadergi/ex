@@ -1,0 +1,11 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.textarea {
+  @include size(100%, rem(120px));
+  @include make-spacer(px, 2);
+  @include make-spacer(py, 1);
+
+  border: 1px solid var(--grey-200);
+  border-radius: rem(4px);
+}

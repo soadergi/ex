@@ -1,0 +1,8 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.content {
+  @include make-spacer(pt, 4);
+  @include make-spacer(pb, 1);
+  @include make-spacer(pb, 4, md);
+}

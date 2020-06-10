@@ -1,0 +1,134 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include make-spacer(py, 8);
+
+  position: relative;
+  background-color: var(--grey-200);
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.headline {
+  @include make-spacer(px, 3);
+  @include make-spacer(px, 0, sm);
+
+  position: relative;
+}
+
+.wrap {
+  @include make-spacer(mx, auto);
+  @include flex(center, center, column);
+
+  position: relative;
+
+  @include media-breakpoint-up(sm) {
+    display: inline-flex;
+    flex-direction: row;
+  }
+}
+
+.title {
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 3, sm);
+  @include font-size(28px, 34px);
+
+  font-weight: var(--wp-font-weight-bold);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(32px, 40px);
+  }
+}
+
+.description {
+  @include make-spacer(mb, 6);
+  @include font-size(16px, 24px);
+}
+
+.text {
+  @include font-size(14px);
+
+  color: var(--white);
+  font-weight: var(--wp-font-weight-regular);
+}
+
+.icon {
+  @include make-spacer(mr, 1);
+
+  color: var(--white);
+}
+
+.link {
+  @include make-spacer(px, 2);
+  @include size(100%, rem(48px));
+  @include flex(center, center);
+  @include transition(background-color);
+
+  border-radius: rem(4px);
+  max-width: rem(312px);
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+
+  &.discord {
+    @include make-spacer(mr, 0);
+    @include make-spacer(mr, 2, sm);
+    @include make-spacer(mb, 2);
+    @include make-spacer(mb, 0, sm);
+
+    background-color: var(--discord);
+
+    &:hover {
+      background-color: var(--discord-hover);
+      text-decoration: none;
+    }
+  }
+
+  &.telegram {
+    background-color: var(--telegram);
+
+    &:hover {
+      background-color: var(--telegram-hover);
+      text-decoration: none;
+    }
+  }
+
+  &.reddit {
+    background-color: var(--reddit);
+
+    &:hover {
+      background-color: var(--youtube);
+      text-decoration: none;
+    }
+  }
+}
+
+.button {
+  @extend %button;
+  @extend %buttonPromoMedium;
+
+  @include font-size(14px);
+
+  border-radius: rem(4px);
+  border-color: var(--magenta);
+  background-color: var(--magenta);
+  height: rem(48px);
+
+  &:hover {
+    border-color: var(--magenta-hover);
+    background-color: var(--magenta-hover);
+  }
+}
+
+.hasWhiteText {
+
+  .title {
+    color: var(--white);
+  }
+
+  .description {
+    color: var(--grey-300);
+  }
+}

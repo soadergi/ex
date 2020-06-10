@@ -1,0 +1,58 @@
+@import 'weplay-core/styles/playoff-config.scss';
+
+$score-width: rem(48px);
+$invited-team-connector-width: rem(12px);
+
+.user {
+  @include flex(flex-start, center);
+
+  position: relative;
+  flex: 1 1 50%;
+}
+
+.name {
+  @include word-break;
+  @include font-size(12px, 16px);
+  @include transition(color);
+
+  flex: 0 0 6.5rem;
+  max-width: 6.5rem;
+  max-height: rem(30px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  color: var(--grey-300);
+
+  &.isActive {
+    color: var(--grey-500);
+  }
+
+  &.isHovered {
+    color: var(--white);
+  }
+}
+
+.invited {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.userAvatar {
+  @include flex(flex-start, center);
+}
+
+.avatar {
+  @include make-spacer(mr, 1);
+
+  border-radius: 50%;
+}
+
+.hasDarkBackground {
+
+  .avatar {
+    background-color: var(--royal-blue);
+  }
+}
+

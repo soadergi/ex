@@ -1,0 +1,10 @@
+@startuml
+
+object Participant {
+ nickname: string.isRequired,
+ pictureUrl: string.isRequired,
+ isInvited: bool,
+ children: node,
+}
+
+@enduml

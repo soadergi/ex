@@ -1,0 +1,16 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.link {
+  @include reset-button;
+  @include font-size(12px);
+
+  vertical-align: baseline;
+  color: var(--blue);
+  font-weight: var(--wp-font-weight-normal);
+
+  &:hover {
+    background-color: transparent;
+    text-decoration: underline;
+    color: var(--blue);
+  }
+}

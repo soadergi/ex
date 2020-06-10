@@ -1,0 +1,23 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.grid {
+  @include flex(center, center, column);
+  @include make-spacer(mb, 4);
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.bottom {
+  @include flex(center, center, row, wrap);
+  @include make-spacer(ml, auto, md);
+}
+
+.indicator {
+  @include make-spacer(mr, 1);
+
+  display: block;
+  white-space: nowrap;
+}

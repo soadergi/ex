@@ -1,0 +1,88 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  position: relative;
+  flex-direction: column;
+
+  @include media-breakpoint-up(sm) {
+    @include flex($direction: row);
+  }
+}
+
+.button {
+  @extend %buttonPromoMedium;
+
+  @include make-spacer(mx, auto);
+  @include make-spacer(mr, 3, sm);
+  @include make-spacer(ml, 0, sm);
+  @include make-spacer(mb, 4);
+  @include make-spacer(mb, 0, sm);
+  @include font-size(14px);
+  @include size(100%, rem(48px));
+
+  display: block;
+  border-radius: rem(4px);
+  border-color: var(--magenta);
+  background-color: var(--magenta);
+  max-width: rem(312px);
+  color: var(--white);
+
+  &:hover {
+    border-color: var(--magenta);
+    background-color: var(--magenta-hover);
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}
+
+.successButton {
+
+  .button {
+    @extend %buttonSuccess;
+
+    border-width: 1px;
+    border-color: var(--success);
+    background-color: transparent;
+    color: var(--success);
+  }
+}
+
+.list {
+  justify-content: space-around;
+
+  @include media-breakpoint-up(sm) {
+    @include flex(flex-start, center, $wrap:wrap);
+  }
+}
+
+.share {
+  @include make-spacer(mt, 0);
+
+  display: grid;
+  grid-template-columns: repeat(5, rem(48px));
+  grid-gap: rem(11px);
+  justify-content: center;
+
+  @include media-breakpoint-up(sm) {
+    grid-gap: rem(16px);
+    justify-content: flex-start;
+  }
+}
+
+.hint {
+  @include make-spacer(mb, 0);
+  @include font-size(12px, 18px);
+
+  position: absolute;
+  top: rem(-24px);
+  right: 0;
+  left: 0;
+  color: var(--white-alpha-064);
+
+  @include media-breakpoint-only(xs) {
+    text-align: center;
+  }
+}

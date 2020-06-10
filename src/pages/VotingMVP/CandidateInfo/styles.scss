@@ -1,0 +1,76 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  @include flex($wrap: wrap);
+
+  @include media-breakpoint-up(md) {
+    @include flex($wrap: nowrap);
+  }
+
+}
+
+.info {
+  @include flex(center, flex-start, column);
+  @include make-spacer(px, 0);
+  @include make-spacer(px, 6, md);
+  @include make-spacer(pb, 2);
+  @include make-spacer(pb, 0, md);
+  @include make-spacer(mb, 2);
+  @include make-spacer(mb, 0, md);
+
+  border-bottom: 1px solid var(--grey-300);
+  width: 50%;
+
+  &:last-child {
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(md) {
+    border-bottom: 0;
+    width: auto;
+    white-space: nowrap;
+
+    &:first-child {
+      @include make-spacer(pl, 0);
+    }
+
+    &:last-child {
+      @include make-spacer(pr, 0);
+
+      width: auto;
+    }
+  }
+}
+
+.header {
+  @include flex;
+  @include make-spacer(pb, 4);
+}
+
+.footer {
+  @include flex;
+}
+
+.headerText {
+  @include font-size(16px);
+  @include make-spacer(my, 0);
+  @include make-spacer(pl, 1);
+
+  color: var(--grey-500);
+}
+
+.footerText {
+  @include font-size(16px);
+  @include make-spacer(my, 0);
+
+  color: var(--royal-blue);
+  font-weight: 600;
+}
+
+.teamLogo {
+  @include make-spacer(mr, 1);
+}
+
+.svgIcon {
+  color: var(--grey-500);
+}

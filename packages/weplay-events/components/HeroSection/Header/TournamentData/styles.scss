@@ -1,0 +1,78 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.dataBlock {
+  @include flex(flex-start, flex-start, column);
+
+  position: relative;
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: column-reverse;
+  }
+
+  &.isTextAlignRight {
+    align-items: flex-end;
+  }
+}
+
+.title {
+  @include font-size(14px, 16px);
+  @include make-spacer(mb, 0);
+  @include make-spacer(mb, 1, sm);
+  @include make-spacer(mb, half, md);
+
+  text-align: left;
+  color: var(--white);
+  font-weight: 500;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+
+    width: auto;
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font-size(28px, 32px);
+  }
+}
+
+.description {
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 0, sm);
+  @include font-size(9px, 12px);
+
+  color: var(--grey-300);
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(12px, 14px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include font-size(12px, 16px);
+  }
+}
+
+.forgeOfMastersLeagueSecondSeason {
+
+  .description {
+    color: var(--white);
+  }
+}
+
+.forgeOfMastersLanSecondSeason {
+
+  .title {
+    @include make-spacer(m, 0);
+    @include flex;
+    @include font-size(12px, 24px);
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(18px, 24px);
+
+      width: auto;
+    }
+
+    @include media-breakpoint-up(md) {
+      @include font-size(20px, 32px);
+    }
+  }
+}

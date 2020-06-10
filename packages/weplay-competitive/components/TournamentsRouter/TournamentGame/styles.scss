@@ -1,0 +1,105 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.title {
+  @include font-size(12px, 18px);
+  @include transition(color);
+
+  color: var(--white);
+  font-weight: 700;
+
+  @include media-breakpoint-up(sm) {
+    @include font-size(16px, 24px);
+  }
+}
+
+.message {
+  @include font-size(12px, 12px);
+  @include make-spacer(mt, 1);
+
+  display: block;
+  color: var(--magenta);
+}
+
+.image {
+  @include absolute-center;
+
+  max-width: 60%;
+}
+
+.wrapper {
+  @include size(rem(64px));
+  @include make-spacer(mr, 1, sm);
+  @include make-spacer(mb, 1);
+  @include make-spacer(mb, 0, sm);
+
+  position: relative;
+  flex-shrink: 0;
+  border-radius: rem(4px);
+  background-color: var(--white-alpha-024);
+  overflow: hidden;
+
+  &::after {
+    @include size(100%);
+    @include transition(opacity);
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    border-radius: rem(8px);
+    box-shadow: inset 0 0 0 2px var(--blue);
+    content: '';
+  }
+}
+
+.link {
+  @include make-spacer(mr, 3);
+
+  text-align: center;
+
+  &:hover {
+    text-decoration: none;
+
+    .title {
+      color: var(--blue);
+    }
+
+    .wrapper {
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include flex(flex-start, center);
+
+    text-align: left;
+  }
+
+  &.isDisabled {
+    pointer-events: none;
+
+    .image {
+      filter: grayscale(1);
+    }
+  }
+
+  &.isActive {
+    pointer-events: none;
+
+    .title {
+      color: var(--blue);
+    }
+
+    .wrapper {
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

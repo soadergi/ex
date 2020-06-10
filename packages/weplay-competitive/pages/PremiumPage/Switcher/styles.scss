@@ -1,0 +1,53 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+$transition: 0.1s;
+$switcher-width: rem(48px);
+
+.circle {
+  @include size(100%);
+
+  display: block;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    @include size(100%, rem(24px));
+
+    transform: translate(0, -50%);
+    border-radius: rem(16px);
+    background-color: var(--blue);
+  }
+
+  &::after {
+    @include transition(#{transform}, $transition);
+    @include size(rem(20px));
+
+    left: 0;
+    transform: translate(rem(2px), -50%);
+    border-radius: 50%;
+    background-color: var(--white);
+  }
+
+  &::after,
+  &::before {
+    position: absolute;
+    top: 50%;
+    content: '';
+  }
+}
+
+.block {
+  @include size(rem(48px), rem(24px));
+
+  display: block;
+  position: relative;
+}
+
+.input {
+  display: none;
+}
+
+.input:checked + .circle::after {
+  transform: translate(rem(26px), -50%);
+  background-color: var(--white);
+}

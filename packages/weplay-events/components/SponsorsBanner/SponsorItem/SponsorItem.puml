@@ -1,0 +1,8 @@
+@startuml
+
+object SponsorItem {
+    sponsorImageUrl: string.required
+    sponsorName: string.required
+}
+
+@enduml

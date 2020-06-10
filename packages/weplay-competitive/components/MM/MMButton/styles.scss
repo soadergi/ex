@@ -1,0 +1,35 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.block {
+  position: relative;
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}
+
+.hint {
+  @include make-spacer(mb, 0);
+  @include make-spacer(pt, 1);
+  @include font-size(12px, 20px);
+
+  text-align: center;
+  font-weight: var(--wp-font-weight-regular);
+
+  @include media-breakpoint-up(sm) {
+    white-space: nowrap;
+  }
+}
+
+.warning {
+  color: var(--warning);
+}
+
+.error {
+  color: var(--error);
+}

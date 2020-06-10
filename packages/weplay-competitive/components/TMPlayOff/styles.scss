@@ -1,0 +1,46 @@
+@import 'config';
+
+.playoff {
+  position: relative;
+  transform: translateZ(0);
+  cursor: grab;
+  overflow-y: hidden;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.hasConnector {
+
+    &::before {
+      @include size(50%, $one-pixel);
+
+      display: block;
+      position: absolute;
+      top: calc(50% + #{$game-padding-y - $one-pixel});
+      right: 0;
+      z-index: -1;
+      background-color: var(--grey-300);
+      content: '';
+    }
+  }
+
+  &.isMouseDown {
+    cursor: grabbing;
+  }
+}
+
+.grid {
+  @include flex(flex-start, stretch, $display: inline-flex);
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 5, sm);
+  @include make-spacer(px, 2, md);
+
+  @include media-breakpoint-up(md) {
+    justify-content: center;
+    min-width: 100%;
+  }
+}

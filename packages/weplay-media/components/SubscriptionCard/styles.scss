@@ -1,0 +1,152 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+
+$one-pixel: rem(1px);
+$blur: 2px;
+
+.title {
+  @include font-size(18px, 24px);
+  @include make-spacer(mb, 1);
+
+  color: var(--royal-blue);
+  font-weight: 500;
+}
+
+.imgWrapper {
+  @include aspect-ratio;
+
+  position: relative;
+  border-radius: 0.5rem 0.5rem 0 0;
+  overflow: hidden;
+
+  &::before {
+    @include size(100%);
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    content: '';
+  }
+}
+
+.preview {
+  @include absolute-center();
+
+  max-width: 100%;
+  filter: blur($blur);
+}
+
+.logo {
+  @include absolute-center();
+  @include size(rem(112px), auto);
+
+  z-index: 2;
+  filter: blur($blur);
+}
+
+.block {
+  @include make-spacer(mb, 3);
+  @include make-spacer(mb, 0, md);
+
+  position: relative;
+  border: 1px solid var(--grey-300);
+  border-radius: rem(8px);
+  background-color: var(--white);
+
+  &::before {
+    position: absolute;
+    top: -$one-pixel * 2;
+    right: -$one-pixel * 2;
+    bottom: -$one-pixel * 2;
+    left: -$one-pixel * 2;
+    z-index: -1;
+    border-radius: rem(10px);
+    content: none;
+  }
+
+  &.isBordered {
+    --start-color: rgba(0, 0, 0, 0.15);
+    --end-color: rgba(0, 0, 0, 0.6);
+
+    border: 0;
+
+    &::before {
+      @include gradient-y(#{var(--blue-active)}, #{var(--blue)});
+
+      content: '';
+    }
+
+    .imgWrapper {
+
+      &::before {
+        @include gradient-radial(#{var(--start-color)}, #{var(--end-color)});
+      }
+    }
+
+    .preview,
+    .logo {
+      filter: none;
+    }
+  }
+
+  &.isDisabled {
+
+    .title {
+      color: var(--grey-500);
+    }
+
+    .imgWrapper {
+
+      &::before {
+        opacity: 0.2;
+        background: var(--white);
+      }
+    }
+
+    .preview,
+    .logo {
+      filter: grayscale(100%) blur($blur);
+    }
+  }
+}
+
+.content {
+  @include make-spacer(px, 2);
+  @include make-spacer(pb, 2);
+  @include make-spacer(pt, 3);
+}
+
+.description {
+  @include font-size(14px, 24px);
+  @include make-spacer(mb, 0);
+
+  color: var(--grey-500);
+}
+
+.checkboxWrapper {
+  @include make-spacer(mt, 2);
+}
+
+.checkboxLabel {
+  @include font-size(12px, 20px);
+
+  color: var(--royal-blue);
+  user-select: none;
+}
+
+.switcherWrapper {
+  @include make-spacer(mt, 3);
+  @include flex(flex-start, center);
+}
+
+.switcherLabel {
+  @include font-size(14px, 24px);
+  @include make-spacer(mr, 2);
+
+  display: inline-block;
+  color: var(--royal-blue);
+  user-select: none;
+}

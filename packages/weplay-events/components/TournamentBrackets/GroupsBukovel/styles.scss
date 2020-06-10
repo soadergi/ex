@@ -1,0 +1,33 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.grid {
+  @include make-spacer(mx, auto);
+
+  @include media-breakpoint-up(lg) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: rem(24px);
+    max-width: 100%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-column-gap: rem(48px);
+  }
+}
+
+.note {
+  @include make-spacer(my, 3);
+  @include flex(flex-start, center);
+  @include font-size(12px, 16px);
+
+  color: var(--grey-400);
+}
+
+.playoffImage {
+  @include make-spacer(mr, 1);
+  @include size(rem(24px));
+
+  border: 1px solid var(--grey-200);
+  background-color: var(--success-alpha-008);
+}

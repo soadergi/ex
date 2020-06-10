@@ -1,0 +1,82 @@
+@import '../../config';
+
+.label {
+  @include word-break;
+  @include font-size(14px, 21px);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--royal-blue);
+  font-weight: var(--wp-font-weight-bold);
+}
+
+.status {
+  @include font-size(12px);
+
+  display: none;
+  flex-shrink: 0;
+  color: var(--grey-500);
+
+  @include media-breakpoint-up(md) {
+    @include make-spacer(ml, 1);
+
+    display: block;
+  }
+}
+
+.wrapper {
+  @include flex(space-between, center);
+  @include size($tm-min-title-width, rem(38px));
+
+  position: relative;
+  flex: 1;
+  padding-right: $tm-min-relations-width;
+  width: $tm-min-game-width + $tm-min-relations-width;
+
+  &::after {
+    @include size(100%);
+
+    position: absolute;
+    top: 0;
+    left: $tm-min-relations-width / 2 * -1;
+    z-index: 1;
+    content: '';
+  }
+
+  &::before {
+    position: absolute;
+    top: rem(8px);
+    right: rem(19px);
+    bottom: rem(8px);
+    z-index: 1;
+    background-color: var(--grey-200);
+    width: rem(1px);
+    content: '';
+  }
+
+  &:last-child {
+    margin-right: $tm-min-relations-width * -1;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 0;
+    min-width: $tm-min-game-width;
+    max-width: $tm-max-game-width;
+  }
+
+  &.isOngoing {
+
+    &::after {
+      background-color: var(--success-alpha-024);
+    }
+
+    .status {
+      color: var(--success);
+    }
+  }
+}

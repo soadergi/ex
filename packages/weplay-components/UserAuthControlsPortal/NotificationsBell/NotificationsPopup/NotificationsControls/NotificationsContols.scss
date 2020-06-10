@@ -1,0 +1,88 @@
+@import 'weplay-core/styles/_initialization.scss';
+@import 'weplay-core/styles/v-2-0/_init.scss';
+
+.block {
+  @include flex(space-between, center, row);
+  @include make-spacer(px, 2);
+
+  border-bottom: 1px solid var(--grey-200);
+  height: rem(56px);
+}
+
+.title {
+  @include make-spacer(mb, 0);
+  @include font-size(14px);
+
+  color: var(--royal-blue);
+  font-weight: 700;
+}
+
+.controlWrap {
+  @include flex($align-items: center);
+
+  height: rem(20px);
+}
+
+.control {
+  @include flex(center, center, $display: inline-flex);
+  @include font-size(12px);
+
+  color: var(--blue);
+
+  @include media-breakpoint-down(sm) {
+
+    .btnText {
+      display: none;
+    }
+  }
+}
+
+.text {
+  @include make-spacer(ml, 1);
+
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
+}
+
+.button {
+  @extend %buttonLink;
+
+  @include make-spacer(px, 0);
+  @include make-spacer(mr, 3);
+
+  display: none;
+  font-weight: 400;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.isVisible {
+    display: block;
+  }
+
+}
+
+.close {
+  @include make-spacer(p, 0);
+
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--grey-500);
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &:hover {
+    color: var(--blue);
+  }
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}

@@ -1,0 +1,59 @@
+@import 'weplay-core/styles/_initialization.scss';
+
+.player {
+  $players-length: 5;
+
+  @include size(rem(32px));
+  @include flex(center, center);
+  @include transition(#{transform, opacity});
+
+  position: relative;
+  transform: translateX(0);
+  transition-delay: 200ms;
+  opacity: 1;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  background-color: var(--royal-blue);
+  overflow: hidden;
+
+  @for $i from 1 through $players-length {
+
+    &:nth-child( #{$i} ) {
+      transition-delay: (50ms * $i);
+      z-index: ($players-length - $i);
+    }
+  }
+
+  &:not( :first-child ) {
+    margin-left: rem(-8px);
+  }
+
+  &.isCaptain {
+    border-color: var(--blue);
+    box-shadow: 1px 4px 4px var(--blue-alpha-032);
+  }
+}
+
+.preview {
+  @include size(100%);
+
+  max-width: 100%;
+}
+
+.block {
+  @include reset-list;
+  @include flex($align-items: center);
+
+  visibility: visible;
+
+  &.isHidden {
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+
+    .player {
+      transform: translateX(8px);
+      opacity: 0;
+    }
+  }
+}
